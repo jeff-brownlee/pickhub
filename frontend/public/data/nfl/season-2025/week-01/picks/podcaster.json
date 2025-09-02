@@ -1,0 +1,56 @@
+{
+  "analystId": "podcaster",
+  "week": 1,
+  "season": 2025,
+  "picks": [
+    {
+      "gameId": "phi-dal",
+      "gameDate": "2025-09-07T19:25:00Z",
+      "awayTeam": {
+        "id": "PHI",
+        "name": "Eagles",
+        "score": 21
+      },
+      "homeTeam": {
+        "id": "DAL",
+        "name": "Cowboys",
+        "score": 7
+      },
+      "marketData": {
+        "spread": {
+          "away": { "line": 2.5, "odds": -110 },
+          "home": { "line": -2.5, "odds": -110 }
+        },
+        "total": {
+          "over": { "line": 48.5, "odds": -110 },
+          "under": { "line": 48.5, "odds": -110 }
+        },
+        "moneyline": {
+          "away": { "odds": 120 },
+          "home": { "odds": -140 }
+        }
+      },
+      "selection": {
+        "betType": "total",
+        "side": "over",
+        "line": 48.5,
+        "odds": -110,
+        "units": 1.0,
+        "rationale": "Listen, this is going to be a SHOOTOUT! Both teams have explosive offenses and questionable defenses. The Cowboys at home in primetime? They're going to put up points. The Eagles? They're not going to sit back and let Dallas run all over them. This total is way too low for what we're about to see. OVER 48.5 all day!"
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 48.5,
+        "finalOdds": -110,
+        "payout": 0,
+        "netUnits": 0
+      }
+    }
+  ],
+  "weekSummary": {
+    "totalPicks": 1,
+    "totalUnits": 1.0,
+    "weekPayout": 0,
+    "weekNetUnits": 0
+  }
+}

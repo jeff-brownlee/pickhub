@@ -1,0 +1,56 @@
+{
+  "analystId": "nerd",
+  "week": 1,
+  "season": 2025,
+  "picks": [
+    {
+      "gameId": "nyj-ne",
+      "gameDate": "2025-09-07T16:00:00Z",
+      "awayTeam": {
+        "id": "NYJ",
+        "name": "Jets",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "NE",
+        "name": "Patriots",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": { "line": 1.5, "odds": -110 },
+          "home": { "line": -1.5, "odds": -110 }
+        },
+        "total": {
+          "over": { "line": 41.0, "odds": -110 },
+          "under": { "line": 41.0, "odds": -110 }
+        },
+        "moneyline": {
+          "away": { "odds": 105 },
+          "home": { "odds": -125 }
+        }
+      },
+      "selection": {
+        "betType": "total",
+        "side": "under",
+        "line": 41.0,
+        "odds": -110,
+        "units": 1.0,
+        "rationale": "Statistical analysis shows that early season games between division rivals tend to be lower scoring due to familiarity and conservative play-calling. The Jets' defense has improved significantly in the offseason, and the Patriots' offense is still finding its rhythm. Historical data from the last 5 seasons shows that Week 1 totals in this division average 38.2 points. The weather forecast also suggests potential wind factors that could impact passing efficiency."
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 41.0,
+        "finalOdds": -110,
+        "payout": 0,
+        "netUnits": 0
+      }
+    }
+  ],
+  "weekSummary": {
+    "totalPicks": 1,
+    "totalUnits": 1.0,
+    "weekPayout": 0,
+    "weekNetUnits": 0
+  }
+}

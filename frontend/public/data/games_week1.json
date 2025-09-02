@@ -1,15 +1,15 @@
 [
   {
-    "id": "phi-dal",
+    "id": "dal-phi",
     "away": {
-      "name": "Eagles",
-      "abbr": "PHI",
-      "primaryHex": "#004C54"
-    },
-    "home": {
       "name": "Cowboys",
       "abbr": "DAL",
       "primaryHex": "#041E42"
+    },
+    "home": {
+      "name": "Eagles",
+      "abbr": "PHI",
+      "primaryHex": "#004C54"
     },
     "kickoffEt": "2025-09-07T15:25:00-04:00",
     "line": "PHI -2.5",

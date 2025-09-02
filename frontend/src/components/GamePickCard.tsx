@@ -256,24 +256,24 @@ export default function GamePickCard({
               border: '1px solid rgba(255,255,255,0.1)'
             }}
           >
-            <Stack direction="row" alignItems="center" spacing={1}>
-              <Typography sx={{ fontSize: '1.2rem' }}>
-                {getStatusEmoji(mockPickStatus.status)}
-              </Typography>
-              <Typography variant="body2" sx={{ fontWeight: 600, flex: 1 }}>
-                {mockPickStatus.pick}
-              </Typography>
-              <IconButton 
-                size="small" 
-                sx={{ color: 'text.secondary' }}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setIsRationaleExpanded(!isRationaleExpanded);
-                }}
-              >
-                {isRationaleExpanded ? <ExpandLess /> : <ExpandMore />}
-              </IconButton>
-            </Stack>
+                                 <Stack direction="row" alignItems="center" spacing={1}>
+                       <Typography sx={{ fontSize: '1.2rem' }}>
+                         {getStatusEmoji(mockPickStatus.status)}
+                       </Typography>
+                       <Typography variant="body2" sx={{ fontWeight: 600, flex: 1 }}>
+                         {mockPickStatus.pick}
+                       </Typography>
+                       <IconButton
+                         size="small"
+                         sx={{ color: 'text.secondary' }}
+                         onClick={(e) => {
+                           e.stopPropagation();
+                           setIsRationaleExpanded(!isRationaleExpanded);
+                         }}
+                       >
+                         {isRationaleExpanded ? <ExpandLess /> : <ExpandMore />}
+                       </IconButton>
+                     </Stack>
             
             <Collapse in={isRationaleExpanded}>
               <Box sx={{ mt: 1.5, pt: 1.5, borderTop: '1px solid rgba(255,255,255,0.1)' }}>

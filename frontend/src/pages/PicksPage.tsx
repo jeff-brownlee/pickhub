@@ -25,12 +25,33 @@ export default function PicksPage() {
   }, []);
 
   useEffect(() => {
-    fetch(`/data/games_week${week}.json`).then(r => r.json()).then(setGames);
+    const weekStr = week.toString().padStart(2, '0');
+    fetch(`/data/nfl/season-2025/week-${weekStr}/games.json`).then(r => r.json()).then(setGames);
   }, [week]);
 
   useEffect(() => {
     if (!selectedPersonaId) return;
-    fetch(`/data/picks_${selectedPersonaId}_week${week}.json`).then(r => r.json()).then(setPicks).catch(()=>setPicks({}));
+    const weekStr = week.toString().padStart(2, '0');
+    fetch(`/data/nfl/season-2025/week-${weekStr}/picks/${selectedPersonaId}.json`)
+      .then(r => r.json())
+      .then((pickData: any) => {
+        // Convert new pick structure to old format for compatibility
+        const picksMap: Record<string, Pick> = {};
+        if (pickData.picks) {
+          pickData.picks.forEach((pick: any) => {
+            picksMap[pick.gameId] = {
+              id: `${selectedPersonaId}-${pick.gameId}`,
+              gameId: pick.gameId,
+              analystId: selectedPersonaId,
+              selection: pick.selection,
+              rationale: pick.selection.rationale,
+              result: pick.result
+            };
+          });
+        }
+        setPicks(picksMap);
+      })
+      .catch(() => setPicks({}));
   }, [selectedPersonaId, week]);
 
   const selectedPersona = useMemo(() => personas.find(p => p.id === selectedPersonaId), [personas, selectedPersonaId]);

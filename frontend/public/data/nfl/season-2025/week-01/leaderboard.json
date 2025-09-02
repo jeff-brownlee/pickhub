@@ -1,0 +1,101 @@
+[
+  {
+    "personaId": "coach",
+    "metrics": {
+      "winPct": 0,
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0,
+      "streak": 0,
+      "last5": ["W", "W", "W", "W", "W"]
+    }
+  },
+  {
+    "personaId": "contrarian",
+    "metrics": {
+      "winPct": 0,
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0,
+      "streak": 0,
+      "last5": []
+    }
+  },
+  {
+    "personaId": "fratguy",
+    "metrics": {
+      "winPct": 0,
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0,
+      "streak": 0,
+      "last5": []
+    }
+  },
+  {
+    "personaId": "hotgirl",
+    "metrics": {
+      "winPct": 0,
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0,
+      "streak": 0,
+      "last5": []
+    }
+  },
+  {
+    "personaId": "joe",
+    "metrics": {
+      "winPct": 0,
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0,
+      "streak": 0,
+      "last5": []
+    }
+  },
+  {
+    "personaId": "mobster",
+    "metrics": {
+      "winPct": 0,
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0,
+      "streak": 0,
+      "last5": []
+    }
+  },
+  {
+    "personaId": "nerd",
+    "metrics": {
+      "winPct": 0,
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0,
+      "streak": 0,
+      "last5": []
+    }
+  },
+  {
+    "personaId": "podcaster",
+    "metrics": {
+      "winPct": 0,
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0,
+      "streak": 0,
+      "last5": []
+    }
+  },
+  {
+    "personaId": "pro",
+    "metrics": {
+      "winPct": 0,
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0,
+      "streak": 0,
+      "last5": []
+    }
+  }
+]

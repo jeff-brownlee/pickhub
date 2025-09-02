@@ -1,0 +1,230 @@
+{
+  "gameId": "nyj-ne",
+  "season": 2025,
+  "week": 1,
+  "kickoffISO": "2025-09-07T12:00:00-04:00",
+  "venue": {
+    "id": "3738",
+    "name": "Gillette Stadium",
+    "city": "Foxborough",
+    "state": "MA",
+    "surface": "turf",
+    "indoor": false
+  },
+  "teams": {
+    "away": {
+      "id": "20",
+      "name": "New York Jets",
+      "abbreviation": "NYJ",
+      "record": {
+        "wins": 1,
+        "losses": 2,
+        "ties": 0,
+        "winPercentage": 0.3333333333333333,
+        "lastFive": [],
+        "streak": {
+          "type": "W",
+          "count": 0
+        }
+      },
+      "recentForm": {
+        "lastFiveGames": [],
+        "pointsFor": 0,
+        "pointsAgainst": 0,
+        "pointDifferential": 0,
+        "averageMargin": 0
+      },
+      "statistics": {
+        "offense": {
+          "pointsPerGame": 0,
+          "yardsPerGame": 350,
+          "passingYards": 211,
+          "rushingYards": 139,
+          "thirdDownPercentage": 0,
+          "redZonePercentage": 0,
+          "turnovers": 6
+        },
+        "defense": {
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "passingYardsAllowed": 0,
+          "rushingYardsAllowed": 0,
+          "sacks": 8,
+          "interceptions": 3,
+          "forcedFumbles": 0
+        },
+        "specialTeams": {
+          "fieldGoalPercentage": 0,
+          "puntReturnAverage": 0,
+          "kickoffReturnAverage": 0
+        }
+      },
+      "keyPlayers": [],
+      "coaching": {
+        "headCoach": "Unknown",
+        "experience": 0,
+        "record": {
+          "wins": 0,
+          "losses": 0,
+          "ties": 0
+        }
+      },
+      "situational": {
+        "homeAdvantage": {
+          "homeRecord": {
+            "wins": 0,
+            "losses": 0,
+            "ties": 0
+          },
+          "homePointsFor": 0,
+          "homePointsAgainst": 0
+        },
+        "restAdvantage": {
+          "daysRest": 7,
+          "opponentDaysRest": 7,
+          "restAdvantage": "even"
+        },
+        "travel": {
+          "milesTraveled": 500,
+          "timeZoneChange": 0,
+          "shortWeek": false
+        },
+        "motivation": {
+          "playoffRace": true,
+          "divisionGame": false,
+          "rivalry": false
+        }
+      },
+      "trends": []
+    },
+    "home": {
+      "id": "17",
+      "name": "New England Patriots",
+      "abbreviation": "NE",
+      "record": {
+        "wins": 2,
+        "losses": 1,
+        "ties": 0,
+        "winPercentage": 0.6666666666666666,
+        "lastFive": [],
+        "streak": {
+          "type": "W",
+          "count": 0
+        }
+      },
+      "recentForm": {
+        "lastFiveGames": [],
+        "pointsFor": 0,
+        "pointsAgainst": 0,
+        "pointDifferential": 0,
+        "averageMargin": 0
+      },
+      "statistics": {
+        "offense": {
+          "pointsPerGame": 0,
+          "yardsPerGame": 282.667,
+          "passingYards": 159.333,
+          "rushingYards": 123.333,
+          "thirdDownPercentage": 0,
+          "redZonePercentage": 0,
+          "turnovers": 7
+        },
+        "defense": {
+          "pointsAllowed": 0,
+          "yardsAllowed": 0,
+          "passingYardsAllowed": 0,
+          "rushingYardsAllowed": 0,
+          "sacks": 5,
+          "interceptions": 5,
+          "forcedFumbles": 0
+        },
+        "specialTeams": {
+          "fieldGoalPercentage": 0,
+          "puntReturnAverage": 0,
+          "kickoffReturnAverage": 0
+        }
+      },
+      "keyPlayers": [],
+      "coaching": {
+        "headCoach": "Unknown",
+        "experience": 0,
+        "record": {
+          "wins": 0,
+          "losses": 0,
+          "ties": 0
+        }
+      },
+      "situational": {
+        "homeAdvantage": {
+          "homeRecord": {
+            "wins": 0,
+            "losses": 0,
+            "ties": 0
+          },
+          "homePointsFor": 0,
+          "homePointsAgainst": 0
+        },
+        "restAdvantage": {
+          "daysRest": 7,
+          "opponentDaysRest": 7,
+          "restAdvantage": "even"
+        },
+        "travel": {
+          "milesTraveled": 0,
+          "timeZoneChange": 0,
+          "shortWeek": false
+        },
+        "motivation": {
+          "playoffRace": true,
+          "divisionGame": false,
+          "rivalry": false
+        }
+      },
+      "trends": []
+    }
+  },
+  "bettingContext": {
+    "openingLine": {},
+    "currentLine": {
+      "spread": -1.5,
+      "total": 41,
+      "moneyline": {
+        "home": -140,
+        "away": 120
+      }
+    },
+    "lineMovement": {},
+    "bettingTrends": {
+      "spread": {
+        "home": 50,
+        "away": 50
+      },
+      "total": {
+        "over": 50,
+        "under": 50
+      },
+      "moneyline": {
+        "home": 50,
+        "away": 50
+      }
+    },
+    "keyNumbers": {
+      "spread": [
+        3,
+        7,
+        10,
+        14
+      ],
+      "total": [
+        40,
+        45,
+        50,
+        55
+      ]
+    }
+  },
+  "keyMatchups": [],
+  "trends": [],
+  "injuries": [],
+  "lastUpdated": "2025-09-02T20:45:44.739Z"
+}

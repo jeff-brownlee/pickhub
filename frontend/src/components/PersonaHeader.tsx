@@ -11,9 +11,9 @@ export default function PersonaHeader({ persona }: { persona: Persona }) {
       <Avatar src={persona.avatarUrl} alt={persona.name} sx={{ width: { xs: 100, sm: 80 }, height: { xs: 100, sm: 80 }, border: '2px solid rgba(255,255,255,0.18)' }} />
       <Box sx={{ flex: 1 }}>
         <Typography variant="h6">{persona.name}</Typography>
-        {persona.bio && (
+        {persona.tagline && (
           <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 0.25 }}>
-            {persona.bio}
+            {persona.tagline}
           </Typography>
         )}
         <Stack direction="row" spacing={1} sx={{ mt: 0.5 }}>

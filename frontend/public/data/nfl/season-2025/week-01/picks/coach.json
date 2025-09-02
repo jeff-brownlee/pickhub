@@ -1,0 +1,99 @@
+{
+  "analystId": "coach",
+  "week": 1,
+  "season": 2025,
+  "picks": [
+    {
+      "gameId": "phi-dal",
+      "gameDate": "2025-09-07T19:25:00Z",
+      "awayTeam": {
+        "id": "PHI",
+        "name": "Eagles",
+        "score": 21
+      },
+      "homeTeam": {
+        "id": "DAL",
+        "name": "Cowboys",
+        "score": 7
+      },
+      "marketData": {
+        "spread": {
+          "away": { "line": 2.5, "odds": -110 },
+          "home": { "line": -2.5, "odds": -110 }
+        },
+        "total": {
+          "over": { "line": 48.5, "odds": -110 },
+          "under": { "line": 48.5, "odds": -110 }
+        },
+        "moneyline": {
+          "away": { "odds": 120 },
+          "home": { "odds": -140 }
+        }
+      },
+      "selection": {
+        "betType": "moneyline",
+        "side": "away",
+        "line": 120,
+        "odds": 120,
+        "units": 1.0,
+        "rationale": "The Eagles have a strong home field advantage and their defense has been performing well against the run. With the current line movement favoring the underdog, there's good value on the moneyline. The weather conditions are also favorable for their passing attack."
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 120,
+        "finalOdds": 120,
+        "payout": 0,
+        "netUnits": 0
+      }
+    },
+    {
+      "gameId": "nyj-ne",
+      "gameDate": "2025-09-07T16:00:00Z",
+      "awayTeam": {
+        "id": "NYJ",
+        "name": "Jets",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "NE",
+        "name": "Patriots",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": { "line": 1.5, "odds": -110 },
+          "home": { "line": -1.5, "odds": -110 }
+        },
+        "total": {
+          "over": { "line": 41.0, "odds": -110 },
+          "under": { "line": 41.0, "odds": -110 }
+        },
+        "moneyline": {
+          "away": { "odds": 105 },
+          "home": { "odds": -125 }
+        }
+      },
+      "selection": {
+        "betType": "spread",
+        "side": "away",
+        "line": 1.5,
+        "odds": -110,
+        "units": 1.0,
+        "rationale": "The Jets have a solid offensive line and can control the clock. This is a classic case where the underdog can keep it close and cover the spread. The Patriots' defense is good but not great, and the Jets' running game should be able to move the chains."
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 1.5,
+        "finalOdds": -110,
+        "payout": 0,
+        "netUnits": 0
+      }
+    }
+  ],
+  "weekSummary": {
+    "totalPicks": 2,
+    "totalUnits": 2.0,
+    "weekPayout": 0,
+    "weekNetUnits": 0
+  }
+}

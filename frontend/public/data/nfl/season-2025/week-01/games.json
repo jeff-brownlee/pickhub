@@ -1,0 +1,706 @@
+[
+  {
+    "id": "2025-09-05-dal-phi",
+    "away": {
+      "name": "Dallas Cowboys",
+      "abbr": "DAL",
+      "primaryHex": "#041E42"
+    },
+    "home": {
+      "name": "Philadelphia Eagles",
+      "abbr": "PHI",
+      "primaryHex": "#004C54"
+    },
+    "kickoffEt": "2025-09-05T00:20:00.000-04:00",
+    "odds": {
+      "spread": {
+        "away": {
+          "line": 8.5,
+          "odds": -115
+        },
+        "home": {
+          "line": -8.5,
+          "odds": -105
+        }
+      },
+      "total": {
+        "over": {
+          "line": 47.5,
+          "odds": -110
+        },
+        "under": {
+          "line": 47.5,
+          "odds": -110
+        }
+      },
+      "moneyline": {
+        "away": {
+          "odds": 320
+        },
+        "home": {
+          "odds": -425
+        }
+      }
+    }
+  },
+  {
+    "id": "2025-09-06-kc-lac",
+    "away": {
+      "name": "Kansas City Chiefs",
+      "abbr": "KC",
+      "primaryHex": "#E31837"
+    },
+    "home": {
+      "name": "Los Angeles Chargers",
+      "abbr": "LAC",
+      "primaryHex": "#0080C6"
+    },
+    "kickoffEt": "2025-09-06T00:00:00.000-04:00",
+    "odds": {
+      "spread": {
+        "away": {
+          "line": -3.5,
+          "odds": 102
+        },
+        "home": {
+          "line": 3.5,
+          "odds": -125
+        }
+      },
+      "total": {
+        "over": {
+          "line": 46.5,
+          "odds": 100
+        },
+        "under": {
+          "line": 46.5,
+          "odds": -120
+        }
+      },
+      "moneyline": {
+        "away": {
+          "odds": -170
+        },
+        "home": {
+          "odds": 145
+        }
+      }
+    }
+  },
+  {
+    "id": "2025-09-07-tb-atl",
+    "away": {
+      "name": "Tampa Bay Buccaneers",
+      "abbr": "TB",
+      "primaryHex": "#D50A0A"
+    },
+    "home": {
+      "name": "Atlanta Falcons",
+      "abbr": "ATL",
+      "primaryHex": "#A71930"
+    },
+    "kickoffEt": "2025-09-07T17:00:00.000-04:00",
+    "odds": {
+      "spread": {
+        "away": {
+          "line": -2.5,
+          "odds": -110
+        },
+        "home": {
+          "line": 2.5,
+          "odds": -110
+        }
+      },
+      "total": {
+        "over": {
+          "line": 47.5,
+          "odds": -105
+        },
+        "under": {
+          "line": 47.5,
+          "odds": -115
+        }
+      },
+      "moneyline": {
+        "away": {
+          "odds": -135
+        },
+        "home": {
+          "odds": 115
+        }
+      }
+    }
+  },
+  {
+    "id": "2025-09-07-cin-cle",
+    "away": {
+      "name": "Cincinnati Bengals",
+      "abbr": "CIN",
+      "primaryHex": "#FB4F14"
+    },
+    "home": {
+      "name": "Cleveland Browns",
+      "abbr": "CLE",
+      "primaryHex": "#311D00"
+    },
+    "kickoffEt": "2025-09-07T17:00:00.000-04:00",
+    "odds": {
+      "spread": {
+        "away": {
+          "line": -4.5,
+          "odds": -110
+        },
+        "home": {
+          "line": 4.5,
+          "odds": -110
+        }
+      },
+      "total": {
+        "over": {
+          "line": 47.5,
+          "odds": -110
+        },
+        "under": {
+          "line": 47.5,
+          "odds": -110
+        }
+      },
+      "moneyline": {
+        "away": {
+          "odds": -250
+        },
+        "home": {
+          "odds": 210
+        }
+      }
+    }
+  },
+  {
+    "id": "2025-09-07-mia-ind",
+    "away": {
+      "name": "Miami Dolphins",
+      "abbr": "MIA",
+      "primaryHex": "#008E97"
+    },
+    "home": {
+      "name": "Indianapolis Colts",
+      "abbr": "IND",
+      "primaryHex": "#002C5F"
+    },
+    "kickoffEt": "2025-09-07T17:00:00.000-04:00",
+    "odds": {
+      "spread": {
+        "away": {
+          "line": 1.5,
+          "odds": -125
+        },
+        "home": {
+          "line": -1.5,
+          "odds": 102
+        }
+      },
+      "total": {
+        "over": {
+          "line": 47.5,
+          "odds": 100
+        },
+        "under": {
+          "line": 47.5,
+          "odds": -120
+        }
+      },
+      "moneyline": {
+        "away": {
+          "odds": -115
+        },
+        "home": {
+          "odds": -105
+        }
+      }
+    }
+  },
+  {
+    "id": "2025-09-07-lv-ne",
+    "away": {
+      "name": "Las Vegas Raiders",
+      "abbr": "LV",
+      "primaryHex": "#000000"
+    },
+    "home": {
+      "name": "New England Patriots",
+      "abbr": "NE",
+      "primaryHex": "#0C2340"
+    },
+    "kickoffEt": "2025-09-07T17:00:00.000-04:00",
+    "odds": {
+      "spread": {
+        "away": {
+          "line": 2.5,
+          "odds": 100
+        },
+        "home": {
+          "line": -2.5,
+          "odds": -120
+        }
+      },
+      "total": {
+        "over": {
+          "line": 43.5,
+          "odds": -110
+        },
+        "under": {
+          "line": 43.5,
+          "odds": -110
+        }
+      },
+      "moneyline": {
+        "away": {
+          "odds": 120
+        },
+        "home": {
+          "odds": -140
+        }
+      }
+    }
+  },
+  {
+    "id": "2025-09-07-ari-no",
+    "away": {
+      "name": "Arizona Cardinals",
+      "abbr": "ARI",
+      "primaryHex": "#97233F"
+    },
+    "home": {
+      "name": "New Orleans Saints",
+      "abbr": "NO",
+      "primaryHex": "#D3BC8D"
+    },
+    "kickoffEt": "2025-09-07T17:00:00.000-04:00",
+    "odds": {
+      "spread": {
+        "away": {
+          "line": -6.5,
+          "odds": -110
+        },
+        "home": {
+          "line": 6.5,
+          "odds": -110
+        }
+      },
+      "total": {
+        "over": {
+          "line": 43.5,
+          "odds": 100
+        },
+        "under": {
+          "line": 43.5,
+          "odds": -120
+        }
+      },
+      "moneyline": {
+        "away": {
+          "odds": -290
+        },
+        "home": {
+          "odds": 240
+        }
+      }
+    }
+  },
+  {
+    "id": "2025-09-07-pit-nyj",
+    "away": {
+      "name": "Pittsburgh Steelers",
+      "abbr": "PIT",
+      "primaryHex": "#FFB612"
+    },
+    "home": {
+      "name": "New York Jets",
+      "abbr": "NYJ",
+      "primaryHex": "#125740"
+    },
+    "kickoffEt": "2025-09-07T17:00:00.000-04:00",
+    "odds": {
+      "spread": {
+        "away": {
+          "line": -2.5,
+          "odds": -125
+        },
+        "home": {
+          "line": 2.5,
+          "odds": 102
+        }
+      },
+      "total": {
+        "over": {
+          "line": 38.5,
+          "odds": -105
+        },
+        "under": {
+          "line": 38.5,
+          "odds": -115
+        }
+      },
+      "moneyline": {
+        "away": {
+          "odds": -150
+        },
+        "home": {
+          "odds": 130
+        }
+      }
+    }
+  },
+  {
+    "id": "2025-09-07-nyg-wsh",
+    "away": {
+      "name": "New York Giants",
+      "abbr": "NYG",
+      "primaryHex": "#0B2265"
+    },
+    "home": {
+      "name": "Washington Commanders",
+      "abbr": "WSH",
+      "primaryHex": "#000000"
+    },
+    "kickoffEt": "2025-09-07T17:00:00.000-04:00",
+    "odds": {
+      "spread": {
+        "away": {
+          "line": 6.5,
+          "odds": -120
+        },
+        "home": {
+          "line": -6.5,
+          "odds": 100
+        }
+      },
+      "total": {
+        "over": {
+          "line": 45.5,
+          "odds": -110
+        },
+        "under": {
+          "line": 45.5,
+          "odds": -110
+        }
+      },
+      "moneyline": {
+        "away": {
+          "odds": 210
+        },
+        "home": {
+          "odds": -250
+        }
+      }
+    }
+  },
+  {
+    "id": "2025-09-07-car-jax",
+    "away": {
+      "name": "Carolina Panthers",
+      "abbr": "CAR",
+      "primaryHex": "#0085CA"
+    },
+    "home": {
+      "name": "Jacksonville Jaguars",
+      "abbr": "JAX",
+      "primaryHex": "#006778"
+    },
+    "kickoffEt": "2025-09-07T17:00:00.000-04:00",
+    "odds": {
+      "spread": {
+        "away": {
+          "line": 3.5,
+          "odds": -115
+        },
+        "home": {
+          "line": -3.5,
+          "odds": -105
+        }
+      },
+      "total": {
+        "over": {
+          "line": 46.5,
+          "odds": -105
+        },
+        "under": {
+          "line": 46.5,
+          "odds": -115
+        }
+      },
+      "moneyline": {
+        "away": {
+          "odds": 170
+        },
+        "home": {
+          "odds": -200
+        }
+      }
+    }
+  },
+  {
+    "id": "2025-09-07-ten-den",
+    "away": {
+      "name": "Tennessee Titans",
+      "abbr": "TEN",
+      "primaryHex": "#0C2340"
+    },
+    "home": {
+      "name": "Denver Broncos",
+      "abbr": "DEN",
+      "primaryHex": "#FB4F14"
+    },
+    "kickoffEt": "2025-09-07T20:05:00.000-04:00",
+    "odds": {
+      "spread": {
+        "away": {
+          "line": 7.5,
+          "odds": -105
+        },
+        "home": {
+          "line": -7.5,
+          "odds": -115
+        }
+      },
+      "total": {
+        "over": {
+          "line": 42.5,
+          "odds": -110
+        },
+        "under": {
+          "line": 42.5,
+          "odds": -110
+        }
+      },
+      "moneyline": {
+        "away": {
+          "odds": 300
+        },
+        "home": {
+          "odds": -400
+        }
+      }
+    }
+  },
+  {
+    "id": "2025-09-07-sf-sea",
+    "away": {
+      "name": "San Francisco 49ers",
+      "abbr": "SF",
+      "primaryHex": "#AA0000"
+    },
+    "home": {
+      "name": "Seattle Seahawks",
+      "abbr": "SEA",
+      "primaryHex": "#002244"
+    },
+    "kickoffEt": "2025-09-07T20:05:00.000-04:00",
+    "odds": {
+      "spread": {
+        "away": {
+          "line": -2.5,
+          "odds": -110
+        },
+        "home": {
+          "line": 2.5,
+          "odds": -110
+        }
+      },
+      "total": {
+        "over": {
+          "line": 43.5,
+          "odds": 100
+        },
+        "under": {
+          "line": 43.5,
+          "odds": -120
+        }
+      },
+      "moneyline": {
+        "away": {
+          "odds": -135
+        },
+        "home": {
+          "odds": 115
+        }
+      }
+    }
+  },
+  {
+    "id": "2025-09-07-det-gb",
+    "away": {
+      "name": "Detroit Lions",
+      "abbr": "DET",
+      "primaryHex": "#0076B6"
+    },
+    "home": {
+      "name": "Green Bay Packers",
+      "abbr": "GB",
+      "primaryHex": "#203731"
+    },
+    "kickoffEt": "2025-09-07T20:25:00.000-04:00",
+    "odds": {
+      "spread": {
+        "away": {
+          "line": 2.5,
+          "odds": -110
+        },
+        "home": {
+          "line": -2.5,
+          "odds": -110
+        }
+      },
+      "total": {
+        "over": {
+          "line": 47.5,
+          "odds": -105
+        },
+        "under": {
+          "line": 47.5,
+          "odds": -115
+        }
+      },
+      "moneyline": {
+        "away": {
+          "odds": 120
+        },
+        "home": {
+          "odds": -140
+        }
+      }
+    }
+  },
+  {
+    "id": "2025-09-07-hou-lar",
+    "away": {
+      "name": "Houston Texans",
+      "abbr": "HOU",
+      "primaryHex": "#03202F"
+    },
+    "home": {
+      "name": "Los Angeles Rams",
+      "abbr": "LAR",
+      "primaryHex": "#003594"
+    },
+    "kickoffEt": "2025-09-07T20:25:00.000-04:00",
+    "odds": {
+      "spread": {
+        "away": {
+          "line": 2.5,
+          "odds": 100
+        },
+        "home": {
+          "line": -2.5,
+          "odds": -120
+        }
+      },
+      "total": {
+        "over": {
+          "line": 43.5,
+          "odds": -110
+        },
+        "under": {
+          "line": 43.5,
+          "odds": -110
+        }
+      },
+      "moneyline": {
+        "away": {
+          "odds": 125
+        },
+        "home": {
+          "odds": -145
+        }
+      }
+    }
+  },
+  {
+    "id": "2025-09-08-bal-buf",
+    "away": {
+      "name": "Baltimore Ravens",
+      "abbr": "BAL",
+      "primaryHex": "#241773"
+    },
+    "home": {
+      "name": "Buffalo Bills",
+      "abbr": "BUF",
+      "primaryHex": "#00338D"
+    },
+    "kickoffEt": "2025-09-08T00:20:00.000-04:00",
+    "odds": {
+      "spread": {
+        "away": {
+          "line": 1.5,
+          "odds": -125
+        },
+        "home": {
+          "line": -1.5,
+          "odds": 102
+        }
+      },
+      "total": {
+        "over": {
+          "line": 50.5,
+          "odds": -115
+        },
+        "under": {
+          "line": 50.5,
+          "odds": -105
+        }
+      },
+      "moneyline": {
+        "away": {
+          "odds": -115
+        },
+        "home": {
+          "odds": -105
+        }
+      }
+    }
+  },
+  {
+    "id": "2025-09-09-min-chi",
+    "away": {
+      "name": "Minnesota Vikings",
+      "abbr": "MIN",
+      "primaryHex": "#4F2683"
+    },
+    "home": {
+      "name": "Chicago Bears",
+      "abbr": "CHI",
+      "primaryHex": "#0B162A"
+    },
+    "kickoffEt": "2025-09-09T00:15:00.000-04:00",
+    "odds": {
+      "spread": {
+        "away": {
+          "line": -1.5,
+          "odds": -115
+        },
+        "home": {
+          "line": 1.5,
+          "odds": -105
+        }
+      },
+      "total": {
+        "over": {
+          "line": 43.5,
+          "odds": -115
+        },
+        "under": {
+          "line": 43.5,
+          "odds": -105
+        }
+      },
+      "moneyline": {
+        "away": {
+          "odds": -130
+        },
+        "home": {
+          "odds": 110
+        }
+      }
+    }
+  }
+]

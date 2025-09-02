@@ -21,9 +21,10 @@ export default function LeaderboardPage() {
 
   useEffect(() => {
     const currentWeek = getCurrentWeek();
+    const weekStr = currentWeek.toString().padStart(2, '0');
     Promise.all([
       fetch('/data/personas.json').then(r=>r.json()),
-      fetch(`/data/leaderboard_week${currentWeek}.json`).then(r=>r.json()),
+      fetch(`/data/nfl/season-2025/week-${weekStr}/leaderboard.json`).then(r=>r.json()),
     ]).then(([personas, leaderboard]) => {
       const map = new Map(personas.map((p: Persona) => [p.id, p]));
       const data = leaderboard.map((row: any) => ({ persona: map.get(row.personaId)!, metrics: row.metrics as PersonaMetrics }));

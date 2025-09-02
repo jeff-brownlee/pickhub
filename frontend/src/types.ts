@@ -18,16 +18,40 @@ export type Persona = {
   id: string;
   name: string;
   avatarUrl: string;
+  profileImageUrl?: string;
   record: { wins: number; losses: number; pushes?: number };
   bio?: string;
+  tagline?: string;
+  persona?: string;
+  bias?: string;
+  voiceStyle?: string;
 };
 
 export type Pick = {
+  id?: string;
   gameId: string;
-  side: 'HOME' | 'AWAY' | 'OVER' | 'UNDER' | 'PASS';
+  analystId?: string;
+  selection?: {
+    betType: 'spread' | 'total' | 'moneyline';
+    side: 'away' | 'home' | 'over' | 'under';
+    line: number;
+    odds: number;
+    units: number;
+    rationale: string;
+  };
+  result?: {
+    status: 'pending' | 'won' | 'loss' | 'push';
+    finalLine: number;
+    finalOdds: number;
+    payout: number;
+    netUnits: number;
+  };
+  // Legacy fields for backward compatibility
+  side?: 'HOME' | 'AWAY' | 'OVER' | 'UNDER' | 'PASS';
   confidence?: 1 | 2 | 3;
   note?: string;
   facts?: PickFact[];
+  rationale?: string;
 };
 
 export type PickFact = { type: 'trend'|'injury'|'epa'|'weather'|'lineMove'; text: string; source?: string };

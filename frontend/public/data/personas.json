@@ -1,0 +1,101 @@
+[
+  {
+    "id": "coach",
+    "name": "Coach",
+    "avatarUrl": "/avatars/nerd.png",
+    "record": {
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0
+    },
+    "bio": "EPA splits, line movement, and trench mismatches."
+  },
+  {
+    "id": "contrarian",
+    "name": "Contrarian",
+    "avatarUrl": "/avatars/contrarian.png",
+    "record": {
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0
+    },
+    "bio": "Fade the public and find value in unpopular picks."
+  },
+  {
+    "id": "fratguy",
+    "name": "Frat Guy",
+    "avatarUrl": "/avatars/fratguy.png",
+    "record": {
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0
+    },
+    "bio": "Vibes, trends, and what feels right in the moment."
+  },
+  {
+    "id": "hotgirl",
+    "name": "Hot Girl",
+    "avatarUrl": "/avatars/hotgirl.png",
+    "record": {
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0
+    },
+    "bio": "Social media trends and viral betting angles."
+  },
+  {
+    "id": "joe",
+    "name": "Average Joe",
+    "avatarUrl": "/avatars/joe.png",
+    "record": {
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0
+    },
+    "bio": "Simple picks based on what everyone else is doing."
+  },
+  {
+    "id": "mobster",
+    "name": "Mobster",
+    "avatarUrl": "/avatars/mobster.png",
+    "record": {
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0
+    },
+    "bio": "Inside information and sharp money movements."
+  },
+  {
+    "id": "nerd",
+    "name": "Analytics Nerd",
+    "avatarUrl": "/avatars/nerd.png",
+    "record": {
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0
+    },
+    "bio": "Advanced analytics and data-driven insights."
+  },
+  {
+    "id": "podcaster",
+    "name": "Podcaster",
+    "avatarUrl": "/avatars/podcaster.png",
+    "record": {
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0
+    },
+    "bio": "Hot takes and bold predictions for the masses."
+  },
+  {
+    "id": "pro",
+    "name": "Pro",
+    "avatarUrl": "/avatars/pro.png",
+    "record": {
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0
+    },
+    "bio": "Professional handicapping with years of experience."
+  }
+]

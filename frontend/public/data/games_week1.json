@@ -1,0 +1,34 @@
+[
+  {
+    "id": "phi-dal",
+    "away": {
+      "name": "Eagles",
+      "abbr": "PHI",
+      "primaryHex": "#004C54"
+    },
+    "home": {
+      "name": "Cowboys",
+      "abbr": "DAL",
+      "primaryHex": "#041E42"
+    },
+    "kickoffEt": "2025-09-07T15:25:00-04:00",
+    "line": "PHI -2.5",
+    "total": 48.5
+  },
+  {
+    "id": "nyj-ne",
+    "away": {
+      "name": "Jets",
+      "abbr": "NYJ",
+      "primaryHex": "#125740"
+    },
+    "home": {
+      "name": "Patriots",
+      "abbr": "NE",
+      "primaryHex": "#0C2340"
+    },
+    "kickoffEt": "2025-09-07T12:00:00-04:00",
+    "line": "NE -1.5",
+    "total": 41.0
+  }
+]

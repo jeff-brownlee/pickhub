@@ -1,0 +1,24 @@
+{
+  "phi-dal": {
+    "gameId": "phi-dal",
+    "side": "AWAY",
+    "confidence": 3,
+    "note": "DL mismatch + early-down EPA split",
+    "facts": [
+      {
+        "type": "epa",
+        "text": "PHI offense top-5 EPA/play vs DAL defense bottom-10 on early downs (\u201924-\u201925)"
+      },
+      {
+        "type": "lineMove",
+        "text": "Lookahead moved from -1.0 to -2.5"
+      }
+    ]
+  },
+  "nyj-ne": {
+    "gameId": "nyj-ne",
+    "side": "UNDER",
+    "confidence": 2,
+    "note": "Two slow-paced offenses; red zone issues"
+  }
+}

@@ -5,7 +5,7 @@ import { ExpandMore, ExpandLess } from '@mui/icons-material';
 import type { Game, Pick } from '../types';
 import { getTeamColor } from '../utils/teamColors';
 
-function TeamBadge({ name, abbr, score }: { name: string; abbr: string; score?: number }) {
+function TeamBadge({ name, abbr, nickname, score }: { name: string; abbr: string; nickname: string; score?: number }) {
   const teamColor = getTeamColor(abbr);
   
   return (
@@ -29,7 +29,7 @@ function TeamBadge({ name, abbr, score }: { name: string; abbr: string; score?: 
           {abbr}
         </Typography>
         <Typography variant="caption" sx={{ color: 'white', opacity: 0.9, fontSize: '0.75rem' }}>
-          {name}
+          {nickname}
         </Typography>
       </Box>
       {score !== undefined && (
@@ -113,35 +113,104 @@ export default function GamePickCard({
   const gameDate = kickoff.toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
   const gameTime = kickoff.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' });
 
-  // Mock betting data - in real app this would come from API
-  const mockBettingData = {
+  // Use real pick data if available, otherwise use game odds
+  const hasPick = pick && pick.selection && pick.marketData;
+  const hasGameOdds = game.odds && game.odds.spread && game.odds.total && game.odds.moneyline;
+  
+  // Get betting data from pick, game odds, or use default values
+  const bettingData = hasPick ? {
     spread: {
-      away: { value: '+2.5', odds: '-110' },
-      home: { value: '-2.5', odds: '-110' }
+      away: { 
+        value: `+${pick.marketData.spread.away.line}`, 
+        odds: pick.marketData.spread.away.odds.toString() 
+      },
+      home: { 
+        value: `-${pick.marketData.spread.home.line}`, 
+        odds: pick.marketData.spread.home.odds.toString() 
+      }
     },
     total: {
-      over: { value: 'O 48.5', odds: '-110' },
-      under: { value: 'U 48.5', odds: '-110' }
+      over: { 
+        value: `O ${pick.marketData.total.over.line}`, 
+        odds: pick.marketData.total.over.odds.toString() 
+      },
+      under: { 
+        value: `U ${pick.marketData.total.under.line}`, 
+        odds: pick.marketData.total.under.odds.toString() 
+      }
     },
     moneyline: {
-      away: '+120',
-      home: '-140'
+      away: pick.marketData.moneyline.away.odds.toString(),
+      home: pick.marketData.moneyline.home.odds.toString()
+    }
+  } : hasGameOdds ? {
+    spread: {
+      away: { 
+        value: `+${game.odds.spread.away.line}`, 
+        odds: game.odds.spread.away.odds.toString() 
+      },
+      home: { 
+        value: `-${game.odds.spread.home.line}`, 
+        odds: game.odds.spread.home.odds.toString() 
+      }
+    },
+    total: {
+      over: { 
+        value: `O ${game.odds.total.over.line}`, 
+        odds: game.odds.total.over.odds.toString() 
+      },
+      under: { 
+        value: `U ${game.odds.total.under.line}`, 
+        odds: game.odds.total.under.odds.toString() 
+      }
+    },
+    moneyline: {
+      away: game.odds.moneyline.away.odds.toString(),
+      home: game.odds.moneyline.home.odds.toString()
+    }
+  } : {
+    spread: {
+      away: { value: 'N/A', odds: 'N/A' },
+      home: { value: 'N/A', odds: 'N/A' }
+    },
+    total: {
+      over: { value: 'N/A', odds: 'N/A' },
+      under: { value: 'N/A', odds: 'N/A' }
+    },
+    moneyline: {
+      away: 'N/A',
+      home: 'N/A'
     }
   };
 
-  // Determine which bet is picked (mock logic for now)
+  // Determine which bet is picked based on actual pick data
   const getPickedBet = () => {
-    // Mock: always return a pick for testing
-    return 'moneyline-away'; // Mock: assume moneyline away is picked
+    if (!hasPick) return null;
+    
+    const { betType, side } = pick.selection;
+    if (betType === 'spread') {
+      return side === 'away' ? 'spread-away' : 'spread-home';
+    } else if (betType === 'total') {
+      return side === 'over' ? 'total-over' : 'total-under';
+    } else if (betType === 'moneyline') {
+      return side === 'away' ? 'moneyline-away' : 'moneyline-home';
+    }
+    return null;
   };
 
   const pickedBet = getPickedBet();
 
-  // Mock pick status data
-  const mockPickStatus = {
-    status: 'pending' as 'pending' | 'won' | 'loss',
-    pick: 'PHI +120', // This would come from actual pick data
-    rationale: 'The Eagles have a strong home field advantage and their defense has been performing well against the run. With the current line movement favoring the underdog, there\'s good value on the moneyline. The weather conditions are also favorable for their passing attack.'
+  // Get pick status from actual pick data
+  const pickStatus = hasPick ? {
+    status: pick.result?.status || 'pending',
+    pick: pick.selection.betType === 'total' 
+      ? `${pick.selection.side === 'over' ? 'OVER' : 'UNDER'} ${pick.selection.line} ${pick.selection.odds > 0 ? '+' : ''}${pick.selection.odds}`
+      : `${pick.selection.side === 'away' ? game.away.abbr : game.home.abbr} ${pick.selection.betType === 'spread' ? pick.selection.line : ''} ${pick.selection.odds > 0 ? '+' : ''}${pick.selection.odds}`,
+    rationale: pick.selection.rationale || pick.rationale || 'No rationale provided.'
+  } : {
+    status: 'pending' as const,
+    pick: 'No pick',
+    rationale: 'No pick has been made for this game.'
   };
 
   const getStatusEmoji = (status: string) => {
@@ -193,26 +262,26 @@ export default function GamePickCard({
 
             {/* Row 2: Away Team */}
             <Grid2 size={5}>
-              <TeamBadge name={game.away.name} abbr={game.away.abbr} score={21} />
+              <TeamBadge name={game.away.name} abbr={game.away.abbr} nickname={game.away.nickname} score={pick?.awayTeam?.score} />
             </Grid2>
             <Grid2 size={2.33}>
               <BettingOption
-                value={mockBettingData.spread.away.value}
-                odds={mockBettingData.spread.away.odds}
+                value={bettingData.spread.away.value}
+                odds={bettingData.spread.away.odds}
                 isPicked={pickedBet === 'spread-away'}
               />
             </Grid2>
             <Grid2 size={2.33}>
               <BettingOption
-                value={mockBettingData.total.over.value}
-                odds={mockBettingData.total.over.odds}
+                value={bettingData.total.over.value}
+                odds={bettingData.total.over.odds}
                 isPicked={pickedBet === 'total-over'}
               />
             </Grid2>
             <Grid2 size={2.33}>
               <BettingOption
                 value=""
-                odds={mockBettingData.moneyline.away}
+                odds={bettingData.moneyline.away}
                 isPicked={pickedBet === 'moneyline-away'}
                 isMoneyline={true}
               />
@@ -220,26 +289,26 @@ export default function GamePickCard({
 
             {/* Row 3: Home Team */}
             <Grid2 size={5}>
-              <TeamBadge name={game.home.name} abbr={game.home.abbr} score={7} />
+              <TeamBadge name={game.home.name} abbr={game.home.abbr} nickname={game.home.nickname} score={pick?.homeTeam?.score} />
             </Grid2>
             <Grid2 size={2.33}>
               <BettingOption
-                value={mockBettingData.spread.home.value}
-                odds={mockBettingData.spread.home.odds}
+                value={bettingData.spread.home.value}
+                odds={bettingData.spread.home.odds}
                 isPicked={pickedBet === 'spread-home'}
               />
             </Grid2>
             <Grid2 size={2.33}>
               <BettingOption
-                value={mockBettingData.total.under.value}
-                odds={mockBettingData.total.under.odds}
+                value={bettingData.total.under.value}
+                odds={bettingData.total.under.odds}
                 isPicked={pickedBet === 'total-under'}
               />
             </Grid2>
             <Grid2 size={2.33}>
               <BettingOption
                 value=""
-                odds={mockBettingData.moneyline.home}
+                odds={bettingData.moneyline.home}
                 isPicked={pickedBet === 'moneyline-home'}
                 isMoneyline={true}
               />
@@ -258,10 +327,10 @@ export default function GamePickCard({
           >
                                  <Stack direction="row" alignItems="center" spacing={1}>
                        <Typography sx={{ fontSize: '1.2rem' }}>
-                         {getStatusEmoji(mockPickStatus.status)}
+                         {getStatusEmoji(pickStatus.status)}
                        </Typography>
                        <Typography variant="body2" sx={{ fontWeight: 600, flex: 1 }}>
-                         {mockPickStatus.pick}
+                         {pickStatus.pick}
                        </Typography>
                        <IconButton
                          size="small"
@@ -278,7 +347,7 @@ export default function GamePickCard({
             <Collapse in={isRationaleExpanded}>
               <Box sx={{ mt: 1.5, pt: 1.5, borderTop: '1px solid rgba(255,255,255,0.1)' }}>
                 <Typography variant="caption" color="text.secondary" sx={{ lineHeight: 1.4 }}>
-                  {mockPickStatus.rationale}
+                  {pickStatus.rationale}
                 </Typography>
               </Box>
             </Collapse>

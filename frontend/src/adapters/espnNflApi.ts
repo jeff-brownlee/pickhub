@@ -7,7 +7,7 @@ dayjs.extend(utc);
 dayjs.extend(timezone);
 
 // Helper function to fetch team data from ESPN API $ref URLs
-async function fetchTeamData(teamRef: string): Promise<{ displayName: string; abbreviation: string } | null> {
+async function fetchTeamData(teamRef: string): Promise<{ displayName: string; abbreviation: string; nickname: string } | null> {
   try {
     const response = await fetch(teamRef);
     if (!response.ok) {
@@ -17,7 +17,8 @@ async function fetchTeamData(teamRef: string): Promise<{ displayName: string; ab
     const teamData = await response.json() as any;
     return {
       displayName: teamData.displayName || "Unknown Team",
-      abbreviation: teamData.abbreviation || "UNK"
+      abbreviation: teamData.abbreviation || "UNK",
+      nickname: teamData.nickname || teamData.name || "Unknown"
     };
   } catch (error) {
     console.warn(`Error fetching team data from ${teamRef}:`, error);
@@ -63,11 +64,13 @@ export interface GameData {
   away: {
     name: string;
     abbr: string;
+    nickname: string;
     primaryHex: string;
   };
   home: {
     name: string;
     abbr: string;
+    nickname: string;
     primaryHex: string;
   };
   kickoffEt: string;
@@ -168,8 +171,11 @@ export async function parseEspnNflApi(response: EspnNflApiResponse): Promise<Gam
     const homeTeamName = homeTeamData.displayName;
     const awayTeamAbbr = awayTeamData.abbreviation;
     const homeTeamAbbr = homeTeamData.abbreviation;
+    const awayTeamNickname = awayTeamData.nickname;
+    const homeTeamNickname = homeTeamData.nickname;
 
     console.log(`Teams: ${awayTeamName} (${awayTeamAbbr}) @ ${homeTeamName} (${homeTeamAbbr})`);
+    console.log(`Nicknames: ${awayTeamNickname} @ ${homeTeamNickname}`);
 
     // Generate unique ID using date and teams
     const gameDate = new Date(event.date);
@@ -185,11 +191,13 @@ export async function parseEspnNflApi(response: EspnNflApiResponse): Promise<Gam
       away: {
         name: awayTeamName,
         abbr: awayTeamAbbr,
+        nickname: awayTeamNickname,
         primaryHex: TEAM_COLORS[awayTeamAbbr] || '#000000'
       },
       home: {
         name: homeTeamName,
         abbr: homeTeamAbbr,
+        nickname: homeTeamNickname,
         primaryHex: TEAM_COLORS[homeTeamAbbr] || '#000000'
       },
       kickoffEt: kickoffEt

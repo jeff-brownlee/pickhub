@@ -4,43 +4,305 @@
   "season": 2025,
   "picks": [
     {
-      "gameId": "phi-dal",
-      "gameDate": "2025-09-07T19:25:00Z",
+      "gameId": "2025-09-07-hou-lar",
+      "gameDate": "2025-09-07T20:25:00.000-04:00",
       "awayTeam": {
-        "id": "PHI",
-        "name": "Eagles",
-        "score": 21
+        "id": "HOU",
+        "name": "Texans",
+        "nickname": "Texans",
+        "score": null
       },
       "homeTeam": {
-        "id": "DAL",
-        "name": "Cowboys",
-        "score": 7
+        "id": "LAR",
+        "name": "Rams",
+        "nickname": "Rams",
+        "score": null
       },
       "marketData": {
         "spread": {
-          "away": { "line": 2.5, "odds": -110 },
-          "home": { "line": -2.5, "odds": -110 }
+          "away": {
+            "line": 11.5,
+            "odds": -110
+          },
+          "home": {
+            "line": -11.5,
+            "odds": -110
+          }
         },
         "total": {
-          "over": { "line": 48.5, "odds": -110 },
-          "under": { "line": 48.5, "odds": -110 }
+          "over": {
+            "line": 53.5,
+            "odds": -110
+          },
+          "under": {
+            "line": 53.5,
+            "odds": -110
+          }
         },
         "moneyline": {
-          "away": { "odds": 120 },
-          "home": { "odds": -140 }
+          "away": {
+            "odds": -176
+          },
+          "home": {
+            "odds": 164
+          }
         }
       },
       "selection": {
         "betType": "total",
         "side": "over",
-        "line": 48.5,
+        "line": 53.5,
         "odds": -110,
-        "units": 1.0,
-        "rationale": "Listen, this is going to be a SHOOTOUT! Both teams have explosive offenses and questionable defenses. The Cowboys at home in primetime? They're going to put up points. The Eagles? They're not going to sit back and let Dallas run all over them. This total is way too low for what we're about to see. OVER 48.5 all day!"
+        "units": 1,
+        "rationale": "The Texans offense is going to EXPLODE in this game! OVER the total, no question about it!"
       },
       "result": {
         "status": "pending",
-        "finalLine": 48.5,
+        "finalLine": 53.5,
+        "finalOdds": -110,
+        "payout": 0,
+        "netUnits": 0
+      }
+    },
+    {
+      "gameId": "2025-09-05-dal-phi",
+      "gameDate": "2025-09-05T00:20:00.000-04:00",
+      "awayTeam": {
+        "id": "DAL",
+        "name": "Cowboys",
+        "nickname": "Cowboys",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "PHI",
+        "name": "Eagles",
+        "nickname": "Eagles",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 7.5,
+            "odds": -110
+          },
+          "home": {
+            "line": -7.5,
+            "odds": -110
+          }
+        },
+        "total": {
+          "over": {
+            "line": 51,
+            "odds": -110
+          },
+          "under": {
+            "line": 51,
+            "odds": -110
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": -223
+          },
+          "home": {
+            "odds": -262
+          }
+        }
+      },
+      "selection": {
+        "betType": "moneyline",
+        "side": "home",
+        "line": 0,
+        "odds": -262,
+        "units": 1,
+        "rationale": "I'm ALL IN on the Eagles moneyline! They're going to prove everyone wrong and get the W!"
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 0,
+        "finalOdds": -262,
+        "payout": 0,
+        "netUnits": 0
+      }
+    },
+    {
+      "gameId": "2025-09-07-nyg-wsh",
+      "gameDate": "2025-09-07T17:00:00.000-04:00",
+      "awayTeam": {
+        "id": "NYG",
+        "name": "Giants",
+        "nickname": "Giants",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "WSH",
+        "name": "Commanders",
+        "nickname": "Commanders",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 6,
+            "odds": -110
+          },
+          "home": {
+            "line": -6,
+            "odds": -110
+          }
+        },
+        "total": {
+          "over": {
+            "line": 43,
+            "odds": -110
+          },
+          "under": {
+            "line": 43,
+            "odds": -110
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": 289
+          },
+          "home": {
+            "odds": 178
+          }
+        }
+      },
+      "selection": {
+        "betType": "moneyline",
+        "side": "home",
+        "line": 0,
+        "odds": 178,
+        "units": 1,
+        "rationale": "The Commanders are going to WIN this game outright! I don't care what the odds say, they're the better team!"
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 0,
+        "finalOdds": 178,
+        "payout": 0,
+        "netUnits": 0
+      }
+    },
+    {
+      "gameId": "2025-09-07-sf-sea",
+      "gameDate": "2025-09-07T20:05:00.000-04:00",
+      "awayTeam": {
+        "id": "SF",
+        "name": "49ers",
+        "nickname": "49ers",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "SEA",
+        "name": "Seahawks",
+        "nickname": "Seahawks",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 14,
+            "odds": -110
+          },
+          "home": {
+            "line": -14,
+            "odds": -110
+          }
+        },
+        "total": {
+          "over": {
+            "line": 39.5,
+            "odds": -110
+          },
+          "under": {
+            "line": 39.5,
+            "odds": -110
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": -193
+          },
+          "home": {
+            "odds": 297
+          }
+        }
+      },
+      "selection": {
+        "betType": "spread",
+        "side": "home",
+        "line": -14,
+        "odds": -110,
+        "units": 1,
+        "rationale": "Listen, the Seahawks are going to COVER this spread! They've been disrespected all week and I'm not buying the hype on the other side!"
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": -14,
+        "finalOdds": -110,
+        "payout": 0,
+        "netUnits": 0
+      }
+    },
+    {
+      "gameId": "2025-09-09-min-chi",
+      "gameDate": "2025-09-09T00:15:00.000-04:00",
+      "awayTeam": {
+        "id": "MIN",
+        "name": "Vikings",
+        "nickname": "Vikings",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "CHI",
+        "name": "Bears",
+        "nickname": "Bears",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 9,
+            "odds": -110
+          },
+          "home": {
+            "line": -9,
+            "odds": -110
+          }
+        },
+        "total": {
+          "over": {
+            "line": 43.5,
+            "odds": -110
+          },
+          "under": {
+            "line": 43.5,
+            "odds": -110
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": 149
+          },
+          "home": {
+            "odds": 196
+          }
+        }
+      },
+      "selection": {
+        "betType": "total",
+        "side": "under",
+        "line": 43.5,
+        "odds": -110,
+        "units": 1,
+        "rationale": "This is going to be a SHOOTOUT! Both teams have explosive offenses and questionable defenses. OVER all day!"
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 43.5,
         "finalOdds": -110,
         "payout": 0,
         "netUnits": 0
@@ -48,8 +310,8 @@
     }
   ],
   "weekSummary": {
-    "totalPicks": 1,
-    "totalUnits": 1.0,
+    "totalPicks": 5,
+    "totalUnits": 5,
     "weekPayout": 0,
     "weekNetUnits": 0
   }

@@ -2,6 +2,7 @@
 export type Team = {
   name: string;
   abbr: string;
+  nickname: string;
   primaryHex: string;
 };
 
@@ -10,6 +11,21 @@ export type Game = {
   home: Team;
   away: Team;
   kickoffEt: string; // ISO string
+  odds?: {
+    spread?: {
+      away: { line: number; odds: number };
+      home: { line: number; odds: number };
+    };
+    total?: {
+      over: { line: number; odds: number };
+      under: { line: number; odds: number };
+    };
+    moneyline?: {
+      away: { odds: number };
+      home: { odds: number };
+    };
+  };
+  // Legacy fields for backward compatibility
   line?: string;     // e.g., PHI -2.5
   total?: number;
 };
@@ -30,8 +46,32 @@ export type Persona = {
 export type Pick = {
   id?: string;
   gameId: string;
-  analystId?: string;
-  selection?: {
+  gameDate: string;
+  awayTeam: {
+    id: string;
+    name: string;
+    score?: number | null;
+  };
+  homeTeam: {
+    id: string;
+    name: string;
+    score?: number | null;
+  };
+  marketData: {
+    spread: {
+      away: { line: number; odds: number };
+      home: { line: number; odds: number };
+    };
+    total: {
+      over: { line: number; odds: number };
+      under: { line: number; odds: number };
+    };
+    moneyline: {
+      away: { odds: number };
+      home: { odds: number };
+    };
+  };
+  selection: {
     betType: 'spread' | 'total' | 'moneyline';
     side: 'away' | 'home' | 'over' | 'under';
     line: number;
@@ -39,7 +79,7 @@ export type Pick = {
     units: number;
     rationale: string;
   };
-  result?: {
+  result: {
     status: 'pending' | 'won' | 'loss' | 'push';
     finalLine: number;
     finalOdds: number;
@@ -47,6 +87,7 @@ export type Pick = {
     netUnits: number;
   };
   // Legacy fields for backward compatibility
+  analystId?: string;
   side?: 'HOME' | 'AWAY' | 'OVER' | 'UNDER' | 'PASS';
   confidence?: 1 | 2 | 3;
   note?: string;

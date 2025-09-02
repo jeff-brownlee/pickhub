@@ -4,86 +4,305 @@
   "season": 2025,
   "picks": [
     {
-      "gameId": "phi-dal",
-      "gameDate": "2025-09-07T19:25:00Z",
+      "gameId": "2025-09-07-ten-den",
+      "gameDate": "2025-09-07T20:05:00.000-04:00",
       "awayTeam": {
-        "id": "PHI",
-        "name": "Eagles",
-        "score": 21
+        "id": "TEN",
+        "name": "Titans",
+        "nickname": "Titans",
+        "score": null
       },
       "homeTeam": {
-        "id": "DAL",
-        "name": "Cowboys",
-        "score": 7
+        "id": "DEN",
+        "name": "Broncos",
+        "nickname": "Broncos",
+        "score": null
       },
       "marketData": {
         "spread": {
-          "away": { "line": 2.5, "odds": -110 },
-          "home": { "line": -2.5, "odds": -110 }
+          "away": {
+            "line": 10.5,
+            "odds": -110
+          },
+          "home": {
+            "line": -10.5,
+            "odds": -110
+          }
         },
         "total": {
-          "over": { "line": 48.5, "odds": -110 },
-          "under": { "line": 48.5, "odds": -110 }
+          "over": {
+            "line": 39.5,
+            "odds": -110
+          },
+          "under": {
+            "line": 39.5,
+            "odds": -110
+          }
         },
         "moneyline": {
-          "away": { "odds": 120 },
-          "home": { "odds": -140 }
+          "away": {
+            "odds": 101
+          },
+          "home": {
+            "odds": 213
+          }
         }
       },
       "selection": {
-        "betType": "moneyline",
-        "side": "away",
-        "line": 120,
-        "odds": 120,
-        "units": 1.0,
-        "rationale": "The Eagles have a strong home field advantage and their defense has been performing well against the run. With the current line movement favoring the underdog, there's good value on the moneyline. The weather conditions are also favorable for their passing attack."
+        "betType": "spread",
+        "side": "home",
+        "line": -10.5,
+        "odds": -110,
+        "units": 1,
+        "rationale": "Home field advantage is real in this division rivalry. The Broncos will cover this number with their strong defensive unit."
       },
       "result": {
         "status": "pending",
-        "finalLine": 120,
-        "finalOdds": 120,
+        "finalLine": -10.5,
+        "finalOdds": -110,
         "payout": 0,
         "netUnits": 0
       }
     },
     {
-      "gameId": "nyj-ne",
-      "gameDate": "2025-09-07T16:00:00Z",
+      "gameId": "2025-09-07-det-gb",
+      "gameDate": "2025-09-07T20:25:00.000-04:00",
       "awayTeam": {
-        "id": "NYJ",
-        "name": "Jets",
+        "id": "DET",
+        "name": "Lions",
+        "nickname": "Lions",
         "score": null
       },
       "homeTeam": {
-        "id": "NE",
-        "name": "Patriots",
+        "id": "GB",
+        "name": "Packers",
+        "nickname": "Packers",
         "score": null
       },
       "marketData": {
         "spread": {
-          "away": { "line": 1.5, "odds": -110 },
-          "home": { "line": -1.5, "odds": -110 }
+          "away": {
+            "line": 6,
+            "odds": -110
+          },
+          "home": {
+            "line": -6,
+            "odds": -110
+          }
         },
         "total": {
-          "over": { "line": 41.0, "odds": -110 },
-          "under": { "line": 41.0, "odds": -110 }
+          "over": {
+            "line": 44,
+            "odds": -110
+          },
+          "under": {
+            "line": 44,
+            "odds": -110
+          }
         },
         "moneyline": {
-          "away": { "odds": 105 },
-          "home": { "odds": -125 }
+          "away": {
+            "odds": 167
+          },
+          "home": {
+            "odds": -257
+          }
+        }
+      },
+      "selection": {
+        "betType": "moneyline",
+        "side": "home",
+        "line": 0,
+        "odds": -257,
+        "units": 1,
+        "rationale": "Home field advantage and the Packers superior talent will lead to a victory."
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 0,
+        "finalOdds": -257,
+        "payout": 0,
+        "netUnits": 0
+      }
+    },
+    {
+      "gameId": "2025-09-07-mia-ind",
+      "gameDate": "2025-09-07T17:00:00.000-04:00",
+      "awayTeam": {
+        "id": "MIA",
+        "name": "Dolphins",
+        "nickname": "Dolphins",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "IND",
+        "name": "Colts",
+        "nickname": "Colts",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 5,
+            "odds": -110
+          },
+          "home": {
+            "line": -5,
+            "odds": -110
+          }
+        },
+        "total": {
+          "over": {
+            "line": 54.5,
+            "odds": -110
+          },
+          "under": {
+            "line": 54.5,
+            "odds": -110
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": 234
+          },
+          "home": {
+            "odds": -242
+          }
+        }
+      },
+      "selection": {
+        "betType": "moneyline",
+        "side": "away",
+        "line": 0,
+        "odds": 234,
+        "units": 1,
+        "rationale": "Home field advantage and the Dolphins superior talent will lead to a victory."
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 0,
+        "finalOdds": 234,
+        "payout": 0,
+        "netUnits": 0
+      }
+    },
+    {
+      "gameId": "2025-09-07-ari-no",
+      "gameDate": "2025-09-07T17:00:00.000-04:00",
+      "awayTeam": {
+        "id": "ARI",
+        "name": "Cardinals",
+        "nickname": "Cardinals",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "NO",
+        "name": "Saints",
+        "nickname": "Saints",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 8,
+            "odds": -110
+          },
+          "home": {
+            "line": -8,
+            "odds": -110
+          }
+        },
+        "total": {
+          "over": {
+            "line": 37.5,
+            "odds": -110
+          },
+          "under": {
+            "line": 37.5,
+            "odds": -110
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": -278
+          },
+          "home": {
+            "odds": 178
+          }
         }
       },
       "selection": {
         "betType": "spread",
         "side": "away",
-        "line": 1.5,
+        "line": 8,
         "odds": -110,
-        "units": 1.0,
-        "rationale": "The Jets have a solid offensive line and can control the clock. This is a classic case where the underdog can keep it close and cover the spread. The Patriots' defense is good but not great, and the Jets' running game should be able to move the chains."
+        "units": 1,
+        "rationale": "The Cardinals have the better coaching staff and will make the necessary adjustments to cover this spread."
       },
       "result": {
         "status": "pending",
-        "finalLine": 1.5,
+        "finalLine": 8,
+        "finalOdds": -110,
+        "payout": 0,
+        "netUnits": 0
+      }
+    },
+    {
+      "gameId": "2025-09-08-bal-buf",
+      "gameDate": "2025-09-08T00:20:00.000-04:00",
+      "awayTeam": {
+        "id": "BAL",
+        "name": "Ravens",
+        "nickname": "Ravens",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "BUF",
+        "name": "Bills",
+        "nickname": "Bills",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 11,
+            "odds": -110
+          },
+          "home": {
+            "line": -11,
+            "odds": -110
+          }
+        },
+        "total": {
+          "over": {
+            "line": 38,
+            "odds": -110
+          },
+          "under": {
+            "line": 38,
+            "odds": -110
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": -236
+          },
+          "home": {
+            "odds": 298
+          }
+        }
+      },
+      "selection": {
+        "betType": "total",
+        "side": "under",
+        "line": 38,
+        "odds": -110,
+        "units": 1,
+        "rationale": "Both teams have strong defenses and this total is inflated. The weather conditions also favor the under."
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 38,
         "finalOdds": -110,
         "payout": 0,
         "netUnits": 0
@@ -91,8 +310,8 @@
     }
   ],
   "weekSummary": {
-    "totalPicks": 2,
-    "totalUnits": 2.0,
+    "totalPicks": 5,
+    "totalUnits": 5,
     "weekPayout": 0,
     "weekNetUnits": 0
   }

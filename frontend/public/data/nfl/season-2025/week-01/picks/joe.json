@@ -1,8 +1,130 @@
 {
-  "analystId": "nerd",
+  "analystId": "joe",
   "week": 1,
   "season": 2025,
   "picks": [
+    {
+      "gameId": "2025-09-09-min-chi",
+      "gameDate": "2025-09-09T00:15:00.000-04:00",
+      "awayTeam": {
+        "id": "MIN",
+        "name": "Vikings",
+        "nickname": "Vikings",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "CHI",
+        "name": "Bears",
+        "nickname": "Bears",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 9,
+            "odds": -110
+          },
+          "home": {
+            "line": -9,
+            "odds": -110
+          }
+        },
+        "total": {
+          "over": {
+            "line": 43.5,
+            "odds": -110
+          },
+          "under": {
+            "line": 43.5,
+            "odds": -110
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": 149
+          },
+          "home": {
+            "odds": 196
+          }
+        }
+      },
+      "selection": {
+        "betType": "spread",
+        "side": "away",
+        "line": 9,
+        "odds": -110,
+        "units": 1,
+        "rationale": "The Vikings are the better team and should cover this spread. Seems like the obvious pick to me."
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 9,
+        "finalOdds": -110,
+        "payout": 0,
+        "netUnits": 0
+      }
+    },
+    {
+      "gameId": "2025-09-07-ari-no",
+      "gameDate": "2025-09-07T17:00:00.000-04:00",
+      "awayTeam": {
+        "id": "ARI",
+        "name": "Cardinals",
+        "nickname": "Cardinals",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "NO",
+        "name": "Saints",
+        "nickname": "Saints",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 8,
+            "odds": -110
+          },
+          "home": {
+            "line": -8,
+            "odds": -110
+          }
+        },
+        "total": {
+          "over": {
+            "line": 37.5,
+            "odds": -110
+          },
+          "under": {
+            "line": 37.5,
+            "odds": -110
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": -278
+          },
+          "home": {
+            "odds": 178
+          }
+        }
+      },
+      "selection": {
+        "betType": "total",
+        "side": "under",
+        "line": 37.5,
+        "odds": -110,
+        "units": 1,
+        "rationale": "This total seems about right. I think both teams will score their fair share of points."
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 37.5,
+        "finalOdds": -110,
+        "payout": 0,
+        "netUnits": 0
+      }
+    },
     {
       "gameId": "2025-09-07-det-gb",
       "gameDate": "2025-09-07T20:25:00.000-04:00",
@@ -54,7 +176,7 @@
         "line": 44,
         "odds": -110,
         "units": 1,
-        "rationale": "Historical data from the last 5 seasons shows that Week 1 totals in this division average 38.2 points. The current total is 4.3 points above the mean."
+        "rationale": "This looks like a typical NFL game. Should be a decent amount of scoring."
       },
       "result": {
         "status": "pending",
@@ -110,199 +232,77 @@
         }
       },
       "selection": {
-        "betType": "spread",
-        "side": "away",
-        "line": 4.5,
-        "odds": -110,
-        "units": 1,
-        "rationale": "Statistical analysis shows that Steelers performs 15% better than expected against teams with similar defensive rankings. The spread doesn't account for this historical edge."
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": 4.5,
-        "finalOdds": -110,
-        "payout": 0,
-        "netUnits": 0
-      }
-    },
-    {
-      "gameId": "2025-09-07-cin-cle",
-      "gameDate": "2025-09-07T17:00:00.000-04:00",
-      "awayTeam": {
-        "id": "CIN",
-        "name": "Bengals",
-        "nickname": "Bengals",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "CLE",
-        "name": "Browns",
-        "nickname": "Browns",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 13,
-            "odds": -110
-          },
-          "home": {
-            "line": -13,
-            "odds": -110
-          }
-        },
-        "total": {
-          "over": {
-            "line": 43,
-            "odds": -110
-          },
-          "under": {
-            "line": 43,
-            "odds": -110
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": -155
-          },
-          "home": {
-            "odds": -282
-          }
-        }
-      },
-      "selection": {
         "betType": "moneyline",
         "side": "home",
         "line": 0,
-        "odds": -282,
+        "odds": -206,
         "units": 1,
-        "rationale": "Expected points added (EPA) analysis shows the Browns have a 58% win probability, making this moneyline bet profitable at current odds."
+        "rationale": "The Jets are favored for a reason. They should win this game."
       },
       "result": {
         "status": "pending",
         "finalLine": 0,
-        "finalOdds": -282,
+        "finalOdds": -206,
         "payout": 0,
         "netUnits": 0
       }
     },
     {
-      "gameId": "2025-09-09-min-chi",
-      "gameDate": "2025-09-09T00:15:00.000-04:00",
+      "gameId": "2025-09-07-sf-sea",
+      "gameDate": "2025-09-07T20:05:00.000-04:00",
       "awayTeam": {
-        "id": "MIN",
-        "name": "Vikings",
-        "nickname": "Vikings",
+        "id": "SF",
+        "name": "49ers",
+        "nickname": "49ers",
         "score": null
       },
       "homeTeam": {
-        "id": "CHI",
-        "name": "Bears",
-        "nickname": "Bears",
+        "id": "SEA",
+        "name": "Seahawks",
+        "nickname": "Seahawks",
         "score": null
       },
       "marketData": {
         "spread": {
           "away": {
-            "line": 9,
+            "line": 14,
             "odds": -110
           },
           "home": {
-            "line": -9,
+            "line": -14,
             "odds": -110
           }
         },
         "total": {
           "over": {
-            "line": 43.5,
+            "line": 39.5,
             "odds": -110
           },
           "under": {
-            "line": 43.5,
+            "line": 39.5,
             "odds": -110
           }
         },
         "moneyline": {
           "away": {
-            "odds": 149
+            "odds": -193
           },
           "home": {
-            "odds": 196
+            "odds": 297
           }
         }
       },
       "selection": {
-        "betType": "moneyline",
-        "side": "away",
-        "line": 0,
-        "odds": 149,
-        "units": 1,
-        "rationale": "Monte Carlo simulations run 10,000 times show the Vikings winning 61% of scenarios, providing positive expected value on the moneyline."
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": 0,
-        "finalOdds": 149,
-        "payout": 0,
-        "netUnits": 0
-      }
-    },
-    {
-      "gameId": "2025-09-07-tb-atl",
-      "gameDate": "2025-09-07T17:00:00.000-04:00",
-      "awayTeam": {
-        "id": "TB",
-        "name": "Buccaneers",
-        "nickname": "Buccaneers",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "ATL",
-        "name": "Falcons",
-        "nickname": "Falcons",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 1.5,
-            "odds": -110
-          },
-          "home": {
-            "line": -1.5,
-            "odds": -110
-          }
-        },
-        "total": {
-          "over": {
-            "line": 42,
-            "odds": -110
-          },
-          "under": {
-            "line": 42,
-            "odds": -110
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": -134
-          },
-          "home": {
-            "odds": 235
-          }
-        }
-      },
-      "selection": {
-        "betType": "total",
-        "side": "under",
-        "line": 42,
+        "betType": "spread",
+        "side": "home",
+        "line": -14,
         "odds": -110,
         "units": 1,
-        "rationale": "Historical data from the last 5 seasons shows that Week 1 totals in this division average 38.2 points. The current total is 4.3 points above the mean."
+        "rationale": "I like the Seahawks here. They've been playing well and this spread seems fair."
       },
       "result": {
         "status": "pending",
-        "finalLine": 42,
+        "finalLine": -14,
         "finalOdds": -110,
         "payout": 0,
         "netUnits": 0

@@ -35,17 +35,21 @@ export default function PicksPage() {
     fetch(`/data/nfl/season-2025/week-${weekStr}/picks/${selectedPersonaId}.json`)
       .then(r => r.json())
       .then((pickData: any) => {
-        // Convert new pick structure to old format for compatibility
+        // Convert new pick structure to match Pick type
         const picksMap: Record<string, Pick> = {};
         if (pickData.picks) {
           pickData.picks.forEach((pick: any) => {
             picksMap[pick.gameId] = {
               id: `${selectedPersonaId}-${pick.gameId}`,
               gameId: pick.gameId,
-              analystId: selectedPersonaId,
+              gameDate: pick.gameDate,
+              awayTeam: pick.awayTeam,
+              homeTeam: pick.homeTeam,
+              marketData: pick.marketData,
               selection: pick.selection,
-              rationale: pick.selection.rationale,
-              result: pick.result
+              result: pick.result,
+              analystId: selectedPersonaId,
+              rationale: pick.selection.rationale
             };
           });
         }
@@ -73,11 +77,13 @@ export default function PicksPage() {
 
       <Container maxWidth="lg" sx={{ py: 2 }}>
         <Grid2 container spacing={2}>
-          {games.map((g) => (
-            <Grid2 key={g.id} size={{ xs: 12 }}>
-              <GamePickCard game={g} pick={picks[g.id]} onClick={() => { /* optional: open inline facts */ }} />
-            </Grid2>
-          ))}
+          {games
+            .filter(game => picks[game.id]) // Only show games that have picks for this persona
+            .map((g) => (
+              <Grid2 key={g.id} size={{ xs: 12 }}>
+                <GamePickCard game={g} pick={picks[g.id]} onClick={() => { /* optional: open inline facts */ }} />
+              </Grid2>
+            ))}
         </Grid2>
       </Container>
     </ThemeProvider>

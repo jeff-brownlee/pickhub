@@ -1,65 +1,187 @@
 {
-  "analystId": "nerd",
+  "analystId": "mobster",
   "week": 1,
   "season": 2025,
   "picks": [
     {
-      "gameId": "2025-09-07-det-gb",
-      "gameDate": "2025-09-07T20:25:00.000-04:00",
+      "gameId": "2025-09-07-ari-no",
+      "gameDate": "2025-09-07T17:00:00.000-04:00",
       "awayTeam": {
-        "id": "DET",
-        "name": "Lions",
-        "nickname": "Lions",
+        "id": "ARI",
+        "name": "Cardinals",
+        "nickname": "Cardinals",
         "score": null
       },
       "homeTeam": {
-        "id": "GB",
-        "name": "Packers",
-        "nickname": "Packers",
+        "id": "NO",
+        "name": "Saints",
+        "nickname": "Saints",
         "score": null
       },
       "marketData": {
         "spread": {
           "away": {
-            "line": 6,
+            "line": 8,
             "odds": -110
           },
           "home": {
-            "line": -6,
+            "line": -8,
             "odds": -110
           }
         },
         "total": {
           "over": {
-            "line": 44,
+            "line": 37.5,
             "odds": -110
           },
           "under": {
-            "line": 44,
+            "line": 37.5,
             "odds": -110
           }
         },
         "moneyline": {
           "away": {
-            "odds": 167
+            "odds": -278
           },
           "home": {
-            "odds": -257
+            "odds": 178
           }
         }
       },
       "selection": {
-        "betType": "total",
-        "side": "under",
-        "line": 44,
-        "odds": -110,
+        "betType": "moneyline",
+        "side": "home",
+        "line": 0,
+        "odds": 178,
         "units": 1,
-        "rationale": "Historical data from the last 5 seasons shows that Week 1 totals in this division average 38.2 points. The current total is 4.3 points above the mean."
+        "rationale": "The Saints moneyline is getting sharp action. When the pros bet, I bet with them."
       },
       "result": {
         "status": "pending",
-        "finalLine": 44,
-        "finalOdds": -110,
+        "finalLine": 0,
+        "finalOdds": 178,
+        "payout": 0,
+        "netUnits": 0
+      }
+    },
+    {
+      "gameId": "2025-09-07-tb-atl",
+      "gameDate": "2025-09-07T17:00:00.000-04:00",
+      "awayTeam": {
+        "id": "TB",
+        "name": "Buccaneers",
+        "nickname": "Buccaneers",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "ATL",
+        "name": "Falcons",
+        "nickname": "Falcons",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 1.5,
+            "odds": -110
+          },
+          "home": {
+            "line": -1.5,
+            "odds": -110
+          }
+        },
+        "total": {
+          "over": {
+            "line": 42,
+            "odds": -110
+          },
+          "under": {
+            "line": 42,
+            "odds": -110
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": -134
+          },
+          "home": {
+            "odds": 235
+          }
+        }
+      },
+      "selection": {
+        "betType": "moneyline",
+        "side": "home",
+        "line": 0,
+        "odds": 235,
+        "units": 1,
+        "rationale": "The Falcons moneyline is getting sharp action. When the pros bet, I bet with them."
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 0,
+        "finalOdds": 235,
+        "payout": 0,
+        "netUnits": 0
+      }
+    },
+    {
+      "gameId": "2025-09-07-hou-lar",
+      "gameDate": "2025-09-07T20:25:00.000-04:00",
+      "awayTeam": {
+        "id": "HOU",
+        "name": "Texans",
+        "nickname": "Texans",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "LAR",
+        "name": "Rams",
+        "nickname": "Rams",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 11.5,
+            "odds": -110
+          },
+          "home": {
+            "line": -11.5,
+            "odds": -110
+          }
+        },
+        "total": {
+          "over": {
+            "line": 53.5,
+            "odds": -110
+          },
+          "under": {
+            "line": 53.5,
+            "odds": -110
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": -176
+          },
+          "home": {
+            "odds": 164
+          }
+        }
+      },
+      "selection": {
+        "betType": "moneyline",
+        "side": "away",
+        "line": 0,
+        "odds": -176,
+        "units": 1,
+        "rationale": "The Texans are getting respect from the right people. The moneyline's the play here."
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 0,
+        "finalOdds": -176,
         "payout": 0,
         "netUnits": 0
       }
@@ -111,43 +233,43 @@
       },
       "selection": {
         "betType": "spread",
-        "side": "away",
-        "line": 4.5,
+        "side": "home",
+        "line": -4.5,
         "odds": -110,
         "units": 1,
-        "rationale": "Statistical analysis shows that Steelers performs 15% better than expected against teams with similar defensive rankings. The spread doesn't account for this historical edge."
+        "rationale": "The sharps are loading up on the Jets. When the line moves like this, you follow the money."
       },
       "result": {
         "status": "pending",
-        "finalLine": 4.5,
+        "finalLine": -4.5,
         "finalOdds": -110,
         "payout": 0,
         "netUnits": 0
       }
     },
     {
-      "gameId": "2025-09-07-cin-cle",
+      "gameId": "2025-09-07-nyg-wsh",
       "gameDate": "2025-09-07T17:00:00.000-04:00",
       "awayTeam": {
-        "id": "CIN",
-        "name": "Bengals",
-        "nickname": "Bengals",
+        "id": "NYG",
+        "name": "Giants",
+        "nickname": "Giants",
         "score": null
       },
       "homeTeam": {
-        "id": "CLE",
-        "name": "Browns",
-        "nickname": "Browns",
+        "id": "WSH",
+        "name": "Commanders",
+        "nickname": "Commanders",
         "score": null
       },
       "marketData": {
         "spread": {
           "away": {
-            "line": 13,
+            "line": 6,
             "odds": -110
           },
           "home": {
-            "line": -13,
+            "line": -6,
             "odds": -110
           }
         },
@@ -163,146 +285,24 @@
         },
         "moneyline": {
           "away": {
-            "odds": -155
+            "odds": 289
           },
           "home": {
-            "odds": -282
-          }
-        }
-      },
-      "selection": {
-        "betType": "moneyline",
-        "side": "home",
-        "line": 0,
-        "odds": -282,
-        "units": 1,
-        "rationale": "Expected points added (EPA) analysis shows the Browns have a 58% win probability, making this moneyline bet profitable at current odds."
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": 0,
-        "finalOdds": -282,
-        "payout": 0,
-        "netUnits": 0
-      }
-    },
-    {
-      "gameId": "2025-09-09-min-chi",
-      "gameDate": "2025-09-09T00:15:00.000-04:00",
-      "awayTeam": {
-        "id": "MIN",
-        "name": "Vikings",
-        "nickname": "Vikings",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "CHI",
-        "name": "Bears",
-        "nickname": "Bears",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 9,
-            "odds": -110
-          },
-          "home": {
-            "line": -9,
-            "odds": -110
-          }
-        },
-        "total": {
-          "over": {
-            "line": 43.5,
-            "odds": -110
-          },
-          "under": {
-            "line": 43.5,
-            "odds": -110
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": 149
-          },
-          "home": {
-            "odds": 196
-          }
-        }
-      },
-      "selection": {
-        "betType": "moneyline",
-        "side": "away",
-        "line": 0,
-        "odds": 149,
-        "units": 1,
-        "rationale": "Monte Carlo simulations run 10,000 times show the Vikings winning 61% of scenarios, providing positive expected value on the moneyline."
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": 0,
-        "finalOdds": 149,
-        "payout": 0,
-        "netUnits": 0
-      }
-    },
-    {
-      "gameId": "2025-09-07-tb-atl",
-      "gameDate": "2025-09-07T17:00:00.000-04:00",
-      "awayTeam": {
-        "id": "TB",
-        "name": "Buccaneers",
-        "nickname": "Buccaneers",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "ATL",
-        "name": "Falcons",
-        "nickname": "Falcons",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 1.5,
-            "odds": -110
-          },
-          "home": {
-            "line": -1.5,
-            "odds": -110
-          }
-        },
-        "total": {
-          "over": {
-            "line": 42,
-            "odds": -110
-          },
-          "under": {
-            "line": 42,
-            "odds": -110
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": -134
-          },
-          "home": {
-            "odds": 235
+            "odds": 178
           }
         }
       },
       "selection": {
         "betType": "total",
         "side": "under",
-        "line": 42,
+        "line": 43,
         "odds": -110,
         "units": 1,
-        "rationale": "Historical data from the last 5 seasons shows that Week 1 totals in this division average 38.2 points. The current total is 4.3 points above the mean."
+        "rationale": "The total's been moving down, which means the sharp money's on the under. I'm with them."
       },
       "result": {
         "status": "pending",
-        "finalLine": 42,
+        "finalLine": 43,
         "finalOdds": -110,
         "payout": 0,
         "netUnits": 0

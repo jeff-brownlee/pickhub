@@ -54,16 +54,30 @@ interface GameData {
   away: {
     name: string;
     abbr: string;
+    nickname: string;
     primaryHex: string;
   };
   home: {
     name: string;
     abbr: string;
+    nickname: string;
     primaryHex: string;
   };
   kickoffEt: string;
-  line?: string;
-  total?: number;
+  odds?: {
+    spread?: {
+      away: { line: number; odds: number };
+      home: { line: number; odds: number };
+    };
+    total?: {
+      over: { line: number; odds: number };
+      under: { line: number; odds: number };
+    };
+    moneyline?: {
+      away: { odds: number };
+      home: { odds: number };
+    };
+  };
 }
 
 // Team color mapping (you might want to expand this)
@@ -102,7 +116,28 @@ const TEAM_COLORS: Record<string, string> = {
   'LAC': '#0080C6'  // Chargers
 };
 
-async function fetchTeamData(teamRef: string): Promise<{ displayName: string; abbreviation: string } | null> {
+// Generate mock market data for games
+function generateMockMarketData(): GameData['odds'] {
+  const spreadLine = Math.round((Math.random() * 14 + 1) * 2) / 2; // 1-14.5 in 0.5 increments
+  const totalLine = Math.round((Math.random() * 20 + 35) * 2) / 2; // 35-55 in 0.5 increments
+  
+  return {
+    spread: {
+      away: { line: spreadLine, odds: -110 },
+      home: { line: -spreadLine, odds: -110 }
+    },
+    total: {
+      over: { line: totalLine, odds: -110 },
+      under: { line: totalLine, odds: -110 }
+    },
+    moneyline: {
+      away: { odds: Math.random() > 0.5 ? Math.round(Math.random() * 200 + 100) : -Math.round(Math.random() * 200 + 100) },
+      home: { odds: Math.random() > 0.5 ? Math.round(Math.random() * 200 + 100) : -Math.round(Math.random() * 200 + 100) }
+    }
+  };
+}
+
+async function fetchTeamData(teamRef: string): Promise<{ displayName: string; abbreviation: string; nickname: string } | null> {
   try {
     const response = await fetch(teamRef);
     if (!response.ok) {
@@ -112,7 +147,8 @@ async function fetchTeamData(teamRef: string): Promise<{ displayName: string; ab
     const teamData = await response.json() as any;
     return {
       displayName: teamData.displayName || "Unknown Team",
-      abbreviation: teamData.abbreviation || "UNK"
+      abbreviation: teamData.abbreviation || "UNK",
+      nickname: teamData.nickname || "Unknown"
     };
   } catch (error) {
     console.warn(`Error fetching team data from ${teamRef}:`, error);
@@ -180,28 +216,35 @@ async function generateGamesForWeek(week: number): Promise<GameData[]> {
       }
 
       console.log(`Teams: ${awayTeamData.displayName} (${awayTeamData.abbreviation}) @ ${homeTeamData.displayName} (${homeTeamData.abbreviation})`);
+      console.log(`Nicknames: ${awayTeamData.nickname} @ ${homeTeamData.nickname}`);
 
-      // Create game ID
-      const gameId = `${awayTeamData.abbreviation.toLowerCase()}-${homeTeamData.abbreviation.toLowerCase()}`;
+      // Create game ID in correct format: YYYY-MM-DD-TEAM1-TEAM2
+      const gameDate = new Date(event.date);
+      const dateStr = gameDate.toISOString().split('T')[0]; // YYYY-MM-DD format
+      const gameId = `${dateStr}-${awayTeamData.abbreviation.toLowerCase()}-${homeTeamData.abbreviation.toLowerCase()}`;
       
       // Format kickoff time
-      const kickoffDate = new Date(event.date);
-      const kickoffEt = kickoffDate.toISOString().replace('Z', '-04:00'); // Assume ET for now
+      const kickoffEt = gameDate.toISOString().replace('Z', '-04:00'); // Assume ET for now
+
+      // Generate mock market data
+      const marketData = generateMockMarketData();
 
       const game: GameData = {
         id: gameId,
         away: {
           name: awayTeamData.displayName,
           abbr: awayTeamData.abbreviation,
+          nickname: awayTeamData.nickname,
           primaryHex: TEAM_COLORS[awayTeamData.abbreviation] || '#000000'
         },
         home: {
           name: homeTeamData.displayName,
           abbr: homeTeamData.abbreviation,
+          nickname: homeTeamData.nickname,
           primaryHex: TEAM_COLORS[homeTeamData.abbreviation] || '#000000'
         },
-        kickoffEt: kickoffEt
-        // Note: We'll need to fetch odds separately for line and total
+        kickoffEt: kickoffEt,
+        odds: marketData
       };
 
       games.push(game);

@@ -144,7 +144,7 @@ export default function GamePickCard({
       home: pick.marketData.moneyline.home.odds.toString()
     }
   } : hasGameOdds ? {
-    spread: {
+    spread: game.odds.spread ? {
       away: { 
         value: `+${game.odds.spread.away.line}`, 
         odds: game.odds.spread.away.odds.toString() 
@@ -153,8 +153,8 @@ export default function GamePickCard({
         value: `-${game.odds.spread.home.line}`, 
         odds: game.odds.spread.home.odds.toString() 
       }
-    },
-    total: {
+    } : undefined,
+    total: game.odds.total ? {
       over: { 
         value: `O ${game.odds.total.over.line}`, 
         odds: game.odds.total.over.odds.toString() 
@@ -163,11 +163,11 @@ export default function GamePickCard({
         value: `U ${game.odds.total.under.line}`, 
         odds: game.odds.total.under.odds.toString() 
       }
-    },
-    moneyline: {
+    } : undefined,
+    moneyline: game.odds.moneyline ? {
       away: game.odds.moneyline.away.odds.toString(),
       home: game.odds.moneyline.home.odds.toString()
-    }
+    } : undefined
   } : {
     spread: {
       away: { value: 'N/A', odds: 'N/A' },
@@ -266,22 +266,22 @@ export default function GamePickCard({
             </Grid2>
             <Grid2 size={2.33}>
               <BettingOption
-                value={bettingData.spread.away.value}
-                odds={bettingData.spread.away.odds}
+                value={bettingData.spread?.away?.value || 'N/A'}
+                odds={bettingData.spread?.away?.odds || 'N/A'}
                 isPicked={pickedBet === 'spread-away'}
               />
             </Grid2>
             <Grid2 size={2.33}>
               <BettingOption
-                value={bettingData.total.over.value}
-                odds={bettingData.total.over.odds}
+                value={bettingData.total?.over?.value || 'N/A'}
+                odds={bettingData.total?.over?.odds || 'N/A'}
                 isPicked={pickedBet === 'total-over'}
               />
             </Grid2>
             <Grid2 size={2.33}>
               <BettingOption
                 value=""
-                odds={bettingData.moneyline.away}
+                odds={bettingData.moneyline?.away || 'N/A'}
                 isPicked={pickedBet === 'moneyline-away'}
                 isMoneyline={true}
               />
@@ -293,22 +293,22 @@ export default function GamePickCard({
             </Grid2>
             <Grid2 size={2.33}>
               <BettingOption
-                value={bettingData.spread.home.value}
-                odds={bettingData.spread.home.odds}
+                value={bettingData.spread?.home?.value || 'N/A'}
+                odds={bettingData.spread?.home?.odds || 'N/A'}
                 isPicked={pickedBet === 'spread-home'}
               />
             </Grid2>
             <Grid2 size={2.33}>
               <BettingOption
-                value={bettingData.total.under.value}
-                odds={bettingData.total.under.odds}
+                value={bettingData.total?.under?.value || 'N/A'}
+                odds={bettingData.total?.under?.odds || 'N/A'}
                 isPicked={pickedBet === 'total-under'}
               />
             </Grid2>
             <Grid2 size={2.33}>
               <BettingOption
                 value=""
-                odds={bettingData.moneyline.home}
+                odds={bettingData.moneyline?.home || 'N/A'}
                 isPicked={pickedBet === 'moneyline-home'}
                 isMoneyline={true}
               />

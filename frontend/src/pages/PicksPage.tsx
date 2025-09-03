@@ -11,10 +11,44 @@ import { useMemo, useState, useEffect } from 'react';
 
 export default function PicksPage() {
   const [personas, setPersonas] = useState<Persona[]>([]);
-  const [games, setGames] = useState<Game[]>([]);
+
   const [picks, setPicks] = useState<Record<string, Pick>>({});
   const [selectedPersonaId, setSelectedPersonaId] = useState<string>('');
   const [week, setWeek] = useState(1);
+
+  // Extract games from picks data
+  const games = useMemo(() => {
+    return Object.values(picks).map(pick => ({
+      id: pick.gameId,
+      kickoffEt: pick.gameDate,
+      away: {
+        name: pick.awayTeam.name,
+        abbr: pick.awayTeam.id,
+        nickname: pick.awayTeam.nickname,
+        primaryHex: '#000000' // Default color, could be enhanced later
+      },
+      home: {
+        name: pick.homeTeam.name,
+        abbr: pick.homeTeam.id,
+        nickname: pick.homeTeam.nickname,
+        primaryHex: '#000000' // Default color, could be enhanced later
+      },
+      odds: {
+        spread: pick.marketData.spread ? {
+          away: { line: pick.marketData.spread.away.line, odds: pick.marketData.spread.away.odds },
+          home: { line: pick.marketData.spread.home.line, odds: pick.marketData.spread.home.odds }
+        } : undefined,
+        total: pick.marketData.total ? {
+          over: { line: pick.marketData.total.over.line, odds: pick.marketData.total.over.odds },
+          under: { line: pick.marketData.total.under.line, odds: pick.marketData.total.under.odds }
+        } : undefined,
+        moneyline: pick.marketData.moneyline ? {
+          away: { odds: pick.marketData.moneyline.away.odds },
+          home: { odds: pick.marketData.moneyline.home.odds }
+        } : undefined
+      }
+    }));
+  }, [picks]);
 
   // Load mock JSON from /public/data
   useEffect(() => {
@@ -24,10 +58,7 @@ export default function PicksPage() {
     });
   }, []);
 
-  useEffect(() => {
-    const weekStr = week.toString().padStart(2, '0');
-    fetch(`/data/nfl/season-2025/week-${weekStr}/games.json`).then(r => r.json()).then(setGames);
-  }, [week]);
+
 
   useEffect(() => {
     if (!selectedPersonaId) return;
@@ -77,9 +108,7 @@ export default function PicksPage() {
 
       <Container maxWidth="lg" sx={{ py: 2 }}>
         <Grid2 container spacing={2}>
-          {games
-            .filter(game => picks[game.id]) // Only show games that have picks for this persona
-            .map((g) => (
+          {games.map((g) => (
               <Grid2 key={g.id} size={{ xs: 12 }}>
                 <GamePickCard game={g} pick={picks[g.id]} onClick={() => { /* optional: open inline facts */ }} />
               </Grid2>

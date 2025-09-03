@@ -413,7 +413,7 @@ function generatePicksForPersona(persona: keyof typeof PERSONAS, games: GameData
 
 // Load games data
 function loadGamesData(): GameData[] {
-  const gamesPath = path.join(process.cwd(), 'public/data/nfl/season-2025/week-01/games.json');
+  const gamesPath = path.join(process.cwd(), '..', 'data/nfl/season-2025/week-01/games.json');
   
   if (!fs.existsSync(gamesPath)) {
     throw new Error(`Games file not found at ${gamesPath}`);

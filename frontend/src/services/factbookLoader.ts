@@ -38,7 +38,7 @@ export class FactbookLoader {
       const gamesResponse = await fetch(`/data/nfl/season-2025/week-${weekStr}/games.json`);
       
       if (!gamesResponse.ok) {
-        console.warn(`Failed to load games for week ${week}: ${gamesResponse.status}`);
+        console.warn(`Failed to load games for week ${week}: ${gamesResponse.status}. Factbooks are now in data directory and not accessible via web.`);
         return factbooks;
       }
 

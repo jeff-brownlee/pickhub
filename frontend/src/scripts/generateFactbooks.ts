@@ -23,8 +23,8 @@ interface GameData {
 
 async function generateFactbooksForWeek(week: number) {
   const weekStr = week.toString().padStart(2, '0');
-  const gamesPath = path.join(process.cwd(), 'public/data/nfl/season-2025', `week-${weekStr}`, 'games.json');
-  const factbooksDir = path.join(process.cwd(), 'public/data/nfl/season-2025', `week-${weekStr}`, 'factbooks');
+  const gamesPath = path.join(process.cwd(), '..', 'data/nfl/season-2025', `week-${weekStr}`, 'games.json');
+  const factbooksDir = path.join(process.cwd(), '..', 'data/nfl/season-2025', `week-${weekStr}`, 'factbooks');
   
   // Create factbooks directory if it doesn't exist
   if (!fs.existsSync(factbooksDir)) {

@@ -278,7 +278,7 @@ function generatePlayerStats(position: string): any {
 function enhanceBettingContext(factbook: any): void {
   // Try to get real betting data from games.json
   try {
-    const gamesPath = path.join(process.cwd(), 'public/data/nfl/season-2025/week-01/games.json');
+    const gamesPath = path.join(process.cwd(), '..', 'data/nfl/season-2025/week-01/games.json');
     const gamesData = JSON.parse(fs.readFileSync(gamesPath, 'utf8'));
     
     const gameData = gamesData.find((g: any) => g.id === factbook.gameId);
@@ -339,7 +339,7 @@ async function enhanceFactbooks() {
   try {
     console.log('🔧 Starting factbook enhancement...\n');
     
-    const factbooksDir = path.join(process.cwd(), 'public/data/nfl/season-2025/week-01/factbooks');
+    const factbooksDir = path.join(process.cwd(), '..', 'data/nfl/season-2025/week-01/factbooks');
     
     if (!fs.existsSync(factbooksDir)) {
       console.log('❌ Factbooks directory not found');

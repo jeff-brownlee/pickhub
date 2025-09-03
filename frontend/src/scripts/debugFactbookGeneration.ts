@@ -329,7 +329,7 @@ async function debugFactbookGeneration(gameId: string): Promise<FactbookDebugInf
   console.log(`\n📊 Step 6: Loading betting data from games.json`);
   
   try {
-    const gamesPath = path.join(process.cwd(), 'public/data/nfl/season-2025/week-01/games.json');
+    const gamesPath = path.join(process.cwd(), '..', 'data/nfl/season-2025/week-01/games.json');
     const gamesData = JSON.parse(fs.readFileSync(gamesPath, 'utf8'));
     const gameData = gamesData.find((g: any) => g.id === gameId);
     
@@ -431,7 +431,7 @@ async function runDebugFactbookGeneration() {
     const report = generateDebugReport(debugInfo);
     
     // Save debug report
-    const reportPath = path.join(process.cwd(), 'public/data/nfl/season-2025/week-01/factbooks/debug-report.md');
+    const reportPath = path.join(process.cwd(), '..', 'data/nfl/season-2025/week-01/factbooks/debug-report.md');
     fs.writeFileSync(reportPath, report);
     
     console.log('\n📋 Debug Report Generated:');

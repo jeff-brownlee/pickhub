@@ -345,7 +345,7 @@ async function generateRealFactbook(gameId: string): Promise<RealFactbookData> {
   // Load betting data from games.json
   console.log(`📊 Loading real betting data from games.json...`);
   
-  const gamesPath = path.join(process.cwd(), 'public/data/nfl/season-2025/week-01/games.json');
+  const gamesPath = path.join(process.cwd(), '..', 'data/nfl/season-2025/week-01/games.json');
   const gamesData = JSON.parse(fs.readFileSync(gamesPath, 'utf8'));
   const gameData = gamesData.find((g: any) => g.id === gameId);
 
@@ -731,7 +731,7 @@ async function runRealFactbookGeneration() {
     const factbook = await generateRealFactbook('2025-09-05-dal-phi');
     
     // Save the real factbook
-    const factbookPath = path.join(process.cwd(), 'public/data/nfl/season-2025/week-01/factbooks/2025-09-05-dal-phi-real.json');
+    const factbookPath = path.join(process.cwd(), '..', 'data/nfl/season-2025/week-01/factbooks/2025-09-05-dal-phi-real.json');
     fs.writeFileSync(factbookPath, JSON.stringify(factbook, null, 2));
     
     console.log(`\n✅ Real factbook saved to: ${factbookPath}`);

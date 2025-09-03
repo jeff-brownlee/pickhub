@@ -262,7 +262,7 @@ async function generateGamesForWeek(week: number): Promise<GameData[]> {
 
 async function saveGamesForWeek(week: number, games: GameData[]) {
   const weekStr = week.toString().padStart(2, '0');
-  const gamesPath = path.join(process.cwd(), 'public/data/nfl/season-2025', `week-${weekStr}`, 'games.json');
+  const gamesPath = path.join(process.cwd(), '..', 'data/nfl/season-2025', `week-${weekStr}`, 'games.json');
   
   // Ensure directory exists
   const gamesDir = path.dirname(gamesPath);

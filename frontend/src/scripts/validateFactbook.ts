@@ -282,7 +282,7 @@ async function validateFactbooks() {
   try {
     console.log('🔍 Starting factbook validation...\n');
     
-    const factbooksDir = path.join(process.cwd(), 'public/data/nfl/season-2025/week-01/factbooks');
+    const factbooksDir = path.join(process.cwd(), '..', 'data/nfl/season-2025/week-01/factbooks');
     
     if (!fs.existsSync(factbooksDir)) {
       console.log('❌ Factbooks directory not found');

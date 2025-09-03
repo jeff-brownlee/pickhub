@@ -1,11 +1,11 @@
 {
-  "gameId": "2025-09-05-dal-phi",
+  "gameId": "2025-09-07-ari-no",
   "season": 2025,
   "week": 1,
-  "kickoffISO": "2025-09-05T00:20:00.000-04:00",
+  "kickoffISO": "2025-09-07T17:00:00.000-04:00",
   "venue": {
     "id": "unknown",
-    "name": "Philadelphia Eagles Stadium",
+    "name": "New Orleans Saints Stadium",
     "city": "Unknown",
     "state": "Unknown",
     "surface": "grass",
@@ -13,26 +13,19 @@
   },
   "teams": {
     "away": {
-      "id": "6",
-      "name": "Dallas Cowboys",
-      "abbreviation": "DAL",
+      "id": "22",
+      "name": "Arizona Cardinals",
+      "abbreviation": "ARI",
+      "location": "Arizona",
+      "nickname": "Cardinals",
+      "color": "a40227",
+      "alternateColor": "ffffff",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ari.png",
       "record": {
         "wins": 0,
         "losses": 0,
         "ties": 0,
-        "winPercentage": 0,
-        "lastFive": [],
-        "streak": {
-          "type": "L",
-          "count": 0
-        }
-      },
-      "recentForm": {
-        "lastFiveGames": [],
-        "pointsFor": 0,
-        "pointsAgainst": 0,
-        "pointDifferential": 0,
-        "averageMargin": 0
+        "winPercentage": 0
       },
       "oddsRecords": {
         "againstSpread": {
@@ -76,72 +69,25 @@
           "sacks": 0,
           "interceptions": 0,
           "forcedFumbles": 0
-        },
-        "specialTeams": {
-          "fieldGoalPercentage": 0,
-          "puntReturnAverage": 0,
-          "kickoffReturnAverage": 0
         }
       },
-      "keyPlayers": [],
-      "coaching": {
-        "headCoach": "Unknown",
-        "experience": 0,
-        "record": {
-          "wins": 0,
-          "losses": 0,
-          "ties": 0
-        }
-      },
-      "situational": {
-        "homeAdvantage": {
-          "homeRecord": {
-            "wins": 0,
-            "losses": 0,
-            "ties": 0
-          },
-          "homePointsFor": 0,
-          "homePointsAgainst": 0
-        },
-        "restAdvantage": {
-          "daysRest": 7,
-          "opponentDaysRest": 7,
-          "restAdvantage": "even"
-        },
-        "travel": {
-          "milesTraveled": 500,
-          "timeZoneChange": 0,
-          "shortWeek": false
-        },
-        "motivation": {
-          "playoffRace": true,
-          "divisionGame": false,
-          "rivalry": false
-        }
-      },
-      "trends": []
+      "injuries": [],
+      "keyPlayers": []
     },
     "home": {
-      "id": "21",
-      "name": "Philadelphia Eagles",
-      "abbreviation": "PHI",
+      "id": "18",
+      "name": "New Orleans Saints",
+      "abbreviation": "NO",
+      "location": "New Orleans",
+      "nickname": "Saints",
+      "color": "d3bc8d",
+      "alternateColor": "000000",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/no.png",
       "record": {
         "wins": 0,
         "losses": 0,
         "ties": 0,
-        "winPercentage": 0,
-        "lastFive": [],
-        "streak": {
-          "type": "L",
-          "count": 0
-        }
-      },
-      "recentForm": {
-        "lastFiveGames": [],
-        "pointsFor": 0,
-        "pointsAgainst": 0,
-        "pointDifferential": 0,
-        "averageMargin": 0
+        "winPercentage": 0
       },
       "oddsRecords": {
         "againstSpread": {
@@ -185,67 +131,27 @@
           "sacks": 0,
           "interceptions": 0,
           "forcedFumbles": 0
-        },
-        "specialTeams": {
-          "fieldGoalPercentage": 0,
-          "puntReturnAverage": 0,
-          "kickoffReturnAverage": 0
         }
       },
-      "keyPlayers": [],
-      "coaching": {
-        "headCoach": "Unknown",
-        "experience": 0,
-        "record": {
-          "wins": 0,
-          "losses": 0,
-          "ties": 0
-        }
-      },
-      "situational": {
-        "homeAdvantage": {
-          "homeRecord": {
-            "wins": 0,
-            "losses": 0,
-            "ties": 0
-          },
-          "homePointsFor": 0,
-          "homePointsAgainst": 0
-        },
-        "restAdvantage": {
-          "daysRest": 7,
-          "opponentDaysRest": 7,
-          "restAdvantage": "even"
-        },
-        "travel": {
-          "milesTraveled": 0,
-          "timeZoneChange": 0,
-          "shortWeek": false
-        },
-        "motivation": {
-          "playoffRace": true,
-          "divisionGame": false,
-          "rivalry": false
-        }
-      },
-      "trends": []
+      "injuries": [],
+      "keyPlayers": []
     }
   },
   "bettingContext": {
     "openingLine": {
-      "spread": 7,
-      "total": 50.5,
+      "spread": 7.5,
+      "total": 37,
       "moneyline": {
-        "home": -272,
-        "away": -213
+        "home": 168,
+        "away": -268
       }
     },
     "currentLine": {
-      "spread": 7.5,
-      "total": 51,
+      "spread": 8,
+      "total": 37.5,
       "moneyline": {
-        "home": -262,
-        "away": -223
+        "home": 178,
+        "away": -278
       }
     },
     "lineMovement": {
@@ -287,7 +193,6 @@
   },
   "trends": [],
   "keyMatchups": [],
-  "injuries": [],
   "weather": {
     "temperature": 72,
     "conditions": "clear",
@@ -298,6 +203,5 @@
     "teamData": "ESPN API",
     "bettingData": "Real Data",
     "weatherData": "Real Data"
-  },
-  "lastUpdated": "2025-09-03T16:41:23.615Z"
+  }
 }

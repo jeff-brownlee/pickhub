@@ -1,11 +1,11 @@
 {
-  "gameId": "2025-09-05-dal-phi",
+  "gameId": "2025-09-08-bal-buf",
   "season": 2025,
   "week": 1,
-  "kickoffISO": "2025-09-05T00:20:00.000-04:00",
+  "kickoffISO": "2025-09-08T00:20:00.000-04:00",
   "venue": {
     "id": "unknown",
-    "name": "Philadelphia Eagles Stadium",
+    "name": "Buffalo Bills Stadium",
     "city": "Unknown",
     "state": "Unknown",
     "surface": "grass",
@@ -13,26 +13,19 @@
   },
   "teams": {
     "away": {
-      "id": "6",
-      "name": "Dallas Cowboys",
-      "abbreviation": "DAL",
+      "id": "33",
+      "name": "Baltimore Ravens",
+      "abbreviation": "BAL",
+      "location": "Baltimore",
+      "nickname": "Ravens",
+      "color": "29126f",
+      "alternateColor": "000000",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
       "record": {
         "wins": 0,
         "losses": 0,
         "ties": 0,
-        "winPercentage": 0,
-        "lastFive": [],
-        "streak": {
-          "type": "L",
-          "count": 0
-        }
-      },
-      "recentForm": {
-        "lastFiveGames": [],
-        "pointsFor": 0,
-        "pointsAgainst": 0,
-        "pointDifferential": 0,
-        "averageMargin": 0
+        "winPercentage": 0
       },
       "oddsRecords": {
         "againstSpread": {
@@ -76,72 +69,25 @@
           "sacks": 0,
           "interceptions": 0,
           "forcedFumbles": 0
-        },
-        "specialTeams": {
-          "fieldGoalPercentage": 0,
-          "puntReturnAverage": 0,
-          "kickoffReturnAverage": 0
         }
       },
-      "keyPlayers": [],
-      "coaching": {
-        "headCoach": "Unknown",
-        "experience": 0,
-        "record": {
-          "wins": 0,
-          "losses": 0,
-          "ties": 0
-        }
-      },
-      "situational": {
-        "homeAdvantage": {
-          "homeRecord": {
-            "wins": 0,
-            "losses": 0,
-            "ties": 0
-          },
-          "homePointsFor": 0,
-          "homePointsAgainst": 0
-        },
-        "restAdvantage": {
-          "daysRest": 7,
-          "opponentDaysRest": 7,
-          "restAdvantage": "even"
-        },
-        "travel": {
-          "milesTraveled": 500,
-          "timeZoneChange": 0,
-          "shortWeek": false
-        },
-        "motivation": {
-          "playoffRace": true,
-          "divisionGame": false,
-          "rivalry": false
-        }
-      },
-      "trends": []
+      "injuries": [],
+      "keyPlayers": []
     },
     "home": {
-      "id": "21",
-      "name": "Philadelphia Eagles",
-      "abbreviation": "PHI",
+      "id": "2",
+      "name": "Buffalo Bills",
+      "abbreviation": "BUF",
+      "location": "Buffalo",
+      "nickname": "Bills",
+      "color": "00338d",
+      "alternateColor": "d50a0a",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
       "record": {
         "wins": 0,
         "losses": 0,
         "ties": 0,
-        "winPercentage": 0,
-        "lastFive": [],
-        "streak": {
-          "type": "L",
-          "count": 0
-        }
-      },
-      "recentForm": {
-        "lastFiveGames": [],
-        "pointsFor": 0,
-        "pointsAgainst": 0,
-        "pointDifferential": 0,
-        "averageMargin": 0
+        "winPercentage": 0
       },
       "oddsRecords": {
         "againstSpread": {
@@ -185,67 +131,27 @@
           "sacks": 0,
           "interceptions": 0,
           "forcedFumbles": 0
-        },
-        "specialTeams": {
-          "fieldGoalPercentage": 0,
-          "puntReturnAverage": 0,
-          "kickoffReturnAverage": 0
         }
       },
-      "keyPlayers": [],
-      "coaching": {
-        "headCoach": "Unknown",
-        "experience": 0,
-        "record": {
-          "wins": 0,
-          "losses": 0,
-          "ties": 0
-        }
-      },
-      "situational": {
-        "homeAdvantage": {
-          "homeRecord": {
-            "wins": 0,
-            "losses": 0,
-            "ties": 0
-          },
-          "homePointsFor": 0,
-          "homePointsAgainst": 0
-        },
-        "restAdvantage": {
-          "daysRest": 7,
-          "opponentDaysRest": 7,
-          "restAdvantage": "even"
-        },
-        "travel": {
-          "milesTraveled": 0,
-          "timeZoneChange": 0,
-          "shortWeek": false
-        },
-        "motivation": {
-          "playoffRace": true,
-          "divisionGame": false,
-          "rivalry": false
-        }
-      },
-      "trends": []
+      "injuries": [],
+      "keyPlayers": []
     }
   },
   "bettingContext": {
     "openingLine": {
-      "spread": 7,
-      "total": 50.5,
+      "spread": 10.5,
+      "total": 37.5,
       "moneyline": {
-        "home": -272,
-        "away": -213
+        "home": 288,
+        "away": -226
       }
     },
     "currentLine": {
-      "spread": 7.5,
-      "total": 51,
+      "spread": 11,
+      "total": 38,
       "moneyline": {
-        "home": -262,
-        "away": -223
+        "home": 298,
+        "away": -236
       }
     },
     "lineMovement": {
@@ -287,7 +193,6 @@
   },
   "trends": [],
   "keyMatchups": [],
-  "injuries": [],
   "weather": {
     "temperature": 72,
     "conditions": "clear",
@@ -298,6 +203,5 @@
     "teamData": "ESPN API",
     "bettingData": "Real Data",
     "weatherData": "Real Data"
-  },
-  "lastUpdated": "2025-09-03T16:41:23.615Z"
+  }
 }

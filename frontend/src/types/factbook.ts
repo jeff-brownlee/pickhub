@@ -15,6 +15,11 @@ export interface GameFactbook {
   keyMatchups: KeyMatchup[];
   trends: GameTrend[];
   injuries: InjuryReport[];
+  dataSources?: {
+    teamData: string;
+    bettingData: string;
+    weatherData: string;
+  };
   lastUpdated: string;
 }
 
@@ -44,6 +49,7 @@ export interface TeamFactbook {
   abbreviation: string;
   record: TeamRecord;
   recentForm: RecentForm;
+  oddsRecords: OddsRecords;
   statistics: TeamStatistics;
   keyPlayers: KeyPlayer[];
   coaching: CoachingInfo;
@@ -81,6 +87,15 @@ export interface GameResult {
   score: string; // "24-21"
   homeAway: 'home' | 'away';
   week: number;
+}
+
+export interface OddsRecords {
+  againstSpread: { wins: number; losses: number; ties: number };
+  overUnder: { overs: number; unders: number; pushes: number };
+  homeAway: {
+    home: { wins: number; losses: number; ties: number };
+    away: { wins: number; losses: number; ties: number };
+  };
 }
 
 export interface TeamStatistics {
@@ -139,7 +154,7 @@ export interface PlayerStats {
   // Defense specific
   tackles?: number;
   sacks?: number;
-  interceptions?: number;
+  defensiveInterceptions?: number;
 }
 
 export interface InjuryInfo {

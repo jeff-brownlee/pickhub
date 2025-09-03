@@ -19,8 +19,8 @@ declare module '@mui/material/styles' {
 export const theme = createTheme({
   palette: {
     mode: 'dark',
-    background: { default: '#0b0b0f', paper: '#111218' },
-    text: { primary: '#e9e9ef', secondary: '#b5b6bf' },
+    background: { default: '#000000', paper: '#1a1a1a' },
+    text: { primary: '#ffffff', secondary: '#cccccc' },
     primary: { main: '#00E676' },
     secondary: { main: '#FF7C00' },
     brand: {
@@ -38,8 +38,8 @@ export const theme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
-          background: 'linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02))',
-          border: '1px solid rgba(255,255,255,0.06)',
+          background: 'linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04))',
+          border: '1px solid rgba(255,255,255,0.12)',
           backdropFilter: 'blur(6px)',
         },
       },

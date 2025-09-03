@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Link, Navigate, useLocation } from 'react
 import { AppBar, Toolbar, Container, Stack, Button } from '@mui/material';
 import PicksPage from './pages/PicksPage';
 import LeaderboardPage from './pages/LeaderboardPage';
+import GlobalHeader from './components/GlobalHeader';
 
 function NavBar() {
   const location = useLocation();
@@ -14,10 +15,40 @@ function NavBar() {
       <Toolbar>
         <Container maxWidth="lg" sx={{ px: 0 }}>
           <Stack direction="row" alignItems="center" spacing={2}>
-            <Button component={Link} to="/leaderboard" variant={isActive('/leaderboard') ? 'contained' : 'text'} size="small">
+            <Button 
+              component={Link} 
+              to="/leaderboard" 
+              variant="text" 
+              size="small"
+              sx={{
+                color: '#00E676',
+                textDecoration: isActive('/leaderboard') ? 'underline' : 'none',
+                textUnderlineOffset: '4px',
+                '&:hover': {
+                  backgroundColor: 'transparent',
+                  textDecoration: 'underline',
+                  textUnderlineOffset: '4px'
+                }
+              }}
+            >
               Leaderboard
             </Button>
-            <Button component={Link} to="/picks" variant={isActive('/picks') ? 'contained' : 'text'} size="small">
+            <Button 
+              component={Link} 
+              to="/picks" 
+              variant="text" 
+              size="small"
+              sx={{
+                color: '#00E676',
+                textDecoration: isActive('/picks') ? 'underline' : 'none',
+                textUnderlineOffset: '4px',
+                '&:hover': {
+                  backgroundColor: 'transparent',
+                  textDecoration: 'underline',
+                  textUnderlineOffset: '4px'
+                }
+              }}
+            >
               Picks
             </Button>
           </Stack>
@@ -35,6 +66,7 @@ export default function App() {
         v7_relativeSplatPath: true,
       }}
     >
+      <GlobalHeader />
       <NavBar />
       <Routes>
         <Route path="/" element={<Navigate to="/picks" replace />} />

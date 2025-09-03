@@ -1,21 +1,21 @@
 {
-  "gameId": "nyj-ne",
+  "gameId": "2025-09-05-dal-phi",
   "season": 2025,
   "week": 1,
-  "kickoffISO": "2025-09-07T12:00:00-04:00",
+  "kickoffISO": "2025-09-05T00:20:00.000-04:00",
   "venue": {
-    "id": "3738",
-    "name": "Gillette Stadium",
-    "city": "Foxborough",
-    "state": "MA",
-    "surface": "turf",
+    "id": "3806",
+    "name": "Lincoln Financial Field",
+    "city": "Philadelphia",
+    "state": "PA",
+    "surface": "grass",
     "indoor": false
   },
   "teams": {
     "away": {
-      "id": "20",
-      "name": "New York Jets",
-      "abbreviation": "NYJ",
+      "id": "6",
+      "name": "Dallas Cowboys",
+      "abbreviation": "DAL",
       "record": {
         "wins": 1,
         "losses": 2,
@@ -37,20 +37,20 @@
       "statistics": {
         "offense": {
           "pointsPerGame": 24.5,
-          "yardsPerGame": 350,
-          "passingYards": 211,
-          "rushingYards": 139,
+          "yardsPerGame": 268.333,
+          "passingYards": 161.333,
+          "rushingYards": 107,
           "thirdDownPercentage": 42.3,
           "redZonePercentage": 68.1,
-          "turnovers": 6
+          "turnovers": 7
         },
         "defense": {
           "pointsAllowed": 21.2,
           "yardsAllowed": 0,
           "passingYardsAllowed": 0,
           "rushingYardsAllowed": 0,
-          "sacks": 8,
-          "interceptions": 3,
+          "sacks": 3,
+          "interceptions": 5,
           "forcedFumbles": 0
         },
         "specialTeams": {
@@ -61,67 +61,67 @@
       },
       "keyPlayers": [
         {
-          "id": "NYJ-aaron-rodgers",
-          "name": "Aaron Rodgers",
+          "id": "DAL-dak-prescott",
+          "name": "Dak Prescott",
           "position": "QB",
           "status": "active",
           "stats": {
-            "passingYards": 3105,
-            "passingTDs": 24,
-            "interceptions": 6,
-            "completionPercentage": 69,
-            "qbRating": 100
+            "passingYards": 3007,
+            "passingTDs": 23,
+            "interceptions": 8,
+            "completionPercentage": 66,
+            "qbRating": 92
           }
         },
         {
-          "id": "NYJ-garrett-wilson",
-          "name": "Garrett Wilson",
+          "id": "DAL-ceedee-lamb",
+          "name": "CeeDee Lamb",
           "position": "WR",
           "status": "active",
           "stats": {
-            "receivingYards": 980,
-            "receivingTDs": 6,
-            "receptions": 57
+            "receivingYards": 1194,
+            "receivingTDs": 5,
+            "receptions": 64
           }
         },
         {
-          "id": "NYJ-breece-hall",
-          "name": "Breece Hall",
+          "id": "DAL-tony-pollard",
+          "name": "Tony Pollard",
           "position": "RB",
           "status": "active",
           "stats": {
-            "rushingYards": 1510,
+            "rushingYards": 1213,
             "rushingTDs": 6,
-            "yardsPerCarry": 5.3
+            "yardsPerCarry": 4.8
           }
         },
         {
-          "id": "NYJ-quinnen-williams",
-          "name": "Quinnen Williams",
-          "position": "DT",
+          "id": "DAL-micah-parsons",
+          "name": "Micah Parsons",
+          "position": "LB",
           "status": "active",
           "stats": {
-            "tackles": 55,
-            "sacks": 5
+            "tackles": 64,
+            "sacks": 9
           }
         },
         {
-          "id": "NYJ-sauce-gardner",
-          "name": "Sauce Gardner",
+          "id": "DAL-trevon-diggs",
+          "name": "Trevon Diggs",
           "position": "CB",
           "status": "active",
           "stats": {
-            "tackles": 53,
-            "interceptions": 5
+            "tackles": 49,
+            "interceptions": 3
           }
         }
       ],
       "coaching": {
-        "headCoach": "Robert Saleh",
-        "experience": 3,
+        "headCoach": "Mike McCarthy",
+        "experience": 4,
         "record": {
-          "wins": 18,
-          "losses": 33,
+          "wins": 42,
+          "losses": 25,
           "ties": 0
         }
       },
@@ -154,9 +154,9 @@
       "trends": []
     },
     "home": {
-      "id": "17",
-      "name": "New England Patriots",
-      "abbreviation": "NE",
+      "id": "21",
+      "name": "Philadelphia Eagles",
+      "abbreviation": "PHI",
       "record": {
         "wins": 2,
         "losses": 1,
@@ -178,20 +178,20 @@
       "statistics": {
         "offense": {
           "pointsPerGame": 26.8,
-          "yardsPerGame": 282.667,
-          "passingYards": 159.333,
-          "rushingYards": 123.333,
+          "yardsPerGame": 253.333,
+          "passingYards": 172,
+          "rushingYards": 81.333,
           "thirdDownPercentage": 45.7,
           "redZonePercentage": 72.3,
-          "turnovers": 7
+          "turnovers": 5
         },
         "defense": {
           "pointsAllowed": 19.7,
           "yardsAllowed": 0,
           "passingYardsAllowed": 0,
           "rushingYardsAllowed": 0,
-          "sacks": 5,
-          "interceptions": 5,
+          "sacks": 6,
+          "interceptions": 4,
           "forcedFumbles": 0
         },
         "specialTeams": {
@@ -202,67 +202,67 @@
       },
       "keyPlayers": [
         {
-          "id": "NE-mac-jones",
-          "name": "Mac Jones",
+          "id": "PHI-jalen-hurts",
+          "name": "Jalen Hurts",
           "position": "QB",
           "status": "active",
           "stats": {
-            "passingYards": 3769,
-            "passingTDs": 22,
-            "interceptions": 7,
+            "passingYards": 3717,
+            "passingTDs": 34,
+            "interceptions": 6,
             "completionPercentage": 68,
-            "qbRating": 86
+            "qbRating": 88
           }
         },
         {
-          "id": "NE-kendrick-bourne",
-          "name": "Kendrick Bourne",
+          "id": "PHI-a.j.-brown",
+          "name": "A.J. Brown",
           "position": "WR",
           "status": "active",
           "stats": {
-            "receivingYards": 1089,
+            "receivingYards": 808,
             "receivingTDs": 6,
-            "receptions": 69
+            "receptions": 65
           }
         },
         {
-          "id": "NE-rhamondre-stevenson",
-          "name": "Rhamondre Stevenson",
+          "id": "PHI-d'andre-swift",
+          "name": "D'Andre Swift",
           "position": "RB",
           "status": "active",
           "stats": {
-            "rushingYards": 1593,
-            "rushingTDs": 11,
-            "yardsPerCarry": 4.2
+            "rushingYards": 1189,
+            "rushingTDs": 12,
+            "yardsPerCarry": 4.1
           }
         },
         {
-          "id": "NE-matthew-judon",
-          "name": "Matthew Judon",
+          "id": "PHI-haason-reddick",
+          "name": "Haason Reddick",
           "position": "LB",
           "status": "active",
           "stats": {
-            "tackles": 58,
-            "sacks": 8
+            "tackles": 67,
+            "sacks": 11
           }
         },
         {
-          "id": "NE-kyle-dugger",
-          "name": "Kyle Dugger",
-          "position": "S",
+          "id": "PHI-darius-slay",
+          "name": "Darius Slay",
+          "position": "CB",
           "status": "active",
           "stats": {
-            "tackles": 52,
-            "interceptions": 5
+            "tackles": 41,
+            "interceptions": 2
           }
         }
       ],
       "coaching": {
-        "headCoach": "Jerod Mayo",
-        "experience": 0,
+        "headCoach": "Nick Sirianni",
+        "experience": 3,
         "record": {
-          "wins": 0,
-          "losses": 0,
+          "wins": 34,
+          "losses": 17,
           "ties": 0
         }
       },
@@ -298,26 +298,26 @@
   "bettingContext": {
     "openingLine": {},
     "currentLine": {
-      "spread": -1.5,
-      "total": 41,
+      "spread": -7.5,
+      "total": 51,
       "moneyline": {
-        "home": -140,
-        "away": 120
+        "home": -262,
+        "away": -223
       }
     },
     "lineMovement": {},
     "bettingTrends": {
       "spread": {
-        "home": 50,
-        "away": 50
+        "home": 58,
+        "away": 42
       },
       "total": {
-        "over": 50,
-        "under": 50
+        "over": 45,
+        "under": 55
       },
       "moneyline": {
-        "home": 50,
-        "away": 50
+        "home": 62,
+        "away": 38
       }
     },
     "keyNumbers": {
@@ -338,35 +338,66 @@
   "keyMatchups": [
     {
       "type": "offense_vs_defense",
-      "description": "Aaron Rodgers vs New England defense",
-      "advantage": "away",
+      "description": "Dallas passing offense vs Philadelphia secondary",
+      "advantage": "even",
       "impact": "high",
-      "details": "Rodgers' experience and accuracy against a young Patriots defense"
+      "details": "Dak Prescott and CeeDee Lamb face a tough Eagles secondary led by Darius Slay"
     },
     {
       "type": "player_vs_player",
-      "description": "Garrett Wilson vs Patriots secondary",
+      "description": "Micah Parsons vs Philadelphia offensive line",
       "advantage": "away",
+      "impact": "high",
+      "details": "Parsons' pass rush ability could disrupt Jalen Hurts' timing"
+    },
+    {
+      "type": "coaching",
+      "description": "Mike McCarthy vs Nick Sirianni game planning",
+      "advantage": "home",
       "impact": "medium",
-      "details": "Wilson's route running against Kyle Dugger and the Patriots safeties"
+      "details": "Sirianni has shown better in-game adjustments in recent matchups"
     }
   ],
   "trends": [
     {
       "type": "historical",
-      "description": "New England has dominated the series, winning 7 of the last 10 meetings",
-      "games": 10,
-      "record": "7-3",
+      "description": "Dallas has won 4 of the last 6 meetings against Philadelphia",
+      "games": 6,
+      "record": "4-2",
       "significance": "high"
     },
     {
       "type": "recent",
-      "description": "The under has hit in 6 of the last 8 NYJ-NE games",
-      "games": 8,
-      "record": "Under 6-2",
+      "description": "The over has hit in 5 of the last 7 DAL-PHI games",
+      "games": 7,
+      "record": "Over 5-2",
+      "significance": "medium"
+    },
+    {
+      "type": "situational",
+      "description": "Philadelphia is 8-2 ATS in their last 10 home games",
+      "games": 10,
+      "record": "8-2",
       "significance": "medium"
     }
   ],
-  "injuries": [],
-  "lastUpdated": "2025-09-02T23:02:24.783Z"
+  "injuries": [
+    {
+      "player": "Tyler Smith",
+      "position": "OL",
+      "injury": "Knee",
+      "status": "questionable",
+      "impact": "medium",
+      "replacement": "Chuma Edoga"
+    },
+    {
+      "player": "Lane Johnson",
+      "position": "OL",
+      "injury": "Ankle",
+      "status": "probable",
+      "impact": "low",
+      "replacement": "Jack Driscoll"
+    }
+  ],
+  "lastUpdated": "2025-09-02T23:02:24.778Z"
 }

@@ -14,6 +14,8 @@ export interface WeeklyPickSelection {
 
 export class PickSelectionService {
   private readonly PICKS_PER_WEEK = 5; // Fixed number of picks per analyst per week
+  private readonly MIN_ADJUSTED_SCORE_PRIMARY = 55; // prefer stronger edges first
+  private readonly MIN_ADJUSTED_SCORE_FALLBACK = 45; // allow fill if not enough
 
   /**
    * Generate weekly picks for an analyst using heuristics
@@ -37,26 +39,38 @@ export class PickSelectionService {
     const selected: typeof enhanced = [];
     const perGameCount: Record<string, number> = {};
 
-    for (const cand of enhanced.sort((a,b) => b.adjustedScore - a.adjustedScore)) {
-      if (selected.length >= this.PICKS_PER_WEEK) break;
-      const count = perGameCount[cand.gameId] || 0;
-      if (count >= 2) continue;
+    const sorted = enhanced.sort((a,b) => b.adjustedScore - a.adjustedScore);
 
-      // enforce combo rule
-      const existing = selected.filter(s => s.gameId === cand.gameId);
-      if (existing.length === 1) {
-        const first = existing[0];
-        const isFirstTotal = first.market === 'total';
-        const isCandTotal = cand.market === 'total';
-        // Only allow second if one is total and the other is ATS/ML
-        if (!((isFirstTotal && (cand.market === 'spread' || cand.market === 'moneyline')) ||
-              (isCandTotal && (first.market === 'spread' || first.market === 'moneyline')))) {
-          continue;
+    const trySelect = (minScore: number) => {
+      for (const cand of sorted) {
+        if (selected.length >= this.PICKS_PER_WEEK) break;
+        if (cand.adjustedScore < minScore) continue;
+
+        const count = perGameCount[cand.gameId] || 0;
+        if (count >= 2) continue;
+
+        // enforce combo rule
+        const existing = selected.filter(s => s.gameId === cand.gameId);
+        if (existing.length === 1) {
+          const first = existing[0];
+          const isFirstTotal = first.market === 'total';
+          const isCandTotal = cand.market === 'total';
+          if (!((isFirstTotal && (cand.market === 'spread' || cand.market === 'moneyline')) ||
+                 (isCandTotal && (first.market === 'spread' || first.market === 'moneyline')))) {
+            continue;
+          }
         }
-      }
 
-      selected.push(cand);
-      perGameCount[cand.gameId] = count + 1;
+        selected.push(cand);
+        perGameCount[cand.gameId] = count + 1;
+      }
+    };
+
+    // First pass: require stronger adjusted scores
+    trySelect(this.MIN_ADJUSTED_SCORE_PRIMARY);
+    // Fallback pass: allow slightly weaker to fill remaining slots
+    if (selected.length < this.PICKS_PER_WEEK) {
+      trySelect(this.MIN_ADJUSTED_SCORE_FALLBACK);
     }
 
     // Materialize AnalystPick objects
@@ -173,12 +187,22 @@ export class PickSelectionService {
       }
     }
 
-    // Overs/Unders bias
+    // Overs/Unders bias (stronger weighting and light counter-penalty)
     if (bias.includes('over') || bias.includes('high-scoring')) {
-      if (cand.market === 'total' && cand.selection === 'over') bonus += 5;
+      if (cand.market === 'total') {
+        bonus += cand.selection === 'over' ? 8 : -3;
+      }
     }
     if (bias.includes('under') || bias.includes('defense')) {
-      if (cand.market === 'total' && cand.selection === 'under') bonus += 5;
+      if (cand.market === 'total') {
+        bonus += cand.selection === 'under' ? 8 : -3;
+      }
+    }
+
+    // Line play / discipline bias → prefer spreads (ATS) over moneyline
+    if (bias.includes('line') || bias.includes('trenches') || bias.includes('discipline')) {
+      if (cand.market === 'spread') bonus += 6;
+      if (cand.market === 'moneyline') bonus -= 2;
     }
 
     // Favorites/underdogs
@@ -194,6 +218,20 @@ export class PickSelectionService {
         const dogSide = awaySpread < 0 ? 'home' : 'away';
         if (cand.selection === dogSide) bonus += 4;
       }
+    }
+
+    // Penalize heavy ML chalk to avoid low-EV picks unless persona explicitly prefers favorites
+    if (cand.market === 'moneyline' && !bias.includes('favorite')) {
+      const ml = fb.bettingContext?.lineMovement?.moneyline;
+      const chosen = cand.selection === 'home' ? ml?.home : ml?.away;
+      const currentPrice = chosen?.current;
+      if (typeof currentPrice === 'number' && currentPrice < -200) {
+        // Scale penalty with severity beyond -200, capped
+        const excess = Math.abs(currentPrice) - 200;
+        bonus -= Math.min(excess * 0.02, 8); // up to -8
+      }
+      // Baseline de-preference of ML vs ATS unless persona leans favorites/underdogs explicitly
+      bonus -= 2;
     }
 
     return bonus;
@@ -465,6 +503,21 @@ export class PickSelectionService {
       selLine = 0; selOdds = cand.selection === 'away' ? marketData.moneyline.away.odds : marketData.moneyline.home.odds;
     }
 
+    const cueStrings = cand.reasons;
+    // Build a concise, human-readable rationale summary for UI (will later be replaced by ChatGPT narrative)
+    const rationaleSummary = (() => {
+      if (cand.market === 'spread') {
+        const sideText = cand.selection === 'away' ? `${away}` : `${home}`;
+        return `ATS lean: ${sideText} ${selLine > 0 ? '+' : ''}${selLine} at ${selOdds > 0 ? '+' : ''}${selOdds}. ${cueStrings[0]}`;
+      }
+      if (cand.market === 'total') {
+        return `Total lean: ${cand.selection.toUpperCase()} ${selLine} at ${selOdds > 0 ? '+' : ''}${selOdds}. ${cueStrings[0]}`;
+      }
+      // moneyline
+      const sideText = cand.selection === 'away' ? `${away}` : `${home}`;
+      return `Moneyline lean: ${sideText} at ${selOdds > 0 ? '+' : ''}${selOdds}. ${cueStrings[0]}`;
+    })();
+
     const uiPick: UIPick = {
       gameId: game.id,
       gameDate: game.kickoffEt,
@@ -477,12 +530,13 @@ export class PickSelectionService {
         line: selLine,
         odds: selOdds,
         units: 1,
-        rationale: `${analyst.tagline || analyst.name}: ${cand.reasons.join(' | ')}`
+        rationale: rationaleSummary,
+        rationaleCues: cueStrings
       },
       result: {
         status: 'pending',
-        finalLine: 0,
-        finalOdds: 0,
+        finalLine: selLine,
+        finalOdds: selOdds,
         payout: 0,
         netUnits: 0
       },

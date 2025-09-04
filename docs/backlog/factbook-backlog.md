@@ -137,3 +137,9 @@ This backlog tracks additions to the MinimalFactbook to improve pick selection a
 - **Rest/Travel**: Short week, time zone travel flags
 
 
+- winning percentage is wrong
+- should add home and away record
+- should add home and away odds record
+- should add home and away injuries
+- should add home and away ranks
+- should add home and away statistics

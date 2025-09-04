@@ -2,6 +2,7 @@
   "analystId": "podcaster",
   "week": 1,
   "season": 2025,
+  "generatedAt": "2025-09-04T22:49:28.171Z",
   "picks": [
     {
       "gameId": "2025-09-07-cin-cle",
@@ -54,12 +55,18 @@
         "line": 0,
         "odds": -250,
         "units": 1,
-        "rationale": "You win by pounding the rock — don't overthink it.: Stat margin AWAY 12.53 | Form Δ 0 | ML movement 25 cents | Public ML 3% home / 97% away"
+        "rationale": "Moneyline lean: CIN at -250. Stat margin (PPG vs opp PA): AWAY +12.53",
+        "rationaleCues": [
+          "Stat margin (PPG vs opp PA): AWAY +12.53",
+          "Form delta (win%): +0",
+          "Moneyline movement (away): -275→-250 (25 cents)",
+          "Public split (moneyline): 3% home / 97% away"
+        ]
       },
       "result": {
         "status": "pending",
         "finalLine": 0,
-        "finalOdds": 0,
+        "finalOdds": -250,
         "payout": 0,
         "netUnits": 0
       },
@@ -116,74 +123,19 @@
         "line": 43.5,
         "odds": -105,
         "units": 1,
-        "rationale": "You win by pounding the rock — don't overthink it.: Expected total 40.39 vs market 43.5 | Line move 45.5→43.5 (under) | Public O/U 27%/73% | Disruption total 7.33 | Passing tilt 385"
+        "rationale": "Total lean: UNDER 43.5 at -105. Expected total 40.39 vs market 43.5",
+        "rationaleCues": [
+          "Expected total 40.39 vs market 43.5",
+          "Total movement: 45.5→43.5 (under)",
+          "Public split (total): 27% over / 73% under",
+          "Defensive disruption (combined sacks+INTs): 7.33",
+          "Passing volume proxy (combined pass yards): 385"
+        ]
       },
       "result": {
         "status": "pending",
-        "finalLine": 0,
-        "finalOdds": 0,
-        "payout": 0,
-        "netUnits": 0
-      },
-      "analystId": "podcaster"
-    },
-    {
-      "gameId": "2025-09-05-dal-phi",
-      "gameDate": "2025-09-05T00:20:00.000-04:00",
-      "awayTeam": {
-        "id": "DAL",
-        "name": "Dallas Cowboys",
-        "nickname": "Cowboys",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "PHI",
-        "name": "Philadelphia Eagles",
-        "nickname": "Eagles",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 8.5,
-            "odds": -115
-          },
-          "home": {
-            "line": -8.5,
-            "odds": -105
-          }
-        },
-        "total": {
-          "over": {
-            "line": 47.5,
-            "odds": -115
-          },
-          "under": {
-            "line": 47.5,
-            "odds": -105
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": 320
-          },
-          "home": {
-            "odds": -425
-          }
-        }
-      },
-      "selection": {
-        "betType": "moneyline",
-        "side": "away",
-        "line": 0,
-        "odds": 320,
-        "units": 1,
-        "rationale": "You win by pounding the rock — don't overthink it.: Stat margin AWAY 3.06 | Form Δ 0 | ML movement 110 cents | Public ML 91% home / 9% away"
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": 0,
-        "finalOdds": 0,
+        "finalLine": 43.5,
+        "finalOdds": -105,
         "payout": 0,
         "netUnits": 0
       },
@@ -240,12 +192,87 @@
         "line": 47.5,
         "odds": 100,
         "units": 1,
-        "rationale": "You win by pounding the rock — don't overthink it.: Expected total 53.15 vs market 47.5 | Line move 49.5→47.5 (under) | Public O/U 14%/86% | Disruption total 5.25 | Passing tilt 276"
+        "rationale": "Total lean: OVER 47.5 at +100. Expected total 53.15 vs market 47.5",
+        "rationaleCues": [
+          "Expected total 53.15 vs market 47.5",
+          "Total movement: 49.5→47.5 (under)",
+          "Public split (total): 14% over / 86% under",
+          "Defensive disruption (combined sacks+INTs): 5.25",
+          "Passing volume proxy (combined pass yards): 276"
+        ]
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 47.5,
+        "finalOdds": 100,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "podcaster"
+    },
+    {
+      "gameId": "2025-09-05-dal-phi",
+      "gameDate": "2025-09-05T00:20:00.000-04:00",
+      "awayTeam": {
+        "id": "DAL",
+        "name": "Dallas Cowboys",
+        "nickname": "Cowboys",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "PHI",
+        "name": "Philadelphia Eagles",
+        "nickname": "Eagles",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 8.5,
+            "odds": -115
+          },
+          "home": {
+            "line": -8.5,
+            "odds": -105
+          }
+        },
+        "total": {
+          "over": {
+            "line": 47.5,
+            "odds": -115
+          },
+          "under": {
+            "line": 47.5,
+            "odds": -105
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": 320
+          },
+          "home": {
+            "odds": -425
+          }
+        }
+      },
+      "selection": {
+        "betType": "moneyline",
+        "side": "away",
+        "line": 0,
+        "odds": 320,
+        "units": 1,
+        "rationale": "Moneyline lean: DAL at +320. Stat margin (PPG vs opp PA): AWAY +3.06",
+        "rationaleCues": [
+          "Stat margin (PPG vs opp PA): AWAY +3.06",
+          "Form delta (win%): +0",
+          "Moneyline movement (away): 230→340 (110 cents)",
+          "Public split (moneyline): 91% home / 9% away"
+        ]
       },
       "result": {
         "status": "pending",
         "finalLine": 0,
-        "finalOdds": 0,
+        "finalOdds": 320,
         "payout": 0,
         "netUnits": 0
       },
@@ -302,12 +329,19 @@
         "line": 46.5,
         "odds": -110,
         "units": 1,
-        "rationale": "You win by pounding the rock — don't overthink it.: Expected total 43.89 vs market 46.5 | Line move 47.5→46.5 (under) | Public O/U 15%/85% | Disruption total 7 | Passing tilt 501"
+        "rationale": "Total lean: UNDER 46.5 at -110. Expected total 43.89 vs market 46.5",
+        "rationaleCues": [
+          "Expected total 43.89 vs market 46.5",
+          "Total movement: 47.5→46.5 (under)",
+          "Public split (total): 15% over / 85% under",
+          "Defensive disruption (combined sacks+INTs): 7",
+          "Passing volume proxy (combined pass yards): 501"
+        ]
       },
       "result": {
         "status": "pending",
-        "finalLine": 0,
-        "finalOdds": 0,
+        "finalLine": 46.5,
+        "finalOdds": -110,
         "payout": 0,
         "netUnits": 0
       },

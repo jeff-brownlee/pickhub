@@ -38,12 +38,14 @@ async function main() {
 
   for (const persona of personas) {
     try {
+      const generatedAt = new Date().toISOString();
       const res = await pickSelectionService.generateWeeklyPicksHeuristics(games, factbooks, persona, week);
       // Adapt to legacy UI JSON envelope
       const legacyEnvelope = {
         analystId: persona.id,
         week,
         season: 2025,
+        generatedAt,
         picks: res.picks,
         weekSummary: {
           totalPicks: res.picks.length,

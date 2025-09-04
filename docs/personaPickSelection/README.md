@@ -3,6 +3,10 @@
 ### Objective
 Produce diversified, persona-aligned weekly picks using real data. Scoring is persona-agnostic; lightweight bias overlays (from personas.json) and constraints are layered on top to minimize correlation across personas.
 
+### Tuning vs Persona Overlay (at a glance)
+- Base tuning lives in `frontend/src/heuristics/marketScoring.ts` and affects every persona equally (global weights for features like stat margin, movement, public splits).
+- Persona overlay lives in `frontend/src/services/pickSelectionService.ts` and nudges only that persona’s candidates (e.g., contrarian fades public, trenches favor ATS, totals lean Over/Under).
+
 ### Inputs
 - `games.json`: odds/lines, `espnId`, kickoff time
 - Factbooks (`data/nfl/season-YYYY/week-WW/factbooks/*.json`): real team stats, leaders, coaching, line movement, Action Network trends, plus `statsSourceSeason`
@@ -23,6 +27,29 @@ Primary signals used
 Notes
 - Normalized to 0–100 with clamps; `reasons[]` provides human-readable context
 - Early-season quality: `statsSourceSeason === 2024` indicates prior-season fallback for PPG/PA
+
+### Service integration — pickSelectionService
+File: `frontend/src/services/pickSelectionService.ts`
+
+Entrypoint invocation (from the generator script):
+
+```ts
+// frontend/src/scripts/generatePicks.ts
+const res = await pickSelectionService.generateWeeklyPicksHeuristics(games, factbooks, persona, week);
+```
+
+What happens inside:
+- Build candidates per game: `spread`, `total`, `moneyline` using Step 1 scoring
+  - `buildCandidatesForGame(fb)` calls `computeSpreadScore/computeTotalScore/computeMoneylineScore`
+- Apply persona overlay: `applyBiasOverlay(cand, persona, factbook)` (uses `persona.bias` from `personas.json` only)
+  - Examples: contrarian favors less popular sides; over/under leans; “trenches/discipline” favors ATS over ML; favorites/dogs; heavy ML chalk penalty
+- Enforce constraints (see Step 3)
+- Materialize UI picks: `candidateToPick(...)` converts to the legacy UI schema and composes a readable rationale from scoring `reasons`
+- Return `WeeklyPickSelection` with `picks` (later wrapped into the legacy envelope in the script)
+
+Tuning knobs:
+- Base weights live in `frontend/src/heuristics/marketScoring.ts`
+- Persona overlay weights live in `frontend/src/services/pickSelectionService.ts` (`applyBiasOverlay`)
 
 ### Step 2 — Persona weighting (bias overlay)
 - Apply a lightweight overlay inferred from `persona.bias`/`tagline` (e.g., contrarian → favor less popular sides; over/under lean; favorite/underdog lean).
@@ -80,8 +107,8 @@ Result: `personaScore = baseScore + biasBonus`
 ```
 
 ### Step 7 — Rationale generation
-- For each pick, call ChatGPT with pick + persona profile + factbook slice + `reasons` (service: `chatgptRationaleService.ts`).
-- Save narrative into the pick for UI display (expandable rationale).
+- Current: rationale is composed from the scoring `reasons` (explicit, unit-labeled strings) prefixed by the analyst’s tagline.
+- Planned: call the ChatGPT service (`frontend/src/services/chatgptRationaleService.ts`) with a compact payload (persona, selection, factbook slice, trends/line movement, and `reasons`) to replace the rationale with a personality-driven narrative.
 
 ### Step 8 — Leaderboard
 - Results script grades picks, updates units, and writes `leaderboard.json` for the week

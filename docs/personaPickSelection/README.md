@@ -9,7 +9,9 @@ Produce diversified, persona-aligned weekly picks using real data. Scoring is pe
 
 ### Inputs
 - `games.json`: odds/lines, `espnId`, kickoff time
+  - Files: `frontend/src/scripts/generateNflGames.ts`
 - Factbooks (`data/nfl/season-YYYY/week-WW/factbooks/*.json`): real team stats, leaders, coaching, line movement, Action Network trends, plus `statsSourceSeason`
+  - Files: `frontend/src/scripts/generateFactbooks.ts`
 - Personas: `frontend/public/data/personas.json` (name, tagline, bias, voiceStyle)
   - Note: `frontend/src/heuristics/personas.ts` is not used for selection; personas are driven by `personas.json`.
 
@@ -35,7 +37,13 @@ Entrypoint invocation (from the generator script):
 
 ```ts
 // frontend/src/scripts/generatePicks.ts
-const res = await pickSelectionService.generateWeeklyPicksHeuristics(games, factbooks, persona, week);
+const res = await pickSelectionService.generateWeeklyPicksHeuristicsWithDecorrelation(
+  games,
+  factbooks,
+  persona,
+  week,
+  exposures // shared across personas
+);
 ```
 
 What happens inside:
@@ -52,12 +60,14 @@ Tuning knobs:
 - Persona overlay weights live in `frontend/src/services/pickSelectionService.ts` (`applyBiasOverlay`)
 
 ### Step 2 — Persona weighting (bias overlay)
+- Files: `frontend/src/services/pickSelectionService.ts` (`applyBiasOverlay`)
 - Apply a lightweight overlay inferred from `persona.bias`/`tagline` (e.g., contrarian → favor less popular sides; over/under lean; favorite/underdog lean).
 - Optional data-quality factor: lightly down-weight when prior-season stats are used.
 
 Result: `personaScore = baseScore + biasBonus`
 
 ### Step 3 — Constraints (per persona)
+- Files: `frontend/src/services/pickSelectionService.ts` (enforced in selection loop)
 - Fixed picks per persona per week: N (configurable; default N = 5)
 - Per-game cap: max 2 picks
   - Allowed combos: ATS + Total OR Moneyline + Total
@@ -67,6 +77,10 @@ Result: `personaScore = baseScore + biasBonus`
 ### Step 4 — Cross-persona decorrelation
 - Personas are selected sequentially (deterministic order or rotated weekly) while maintaining a shared exposure map.
 - Overlap penalties are applied to later personas so they naturally drift from already-selected picks.
+
+- Files:
+  - `frontend/src/services/pickSelectionService.ts` (`generateWeeklyPicksHeuristicsWithDecorrelation`, `computeDecorrelationPenalty`, `updateExposuresAfterSelection`)
+  - `frontend/src/scripts/generatePicks.ts` (creates and passes shared `exposures` object)
 
 Current thresholds (defaults):
 - Exact pick overlap (same game + market + side): allow up to 2 personas. 3rd+ gets a heavy penalty.
@@ -79,14 +93,9 @@ Mechanics:
 - For each candidate: `penalizedScore = adjustedScore - decorrelationPenalty(exposures)`.
 - Greedy selection with constraints; if a persona cannot reach N picks, penalties are relaxed slightly (hard caps remain).
 
-### Step 5 — Selection algorithm (greedy with constraints)
-1) Rank persona candidates by `personaScore` (after penalties)
-2) Iterate and select if constraints are satisfied
-3) If one pick already from a game and it is ATS or ML, only allow Total as the second (and vice versa)
-4) Stop at N picks
-
 ### Step 6 — Output
 - Picks are written to `frontend/public/data/nfl/season-YYYY/week-WW/picks/{personaId}.json` by `frontend/src/scripts/generatePicks.ts`.
+- Files: `frontend/src/scripts/generatePicks.ts`
 - We adhere to the legacy UI envelope for compatibility:
 
 ```json
@@ -114,11 +123,13 @@ Mechanics:
 ```
 
 ### Step 7 — Rationale generation
-- Current: rationale is composed from the scoring `reasons` (explicit, unit-labeled strings) prefixed by the analyst’s tagline.
-- Planned: call the ChatGPT service (`frontend/src/services/chatgptRationaleService.ts`) with a compact payload (persona, selection, factbook slice, trends/line movement, and `reasons`) to replace the rationale with a personality-driven narrative.
+- Current: rationale is composed from scoring cues into a concise summary.
+- Planned: call the ChatGPT service with a compact payload (persona, selection, factbook slice, trends/line movement, and cues) to replace with a personality-driven narrative.
+- Files: `frontend/src/services/chatgptRationaleService.ts` (planned), call site in `frontend/src/scripts/generatePicks.ts` (planned)
 
 ### Step 8 — Leaderboard
 - Results script grades picks, updates units, and writes `leaderboard.json` for the week
+- Files: results updater script (pending); see `docs/DATA_PIPELINE.md`
 
 ### Data provenance (PPG/PA fallback)
 - Week 1 uses 2025 where available; if zero, fallback to 2024 regular-season record endpoint to populate PPG/PA

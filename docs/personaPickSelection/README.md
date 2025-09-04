@@ -65,12 +65,19 @@ Result: `personaScore = baseScore + biasBonus`
 - Minimum edge threshold; expand if needed to reach N
 
 ### Step 4 — Cross-persona decorrelation
-- Sequential persona selection (deterministic order or rotated)
-- Overlap penalties against already-selected picks:
-  - Same game + same market + same side/direction → strong penalty
-  - Same game + different market → small penalty
-  - Market crowding in the same week → soft penalty
-- Deterministic tiebreaker: seed `${week}:${personaId}`
+- Personas are selected sequentially (deterministic order or rotated weekly) while maintaining a shared exposure map.
+- Overlap penalties are applied to later personas so they naturally drift from already-selected picks.
+
+Current thresholds (defaults):
+- Exact pick overlap (same game + market + side): allow up to 2 personas. 3rd+ gets a heavy penalty.
+- Same game, different market: light penalty starting with the 3rd pick from that game.
+- Team exposure: soft cap of 4 total picks involving the same team; 5th+ incurs a medium penalty.
+- Moneyline chalk crowding: ML favorites priced ≤ -200 capped at 3 across the week; additional picks incur a medium penalty.
+- Public alignment crowding: if public ≥ 65% on that side, allow up to 6 such picks week-wide; additional picks incur a medium penalty (contrarian personas may still receive bias bonuses for fading).
+
+Mechanics:
+- For each candidate: `penalizedScore = adjustedScore - decorrelationPenalty(exposures)`.
+- Greedy selection with constraints; if a persona cannot reach N picks, penalties are relaxed slightly (hard caps remain).
 
 ### Step 5 — Selection algorithm (greedy with constraints)
 1) Rank persona candidates by `personaScore` (after penalties)

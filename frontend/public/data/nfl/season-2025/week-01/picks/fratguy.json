@@ -2,7 +2,7 @@
   "analystId": "fratguy",
   "week": 1,
   "season": 2025,
-  "generatedAt": "2025-09-04T22:49:28.168Z",
+  "generatedAt": "2025-09-04T22:57:02.168Z",
   "picks": [
     {
       "gameId": "2025-09-07-cin-cle",
@@ -279,70 +279,68 @@
       "analystId": "fratguy"
     },
     {
-      "gameId": "2025-09-07-nyg-wsh",
-      "gameDate": "2025-09-07T17:00:00.000-04:00",
+      "gameId": "2025-09-08-bal-buf",
+      "gameDate": "2025-09-08T00:20:00.000-04:00",
       "awayTeam": {
-        "id": "NYG",
-        "name": "New York Giants",
-        "nickname": "Giants",
+        "id": "BAL",
+        "name": "Baltimore Ravens",
+        "nickname": "Ravens",
         "score": null
       },
       "homeTeam": {
-        "id": "WSH",
-        "name": "Washington Commanders",
-        "nickname": "Commanders",
+        "id": "BUF",
+        "name": "Buffalo Bills",
+        "nickname": "Bills",
         "score": null
       },
       "marketData": {
         "spread": {
           "away": {
-            "line": 6.5,
-            "odds": 100
+            "line": 1.5,
+            "odds": -125
           },
           "home": {
-            "line": -6.5,
-            "odds": -120
+            "line": -1.5,
+            "odds": 102
           }
         },
         "total": {
           "over": {
-            "line": 45.5,
+            "line": 50.5,
             "odds": -110
           },
           "under": {
-            "line": 45.5,
+            "line": 50.5,
             "odds": -110
           }
         },
         "moneyline": {
           "away": {
-            "odds": 215
+            "odds": -115
           },
           "home": {
-            "odds": -260
+            "odds": -105
           }
         }
       },
       "selection": {
-        "betType": "spread",
+        "betType": "moneyline",
         "side": "home",
-        "line": -6.5,
-        "odds": -120,
+        "line": 0,
+        "odds": -105,
         "units": 1,
-        "rationale": "ATS lean: WSH -6.5 at -120. Stat margin (PPG vs opp PA): HOME -11.06 pts",
+        "rationale": "Moneyline lean: BUF at -105. Stat margin (PPG vs opp PA): HOME -0.82",
         "rationaleCues": [
-          "Stat margin (PPG vs opp PA): HOME -11.06 pts",
-          "Turnovers delta (opp − chosen): -4",
-          "Defensive disruption delta (sacks+INTs): -2",
-          "Coaching experience delta (years): +4",
-          "Spread movement: 6.5→6.5 (stable)",
-          "Public split (spread): 50% home / 50% away"
+          "Stat margin (PPG vs opp PA): HOME -0.82",
+          "Form delta (win%): +0",
+          "Moneyline movement (home): -120→0 (120 cents)",
+          "Public split (moneyline): 21% home / 79% away"
         ]
       },
       "result": {
         "status": "pending",
-        "finalLine": -6.5,
-        "finalOdds": -120,
+        "finalLine": 0,
+        "finalOdds": -105,
         "payout": 0,
         "netUnits": 0
       },

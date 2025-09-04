@@ -17,6 +17,16 @@ export class PickSelectionService {
   private readonly MIN_ADJUSTED_SCORE_PRIMARY = 55; // prefer stronger edges first
   private readonly MIN_ADJUSTED_SCORE_FALLBACK = 45; // allow fill if not enough
 
+  // Decorrelation thresholds (initial defaults)
+  private readonly MAX_EXACT_PICK_OVERLAP = 2; // allow up to 2 personas on same exact pick
+  private readonly SAME_GAME_3RD_PICK_PENALTY = 3; // light penalty for 3rd+ pick from same game (any market)
+  private readonly TEAM_SOFT_CAP = 4; // soft cap per team exposure
+  private readonly TEAM_SOFT_CAP_PENALTY = 5;
+  private readonly ML_CHALK_CAP = 3; // ML favorites <= -200 cap across portfolio
+  private readonly ML_CHALK_CAP_PENALTY = 6;
+  private readonly PUBLIC_ALIGN_CAP = 6; // public ≥ 65% cap across portfolio
+  private readonly PUBLIC_ALIGN_CAP_PENALTY = 6;
+
   /**
    * Generate weekly picks for an analyst using heuristics
    */
@@ -83,6 +93,189 @@ export class PickSelectionService {
       totalPicks: picks.length,
       selectionMethod: 'heuristics'
     };
+  }
+
+  /**
+   * Same as heuristics, but applies decorrelation penalties based on current portfolio exposures
+   */
+  async generateWeeklyPicksHeuristicsWithDecorrelation(
+    games: GameData[],
+    factbooks: MinimalFactbook[],
+    analyst: Persona,
+    week: number,
+    exposures: any
+  ): Promise<WeeklyPickSelection> {
+    // Build candidates for all games (spread, total, moneyline)
+    const allCandidates = factbooks.flatMap((fb) => this.buildCandidatesForGame(fb));
+
+    const enhanced = allCandidates.map(c => ({
+      ...c,
+      adjustedScore: c.baseScore + this.applyBiasOverlay(c, analyst, factbooks.find(f => f.gameId === c.gameId)!)
+    }));
+
+    const selected: typeof enhanced = [];
+    const perGameCount: Record<string, number> = {};
+    const sorted = enhanced.sort((a,b) => b.adjustedScore - a.adjustedScore);
+
+    const trySelect = (minScore: number) => {
+      for (const cand of sorted) {
+        if (selected.length >= this.PICKS_PER_WEEK) break;
+        const fb = factbooks.find(f => f.gameId === cand.gameId)!;
+        const penalty = this.computeDecorrelationPenalty(cand, fb, games, exposures);
+        const penalizedScore = cand.adjustedScore - penalty;
+        if (penalizedScore < minScore) continue;
+
+        const count = perGameCount[cand.gameId] || 0;
+        if (count >= 2) continue;
+
+        const existing = selected.filter(s => s.gameId === cand.gameId);
+        if (existing.length === 1) {
+          const first = existing[0];
+          const isFirstTotal = first.market === 'total';
+          const isCandTotal = cand.market === 'total';
+          if (!((isFirstTotal && (cand.market === 'spread' || cand.market === 'moneyline')) ||
+                 (isCandTotal && (first.market === 'spread' || first.market === 'moneyline')))) {
+            continue;
+          }
+        }
+
+        selected.push(cand);
+        perGameCount[cand.gameId] = count + 1;
+        this.updateExposuresAfterSelection(cand, fb, games, exposures);
+      }
+    };
+
+    trySelect(this.MIN_ADJUSTED_SCORE_PRIMARY);
+    if (selected.length < this.PICKS_PER_WEEK) {
+      trySelect(this.MIN_ADJUSTED_SCORE_FALLBACK);
+    }
+
+    const picks = selected.map(c => this.candidateToPick(c, games, analyst));
+
+    return {
+      analystId: analyst.id,
+      week,
+      picks,
+      totalPicks: picks.length,
+      selectionMethod: 'heuristics'
+    };
+  }
+
+  private computeDecorrelationPenalty(
+    cand: { gameId: string; market: 'spread'|'total'|'moneyline'; selection: any; baseScore: number; reasons: string[] },
+    fb: MinimalFactbook,
+    games: GameData[],
+    exposures: any
+  ): number {
+    let penalty = 0;
+    exposures.exactPickCount ||= Object.create(null);
+    exposures.gamePickCount ||= Object.create(null);
+    exposures.teamCount ||= Object.create(null);
+    exposures.mlChalkCount ||= 0;
+    exposures.publicAlignedCount ||= 0;
+    exposures.totalPicks ||= 0;
+
+    const key = `${cand.gameId}|${cand.market}|${cand.selection}`;
+    const exactCount = exposures.exactPickCount[key] || 0;
+    if (exactCount >= this.MAX_EXACT_PICK_OVERLAP) {
+      penalty += 12; // heavy
+    }
+
+    const gameCount = exposures.gamePickCount[cand.gameId] || 0;
+    if (gameCount >= 2) {
+      penalty += this.SAME_GAME_3RD_PICK_PENALTY;
+    }
+
+    // Team exposure
+    const game = games.find(g => g.id === cand.gameId);
+    if (game) {
+      const away = game.away.abbr;
+      const home = game.home.abbr;
+      const awayCount = exposures.teamCount[away] || 0;
+      const homeCount = exposures.teamCount[home] || 0;
+      if (awayCount >= this.TEAM_SOFT_CAP || homeCount >= this.TEAM_SOFT_CAP) {
+        penalty += this.TEAM_SOFT_CAP_PENALTY;
+      }
+    }
+
+    // ML chalk crowding (<= -200)
+    if (cand.market === 'moneyline') {
+      const ml = fb.bettingContext?.lineMovement?.moneyline;
+      const chosen = cand.selection === 'home' ? ml?.home : ml?.away;
+      const currentPrice = chosen?.current;
+      if (typeof currentPrice === 'number' && currentPrice < -200) {
+        if ((exposures.mlChalkCount || 0) >= this.ML_CHALK_CAP) {
+          penalty += this.ML_CHALK_CAP_PENALTY;
+        }
+      }
+    }
+
+    // Public alignment crowding (≥ 65%)
+    const bt = fb.bettingContext?.bettingTrends;
+    let publicPct: number | undefined;
+    if (cand.market === 'spread' && bt?.spread) {
+      publicPct = cand.selection === 'home' ? bt.spread.home : bt.spread.away;
+    } else if (cand.market === 'total' && bt?.total) {
+      publicPct = cand.selection === 'over' ? bt.total.over : bt.total.under;
+    } else if (cand.market === 'moneyline' && bt?.moneyline) {
+      publicPct = cand.selection === 'home' ? bt.moneyline.home : bt.moneyline.away;
+    }
+    if (typeof publicPct === 'number' && publicPct >= 65) {
+      if ((exposures.publicAlignedCount || 0) >= this.PUBLIC_ALIGN_CAP) {
+        penalty += this.PUBLIC_ALIGN_CAP_PENALTY;
+      }
+    }
+
+    return penalty;
+  }
+
+  private updateExposuresAfterSelection(
+    cand: { gameId: string; market: 'spread'|'total'|'moneyline'; selection: any; baseScore: number; reasons: string[] },
+    fb: MinimalFactbook,
+    games: GameData[],
+    exposures: any
+  ) {
+    exposures.exactPickCount ||= Object.create(null);
+    exposures.gamePickCount ||= Object.create(null);
+    exposures.teamCount ||= Object.create(null);
+    exposures.mlChalkCount ||= 0;
+    exposures.publicAlignedCount ||= 0;
+    exposures.totalPicks ||= 0;
+
+    const key = `${cand.gameId}|${cand.market}|${cand.selection}`;
+    exposures.exactPickCount[key] = (exposures.exactPickCount[key] || 0) + 1;
+    exposures.gamePickCount[cand.gameId] = (exposures.gamePickCount[cand.gameId] || 0) + 1;
+    exposures.totalPicks += 1;
+
+    const game = games.find(g => g.id === cand.gameId);
+    if (game) {
+      const away = game.away.abbr;
+      const home = game.home.abbr;
+      exposures.teamCount[away] = (exposures.teamCount[away] || 0) + 1;
+      exposures.teamCount[home] = (exposures.teamCount[home] || 0) + 1;
+    }
+
+    if (cand.market === 'moneyline') {
+      const ml = fb.bettingContext?.lineMovement?.moneyline;
+      const chosen = cand.selection === 'home' ? ml?.home : ml?.away;
+      const currentPrice = chosen?.current;
+      if (typeof currentPrice === 'number' && currentPrice < -200) {
+        exposures.mlChalkCount += 1;
+      }
+    }
+
+    const bt = fb.bettingContext?.bettingTrends;
+    let publicPct: number | undefined;
+    if (cand.market === 'spread' && bt?.spread) {
+      publicPct = cand.selection === 'home' ? bt.spread.home : bt.spread.away;
+    } else if (cand.market === 'total' && bt?.total) {
+      publicPct = cand.selection === 'over' ? bt.total.over : bt.total.under;
+    } else if (cand.market === 'moneyline' && bt?.moneyline) {
+      publicPct = cand.selection === 'home' ? bt.moneyline.home : bt.moneyline.away;
+    }
+    if (typeof publicPct === 'number' && publicPct >= 65) {
+      exposures.publicAlignedCount += 1;
+    }
   }
 
   /**

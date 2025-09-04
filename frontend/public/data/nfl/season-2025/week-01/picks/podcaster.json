@@ -2,139 +2,71 @@
   "analystId": "podcaster",
   "week": 1,
   "season": 2025,
-  "generatedAt": "2025-09-04T22:49:28.171Z",
+  "generatedAt": "2025-09-04T22:57:02.171Z",
   "picks": [
     {
-      "gameId": "2025-09-07-cin-cle",
-      "gameDate": "2025-09-07T17:00:00.000-04:00",
+      "gameId": "2025-09-07-ten-den",
+      "gameDate": "2025-09-07T20:05:00.000-04:00",
       "awayTeam": {
-        "id": "CIN",
-        "name": "Cincinnati Bengals",
-        "nickname": "Bengals",
+        "id": "TEN",
+        "name": "Tennessee Titans",
+        "nickname": "Titans",
         "score": null
       },
       "homeTeam": {
-        "id": "CLE",
-        "name": "Cleveland Browns",
-        "nickname": "Browns",
+        "id": "DEN",
+        "name": "Denver Broncos",
+        "nickname": "Broncos",
         "score": null
       },
       "marketData": {
         "spread": {
           "away": {
-            "line": -5.5,
+            "line": 8.5,
             "odds": -110
           },
           "home": {
-            "line": 5.5,
+            "line": -8.5,
             "odds": -110
           }
         },
         "total": {
           "over": {
-            "line": 47.5,
-            "odds": -115
+            "line": 42.5,
+            "odds": -105
           },
           "under": {
-            "line": 47.5,
-            "odds": -110
+            "line": 42.5,
+            "odds": -115
           }
         },
         "moneyline": {
           "away": {
-            "odds": -250
+            "odds": 340
           },
           "home": {
-            "odds": 210
-          }
-        }
-      },
-      "selection": {
-        "betType": "moneyline",
-        "side": "away",
-        "line": 0,
-        "odds": -250,
-        "units": 1,
-        "rationale": "Moneyline lean: CIN at -250. Stat margin (PPG vs opp PA): AWAY +12.53",
-        "rationaleCues": [
-          "Stat margin (PPG vs opp PA): AWAY +12.53",
-          "Form delta (win%): +0",
-          "Moneyline movement (away): -275→-250 (25 cents)",
-          "Public split (moneyline): 3% home / 97% away"
-        ]
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": 0,
-        "finalOdds": -250,
-        "payout": 0,
-        "netUnits": 0
-      },
-      "analystId": "podcaster"
-    },
-    {
-      "gameId": "2025-09-07-lv-ne",
-      "gameDate": "2025-09-07T17:00:00.000-04:00",
-      "awayTeam": {
-        "id": "LV",
-        "name": "Las Vegas Raiders",
-        "nickname": "Raiders",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "NE",
-        "name": "New England Patriots",
-        "nickname": "Patriots",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 2.5,
-            "odds": -105
-          },
-          "home": {
-            "line": -2.5,
-            "odds": -120
-          }
-        },
-        "total": {
-          "over": {
-            "line": 43.5,
-            "odds": -115
-          },
-          "under": {
-            "line": 43.5,
-            "odds": -105
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": 120
-          },
-          "home": {
-            "odds": -140
+            "odds": -450
           }
         }
       },
       "selection": {
         "betType": "total",
-        "side": "under",
-        "line": 43.5,
+        "side": "over",
+        "line": 42.5,
         "odds": -105,
         "units": 1,
-        "rationale": "Total lean: UNDER 43.5 at -105. Expected total 40.39 vs market 43.5",
+        "rationale": "Total lean: OVER 42.5 at -105. Expected total 44.01 vs market 42.5",
         "rationaleCues": [
-          "Expected total 40.39 vs market 43.5",
-          "Total movement: 45.5→43.5 (under)",
-          "Public split (total): 27% over / 73% under",
+          "Expected total 44.01 vs market 42.5",
+          "Total movement: 41.5→42.5 (over)",
+          "Public split (total): 21% over / 79% under",
           "Defensive disruption (combined sacks+INTs): 7.33",
-          "Passing volume proxy (combined pass yards): 385"
+          "Passing volume proxy (combined pass yards): 495"
         ]
       },
       "result": {
         "status": "pending",
-        "finalLine": 43.5,
+        "finalLine": 42.5,
         "finalOdds": -105,
         "payout": 0,
         "netUnits": 0
@@ -142,206 +74,69 @@
       "analystId": "podcaster"
     },
     {
-      "gameId": "2025-09-07-det-gb",
-      "gameDate": "2025-09-07T20:25:00.000-04:00",
+      "gameId": "2025-09-07-pit-nyj",
+      "gameDate": "2025-09-07T17:00:00.000-04:00",
       "awayTeam": {
-        "id": "DET",
-        "name": "Detroit Lions",
-        "nickname": "Lions",
+        "id": "PIT",
+        "name": "Pittsburgh Steelers",
+        "nickname": "Steelers",
         "score": null
       },
       "homeTeam": {
-        "id": "GB",
-        "name": "Green Bay Packers",
-        "nickname": "Packers",
+        "id": "NYJ",
+        "name": "New York Jets",
+        "nickname": "Jets",
         "score": null
       },
       "marketData": {
         "spread": {
           "away": {
-            "line": 1.5,
-            "odds": 100
+            "line": -2.5,
+            "odds": -125
           },
           "home": {
-            "line": -1.5,
-            "odds": -120
+            "line": 2.5,
+            "odds": 102
           }
         },
         "total": {
           "over": {
-            "line": 47.5,
-            "odds": 100
+            "line": 37.5,
+            "odds": -120
           },
           "under": {
-            "line": 47.5,
-            "odds": -120
+            "line": 37.5,
+            "odds": 100
           }
         },
         "moneyline": {
           "away": {
-            "odds": 110
+            "odds": -150
           },
           "home": {
-            "odds": -130
+            "odds": 130
           }
         }
       },
       "selection": {
         "betType": "total",
         "side": "over",
-        "line": 47.5,
-        "odds": 100,
+        "line": 37.5,
+        "odds": -120,
         "units": 1,
-        "rationale": "Total lean: OVER 47.5 at +100. Expected total 53.15 vs market 47.5",
+        "rationale": "Total lean: OVER 37.5 at -120. Expected total 42.91 vs market 37.5",
         "rationaleCues": [
-          "Expected total 53.15 vs market 47.5",
-          "Total movement: 49.5→47.5 (under)",
-          "Public split (total): 14% over / 86% under",
-          "Defensive disruption (combined sacks+INTs): 5.25",
-          "Passing volume proxy (combined pass yards): 276"
+          "Expected total 42.91 vs market 37.5",
+          "Total movement: 38.5→38.5 (stable)",
+          "Public split (total): 38% over / 62% under",
+          "Defensive disruption (combined sacks+INTs): 6",
+          "Passing volume proxy (combined pass yards): 460"
         ]
       },
       "result": {
         "status": "pending",
-        "finalLine": 47.5,
-        "finalOdds": 100,
-        "payout": 0,
-        "netUnits": 0
-      },
-      "analystId": "podcaster"
-    },
-    {
-      "gameId": "2025-09-05-dal-phi",
-      "gameDate": "2025-09-05T00:20:00.000-04:00",
-      "awayTeam": {
-        "id": "DAL",
-        "name": "Dallas Cowboys",
-        "nickname": "Cowboys",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "PHI",
-        "name": "Philadelphia Eagles",
-        "nickname": "Eagles",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 8.5,
-            "odds": -115
-          },
-          "home": {
-            "line": -8.5,
-            "odds": -105
-          }
-        },
-        "total": {
-          "over": {
-            "line": 47.5,
-            "odds": -115
-          },
-          "under": {
-            "line": 47.5,
-            "odds": -105
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": 320
-          },
-          "home": {
-            "odds": -425
-          }
-        }
-      },
-      "selection": {
-        "betType": "moneyline",
-        "side": "away",
-        "line": 0,
-        "odds": 320,
-        "units": 1,
-        "rationale": "Moneyline lean: DAL at +320. Stat margin (PPG vs opp PA): AWAY +3.06",
-        "rationaleCues": [
-          "Stat margin (PPG vs opp PA): AWAY +3.06",
-          "Form delta (win%): +0",
-          "Moneyline movement (away): 230→340 (110 cents)",
-          "Public split (moneyline): 91% home / 9% away"
-        ]
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": 0,
-        "finalOdds": 320,
-        "payout": 0,
-        "netUnits": 0
-      },
-      "analystId": "podcaster"
-    },
-    {
-      "gameId": "2025-09-07-mia-ind",
-      "gameDate": "2025-09-07T17:00:00.000-04:00",
-      "awayTeam": {
-        "id": "MIA",
-        "name": "Miami Dolphins",
-        "nickname": "Dolphins",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "IND",
-        "name": "Indianapolis Colts",
-        "nickname": "Colts",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 1.5,
-            "odds": -125
-          },
-          "home": {
-            "line": -1.5,
-            "odds": 102
-          }
-        },
-        "total": {
-          "over": {
-            "line": 46.5,
-            "odds": -110
-          },
-          "under": {
-            "line": 46.5,
-            "odds": -110
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": -115
-          },
-          "home": {
-            "odds": -105
-          }
-        }
-      },
-      "selection": {
-        "betType": "total",
-        "side": "under",
-        "line": 46.5,
-        "odds": -110,
-        "units": 1,
-        "rationale": "Total lean: UNDER 46.5 at -110. Expected total 43.89 vs market 46.5",
-        "rationaleCues": [
-          "Expected total 43.89 vs market 46.5",
-          "Total movement: 47.5→46.5 (under)",
-          "Public split (total): 15% over / 85% under",
-          "Defensive disruption (combined sacks+INTs): 7",
-          "Passing volume proxy (combined pass yards): 501"
-        ]
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": 46.5,
-        "finalOdds": -110,
+        "finalLine": 37.5,
+        "finalOdds": -120,
         "payout": 0,
         "netUnits": 0
       },
@@ -349,8 +144,8 @@
     }
   ],
   "weekSummary": {
-    "totalPicks": 5,
-    "totalUnits": 5,
+    "totalPicks": 2,
+    "totalUnits": 2,
     "weekPayout": 0,
     "weekNetUnits": 0
   }

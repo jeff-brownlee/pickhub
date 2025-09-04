@@ -2,352 +2,73 @@
   "analystId": "pro",
   "week": 1,
   "season": 2025,
-  "generatedAt": "2025-09-04T22:49:28.171Z",
+  "generatedAt": "2025-09-04T22:57:02.172Z",
   "picks": [
     {
-      "gameId": "2025-09-07-cin-cle",
+      "gameId": "2025-09-07-car-jax",
       "gameDate": "2025-09-07T17:00:00.000-04:00",
       "awayTeam": {
-        "id": "CIN",
-        "name": "Cincinnati Bengals",
-        "nickname": "Bengals",
+        "id": "CAR",
+        "name": "Carolina Panthers",
+        "nickname": "Panthers",
         "score": null
       },
       "homeTeam": {
-        "id": "CLE",
-        "name": "Cleveland Browns",
-        "nickname": "Browns",
+        "id": "JAX",
+        "name": "Jacksonville Jaguars",
+        "nickname": "Jaguars",
         "score": null
       },
       "marketData": {
         "spread": {
           "away": {
-            "line": -5.5,
-            "odds": -110
+            "line": 3.5,
+            "odds": -115
           },
           "home": {
-            "line": 5.5,
-            "odds": -110
+            "line": -3.5,
+            "odds": -105
           }
         },
         "total": {
           "over": {
-            "line": 47.5,
-            "odds": -115
+            "line": 46.5,
+            "odds": -120
           },
           "under": {
-            "line": 47.5,
-            "odds": -110
+            "line": 46.5,
+            "odds": 100
           }
         },
         "moneyline": {
           "away": {
-            "odds": -250
+            "odds": 160
           },
           "home": {
-            "odds": 210
+            "odds": -190
           }
         }
       },
       "selection": {
         "betType": "spread",
         "side": "away",
-        "line": -5.5,
-        "odds": -110,
+        "line": 3.5,
+        "odds": -115,
         "units": 1,
-        "rationale": "ATS lean: CIN -5.5 at -110. Stat margin (PPG vs opp PA): AWAY +12.53 pts",
+        "rationale": "ATS lean: CAR +3.5 at -115. Stat margin (PPG vs opp PA): AWAY +7.06 pts",
         "rationaleCues": [
-          "Stat margin (PPG vs opp PA): AWAY +12.53 pts",
-          "Turnovers delta (opp − chosen): -1",
-          "Defensive disruption delta (sacks+INTs): -2.33",
-          "Coaching experience delta (years): +1",
-          "Spread movement: -5.5→-5.5 (stable)",
-          "Public split (spread): 26% home / 74% away"
-        ]
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": -5.5,
-        "finalOdds": -110,
-        "payout": 0,
-        "netUnits": 0
-      },
-      "analystId": "pro"
-    },
-    {
-      "gameId": "2025-09-07-nyg-wsh",
-      "gameDate": "2025-09-07T17:00:00.000-04:00",
-      "awayTeam": {
-        "id": "NYG",
-        "name": "New York Giants",
-        "nickname": "Giants",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "WSH",
-        "name": "Washington Commanders",
-        "nickname": "Commanders",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 6.5,
-            "odds": 100
-          },
-          "home": {
-            "line": -6.5,
-            "odds": -120
-          }
-        },
-        "total": {
-          "over": {
-            "line": 45.5,
-            "odds": -110
-          },
-          "under": {
-            "line": 45.5,
-            "odds": -110
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": 215
-          },
-          "home": {
-            "odds": -260
-          }
-        }
-      },
-      "selection": {
-        "betType": "spread",
-        "side": "home",
-        "line": -6.5,
-        "odds": -120,
-        "units": 1,
-        "rationale": "ATS lean: WSH -6.5 at -120. Stat margin (PPG vs opp PA): HOME -11.06 pts",
-        "rationaleCues": [
-          "Stat margin (PPG vs opp PA): HOME -11.06 pts",
-          "Turnovers delta (opp − chosen): -4",
+          "Stat margin (PPG vs opp PA): AWAY +7.06 pts",
+          "Turnovers delta (opp − chosen): -2",
           "Defensive disruption delta (sacks+INTs): -2",
-          "Coaching experience delta (years): +4",
-          "Spread movement: 6.5→6.5 (stable)",
+          "Coaching experience delta (years): +1",
+          "Spread movement: 2.5→3.5 (toward_home)",
           "Public split (spread): 50% home / 50% away"
         ]
       },
       "result": {
         "status": "pending",
-        "finalLine": -6.5,
-        "finalOdds": -120,
-        "payout": 0,
-        "netUnits": 0
-      },
-      "analystId": "pro"
-    },
-    {
-      "gameId": "2025-09-08-bal-buf",
-      "gameDate": "2025-09-08T00:20:00.000-04:00",
-      "awayTeam": {
-        "id": "BAL",
-        "name": "Baltimore Ravens",
-        "nickname": "Ravens",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "BUF",
-        "name": "Buffalo Bills",
-        "nickname": "Bills",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 1.5,
-            "odds": -125
-          },
-          "home": {
-            "line": -1.5,
-            "odds": 102
-          }
-        },
-        "total": {
-          "over": {
-            "line": 50.5,
-            "odds": -110
-          },
-          "under": {
-            "line": 50.5,
-            "odds": -110
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": -115
-          },
-          "home": {
-            "odds": -105
-          }
-        }
-      },
-      "selection": {
-        "betType": "spread",
-        "side": "home",
-        "line": -1.5,
-        "odds": 102,
-        "units": 1,
-        "rationale": "ATS lean: BUF -1.5 at +102. Stat margin (PPG vs opp PA): HOME -0.82 pts",
-        "rationaleCues": [
-          "Stat margin (PPG vs opp PA): HOME -0.82 pts",
-          "Turnovers delta (opp − chosen): +2",
-          "Defensive disruption delta (sacks+INTs): -2.67",
-          "Coaching experience delta (years): -10",
-          "Spread movement: 1.5→-1.5 (toward_away)",
-          "Public split (spread): 29% home / 71% away"
-        ]
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": -1.5,
-        "finalOdds": 102,
-        "payout": 0,
-        "netUnits": 0
-      },
-      "analystId": "pro"
-    },
-    {
-      "gameId": "2025-09-07-lv-ne",
-      "gameDate": "2025-09-07T17:00:00.000-04:00",
-      "awayTeam": {
-        "id": "LV",
-        "name": "Las Vegas Raiders",
-        "nickname": "Raiders",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "NE",
-        "name": "New England Patriots",
-        "nickname": "Patriots",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 2.5,
-            "odds": -105
-          },
-          "home": {
-            "line": -2.5,
-            "odds": -120
-          }
-        },
-        "total": {
-          "over": {
-            "line": 43.5,
-            "odds": -115
-          },
-          "under": {
-            "line": 43.5,
-            "odds": -105
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": 120
-          },
-          "home": {
-            "odds": -140
-          }
-        }
-      },
-      "selection": {
-        "betType": "total",
-        "side": "under",
-        "line": 43.5,
-        "odds": -105,
-        "units": 1,
-        "rationale": "Total lean: UNDER 43.5 at -105. Expected total 40.39 vs market 43.5",
-        "rationaleCues": [
-          "Expected total 40.39 vs market 43.5",
-          "Total movement: 45.5→43.5 (under)",
-          "Public split (total): 27% over / 73% under",
-          "Defensive disruption (combined sacks+INTs): 7.33",
-          "Passing volume proxy (combined pass yards): 385"
-        ]
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": 43.5,
-        "finalOdds": -105,
-        "payout": 0,
-        "netUnits": 0
-      },
-      "analystId": "pro"
-    },
-    {
-      "gameId": "2025-09-07-det-gb",
-      "gameDate": "2025-09-07T20:25:00.000-04:00",
-      "awayTeam": {
-        "id": "DET",
-        "name": "Detroit Lions",
-        "nickname": "Lions",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "GB",
-        "name": "Green Bay Packers",
-        "nickname": "Packers",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 1.5,
-            "odds": 100
-          },
-          "home": {
-            "line": -1.5,
-            "odds": -120
-          }
-        },
-        "total": {
-          "over": {
-            "line": 47.5,
-            "odds": 100
-          },
-          "under": {
-            "line": 47.5,
-            "odds": -120
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": 110
-          },
-          "home": {
-            "odds": -130
-          }
-        }
-      },
-      "selection": {
-        "betType": "spread",
-        "side": "away",
-        "line": 1.5,
-        "odds": 100,
-        "units": 1,
-        "rationale": "ATS lean: DET +1.5 at +100. Stat margin (PPG vs opp PA): AWAY +6.35 pts",
-        "rationaleCues": [
-          "Stat margin (PPG vs opp PA): AWAY +6.35 pts",
-          "Turnovers delta (opp − chosen): -5",
-          "Defensive disruption delta (sacks+INTs): -0.75",
-          "Coaching experience delta (years): -1",
-          "Spread movement: 1.5→1.5 (stable)",
-          "Public split (spread): 7% home / 93% away"
-        ]
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": 1.5,
-        "finalOdds": 100,
+        "finalLine": 3.5,
+        "finalOdds": -115,
         "payout": 0,
         "netUnits": 0
       },
@@ -355,8 +76,8 @@
     }
   ],
   "weekSummary": {
-    "totalPicks": 5,
-    "totalUnits": 5,
+    "totalPicks": 1,
+    "totalUnits": 1,
     "weekPayout": 0,
     "weekNetUnits": 0
   }

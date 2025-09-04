@@ -36,10 +36,19 @@ async function main() {
   const picksOutDir = path.join(process.cwd(), 'public', 'data', 'nfl', 'season-2025', weekStr, 'picks');
   fs.mkdirSync(picksOutDir, { recursive: true });
 
+  // Shared exposures across personas for decorrelation
+  const exposures: any = {};
+
   for (const persona of personas) {
     try {
       const generatedAt = new Date().toISOString();
-      const res = await pickSelectionService.generateWeeklyPicksHeuristics(games, factbooks, persona, week);
+      const res = await pickSelectionService.generateWeeklyPicksHeuristicsWithDecorrelation(
+        games,
+        factbooks,
+        persona,
+        week,
+        exposures
+      );
       // Adapt to legacy UI JSON envelope
       const legacyEnvelope = {
         analystId: persona.id,

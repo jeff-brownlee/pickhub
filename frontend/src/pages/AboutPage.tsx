@@ -3,7 +3,7 @@ import { Container, Typography, Box } from '@mui/material';
 
 export default function AboutPage() {
   return (
-    <Container maxWidth="md" sx={{ py: 4, px: { xs: 2, sm: 3 }, overflowX: 'hidden' }}>
+    <Container maxWidth="lg" sx={{ py: 4, px: { xs: 2, sm: 3 }, overflowX: 'hidden' }}>
       <Box sx={{ mb: 3 }}>
         <Typography variant="h4" sx={{ fontWeight: 700, mb: 1, fontSize: { xs: '1.5rem', sm: '2rem' } }}>About</Typography>
         <Typography variant="body1" sx={{ color: 'text.secondary', wordBreak: 'break-word', overflowWrap: 'anywhere' }}>

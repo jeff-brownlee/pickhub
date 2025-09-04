@@ -2,6 +2,7 @@
   "gameId": "2025-09-06-kc-lac",
   "kickoffISO": "2025-09-06T00:00:00.000-04:00",
   "week": 1,
+  "statsSourceSeason": 2024,
   "teams": {
     "away": {
       "abbreviation": "KC",
@@ -10,13 +11,13 @@
       },
       "statistics": {
         "offense": {
-          "pointsPerGame": 0,
+          "pointsPerGame": 22.647058,
           "turnovers": 3,
           "rushingYards": 87,
           "passingYards": 176
         },
         "defense": {
-          "pointsAllowed": 0,
+          "pointsAllowed": 19.17647,
           "sacks": 1,
           "interceptions": 2,
           "forcedFumbles": 0,
@@ -73,13 +74,13 @@
       },
       "statistics": {
         "offense": {
-          "pointsPerGame": 0,
+          "pointsPerGame": 23.647058,
           "turnovers": 5,
           "rushingYards": 108,
           "passingYards": 179
         },
         "defense": {
-          "pointsAllowed": 0,
+          "pointsAllowed": 17.705883,
           "sacks": 2.5,
           "interceptions": 1,
           "forcedFumbles": 0,
@@ -137,8 +138,8 @@
     },
     "bettingTrends": {
       "spread": {
-        "home": 70,
-        "away": 30
+        "home": 69,
+        "away": 31
       },
       "total": {
         "over": 14,

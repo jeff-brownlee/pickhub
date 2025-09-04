@@ -2,6 +2,7 @@
   "gameId": "2025-09-07-det-gb",
   "kickoffISO": "2025-09-07T20:25:00.000-04:00",
   "week": 1,
+  "statsSourceSeason": 2024,
   "teams": {
     "away": {
       "abbreviation": "DET",
@@ -10,13 +11,13 @@
       },
       "statistics": {
         "offense": {
-          "pointsPerGame": 0,
+          "pointsPerGame": 33.17647,
           "turnovers": 9,
           "rushingYards": 92,
           "passingYards": 147
         },
         "defense": {
-          "pointsAllowed": 0,
+          "pointsAllowed": 20.117647,
           "sacks": 1.25,
           "interceptions": 1,
           "forcedFumbles": 0,
@@ -73,15 +74,15 @@
       },
       "statistics": {
         "offense": {
-          "pointsPerGame": 0,
+          "pointsPerGame": 27.058823,
           "turnovers": 4,
           "rushingYards": 139,
           "passingYards": 129
         },
         "defense": {
-          "pointsAllowed": 0,
+          "pointsAllowed": 19.882353,
           "sacks": 2,
-          "interceptions": 0,
+          "interceptions": 1,
           "forcedFumbles": 0,
           "totalTackles": 68
         }
@@ -135,8 +136,8 @@
         "away": 93
       },
       "total": {
-        "over": 13,
-        "under": 87
+        "over": 14,
+        "under": 86
       },
       "moneyline": {
         "home": 26,

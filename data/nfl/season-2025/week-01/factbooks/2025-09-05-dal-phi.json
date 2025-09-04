@@ -2,6 +2,7 @@
   "gameId": "2025-09-05-dal-phi",
   "kickoffISO": "2025-09-05T00:20:00.000-04:00",
   "week": 1,
+  "statsSourceSeason": 2024,
   "teams": {
     "away": {
       "abbreviation": "DAL",
@@ -10,13 +11,13 @@
       },
       "statistics": {
         "offense": {
-          "pointsPerGame": 0,
+          "pointsPerGame": 20.588236,
           "turnovers": 3,
           "rushingYards": 107,
           "passingYards": 161
         },
         "defense": {
-          "pointsAllowed": 0,
+          "pointsAllowed": 27.529411,
           "sacks": 1,
           "interceptions": 1,
           "forcedFumbles": 0,
@@ -73,13 +74,13 @@
       },
       "statistics": {
         "offense": {
-          "pointsPerGame": 0,
+          "pointsPerGame": 27.235294,
           "turnovers": 3,
           "rushingYards": 81,
           "passingYards": 172
         },
         "defense": {
-          "pointsAllowed": 0,
+          "pointsAllowed": 17.82353,
           "sacks": 2,
           "interceptions": 1,
           "forcedFumbles": 0,
@@ -137,16 +138,16 @@
     },
     "bettingTrends": {
       "spread": {
-        "home": 61,
-        "away": 39
+        "home": 62,
+        "away": 38
       },
       "total": {
-        "over": 27,
-        "under": 73
+        "over": 29,
+        "under": 71
       },
       "moneyline": {
-        "home": 94,
-        "away": 6
+        "home": 91,
+        "away": 9
       }
     },
     "lineMovement": {

@@ -2,6 +2,7 @@
   "gameId": "2025-09-07-ten-den",
   "kickoffISO": "2025-09-07T20:05:00.000-04:00",
   "week": 1,
+  "statsSourceSeason": 2024,
   "teams": {
     "away": {
       "abbreviation": "TEN",
@@ -10,13 +11,13 @@
       },
       "statistics": {
         "offense": {
-          "pointsPerGame": 0,
+          "pointsPerGame": 18.294117,
           "turnovers": 5,
           "rushingYards": 107,
           "passingYards": 185
         },
         "defense": {
-          "pointsAllowed": 0,
+          "pointsAllowed": 27.058823,
           "sacks": 1.3329999446868896,
           "interceptions": 2,
           "forcedFumbles": 0,
@@ -73,13 +74,13 @@
       },
       "statistics": {
         "offense": {
-          "pointsPerGame": 0,
+          "pointsPerGame": 25,
           "turnovers": 2,
           "rushingYards": 141,
           "passingYards": 310
         },
         "defense": {
-          "pointsAllowed": 0,
+          "pointsAllowed": 18.294117,
           "sacks": 3,
           "interceptions": 1,
           "forcedFumbles": 0,
@@ -137,16 +138,16 @@
     },
     "bettingTrends": {
       "spread": {
-        "home": 88,
-        "away": 12
+        "home": 87,
+        "away": 13
       },
       "total": {
         "over": 21,
         "under": 79
       },
       "moneyline": {
-        "home": 96,
-        "away": 4
+        "home": 91,
+        "away": 9
       }
     },
     "lineMovement": {

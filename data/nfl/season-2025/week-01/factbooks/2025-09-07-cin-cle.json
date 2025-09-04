@@ -2,6 +2,7 @@
   "gameId": "2025-09-07-cin-cle",
   "kickoffISO": "2025-09-07T17:00:00.000-04:00",
   "week": 1,
+  "statsSourceSeason": 2024,
   "teams": {
     "away": {
       "abbreviation": "CIN",
@@ -10,13 +11,13 @@
       },
       "statistics": {
         "offense": {
-          "pointsPerGame": 0,
+          "pointsPerGame": 27.764706,
           "turnovers": 3,
           "rushingYards": 92,
           "passingYards": 206
         },
         "defense": {
-          "pointsAllowed": 0,
+          "pointsAllowed": 25.529411,
           "sacks": 1.6670000553131104,
           "interceptions": 1,
           "forcedFumbles": 0,
@@ -73,13 +74,13 @@
       },
       "statistics": {
         "offense": {
-          "pointsPerGame": 0,
+          "pointsPerGame": 15.176471,
           "turnovers": 2,
           "rushingYards": 114,
           "passingYards": 208
         },
         "defense": {
-          "pointsAllowed": 0,
+          "pointsAllowed": 25.588236,
           "sacks": 3,
           "interceptions": 2,
           "forcedFumbles": 0,
@@ -157,9 +158,9 @@
         "direction": "stable"
       },
       "total": {
-        "current": 47.5,
+        "current": 48.5,
         "opening": 46.5,
-        "movement": 1,
+        "movement": 2,
         "direction": "over"
       },
       "moneyline": {

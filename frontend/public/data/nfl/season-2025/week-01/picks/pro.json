@@ -4,291 +4,47 @@
   "season": 2025,
   "picks": [
     {
-      "gameId": "2025-09-07-nyg-wsh",
-      "gameDate": "2025-09-07T17:00:00.000-04:00",
-      "awayTeam": {
-        "id": "NYG",
-        "name": "Giants",
-        "nickname": "Giants",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "WSH",
-        "name": "Commanders",
-        "nickname": "Commanders",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 6,
-            "odds": -110
-          },
-          "home": {
-            "line": -6,
-            "odds": -110
-          }
-        },
-        "total": {
-          "over": {
-            "line": 43,
-            "odds": -110
-          },
-          "under": {
-            "line": 43,
-            "odds": -110
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": 289
-          },
-          "home": {
-            "odds": 178
-          }
-        }
-      },
-      "selection": {
-        "betType": "total",
-        "side": "under",
-        "line": 43,
-        "odds": -110,
-        "units": 1,
-        "rationale": "The total is mispriced based on recent pace trends. The Giants will control the tempo and keep this under."
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": 43,
-        "finalOdds": -110,
-        "payout": 0,
-        "netUnits": 0
-      }
-    },
-    {
-      "gameId": "2025-09-05-dal-phi",
-      "gameDate": "2025-09-05T00:20:00.000-04:00",
-      "awayTeam": {
-        "id": "DAL",
-        "name": "Cowboys",
-        "nickname": "Cowboys",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "PHI",
-        "name": "Eagles",
-        "nickname": "Eagles",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 7.5,
-            "odds": -110
-          },
-          "home": {
-            "line": -7.5,
-            "odds": -110
-          }
-        },
-        "total": {
-          "over": {
-            "line": 51,
-            "odds": -110
-          },
-          "under": {
-            "line": 51,
-            "odds": -110
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": -223
-          },
-          "home": {
-            "odds": -262
-          }
-        }
-      },
-      "selection": {
-        "betType": "total",
-        "side": "under",
-        "line": 51,
-        "odds": -110,
-        "units": 1,
-        "rationale": "Weather and situational factors create value on the under. The Cowboys defense is underrated."
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": 51,
-        "finalOdds": -110,
-        "payout": 0,
-        "netUnits": 0
-      }
-    },
-    {
-      "gameId": "2025-09-06-kc-lac",
-      "gameDate": "2025-09-06T00:00:00.000-04:00",
-      "awayTeam": {
-        "id": "KC",
-        "name": "Chiefs",
-        "nickname": "Chiefs",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "LAC",
-        "name": "Chargers",
-        "nickname": "Chargers",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 10,
-            "odds": -110
-          },
-          "home": {
-            "line": -10,
-            "odds": -110
-          }
-        },
-        "total": {
-          "over": {
-            "line": 53.5,
-            "odds": -110
-          },
-          "under": {
-            "line": 53.5,
-            "odds": -110
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": 155
-          },
-          "home": {
-            "odds": -263
-          }
-        }
-      },
-      "selection": {
-        "betType": "moneyline",
-        "side": "home",
-        "line": 0,
-        "odds": -263,
-        "units": 1,
-        "rationale": "The Chargers have a 58% implied win probability but are priced at 52%. This is a profitable spot."
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": 0,
-        "finalOdds": -263,
-        "payout": 0,
-        "netUnits": 0
-      }
-    },
-    {
-      "gameId": "2025-09-08-bal-buf",
-      "gameDate": "2025-09-08T00:20:00.000-04:00",
-      "awayTeam": {
-        "id": "BAL",
-        "name": "Ravens",
-        "nickname": "Ravens",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "BUF",
-        "name": "Bills",
-        "nickname": "Bills",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 11,
-            "odds": -110
-          },
-          "home": {
-            "line": -11,
-            "odds": -110
-          }
-        },
-        "total": {
-          "over": {
-            "line": 38,
-            "odds": -110
-          },
-          "under": {
-            "line": 38,
-            "odds": -110
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": -236
-          },
-          "home": {
-            "odds": 298
-          }
-        }
-      },
-      "selection": {
-        "betType": "spread",
-        "side": "home",
-        "line": -11,
-        "odds": -110,
-        "units": 1,
-        "rationale": "The Bills are in a profitable spot here. The situational factors favor them significantly."
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": -11,
-        "finalOdds": -110,
-        "payout": 0,
-        "netUnits": 0
-      }
-    },
-    {
       "gameId": "2025-09-07-cin-cle",
       "gameDate": "2025-09-07T17:00:00.000-04:00",
       "awayTeam": {
         "id": "CIN",
-        "name": "Bengals",
+        "name": "Cincinnati Bengals",
         "nickname": "Bengals",
         "score": null
       },
       "homeTeam": {
         "id": "CLE",
-        "name": "Browns",
+        "name": "Cleveland Browns",
         "nickname": "Browns",
         "score": null
       },
       "marketData": {
         "spread": {
           "away": {
-            "line": 13,
+            "line": -5.5,
             "odds": -110
           },
           "home": {
-            "line": -13,
+            "line": 5.5,
             "odds": -110
           }
         },
         "total": {
           "over": {
-            "line": 43,
-            "odds": -110
+            "line": 47.5,
+            "odds": -115
           },
           "under": {
-            "line": 43,
+            "line": 47.5,
             "odds": -110
           }
         },
         "moneyline": {
           "away": {
-            "odds": -155
+            "odds": -250
           },
           "home": {
-            "odds": -282
+            "odds": 210
           }
         }
       },
@@ -296,17 +52,266 @@
         "betType": "moneyline",
         "side": "away",
         "line": 0,
-        "odds": -155,
+        "odds": -250,
         "units": 1,
-        "rationale": "The Bengals moneyline offers positive expected value at current odds. The market is undervaluing them."
+        "rationale": "Edges are thin, but I cash them every Sunday.: Stat margin AWAY 12.53 | Form Δ 0 | ML movement 25 cents | Public ML 3% home / 97% away"
       },
       "result": {
         "status": "pending",
         "finalLine": 0,
-        "finalOdds": -155,
+        "finalOdds": 0,
         "payout": 0,
         "netUnits": 0
-      }
+      },
+      "analystId": "pro"
+    },
+    {
+      "gameId": "2025-09-05-dal-phi",
+      "gameDate": "2025-09-05T00:20:00.000-04:00",
+      "awayTeam": {
+        "id": "DAL",
+        "name": "Dallas Cowboys",
+        "nickname": "Cowboys",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "PHI",
+        "name": "Philadelphia Eagles",
+        "nickname": "Eagles",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 8.5,
+            "odds": -115
+          },
+          "home": {
+            "line": -8.5,
+            "odds": -105
+          }
+        },
+        "total": {
+          "over": {
+            "line": 47.5,
+            "odds": -115
+          },
+          "under": {
+            "line": 47.5,
+            "odds": -105
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": 320
+          },
+          "home": {
+            "odds": -425
+          }
+        }
+      },
+      "selection": {
+        "betType": "moneyline",
+        "side": "away",
+        "line": 0,
+        "odds": 320,
+        "units": 1,
+        "rationale": "Edges are thin, but I cash them every Sunday.: Stat margin AWAY 3.06 | Form Δ 0 | ML movement 110 cents | Public ML 91% home / 9% away"
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 0,
+        "finalOdds": 0,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "pro"
+    },
+    {
+      "gameId": "2025-09-07-lv-ne",
+      "gameDate": "2025-09-07T17:00:00.000-04:00",
+      "awayTeam": {
+        "id": "LV",
+        "name": "Las Vegas Raiders",
+        "nickname": "Raiders",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "NE",
+        "name": "New England Patriots",
+        "nickname": "Patriots",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 2.5,
+            "odds": -105
+          },
+          "home": {
+            "line": -2.5,
+            "odds": -120
+          }
+        },
+        "total": {
+          "over": {
+            "line": 43.5,
+            "odds": -115
+          },
+          "under": {
+            "line": 43.5,
+            "odds": -105
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": 120
+          },
+          "home": {
+            "odds": -140
+          }
+        }
+      },
+      "selection": {
+        "betType": "total",
+        "side": "under",
+        "line": 43.5,
+        "odds": -105,
+        "units": 1,
+        "rationale": "Edges are thin, but I cash them every Sunday.: Expected total 40.39 vs market 43.5 | Line move 45.5→43.5 (under) | Public O/U 27%/73% | Disruption total 7.33 | Passing tilt 385"
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 0,
+        "finalOdds": 0,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "pro"
+    },
+    {
+      "gameId": "2025-09-07-nyg-wsh",
+      "gameDate": "2025-09-07T17:00:00.000-04:00",
+      "awayTeam": {
+        "id": "NYG",
+        "name": "New York Giants",
+        "nickname": "Giants",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "WSH",
+        "name": "Washington Commanders",
+        "nickname": "Commanders",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 6.5,
+            "odds": 100
+          },
+          "home": {
+            "line": -6.5,
+            "odds": -120
+          }
+        },
+        "total": {
+          "over": {
+            "line": 45.5,
+            "odds": -110
+          },
+          "under": {
+            "line": 45.5,
+            "odds": -110
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": 215
+          },
+          "home": {
+            "odds": -260
+          }
+        }
+      },
+      "selection": {
+        "betType": "spread",
+        "side": "home",
+        "line": -6.5,
+        "odds": -120,
+        "units": 1,
+        "rationale": "Edges are thin, but I cash them every Sunday.: Stat margin HOME 11.06 pts | Discipline Δ -4 | Disruption Δ -2 | Coaching Δ 4 | Spread move 0 pts | Public split 50% home / 50% away"
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 0,
+        "finalOdds": 0,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "pro"
+    },
+    {
+      "gameId": "2025-09-08-bal-buf",
+      "gameDate": "2025-09-08T00:20:00.000-04:00",
+      "awayTeam": {
+        "id": "BAL",
+        "name": "Baltimore Ravens",
+        "nickname": "Ravens",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "BUF",
+        "name": "Buffalo Bills",
+        "nickname": "Bills",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 1.5,
+            "odds": -125
+          },
+          "home": {
+            "line": -1.5,
+            "odds": 102
+          }
+        },
+        "total": {
+          "over": {
+            "line": 50.5,
+            "odds": -110
+          },
+          "under": {
+            "line": 50.5,
+            "odds": -110
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": -115
+          },
+          "home": {
+            "odds": -105
+          }
+        }
+      },
+      "selection": {
+        "betType": "spread",
+        "side": "home",
+        "line": -1.5,
+        "odds": 102,
+        "units": 1,
+        "rationale": "Edges are thin, but I cash them every Sunday.: Stat margin HOME 0.82 pts | Discipline Δ 2 | Disruption Δ -2.67 | Coaching Δ -10 | Spread move 3 pts | Public split 29% home / 71% away"
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 0,
+        "finalOdds": 0,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "pro"
     }
   ],
   "weekSummary": {

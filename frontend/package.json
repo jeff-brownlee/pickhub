@@ -9,6 +9,8 @@
     "preview": "vite preview",
     "generate-games": "tsx src/scripts/generateNflGames.ts",
     "generate-factbooks": "tsx src/scripts/generateFactbooks.ts",
+    "generate-picks": "tsx src/scripts/generatePicks.ts",
+    "generate-all": "npm run generate-games -- $WEEK && npm run generate-factbooks -- $WEEK && npm run generate-picks -- $WEEK",
     "test-picks": "tsx src/scripts/testPickSelection.ts"
   },
   "dependencies": {

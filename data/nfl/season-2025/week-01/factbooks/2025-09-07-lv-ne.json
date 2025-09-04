@@ -2,6 +2,7 @@
   "gameId": "2025-09-07-lv-ne",
   "kickoffISO": "2025-09-07T17:00:00.000-04:00",
   "week": 1,
+  "statsSourceSeason": 2024,
   "teams": {
     "away": {
       "abbreviation": "LV",
@@ -10,13 +11,13 @@
       },
       "statistics": {
         "offense": {
-          "pointsPerGame": 0,
+          "pointsPerGame": 18.17647,
           "turnovers": 5,
           "rushingYards": 94,
           "passingYards": 226
         },
         "defense": {
-          "pointsAllowed": 0,
+          "pointsAllowed": 25.529411,
           "sacks": 2.6670000553131104,
           "interceptions": 2,
           "forcedFumbles": 0,
@@ -73,13 +74,13 @@
       },
       "statistics": {
         "offense": {
-          "pointsPerGame": 0,
+          "pointsPerGame": 17,
           "turnovers": 2,
           "rushingYards": 123,
           "passingYards": 159
         },
         "defense": {
-          "pointsAllowed": 0,
+          "pointsAllowed": 24.529411,
           "sacks": 1.6670000553131104,
           "interceptions": 1,
           "forcedFumbles": 0,
@@ -137,12 +138,12 @@
     },
     "bettingTrends": {
       "spread": {
-        "home": 28,
-        "away": 72
+        "home": 29,
+        "away": 71
       },
       "total": {
-        "over": 28,
-        "under": 72
+        "over": 27,
+        "under": 73
       },
       "moneyline": {
         "home": 68,

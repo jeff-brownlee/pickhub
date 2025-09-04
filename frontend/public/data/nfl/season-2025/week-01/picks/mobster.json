@@ -4,169 +4,47 @@
   "season": 2025,
   "picks": [
     {
-      "gameId": "2025-09-07-ari-no",
+      "gameId": "2025-09-07-cin-cle",
       "gameDate": "2025-09-07T17:00:00.000-04:00",
       "awayTeam": {
-        "id": "ARI",
-        "name": "Cardinals",
-        "nickname": "Cardinals",
+        "id": "CIN",
+        "name": "Cincinnati Bengals",
+        "nickname": "Bengals",
         "score": null
       },
       "homeTeam": {
-        "id": "NO",
-        "name": "Saints",
-        "nickname": "Saints",
+        "id": "CLE",
+        "name": "Cleveland Browns",
+        "nickname": "Browns",
         "score": null
       },
       "marketData": {
         "spread": {
           "away": {
-            "line": 8,
+            "line": -5.5,
             "odds": -110
           },
           "home": {
-            "line": -8,
+            "line": 5.5,
             "odds": -110
           }
         },
         "total": {
           "over": {
-            "line": 37.5,
-            "odds": -110
+            "line": 47.5,
+            "odds": -115
           },
           "under": {
-            "line": 37.5,
+            "line": 47.5,
             "odds": -110
           }
         },
         "moneyline": {
           "away": {
-            "odds": -278
+            "odds": -250
           },
           "home": {
-            "odds": 178
-          }
-        }
-      },
-      "selection": {
-        "betType": "moneyline",
-        "side": "home",
-        "line": 0,
-        "odds": 178,
-        "units": 1,
-        "rationale": "The Saints moneyline is getting sharp action. When the pros bet, I bet with them."
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": 0,
-        "finalOdds": 178,
-        "payout": 0,
-        "netUnits": 0
-      }
-    },
-    {
-      "gameId": "2025-09-07-tb-atl",
-      "gameDate": "2025-09-07T17:00:00.000-04:00",
-      "awayTeam": {
-        "id": "TB",
-        "name": "Buccaneers",
-        "nickname": "Buccaneers",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "ATL",
-        "name": "Falcons",
-        "nickname": "Falcons",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 1.5,
-            "odds": -110
-          },
-          "home": {
-            "line": -1.5,
-            "odds": -110
-          }
-        },
-        "total": {
-          "over": {
-            "line": 42,
-            "odds": -110
-          },
-          "under": {
-            "line": 42,
-            "odds": -110
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": -134
-          },
-          "home": {
-            "odds": 235
-          }
-        }
-      },
-      "selection": {
-        "betType": "moneyline",
-        "side": "home",
-        "line": 0,
-        "odds": 235,
-        "units": 1,
-        "rationale": "The Falcons moneyline is getting sharp action. When the pros bet, I bet with them."
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": 0,
-        "finalOdds": 235,
-        "payout": 0,
-        "netUnits": 0
-      }
-    },
-    {
-      "gameId": "2025-09-07-hou-lar",
-      "gameDate": "2025-09-07T20:25:00.000-04:00",
-      "awayTeam": {
-        "id": "HOU",
-        "name": "Texans",
-        "nickname": "Texans",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "LAR",
-        "name": "Rams",
-        "nickname": "Rams",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 11.5,
-            "odds": -110
-          },
-          "home": {
-            "line": -11.5,
-            "odds": -110
-          }
-        },
-        "total": {
-          "over": {
-            "line": 53.5,
-            "odds": -110
-          },
-          "under": {
-            "line": 53.5,
-            "odds": -110
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": -176
-          },
-          "home": {
-            "odds": 164
+            "odds": 210
           }
         }
       },
@@ -174,139 +52,266 @@
         "betType": "moneyline",
         "side": "away",
         "line": 0,
-        "odds": -176,
+        "odds": -250,
         "units": 1,
-        "rationale": "The Texans are getting respect from the right people. The moneyline's the play here."
+        "rationale": "The line tells the story. Don't fight it.: Stat margin AWAY 12.53 | Form Δ 0 | ML movement 25 cents | Public ML 3% home / 97% away"
       },
       "result": {
         "status": "pending",
         "finalLine": 0,
-        "finalOdds": -176,
+        "finalOdds": 0,
         "payout": 0,
         "netUnits": 0
-      }
+      },
+      "analystId": "mobster"
     },
     {
-      "gameId": "2025-09-07-pit-nyj",
-      "gameDate": "2025-09-07T17:00:00.000-04:00",
+      "gameId": "2025-09-05-dal-phi",
+      "gameDate": "2025-09-05T00:20:00.000-04:00",
       "awayTeam": {
-        "id": "PIT",
-        "name": "Steelers",
-        "nickname": "Steelers",
+        "id": "DAL",
+        "name": "Dallas Cowboys",
+        "nickname": "Cowboys",
         "score": null
       },
       "homeTeam": {
-        "id": "NYJ",
-        "name": "Jets",
-        "nickname": "Jets",
+        "id": "PHI",
+        "name": "Philadelphia Eagles",
+        "nickname": "Eagles",
         "score": null
       },
       "marketData": {
         "spread": {
           "away": {
-            "line": 4.5,
-            "odds": -110
+            "line": 8.5,
+            "odds": -115
           },
           "home": {
-            "line": -4.5,
-            "odds": -110
+            "line": -8.5,
+            "odds": -105
           }
         },
         "total": {
           "over": {
-            "line": 42.5,
-            "odds": -110
+            "line": 47.5,
+            "odds": -115
           },
           "under": {
-            "line": 42.5,
-            "odds": -110
+            "line": 47.5,
+            "odds": -105
           }
         },
         "moneyline": {
           "away": {
-            "odds": 293
+            "odds": 320
           },
           "home": {
-            "odds": -206
+            "odds": -425
           }
         }
       },
       "selection": {
-        "betType": "spread",
-        "side": "home",
-        "line": -4.5,
-        "odds": -110,
+        "betType": "moneyline",
+        "side": "away",
+        "line": 0,
+        "odds": 320,
         "units": 1,
-        "rationale": "The sharps are loading up on the Jets. When the line moves like this, you follow the money."
+        "rationale": "The line tells the story. Don't fight it.: Stat margin AWAY 3.06 | Form Δ 0 | ML movement 110 cents | Public ML 91% home / 9% away"
       },
       "result": {
         "status": "pending",
-        "finalLine": -4.5,
-        "finalOdds": -110,
+        "finalLine": 0,
+        "finalOdds": 0,
         "payout": 0,
         "netUnits": 0
-      }
+      },
+      "analystId": "mobster"
     },
     {
-      "gameId": "2025-09-07-nyg-wsh",
+      "gameId": "2025-09-07-lv-ne",
       "gameDate": "2025-09-07T17:00:00.000-04:00",
       "awayTeam": {
-        "id": "NYG",
-        "name": "Giants",
-        "nickname": "Giants",
+        "id": "LV",
+        "name": "Las Vegas Raiders",
+        "nickname": "Raiders",
         "score": null
       },
       "homeTeam": {
-        "id": "WSH",
-        "name": "Commanders",
-        "nickname": "Commanders",
+        "id": "NE",
+        "name": "New England Patriots",
+        "nickname": "Patriots",
         "score": null
       },
       "marketData": {
         "spread": {
           "away": {
-            "line": 6,
-            "odds": -110
+            "line": 2.5,
+            "odds": -105
           },
           "home": {
-            "line": -6,
-            "odds": -110
+            "line": -2.5,
+            "odds": -120
           }
         },
         "total": {
           "over": {
-            "line": 43,
-            "odds": -110
+            "line": 43.5,
+            "odds": -115
           },
           "under": {
-            "line": 43,
-            "odds": -110
+            "line": 43.5,
+            "odds": -105
           }
         },
         "moneyline": {
           "away": {
-            "odds": 289
+            "odds": 120
           },
           "home": {
-            "odds": 178
+            "odds": -140
           }
         }
       },
       "selection": {
         "betType": "total",
         "side": "under",
-        "line": 43,
-        "odds": -110,
+        "line": 43.5,
+        "odds": -105,
         "units": 1,
-        "rationale": "The total's been moving down, which means the sharp money's on the under. I'm with them."
+        "rationale": "The line tells the story. Don't fight it.: Expected total 40.39 vs market 43.5 | Line move 45.5→43.5 (under) | Public O/U 27%/73% | Disruption total 7.33 | Passing tilt 385"
       },
       "result": {
         "status": "pending",
-        "finalLine": 43,
-        "finalOdds": -110,
+        "finalLine": 0,
+        "finalOdds": 0,
         "payout": 0,
         "netUnits": 0
-      }
+      },
+      "analystId": "mobster"
+    },
+    {
+      "gameId": "2025-09-07-nyg-wsh",
+      "gameDate": "2025-09-07T17:00:00.000-04:00",
+      "awayTeam": {
+        "id": "NYG",
+        "name": "New York Giants",
+        "nickname": "Giants",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "WSH",
+        "name": "Washington Commanders",
+        "nickname": "Commanders",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 6.5,
+            "odds": 100
+          },
+          "home": {
+            "line": -6.5,
+            "odds": -120
+          }
+        },
+        "total": {
+          "over": {
+            "line": 45.5,
+            "odds": -110
+          },
+          "under": {
+            "line": 45.5,
+            "odds": -110
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": 215
+          },
+          "home": {
+            "odds": -260
+          }
+        }
+      },
+      "selection": {
+        "betType": "spread",
+        "side": "home",
+        "line": -6.5,
+        "odds": -120,
+        "units": 1,
+        "rationale": "The line tells the story. Don't fight it.: Stat margin HOME 11.06 pts | Discipline Δ -4 | Disruption Δ -2 | Coaching Δ 4 | Spread move 0 pts | Public split 50% home / 50% away"
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 0,
+        "finalOdds": 0,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "mobster"
+    },
+    {
+      "gameId": "2025-09-08-bal-buf",
+      "gameDate": "2025-09-08T00:20:00.000-04:00",
+      "awayTeam": {
+        "id": "BAL",
+        "name": "Baltimore Ravens",
+        "nickname": "Ravens",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "BUF",
+        "name": "Buffalo Bills",
+        "nickname": "Bills",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 1.5,
+            "odds": -125
+          },
+          "home": {
+            "line": -1.5,
+            "odds": 102
+          }
+        },
+        "total": {
+          "over": {
+            "line": 50.5,
+            "odds": -110
+          },
+          "under": {
+            "line": 50.5,
+            "odds": -110
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": -115
+          },
+          "home": {
+            "odds": -105
+          }
+        }
+      },
+      "selection": {
+        "betType": "spread",
+        "side": "home",
+        "line": -1.5,
+        "odds": 102,
+        "units": 1,
+        "rationale": "The line tells the story. Don't fight it.: Stat margin HOME 0.82 pts | Discipline Δ 2 | Disruption Δ -2.67 | Coaching Δ -10 | Spread move 3 pts | Public split 29% home / 71% away"
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 0,
+        "finalOdds": 0,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "mobster"
     }
   ],
   "weekSummary": {

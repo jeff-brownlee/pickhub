@@ -2,6 +2,7 @@
   "gameId": "2025-09-07-hou-lar",
   "kickoffISO": "2025-09-07T20:25:00.000-04:00",
   "week": 1,
+  "statsSourceSeason": 2024,
   "teams": {
     "away": {
       "abbreviation": "HOU",
@@ -10,13 +11,13 @@
       },
       "statistics": {
         "offense": {
-          "pointsPerGame": 0,
+          "pointsPerGame": 21.882353,
           "turnovers": 4,
           "rushingYards": 108,
           "passingYards": 187
         },
         "defense": {
-          "pointsAllowed": 0,
+          "pointsAllowed": 21.882353,
           "sacks": 2.6670000553131104,
           "interceptions": 1,
           "forcedFumbles": 0,
@@ -73,13 +74,13 @@
       },
       "statistics": {
         "offense": {
-          "pointsPerGame": 0,
+          "pointsPerGame": 21.588236,
           "turnovers": 2,
           "rushingYards": 138,
           "passingYards": 234
         },
         "defense": {
-          "pointsAllowed": 0,
+          "pointsAllowed": 22.705883,
           "sacks": 3,
           "interceptions": 1,
           "forcedFumbles": 0,

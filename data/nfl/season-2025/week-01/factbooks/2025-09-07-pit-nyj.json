@@ -2,6 +2,7 @@
   "gameId": "2025-09-07-pit-nyj",
   "kickoffISO": "2025-09-07T17:00:00.000-04:00",
   "week": 1,
+  "statsSourceSeason": 2024,
   "teams": {
     "away": {
       "abbreviation": "PIT",
@@ -10,13 +11,13 @@
       },
       "statistics": {
         "offense": {
-          "pointsPerGame": 0,
+          "pointsPerGame": 22.352942,
           "turnovers": 4,
           "rushingYards": 98,
           "passingYards": 249
         },
         "defense": {
-          "pointsAllowed": 0,
+          "pointsAllowed": 20.411764,
           "sacks": 1.3329999446868896,
           "interceptions": 1,
           "forcedFumbles": 0,
@@ -73,13 +74,13 @@
       },
       "statistics": {
         "offense": {
-          "pointsPerGame": 0,
+          "pointsPerGame": 19.882353,
           "turnovers": 4,
           "rushingYards": 139,
           "passingYards": 211
         },
         "defense": {
-          "pointsAllowed": 0,
+          "pointsAllowed": 23.764706,
           "sacks": 2.6670000553131104,
           "interceptions": 1,
           "forcedFumbles": 0,
@@ -145,8 +146,8 @@
         "under": 62
       },
       "moneyline": {
-        "home": 8,
-        "away": 92
+        "home": 7,
+        "away": 93
       }
     },
     "lineMovement": {
@@ -157,10 +158,10 @@
         "direction": "stable"
       },
       "total": {
-        "current": 37.5,
+        "current": 38.5,
         "opening": 38.5,
-        "movement": 1,
-        "direction": "under"
+        "movement": 0,
+        "direction": "stable"
       },
       "moneyline": {
         "away": {

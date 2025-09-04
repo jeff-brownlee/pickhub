@@ -2,6 +2,7 @@
   "gameId": "2025-09-07-mia-ind",
   "kickoffISO": "2025-09-07T17:00:00.000-04:00",
   "week": 1,
+  "statsSourceSeason": 2024,
   "teams": {
     "away": {
       "abbreviation": "MIA",
@@ -10,13 +11,13 @@
       },
       "statistics": {
         "offense": {
-          "pointsPerGame": 0,
+          "pointsPerGame": 20.294117,
           "turnovers": 3,
           "rushingYards": 95,
           "passingYards": 225
         },
         "defense": {
-          "pointsAllowed": 0,
+          "pointsAllowed": 21.411764,
           "sacks": 3,
           "interceptions": 1,
           "forcedFumbles": 0,
@@ -73,13 +74,13 @@
       },
       "statistics": {
         "offense": {
-          "pointsPerGame": 0,
+          "pointsPerGame": 22.17647,
           "turnovers": 2,
           "rushingYards": 138,
           "passingYards": 276
         },
         "defense": {
-          "pointsAllowed": 0,
+          "pointsAllowed": 25.117647,
           "sacks": 2,
           "interceptions": 1,
           "forcedFumbles": 0,
@@ -137,8 +138,8 @@
     },
     "bettingTrends": {
       "spread": {
-        "home": 20,
-        "away": 80
+        "home": 21,
+        "away": 79
       },
       "total": {
         "over": 15,

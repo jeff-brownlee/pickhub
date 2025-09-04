@@ -4,309 +4,314 @@
   "season": 2025,
   "picks": [
     {
-      "gameId": "2025-09-09-min-chi",
-      "gameDate": "2025-09-09T00:15:00.000-04:00",
-      "awayTeam": {
-        "id": "MIN",
-        "name": "Vikings",
-        "nickname": "Vikings",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "CHI",
-        "name": "Bears",
-        "nickname": "Bears",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 9,
-            "odds": -110
-          },
-          "home": {
-            "line": -9,
-            "odds": -110
-          }
-        },
-        "total": {
-          "over": {
-            "line": 43.5,
-            "odds": -110
-          },
-          "under": {
-            "line": 43.5,
-            "odds": -110
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": 149
-          },
-          "home": {
-            "odds": 196
-          }
-        }
-      },
-      "selection": {
-        "betType": "spread",
-        "side": "away",
-        "line": 9,
-        "odds": -110,
-        "units": 1,
-        "rationale": "The Vikings are the better team and should cover this spread. Seems like the obvious pick to me."
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": 9,
-        "finalOdds": -110,
-        "payout": 0,
-        "netUnits": 0
-      }
-    },
-    {
-      "gameId": "2025-09-07-ari-no",
+      "gameId": "2025-09-07-cin-cle",
       "gameDate": "2025-09-07T17:00:00.000-04:00",
       "awayTeam": {
-        "id": "ARI",
-        "name": "Cardinals",
-        "nickname": "Cardinals",
+        "id": "CIN",
+        "name": "Cincinnati Bengals",
+        "nickname": "Bengals",
         "score": null
       },
       "homeTeam": {
-        "id": "NO",
-        "name": "Saints",
-        "nickname": "Saints",
+        "id": "CLE",
+        "name": "Cleveland Browns",
+        "nickname": "Browns",
         "score": null
       },
       "marketData": {
         "spread": {
           "away": {
-            "line": 8,
+            "line": -5.5,
             "odds": -110
           },
           "home": {
-            "line": -8,
+            "line": 5.5,
             "odds": -110
           }
         },
         "total": {
           "over": {
-            "line": 37.5,
-            "odds": -110
+            "line": 47.5,
+            "odds": -115
           },
           "under": {
-            "line": 37.5,
+            "line": 47.5,
             "odds": -110
           }
         },
         "moneyline": {
           "away": {
-            "odds": -278
+            "odds": -250
           },
           "home": {
-            "odds": 178
-          }
-        }
-      },
-      "selection": {
-        "betType": "total",
-        "side": "under",
-        "line": 37.5,
-        "odds": -110,
-        "units": 1,
-        "rationale": "This total seems about right. I think both teams will score their fair share of points."
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": 37.5,
-        "finalOdds": -110,
-        "payout": 0,
-        "netUnits": 0
-      }
-    },
-    {
-      "gameId": "2025-09-07-det-gb",
-      "gameDate": "2025-09-07T20:25:00.000-04:00",
-      "awayTeam": {
-        "id": "DET",
-        "name": "Lions",
-        "nickname": "Lions",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "GB",
-        "name": "Packers",
-        "nickname": "Packers",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 6,
-            "odds": -110
-          },
-          "home": {
-            "line": -6,
-            "odds": -110
-          }
-        },
-        "total": {
-          "over": {
-            "line": 44,
-            "odds": -110
-          },
-          "under": {
-            "line": 44,
-            "odds": -110
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": 167
-          },
-          "home": {
-            "odds": -257
-          }
-        }
-      },
-      "selection": {
-        "betType": "total",
-        "side": "under",
-        "line": 44,
-        "odds": -110,
-        "units": 1,
-        "rationale": "This looks like a typical NFL game. Should be a decent amount of scoring."
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": 44,
-        "finalOdds": -110,
-        "payout": 0,
-        "netUnits": 0
-      }
-    },
-    {
-      "gameId": "2025-09-07-pit-nyj",
-      "gameDate": "2025-09-07T17:00:00.000-04:00",
-      "awayTeam": {
-        "id": "PIT",
-        "name": "Steelers",
-        "nickname": "Steelers",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "NYJ",
-        "name": "Jets",
-        "nickname": "Jets",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 4.5,
-            "odds": -110
-          },
-          "home": {
-            "line": -4.5,
-            "odds": -110
-          }
-        },
-        "total": {
-          "over": {
-            "line": 42.5,
-            "odds": -110
-          },
-          "under": {
-            "line": 42.5,
-            "odds": -110
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": 293
-          },
-          "home": {
-            "odds": -206
+            "odds": 210
           }
         }
       },
       "selection": {
         "betType": "moneyline",
-        "side": "home",
+        "side": "away",
         "line": 0,
-        "odds": -206,
+        "odds": -250,
         "units": 1,
-        "rationale": "The Jets are favored for a reason. They should win this game."
+        "rationale": "I bet what feels right — same as my buddies at the bar.: Stat margin AWAY 12.53 | Form Δ 0 | ML movement 25 cents | Public ML 3% home / 97% away"
       },
       "result": {
         "status": "pending",
         "finalLine": 0,
-        "finalOdds": -206,
+        "finalOdds": 0,
         "payout": 0,
         "netUnits": 0
-      }
+      },
+      "analystId": "joe"
     },
     {
-      "gameId": "2025-09-07-sf-sea",
-      "gameDate": "2025-09-07T20:05:00.000-04:00",
+      "gameId": "2025-09-05-dal-phi",
+      "gameDate": "2025-09-05T00:20:00.000-04:00",
       "awayTeam": {
-        "id": "SF",
-        "name": "49ers",
-        "nickname": "49ers",
+        "id": "DAL",
+        "name": "Dallas Cowboys",
+        "nickname": "Cowboys",
         "score": null
       },
       "homeTeam": {
-        "id": "SEA",
-        "name": "Seahawks",
-        "nickname": "Seahawks",
+        "id": "PHI",
+        "name": "Philadelphia Eagles",
+        "nickname": "Eagles",
         "score": null
       },
       "marketData": {
         "spread": {
           "away": {
-            "line": 14,
-            "odds": -110
+            "line": 8.5,
+            "odds": -115
           },
           "home": {
-            "line": -14,
-            "odds": -110
+            "line": -8.5,
+            "odds": -105
           }
         },
         "total": {
           "over": {
-            "line": 39.5,
+            "line": 47.5,
+            "odds": -115
+          },
+          "under": {
+            "line": 47.5,
+            "odds": -105
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": 320
+          },
+          "home": {
+            "odds": -425
+          }
+        }
+      },
+      "selection": {
+        "betType": "moneyline",
+        "side": "away",
+        "line": 0,
+        "odds": 320,
+        "units": 1,
+        "rationale": "I bet what feels right — same as my buddies at the bar.: Stat margin AWAY 3.06 | Form Δ 0 | ML movement 110 cents | Public ML 91% home / 9% away"
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 0,
+        "finalOdds": 0,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "joe"
+    },
+    {
+      "gameId": "2025-09-07-lv-ne",
+      "gameDate": "2025-09-07T17:00:00.000-04:00",
+      "awayTeam": {
+        "id": "LV",
+        "name": "Las Vegas Raiders",
+        "nickname": "Raiders",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "NE",
+        "name": "New England Patriots",
+        "nickname": "Patriots",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 2.5,
+            "odds": -105
+          },
+          "home": {
+            "line": -2.5,
+            "odds": -120
+          }
+        },
+        "total": {
+          "over": {
+            "line": 43.5,
+            "odds": -115
+          },
+          "under": {
+            "line": 43.5,
+            "odds": -105
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": 120
+          },
+          "home": {
+            "odds": -140
+          }
+        }
+      },
+      "selection": {
+        "betType": "total",
+        "side": "under",
+        "line": 43.5,
+        "odds": -105,
+        "units": 1,
+        "rationale": "I bet what feels right — same as my buddies at the bar.: Expected total 40.39 vs market 43.5 | Line move 45.5→43.5 (under) | Public O/U 27%/73% | Disruption total 7.33 | Passing tilt 385"
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 0,
+        "finalOdds": 0,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "joe"
+    },
+    {
+      "gameId": "2025-09-07-nyg-wsh",
+      "gameDate": "2025-09-07T17:00:00.000-04:00",
+      "awayTeam": {
+        "id": "NYG",
+        "name": "New York Giants",
+        "nickname": "Giants",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "WSH",
+        "name": "Washington Commanders",
+        "nickname": "Commanders",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 6.5,
+            "odds": 100
+          },
+          "home": {
+            "line": -6.5,
+            "odds": -120
+          }
+        },
+        "total": {
+          "over": {
+            "line": 45.5,
             "odds": -110
           },
           "under": {
-            "line": 39.5,
+            "line": 45.5,
             "odds": -110
           }
         },
         "moneyline": {
           "away": {
-            "odds": -193
+            "odds": 215
           },
           "home": {
-            "odds": 297
+            "odds": -260
           }
         }
       },
       "selection": {
         "betType": "spread",
         "side": "home",
-        "line": -14,
-        "odds": -110,
+        "line": -6.5,
+        "odds": -120,
         "units": 1,
-        "rationale": "I like the Seahawks here. They've been playing well and this spread seems fair."
+        "rationale": "I bet what feels right — same as my buddies at the bar.: Stat margin HOME 11.06 pts | Discipline Δ -4 | Disruption Δ -2 | Coaching Δ 4 | Spread move 0 pts | Public split 50% home / 50% away"
       },
       "result": {
         "status": "pending",
-        "finalLine": -14,
-        "finalOdds": -110,
+        "finalLine": 0,
+        "finalOdds": 0,
         "payout": 0,
         "netUnits": 0
-      }
+      },
+      "analystId": "joe"
+    },
+    {
+      "gameId": "2025-09-08-bal-buf",
+      "gameDate": "2025-09-08T00:20:00.000-04:00",
+      "awayTeam": {
+        "id": "BAL",
+        "name": "Baltimore Ravens",
+        "nickname": "Ravens",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "BUF",
+        "name": "Buffalo Bills",
+        "nickname": "Bills",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 1.5,
+            "odds": -125
+          },
+          "home": {
+            "line": -1.5,
+            "odds": 102
+          }
+        },
+        "total": {
+          "over": {
+            "line": 50.5,
+            "odds": -110
+          },
+          "under": {
+            "line": 50.5,
+            "odds": -110
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": -115
+          },
+          "home": {
+            "odds": -105
+          }
+        }
+      },
+      "selection": {
+        "betType": "spread",
+        "side": "home",
+        "line": -1.5,
+        "odds": 102,
+        "units": 1,
+        "rationale": "I bet what feels right — same as my buddies at the bar.: Stat margin HOME 0.82 pts | Discipline Δ 2 | Disruption Δ -2.67 | Coaching Δ -10 | Spread move 3 pts | Public split 29% home / 71% away"
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 0,
+        "finalOdds": 0,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "joe"
     }
   ],
   "weekSummary": {

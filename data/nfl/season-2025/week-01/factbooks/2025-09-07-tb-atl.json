@@ -2,6 +2,7 @@
   "gameId": "2025-09-07-tb-atl",
   "kickoffISO": "2025-09-07T17:00:00.000-04:00",
   "week": 1,
+  "statsSourceSeason": 2024,
   "teams": {
     "away": {
       "abbreviation": "TB",
@@ -10,13 +11,13 @@
       },
       "statistics": {
         "offense": {
-          "pointsPerGame": 0,
+          "pointsPerGame": 29.529411,
           "turnovers": 4,
           "rushingYards": 88,
           "passingYards": 195
         },
         "defense": {
-          "pointsAllowed": 0,
+          "pointsAllowed": 22.647058,
           "sacks": 2.6670000553131104,
           "interceptions": 2,
           "forcedFumbles": 0,
@@ -73,13 +74,13 @@
       },
       "statistics": {
         "offense": {
-          "pointsPerGame": 0,
+          "pointsPerGame": 22.882353,
           "turnovers": 3,
           "rushingYards": 94,
           "passingYards": 195
         },
         "defense": {
-          "pointsAllowed": 0,
+          "pointsAllowed": 24.882353,
           "sacks": 1.6670000553131104,
           "interceptions": 1,
           "forcedFumbles": 0,
@@ -137,16 +138,16 @@
     },
     "bettingTrends": {
       "spread": {
-        "home": 69,
-        "away": 31
+        "home": 75,
+        "away": 25
       },
       "total": {
-        "over": 20,
-        "under": 80
+        "over": 21,
+        "under": 79
       },
       "moneyline": {
-        "home": 69,
-        "away": 31
+        "home": 67,
+        "away": 33
       }
     },
     "lineMovement": {

@@ -2,6 +2,7 @@
   "gameId": "2025-09-07-ari-no",
   "kickoffISO": "2025-09-07T17:00:00.000-04:00",
   "week": 1,
+  "statsSourceSeason": 2024,
   "teams": {
     "away": {
       "abbreviation": "ARI",
@@ -10,13 +11,13 @@
       },
       "statistics": {
         "offense": {
-          "pointsPerGame": 0,
+          "pointsPerGame": 23.529411,
           "turnovers": 3,
           "rushingYards": 128,
           "passingYards": 140
         },
         "defense": {
-          "pointsAllowed": 0,
+          "pointsAllowed": 22.294117,
           "sacks": 2.3329999446868896,
           "interceptions": 2,
           "forcedFumbles": 0,
@@ -73,13 +74,13 @@
       },
       "statistics": {
         "offense": {
-          "pointsPerGame": 0,
+          "pointsPerGame": 19.882353,
           "turnovers": 5,
           "rushingYards": 74,
           "passingYards": 235
         },
         "defense": {
-          "pointsAllowed": 0,
+          "pointsAllowed": 23.411764,
           "sacks": 2,
           "interceptions": 1,
           "forcedFumbles": 0,
@@ -141,12 +142,12 @@
         "away": 64
       },
       "total": {
-        "over": 22,
-        "under": 78
+        "over": 21,
+        "under": 79
       },
       "moneyline": {
-        "home": 8,
-        "away": 92
+        "home": 7,
+        "away": 93
       }
     },
     "lineMovement": {

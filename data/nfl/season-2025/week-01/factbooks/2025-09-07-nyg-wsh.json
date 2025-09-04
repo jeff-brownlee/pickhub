@@ -2,6 +2,7 @@
   "gameId": "2025-09-07-nyg-wsh",
   "kickoffISO": "2025-09-07T17:00:00.000-04:00",
   "week": 1,
+  "statsSourceSeason": 2024,
   "teams": {
     "away": {
       "abbreviation": "NYG",
@@ -10,13 +11,13 @@
       },
       "statistics": {
         "offense": {
-          "pointsPerGame": 0,
+          "pointsPerGame": 16.058823,
           "turnovers": 4,
           "rushingYards": 90,
           "passingYards": 350
         },
         "defense": {
-          "pointsAllowed": 0,
+          "pointsAllowed": 24.411764,
           "sacks": 1,
           "interceptions": 2,
           "forcedFumbles": 0,
@@ -73,13 +74,13 @@
       },
       "statistics": {
         "offense": {
-          "pointsPerGame": 0,
+          "pointsPerGame": 28.529411,
           "turnovers": 8,
           "rushingYards": 123,
           "passingYards": 162
         },
         "defense": {
-          "pointsAllowed": 0,
+          "pointsAllowed": 23,
           "sacks": 1,
           "interceptions": 0,
           "forcedFumbles": 0,

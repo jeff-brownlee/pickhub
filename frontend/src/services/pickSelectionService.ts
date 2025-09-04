@@ -1,7 +1,8 @@
 import { MinimalFactbook } from '../types/minimalFactbook';
-import { Persona } from '../types';
-import { AnalystPick, PickRationale } from './analystService';
+import { Persona, Pick as UIPick } from '../types';
+import { AnalystPick } from './analystService';
 import { GameData } from '../adapters/espnNflApi';
+import { computeSpreadScore, computeTotalScore, computeMoneylineScore } from '../heuristics/marketScoring';
 
 export interface WeeklyPickSelection {
   analystId: string;
@@ -12,7 +13,7 @@ export interface WeeklyPickSelection {
 }
 
 export class PickSelectionService {
-  private readonly PICKS_PER_WEEK = 3; // Fixed number of picks per analyst per week
+  private readonly PICKS_PER_WEEK = 5; // Fixed number of picks per analyst per week
 
   /**
    * Generate weekly picks for an analyst using heuristics
@@ -23,26 +24,43 @@ export class PickSelectionService {
     analyst: Persona, 
     week: number
   ): Promise<WeeklyPickSelection> {
-    
-    // Score each game based on analyst bias
-    const scoredGames = factbooks.map(factbook => ({
-      factbook,
-      score: this.calculateBiasAlignmentScore(factbook, analyst)
+    // Build candidates for all games (spread, total, moneyline)
+    const allCandidates = factbooks.flatMap((fb) => this.buildCandidatesForGame(fb));
+
+    // Apply lightweight bias overlay using persona.bias text only (no personas.ts)
+    const enhanced = allCandidates.map(c => ({
+      ...c,
+      adjustedScore: c.baseScore + this.applyBiasOverlay(c, analyst, factbooks.find(f => f.gameId === c.gameId)!)
     }));
 
-    // Sort by score and take top N
-    const topGames = scoredGames
-      .sort((a, b) => b.score - a.score)
-      .slice(0, this.PICKS_PER_WEEK);
+    // Greedy selection with constraints: max 2 per game, allowed combos: (ATS|ML) + Total
+    const selected: typeof enhanced = [];
+    const perGameCount: Record<string, number> = {};
 
-    // Generate picks for selected games
-    const picks = await Promise.all(
-      topGames.map(({ factbook }) => {
-        const game = games.find(g => g.id === factbook.gameId);
-        if (!game) throw new Error(`Game ${factbook.gameId} not found in games data`);
-        return this.generatePickForGame(game, factbook, analyst);
-      })
-    );
+    for (const cand of enhanced.sort((a,b) => b.adjustedScore - a.adjustedScore)) {
+      if (selected.length >= this.PICKS_PER_WEEK) break;
+      const count = perGameCount[cand.gameId] || 0;
+      if (count >= 2) continue;
+
+      // enforce combo rule
+      const existing = selected.filter(s => s.gameId === cand.gameId);
+      if (existing.length === 1) {
+        const first = existing[0];
+        const isFirstTotal = first.market === 'total';
+        const isCandTotal = cand.market === 'total';
+        // Only allow second if one is total and the other is ATS/ML
+        if (!((isFirstTotal && (cand.market === 'spread' || cand.market === 'moneyline')) ||
+              (isCandTotal && (first.market === 'spread' || first.market === 'moneyline')))) {
+          continue;
+        }
+      }
+
+      selected.push(cand);
+      perGameCount[cand.gameId] = count + 1;
+    }
+
+    // Materialize AnalystPick objects
+    const picks = selected.map(c => this.candidateToPick(c, games, analyst));
 
     return {
       analystId: analyst.id,
@@ -93,45 +111,92 @@ export class PickSelectionService {
     }
   }
 
-  /**
-   * Calculate how well a game aligns with an analyst's bias
-   */
-  private calculateBiasAlignmentScore(factbook: MinimalFactbook, analyst: Persona): number {
-    let score = 0;
+  // Build ATS/Total/ML candidates for a given game
+  private buildCandidatesForGame(fb: MinimalFactbook) {
+    const spread = computeSpreadScore(fb);
+    const total = computeTotalScore(fb);
+    const moneyline = computeMoneylineScore(fb);
 
-    switch (analyst.id) {
-      case 'coach':
-        score = this.calculateCoachScore(factbook);
-        break;
-      case 'contrarian':
-        score = this.calculateContrarianScore(factbook);
-        break;
-      case 'fratguy':
-        score = this.calculateFratGuyScore(factbook);
-        break;
-      case 'hotgirl':
-        score = this.calculateHotGirlScore(factbook);
-        break;
-      case 'joe':
-        score = this.calculateAverageJoeScore(factbook);
-        break;
-      case 'mobster':
-        score = this.calculateMobsterScore(factbook);
-        break;
-      case 'nerd':
-        score = this.calculateNerdScore(factbook);
-        break;
-      case 'podcaster':
-        score = this.calculatePodcasterScore(factbook);
-        break;
-      case 'pro':
-        score = this.calculateProScore(factbook);
-        break;
-      default:
-        score = 0;
+    return [
+      {
+        gameId: fb.gameId,
+        market: 'spread' as const,
+        selection: spread.side,
+        baseScore: spread.score,
+        reasons: spread.reasons
+      },
+      {
+        gameId: fb.gameId,
+        market: 'total' as const,
+        selection: total.direction,
+        baseScore: total.score,
+        reasons: total.reasons
+      },
+      {
+        gameId: fb.gameId,
+        market: 'moneyline' as const,
+        selection: moneyline.side,
+        baseScore: moneyline.score,
+        reasons: moneyline.reasons
+      }
+    ];
+  }
+
+  // Lightweight bias overlay from persona.bias/tagline only
+  private applyBiasOverlay(
+    cand: { gameId: string; market: 'spread'|'total'|'moneyline'; selection: any; baseScore: number; reasons: string[] },
+    analyst: Persona,
+    fb: MinimalFactbook
+  ): number {
+    const bias = (analyst.bias || '').toLowerCase();
+    let bonus = 0;
+
+    // Contrarian: prefer side with lower public percentage
+    if (bias.includes('contrarian') || bias.includes('fade')) {
+      if (cand.market === 'spread' && fb.bettingContext?.bettingTrends?.spread) {
+        const trends = fb.bettingContext.bettingTrends.spread;
+        const favPct = cand.selection === 'home' ? (trends.home || 50) : (trends.away || 50);
+        const oppPct = cand.selection === 'home' ? (trends.away || 50) : (trends.home || 50);
+        if (favPct < oppPct) bonus += Math.min((oppPct - favPct) * 0.1, 8);
+      }
+      if (cand.market === 'moneyline' && fb.bettingContext?.bettingTrends?.moneyline) {
+        const trends = fb.bettingContext.bettingTrends.moneyline;
+        const favPct = cand.selection === 'home' ? (trends.home || 50) : (trends.away || 50);
+        const oppPct = cand.selection === 'home' ? (trends.away || 50) : (trends.home || 50);
+        if (favPct < oppPct) bonus += Math.min((oppPct - favPct) * 0.1, 6);
+      }
+      if (cand.market === 'total' && fb.bettingContext?.bettingTrends?.total) {
+        const t = fb.bettingContext.bettingTrends.total;
+        const favPct = cand.selection === 'over' ? (t.over || 50) : (t.under || 50);
+        const oppPct = cand.selection === 'over' ? (t.under || 50) : (t.over || 50);
+        if (favPct < oppPct) bonus += Math.min((oppPct - favPct) * 0.1, 6);
+      }
     }
 
-    return score;
+    // Overs/Unders bias
+    if (bias.includes('over') || bias.includes('high-scoring')) {
+      if (cand.market === 'total' && cand.selection === 'over') bonus += 5;
+    }
+    if (bias.includes('under') || bias.includes('defense')) {
+      if (cand.market === 'total' && cand.selection === 'under') bonus += 5;
+    }
+
+    // Favorites/underdogs
+    const awaySpread = fb.bettingContext?.currentLine?.spread || 0; // away line sign indicates favorite
+    if (bias.includes('favorite') || bias.includes('favorites')) {
+      if (cand.market === 'moneyline') {
+        const favSide = awaySpread < 0 ? 'away' : 'home';
+        if (cand.selection === favSide) bonus += 4;
+      }
+    }
+    if (bias.includes('underdog') || bias.includes('dogs')) {
+      if (cand.market === 'moneyline') {
+        const dogSide = awaySpread < 0 ? 'home' : 'away';
+        if (cand.selection === dogSide) bonus += 4;
+      }
+    }
+
+    return bonus;
   }
 
   private calculateCoachScore(factbook: MinimalFactbook): number {
@@ -362,47 +427,69 @@ export class PickSelectionService {
     return score;
   }
 
-  private async generatePickForGame(game: GameData, factbook: MinimalFactbook, analyst: Persona): Promise<AnalystPick> {
-    // Merge game data (odds, lines) with factbook data (analysis) for pick generation
-    const mergedData = {
-      game: game,           // Contains: odds, lines, basic game info
-      analysis: factbook    // Contains: team stats, trends, key matchups
+  private candidateToPick(
+    cand: { gameId: string; market: 'spread'|'total'|'moneyline'; selection: any; baseScore: number; adjustedScore: number; reasons: string[] },
+    games: GameData[],
+    analyst: Persona
+  ): UIPick {
+    const game = games.find(g => g.id === cand.gameId)!;
+    const away = game.away.abbr;
+    const home = game.home.abbr;
+
+    // Build marketData in UI schema
+    const marketData: UIPick['marketData'] = {
+      spread: game.odds?.spread ? {
+        away: { line: game.odds.spread.away.line, odds: game.odds.spread.away.odds },
+        home: { line: game.odds.spread.home.line, odds: game.odds.spread.home.odds }
+      } : undefined as any,
+      total: game.odds?.total ? {
+        over: { line: game.odds.total.over.line, odds: game.odds.total.over.odds },
+        under: { line: game.odds.total.under.line, odds: game.odds.total.under.odds }
+      } : undefined as any,
+      moneyline: game.odds?.moneyline ? {
+        away: { odds: game.odds.moneyline.away.odds },
+        home: { odds: game.odds.moneyline.home.odds }
+      } : undefined as any
+    } as UIPick['marketData'];
+
+    // Selection mapping
+    let selLine = 0;
+    let selOdds = 0;
+    if (cand.market === 'spread' && marketData.spread) {
+      if (cand.selection === 'away') { selLine = marketData.spread.away.line; selOdds = marketData.spread.away.odds; }
+      else { selLine = marketData.spread.home.line; selOdds = marketData.spread.home.odds; }
+    } else if (cand.market === 'total' && marketData.total) {
+      if (cand.selection === 'over') { selLine = marketData.total.over.line; selOdds = marketData.total.over.odds; }
+      else { selLine = marketData.total.under.line; selOdds = marketData.total.under.odds; }
+    } else if (cand.market === 'moneyline' && marketData.moneyline) {
+      selLine = 0; selOdds = cand.selection === 'away' ? marketData.moneyline.away.odds : marketData.moneyline.home.odds;
+    }
+
+    const uiPick: UIPick = {
+      gameId: game.id,
+      gameDate: game.kickoffEt,
+      awayTeam: { id: game.away.abbr, name: game.away.name, nickname: game.away.nickname, score: null },
+      homeTeam: { id: game.home.abbr, name: game.home.name, nickname: game.home.nickname, score: null },
+      marketData: marketData as UIPick['marketData'],
+      selection: {
+        betType: cand.market,
+        side: cand.selection,
+        line: selLine,
+        odds: selOdds,
+        units: 1,
+        rationale: `${analyst.tagline || analyst.name}: ${cand.reasons.join(' | ')}`
+      },
+      result: {
+        status: 'pending',
+        finalLine: 0,
+        finalOdds: 0,
+        payout: 0,
+        netUnits: 0
+      },
+      analystId: analyst.id
     };
 
-    // This would call the analystService.generatePick method with merged data
-    // For now, return a placeholder that uses actual game data
-    const spread = game.odds?.spread?.away?.line || 0;
-    const total = game.odds?.total?.over?.line || 48.5;
-    const awayTeam = game.away.abbr;
-    const homeTeam = game.home.abbr;
-    
-    return {
-      gameId: game.id,
-      analystId: analyst.id,
-      pick: `${awayTeam} ${spread > 0 ? '+' : ''}${spread}`,
-      rationale: {
-        pick: `${awayTeam} ${spread > 0 ? '+' : ''}${spread}`,
-        confidence: 2,
-        rationale: `Based on ${analyst.persona} analysis: ${factbook.teams.away.abbreviation} has statistical advantages in key areas.`,
-        keyFactors: [
-          `Spread: ${spread > 0 ? awayTeam : homeTeam} ${Math.abs(spread)}`,
-          `Total: ${total}`,
-          `Analysis: ${factbook.keyMatchups.length} key factors identified`
-        ],
-        supportingData: {
-          stats: [
-            `${awayTeam} PPG: ${factbook.teams.away.statistics.offense.pointsPerGame}`,
-            `${homeTeam} PPG: ${factbook.teams.home.statistics.offense.pointsPerGame}`
-          ],
-          trends: factbook.bettingContext.bettingTrends ? [
-            `Spread: ${factbook.bettingContext.bettingTrends.spread.home}% home, ${factbook.bettingContext.bettingTrends.spread.away}% away`,
-            `Total: ${factbook.bettingContext.bettingTrends.total.over}% over, ${factbook.bettingContext.bettingTrends.total.under}% under`
-          ] : [],
-          situational: factbook.keyMatchups.map(m => `${m.type}: ${m.description}`)
-        }
-      },
-      timestamp: new Date().toISOString()
-    };
+    return uiPick;
   }
 
   private createGameSummary(factbook: MinimalFactbook): string {

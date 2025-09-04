@@ -2,6 +2,7 @@
   "gameId": "2025-09-09-min-chi",
   "kickoffISO": "2025-09-09T00:15:00.000-04:00",
   "week": 1,
+  "statsSourceSeason": 2024,
   "teams": {
     "away": {
       "abbreviation": "MIN",
@@ -10,13 +11,13 @@
       },
       "statistics": {
         "offense": {
-          "pointsPerGame": 0,
+          "pointsPerGame": 25.411764,
           "turnovers": 4,
           "rushingYards": 80,
           "passingYards": 221
         },
         "defense": {
-          "pointsAllowed": 0,
+          "pointsAllowed": 19.529411,
           "sacks": 1.6670000553131104,
           "interceptions": 1,
           "forcedFumbles": 0,
@@ -73,15 +74,15 @@
       },
       "statistics": {
         "offense": {
-          "pointsPerGame": 0,
+          "pointsPerGame": 18.235294,
           "turnovers": 1,
           "rushingYards": 125,
           "passingYards": 306
         },
         "defense": {
-          "pointsAllowed": 0,
+          "pointsAllowed": 21.764706,
           "sacks": 3,
-          "interceptions": 0,
+          "interceptions": 1,
           "forcedFumbles": 0,
           "totalTackles": 54
         }
@@ -139,8 +140,8 @@
         "under": 78
       },
       "moneyline": {
-        "home": 27,
-        "away": 73
+        "home": 26,
+        "away": 74
       }
     },
     "lineMovement": {

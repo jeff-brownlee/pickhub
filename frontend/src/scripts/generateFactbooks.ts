@@ -106,19 +106,26 @@ async function generateRealFactbook(game: GameData): Promise<MinimalFactbook | n
     // Log successful record fetch
     console.log(`   ✅ Successfully fetched records for both teams`);
 
-    // Fetch team statistics using constructed URLs
+    // Helper to fetch records for a specific season (regular season type=2)
+    async function fetchTeamRecordForSeason(season: number, teamId: string, label: string) {
+      const url = `http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/${season}/types/2/teams/${teamId}/record?lang=en&region=us`;
+      console.log(`   🔗 ${label} record URL (${season}): ${url}`);
+      return realEspnApiCall(url, `${label} record for ${season}`);
+    }
+
+    // Fetch team statistics using constructed URLs with fallback to prior season
     console.log(`\n📊 Fetching team statistics...`);
+    let statsSourceSeason = 2025;
     
-    // Construct statistics URLs using team IDs
-    const awayStatsUrl = `http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/types/1/teams/${awayTeamData.id}/statistics?lang=en&region=us`;
-    const homeStatsUrl = `http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/types/1/teams/${homeTeamData.id}/statistics?lang=en&region=us`;
-    
-    console.log(`   🔗 Away team statistics URL: ${awayStatsUrl}`);
-    console.log(`   🔗 Home team statistics URL: ${homeStatsUrl}`);
-    
-    const [awayStatsData, homeStatsData] = await Promise.all([
-      realEspnApiCall(awayStatsUrl, `Away team statistics for ${game.away.abbr}`),
-      realEspnApiCall(homeStatsUrl, `Home team statistics for ${game.home.abbr}`)
+    async function fetchTeamStatsForSeason(season: number, teamId: string, label: string) {
+      const url = `http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/${season}/types/1/teams/${teamId}/statistics?lang=en&region=us`;
+      console.log(`   🔗 ${label} statistics URL (${season}): ${url}`);
+      return realEspnApiCall(url, `${label} statistics for ${season}`);
+    }
+
+    let [awayStatsData, homeStatsData] = await Promise.all([
+      fetchTeamStatsForSeason(2025, awayTeamData.id, 'Away team'),
+      fetchTeamStatsForSeason(2025, homeTeamData.id, 'Home team')
     ]);
 
     // Log successful statistics fetch
@@ -154,26 +161,114 @@ async function generateRealFactbook(game: GameData): Promise<MinimalFactbook | n
     console.log(`   ✅ Successfully extracted real statistics from ESPN API`);
     
     // Away team stats
-    const awayPointsPerGame = awayRecordData.items[0]?.stats.find((s: any) => s.name === 'avgPointsFor')?.value || 0;
-    const awayPointsAllowed = awayRecordData.items[0]?.stats.find((s: any) => s.name === 'avgPointsAgainst')?.value || 0;
-    const awayTurnovers = extractStat(awayStatsData, 'totalGiveaways', 'miscellaneous'); // Total giveaways
-    const awayRushingYards = extractStat(awayStatsData, 'rushingYards', 'rushing');
-    const awaySacks = extractStat(awayStatsData, 'sacks', 'defensive');
-    const awayPassingYards = extractStat(awayStatsData, 'passingYards', 'passing');
-    const awayInterceptions = extractStat(awayStatsData, 'interceptions', 'defensiveInterceptions');
-    const awayForcedFumbles = extractStat(awayStatsData, 'forcedFumbles', 'defensive');
-    const awayTotalTackles = extractStat(awayStatsData, 'totalTackles', 'defensive');
+    let awayPointsPerGame = awayRecordData.items[0]?.stats.find((s: any) => s.name === 'avgPointsFor')?.value || 0;
+    let awayPointsAllowed = awayRecordData.items[0]?.stats.find((s: any) => s.name === 'avgPointsAgainst')?.value || 0;
+    let awayTurnovers = extractStat(awayStatsData, 'totalGiveaways', 'miscellaneous'); // Total giveaways
+    let awayRushingYards = extractStat(awayStatsData, 'rushingYards', 'rushing');
+    let awaySacks = extractStat(awayStatsData, 'sacks', 'defensive');
+    let awayPassingYards = extractStat(awayStatsData, 'passingYards', 'passing');
+    let awayInterceptions = extractStat(awayStatsData, 'interceptions', 'defensiveInterceptions');
+    let awayForcedFumbles = extractStat(awayStatsData, 'forcedFumbles', 'defensive');
+    let awayTotalTackles = extractStat(awayStatsData, 'totalTackles', 'defensive');
 
     // Home team stats
-    const homePointsPerGame = homeRecordData.items[0]?.stats.find((s: any) => s.name === 'avgPointsFor')?.value || 0;
-    const homePointsAllowed = homeRecordData.items[0]?.stats.find((s: any) => s.name === 'avgPointsAgainst')?.value || 0;
-    const homeTurnovers = extractStat(homeStatsData, 'totalGiveaways', 'miscellaneous'); // Total giveaways
-    const homeRushingYards = extractStat(homeStatsData, 'rushingYards', 'rushing');
-    const homeSacks = extractStat(homeStatsData, 'sacks', 'defensive');
-    const homePassingYards = extractStat(homeStatsData, 'passingYards', 'passing');
-    const homeInterceptions = extractStat(homeStatsData, 'interceptions', 'defensiveInterceptions');
-    const homeForcedFumbles = extractStat(homeStatsData, 'forcedFumbles', 'defensive');
-    const homeTotalTackles = extractStat(homeStatsData, 'totalTackles', 'defensive');
+    let homePointsPerGame = homeRecordData.items[0]?.stats.find((s: any) => s.name === 'avgPointsFor')?.value || 0;
+    let homePointsAllowed = homeRecordData.items[0]?.stats.find((s: any) => s.name === 'avgPointsAgainst')?.value || 0;
+    let homeTurnovers = extractStat(homeStatsData, 'totalGiveaways', 'miscellaneous'); // Total giveaways
+    let homeRushingYards = extractStat(homeStatsData, 'rushingYards', 'rushing');
+    let homeSacks = extractStat(homeStatsData, 'sacks', 'defensive');
+    let homePassingYards = extractStat(homeStatsData, 'passingYards', 'passing');
+    let homeInterceptions = extractStat(homeStatsData, 'interceptions', 'defensiveInterceptions');
+    let homeForcedFumbles = extractStat(homeStatsData, 'forcedFumbles', 'defensive');
+    let homeTotalTackles = extractStat(homeStatsData, 'totalTackles', 'defensive');
+
+    // If key values are zeros (week 1), fall back to prior regular season (2024)
+    const keyZero = (n: number) => typeof n === 'number' && n === 0;
+    const needFallback = [awayPointsPerGame, awayPointsAllowed, homePointsPerGame, homePointsAllowed]
+      .some(keyZero);
+
+    if (needFallback) {
+      console.log(`   🔁 Detected zeroed stats — attempting fallback to prior season (2024)...`);
+      try {
+        statsSourceSeason = 2024;
+        const [awayStats2024, homeStats2024] = await Promise.all([
+          fetchTeamStatsForSeason(2024, awayTeamData.id, 'Away team'),
+          fetchTeamStatsForSeason(2024, homeTeamData.id, 'Home team')
+        ]);
+
+        // Fetch 2024 records for PPG/PA fallback
+        const [awayRecord2024, homeRecord2024] = await Promise.all([
+          fetchTeamRecordForSeason(2024, awayTeamData.id, 'Away team'),
+          fetchTeamRecordForSeason(2024, homeTeamData.id, 'Home team')
+        ]);
+
+        // Re-extract turnovers/yards/sacks etc. from 2024 if 2025 yielded zeros
+        const fallbackExtract = (current: number, data: any, stat: string, category?: string) =>
+          keyZero(current) ? extractStat(data, stat, category) : current;
+
+        // Records API (avgPointsFor/Against) are season-specific; if zero, try mapping via stats per-game
+        const fallbackPPGFromRecord = (current: number, rec: any) => {
+          if (!keyZero(current)) return current;
+          const val = rec?.items?.[0]?.stats?.find((s: any) => s.name === 'avgPointsFor')?.value;
+          return typeof val === 'number' ? val : current;
+        };
+        const fallbackPAFromRecord = (current: number, rec: any) => {
+          if (!keyZero(current)) return current;
+          const val = rec?.items?.[0]?.stats?.find((s: any) => s.name === 'avgPointsAgainst')?.value;
+          return typeof val === 'number' ? val : current;
+        };
+
+        awayPointsPerGame = fallbackPPGFromRecord(awayPointsPerGame, awayRecord2024);
+        awayPointsAllowed = fallbackPAFromRecord(awayPointsAllowed, awayRecord2024);
+        homePointsPerGame = fallbackPPGFromRecord(homePointsPerGame, homeRecord2024);
+        homePointsAllowed = fallbackPAFromRecord(homePointsAllowed, homeRecord2024);
+
+        // Keep existing 2025 values when present; otherwise use 2024
+        const awayTurnovers2024 = extractStat(awayStats2024, 'totalGiveaways', 'miscellaneous');
+        const awayRushing2024 = extractStat(awayStats2024, 'rushingYards', 'rushing');
+        const awaySacks2024 = extractStat(awayStats2024, 'sacks', 'defensive');
+        const awayPassing2024 = extractStat(awayStats2024, 'passingYards', 'passing');
+        const awayInts2024 = extractStat(awayStats2024, 'interceptions', 'defensiveInterceptions');
+        const awayFF2024 = extractStat(awayStats2024, 'forcedFumbles', 'defensive');
+        const awayTackles2024 = extractStat(awayStats2024, 'totalTackles', 'defensive');
+
+        const homeTurnovers2024 = extractStat(homeStats2024, 'totalGiveaways', 'miscellaneous');
+        const homeRushing2024 = extractStat(homeStats2024, 'rushingYards', 'rushing');
+        const homeSacks2024 = extractStat(homeStats2024, 'sacks', 'defensive');
+        const homePassing2024 = extractStat(homeStats2024, 'passingYards', 'passing');
+        const homeInts2024 = extractStat(homeStats2024, 'interceptions', 'defensiveInterceptions');
+        const homeFF2024 = extractStat(homeStats2024, 'forcedFumbles', 'defensive');
+        const homeTackles2024 = extractStat(homeStats2024, 'totalTackles', 'defensive');
+
+        // Replace zeros only
+        (awayPointsPerGame);
+        (awayPointsAllowed);
+        (homePointsPerGame);
+        (homePointsAllowed);
+
+        // Update defensive/offensive aggregates if zero
+        // Note: turnovers/yards are not in records; overwrite only if zero
+        (awayTurnovers === 0) && ( (awayTurnovers as any) = awayTurnovers2024 );
+        (awayRushingYards === 0) && ( (awayRushingYards as any) = awayRushing2024 );
+        (awaySacks === 0) && ( (awaySacks as any) = awaySacks2024 );
+        (awayPassingYards === 0) && ( (awayPassingYards as any) = awayPassing2024 );
+        (awayInterceptions === 0) && ( (awayInterceptions as any) = awayInts2024 );
+        (awayForcedFumbles === 0) && ( (awayForcedFumbles as any) = awayFF2024 );
+        (awayTotalTackles === 0) && ( (awayTotalTackles as any) = awayTackles2024 );
+
+        (homeTurnovers === 0) && ( (homeTurnovers as any) = homeTurnovers2024 );
+        (homeRushingYards === 0) && ( (homeRushingYards as any) = homeRushing2024 );
+        (homeSacks === 0) && ( (homeSacks as any) = homeSacks2024 );
+        (homePassingYards === 0) && ( (homePassingYards as any) = homePassing2024 );
+        (homeInterceptions === 0) && ( (homeInterceptions as any) = homeInts2024 );
+        (homeForcedFumbles === 0) && ( (homeForcedFumbles as any) = homeFF2024 );
+        (homeTotalTackles === 0) && ( (homeTotalTackles as any) = homeTackles2024 );
+
+        console.log(`   ✅ Applied 2024 fallback for zeroed values`);
+      } catch (e) {
+        console.log(`   ⚠️  2024 fallback failed: ${e}`);
+      }
+    }
 
     console.log(`   📊 Away (${game.away.abbr}): PPG=${awayPointsPerGame}, PA=${awayPointsAllowed}, TO=${awayTurnovers}, RY=${awayRushingYards}, Sacks=${awaySacks}, PY=${awayPassingYards}, INT=${awayInterceptions}, FF=${awayForcedFumbles}, TT=${awayTotalTackles}`);
     console.log(`   📊 Home (${game.home.abbr}): PPG=${homePointsPerGame}, PA=${homePointsAllowed}, TO=${homeTurnovers}, RY=${homeRushingYards}, Sacks=${homeSacks}, PY=${homePassingYards}, INT=${homeInterceptions}, FF=${homeForcedFumbles}, TT=${homeTotalTackles}`);
@@ -611,6 +706,7 @@ async function generateRealFactbook(game: GameData): Promise<MinimalFactbook | n
       gameId: game.id,
       kickoffISO: game.kickoffEt,
       week: 1,
+      statsSourceSeason: statsSourceSeason,
       teams: {
         away: awayTeamSection,
         home: homeTeamSection

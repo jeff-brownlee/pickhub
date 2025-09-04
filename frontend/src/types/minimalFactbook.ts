@@ -4,6 +4,8 @@ export interface MinimalFactbook {
   gameId: string;
   kickoffISO: string;
   week: number;
+  /** Season year the team statistics/records were sourced from (provenance) */
+  statsSourceSeason?: number;
   teams: {
     away: {
       abbreviation: string;

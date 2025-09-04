@@ -2,6 +2,7 @@
   "gameId": "2025-09-07-car-jax",
   "kickoffISO": "2025-09-07T17:00:00.000-04:00",
   "week": 1,
+  "statsSourceSeason": 2024,
   "teams": {
     "away": {
       "abbreviation": "CAR",
@@ -10,13 +11,13 @@
       },
       "statistics": {
         "offense": {
-          "pointsPerGame": 0,
+          "pointsPerGame": 20.058823,
           "turnovers": 6,
           "rushingYards": 96,
           "passingYards": 154
         },
         "defense": {
-          "pointsAllowed": 0,
+          "pointsAllowed": 31.411764,
           "sacks": 1.3329999446868896,
           "interceptions": 1,
           "forcedFumbles": 0,
@@ -73,13 +74,13 @@
       },
       "statistics": {
         "offense": {
-          "pointsPerGame": 0,
+          "pointsPerGame": 18.82353,
           "turnovers": 4,
           "rushingYards": 94,
           "passingYards": 205
         },
         "defense": {
-          "pointsAllowed": 0,
+          "pointsAllowed": 25.588236,
           "sacks": 3.3329999446868896,
           "interceptions": 1,
           "forcedFumbles": 0,

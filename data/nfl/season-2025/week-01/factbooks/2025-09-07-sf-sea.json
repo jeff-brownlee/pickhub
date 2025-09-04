@@ -2,6 +2,7 @@
   "gameId": "2025-09-07-sf-sea",
   "kickoffISO": "2025-09-07T20:05:00.000-04:00",
   "week": 1,
+  "statsSourceSeason": 2024,
   "teams": {
     "away": {
       "abbreviation": "SF",
@@ -10,13 +11,13 @@
       },
       "statistics": {
         "offense": {
-          "pointsPerGame": 0,
+          "pointsPerGame": 22.882353,
           "turnovers": 7,
           "rushingYards": 81,
           "passingYards": 199
         },
         "defense": {
-          "pointsAllowed": 0,
+          "pointsAllowed": 25.647058,
           "sacks": 2,
           "interceptions": 1,
           "forcedFumbles": 0,
@@ -73,13 +74,13 @@
       },
       "statistics": {
         "offense": {
-          "pointsPerGame": 0,
+          "pointsPerGame": 22.058823,
           "turnovers": 5,
           "rushingYards": 189,
           "passingYards": 188
         },
         "defense": {
-          "pointsAllowed": 0,
+          "pointsAllowed": 21.647058,
           "sacks": 2.3329999446868896,
           "interceptions": 1,
           "forcedFumbles": 0,
@@ -145,8 +146,8 @@
         "under": 85
       },
       "moneyline": {
-        "home": 44,
-        "away": 56
+        "home": 42,
+        "away": 58
       }
     },
     "lineMovement": {

@@ -1,5 +1,7 @@
 // src/pages/LeaderboardPage.tsx
 import { ThemeProvider, CssBaseline, Container, Stack, Grid2, Card, CardContent, Avatar, Typography, Chip } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import { usePickhubContext } from '../context/PickhubContext';
 import { theme } from '../theme';
 
 import StickyBar from '../components/StickyBar';
@@ -16,6 +18,8 @@ const getCurrentWeek = (): number => {
 };
 
 export default function LeaderboardPage() {
+  const navigate = useNavigate();
+  const { setSelectedPersonaId } = usePickhubContext();
   const [sort, setSort] = useState<SortKey>('winPct');
   const [rows, setRows] = useState<Array<{ persona: Persona; metrics: PersonaMetrics }>>([]);
 
@@ -88,16 +92,20 @@ export default function LeaderboardPage() {
         <Grid2 container spacing={2}>
           {sorted.map(({ persona, metrics }) => (
             <Grid2 key={persona.id} size={{ xs: 12 }}>
-              <Card>
+              <Card onClick={() => { setSelectedPersonaId(persona.id); navigate('/picks'); }} sx={{ cursor: 'pointer', transition: 'transform 120ms ease', '&:hover': { transform: 'scale(1.01)' } }}>
                 <CardContent sx={{ p: 1.5 }}>
                   <Stack direction="row" alignItems="center" spacing={3}>
                     <Avatar 
-                      src={persona.avatarUrl} 
+                      src={persona.avatarUrl}
+                      onClick={(e) => { e.stopPropagation(); setSelectedPersonaId(persona.id); navigate('/bio'); }}
                       sx={{ 
                         width: { xs: 100, sm: 80 }, 
                         height: { xs: 100, sm: 80 },
                         border: '2px solid',
-                        borderColor: 'rgba(255, 255, 255, 0.2)'
+                        borderColor: 'rgba(255, 255, 255, 0.2)',
+                        cursor: 'pointer',
+                        transition: 'transform 120ms ease',
+                        '&:hover': { transform: 'scale(1.03)' }
                       }} 
                     />
                     <Stack sx={{ flex: 1, minWidth: 0 }}>

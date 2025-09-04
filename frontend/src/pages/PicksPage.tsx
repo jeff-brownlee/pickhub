@@ -8,12 +8,13 @@ import GamePickCard from '../components/GamePickCard';
 import StickyBar from '../components/StickyBar';
 import type { Game, Persona, Pick } from '../types';
 import { useMemo, useState, useEffect } from 'react';
+import { usePickhubContext } from '../context/PickhubContext';
 
 export default function PicksPage() {
+  const { selectedPersonaId, setSelectedPersonaId } = usePickhubContext();
   const [personas, setPersonas] = useState<Persona[]>([]);
 
   const [picks, setPicks] = useState<Record<string, Pick>>({});
-  const [selectedPersonaId, setSelectedPersonaId] = useState<string>('');
   const [week, setWeek] = useState(1);
 
   // Extract games from picks data
@@ -52,11 +53,18 @@ export default function PicksPage() {
 
   // Load mock JSON from /public/data
   useEffect(() => {
-    fetch('/data/personas.json').then(r => r.json()).then((d: Persona[]) => {
-      setPersonas(d);
-      if (d.length) setSelectedPersonaId(d[0].id);
-    });
-  }, []);
+    fetch('/data/personas.json')
+      .then(r => r.json())
+      .then((d: Persona[]) => {
+        setPersonas(d);
+        // Only set a default if none is selected or current selection is not in the list
+        const hasSelection = !!selectedPersonaId;
+        const selectionValid = d.some(p => p.id === selectedPersonaId);
+        if (!hasSelection || !selectionValid) {
+          if (d.length) setSelectedPersonaId(d[0].id);
+        }
+      });
+  }, [selectedPersonaId, setSelectedPersonaId]);
 
 
 

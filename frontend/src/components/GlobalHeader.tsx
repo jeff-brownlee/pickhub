@@ -14,16 +14,18 @@ export default function GlobalHeader() {
         borderBottom: '1px solid rgba(255,255,255,0.08)'
       }}
     >
-      <Toolbar sx={{ minHeight: 64 }}>
+      <Toolbar sx={{ minHeight: { xs: 56, sm: 64 } }}>
         <Container maxWidth="lg" sx={{ px: { xs: 1, sm: 2 } }}>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, minWidth: 0 }}>
             {/* Logo */}
             <Box
               component="img"
               src="/logo_black.png"
               alt="pickhub.ai logo"
               sx={{
-                height: 80,
+                height: { xs: 48, sm: 80 },
+                width: 'auto',
+                maxWidth: '100%',
                 objectFit: 'contain'
               }}
             />
@@ -33,8 +35,11 @@ export default function GlobalHeader() {
               component="h1"
               sx={{
                 fontWeight: 700,
-                fontSize: '2.0rem',
-                lineHeight: 1
+                fontSize: { xs: '1.5rem', sm: '2.0rem' },
+                lineHeight: 1,
+                overflowWrap: 'anywhere',
+                minWidth: 0,
+                flexShrink: 1
               }}
             >
               <Box component="span" sx={{ color: '#00E676' }}>

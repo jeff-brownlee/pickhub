@@ -16,6 +16,17 @@ This backlog tracks additions to the MinimalFactbook to improve pick selection a
    - Rationale: High impact on picks/rationales; moderate effort.
 3) Add Ranks data from Teams — Priority: P2 — Score: 3/2 = 1.5
    - Rationale: Helpful context; moderate effort; less immediate impact than injuries.
+   - coach needs time of possesion and any o-line, d-line stats or ranking
+   - contrarian should be able to use public betting data alone
+   - fratguy likes favorites, overs, and primetime favorites
+   - tracks public betting, likes the teams with star power
+   - tracks public betting, likes home team favorites
+   - focused on line movement against the public betting
+   - podcaster overweights run game
+   - pro - looks for line inefficiencies around key numbers
+   - nerd - advanced stats
+
+
 
 ### Backlog Item Template
 - **Title**: <short name>

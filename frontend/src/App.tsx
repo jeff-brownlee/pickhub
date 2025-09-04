@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route, Link, Navigate, useLocation } from 'react
 import { AppBar, Toolbar, Container, Stack, Button } from '@mui/material';
 import PicksPage from './pages/PicksPage';
 import LeaderboardPage from './pages/LeaderboardPage';
+import BiosPage from './pages/BiosPage';
+import AboutPage from './pages/AboutPage';
 import GlobalHeader from './components/GlobalHeader';
 
 function NavBar() {
@@ -51,6 +53,42 @@ function NavBar() {
             >
               Picks
             </Button>
+            <Button 
+              component={Link} 
+              to="/bio" 
+              variant="text" 
+              size="small"
+              sx={{
+                color: '#00E676',
+                textDecoration: isActive('/bio') ? 'underline' : 'none',
+                textUnderlineOffset: '4px',
+                '&:hover': {
+                  backgroundColor: 'transparent',
+                  textDecoration: 'underline',
+                  textUnderlineOffset: '4px'
+                }
+              }}
+            >
+              BIO
+            </Button>
+            <Button 
+              component={Link} 
+              to="/about" 
+              variant="text" 
+              size="small"
+              sx={{
+                color: '#00E676',
+                textDecoration: isActive('/about') ? 'underline' : 'none',
+                textUnderlineOffset: '4px',
+                '&:hover': {
+                  backgroundColor: 'transparent',
+                  textDecoration: 'underline',
+                  textUnderlineOffset: '4px'
+                }
+              }}
+            >
+              About
+            </Button>
           </Stack>
         </Container>
       </Toolbar>
@@ -72,6 +110,9 @@ export default function App() {
         <Route path="/" element={<Navigate to="/picks" replace />} />
         <Route path="/picks" element={<PicksPage />} />
         <Route path="/leaderboard" element={<LeaderboardPage />} />
+        <Route path="/bio" element={<BiosPage />} />
+        <Route path="/bio/:id" element={<BiosPage />} />
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
     </BrowserRouter>
   );

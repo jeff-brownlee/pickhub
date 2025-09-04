@@ -61,6 +61,7 @@ export interface EspnNflApiResponse {
 // Game data structure for our frontend
 export interface GameData {
   id: string;
+  espnId: string;
   away: {
     name: string;
     abbr: string;
@@ -188,6 +189,7 @@ export async function parseEspnNflApi(response: EspnNflApiResponse): Promise<Gam
 
     const game: GameData = {
       id: gameId,
+      espnId: event.id,
       away: {
         name: awayTeamName,
         abbr: awayTeamAbbr,

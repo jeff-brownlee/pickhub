@@ -1,6 +1,7 @@
 [
   {
     "id": "2025-09-05-dal-phi",
+    "espnId": "401772510",
     "away": {
       "name": "Dallas Cowboys",
       "abbr": "DAL",
@@ -17,36 +18,37 @@
     "odds": {
       "spread": {
         "away": {
-          "line": 7.5,
-          "odds": -110
+          "line": 8.5,
+          "odds": -115
         },
         "home": {
-          "line": -7.5,
-          "odds": -110
+          "line": -8.5,
+          "odds": -105
         }
       },
       "total": {
         "over": {
-          "line": 51,
-          "odds": -110
+          "line": 47.5,
+          "odds": -115
         },
         "under": {
-          "line": 51,
-          "odds": -110
+          "line": 47.5,
+          "odds": -105
         }
       },
       "moneyline": {
         "away": {
-          "odds": -223
+          "odds": 320
         },
         "home": {
-          "odds": -262
+          "odds": -425
         }
       }
     }
   },
   {
     "id": "2025-09-06-kc-lac",
+    "espnId": "401772714",
     "away": {
       "name": "Kansas City Chiefs",
       "abbr": "KC",
@@ -63,36 +65,37 @@
     "odds": {
       "spread": {
         "away": {
-          "line": 10,
-          "odds": -110
+          "line": -3.5,
+          "odds": 100
         },
         "home": {
-          "line": -10,
-          "odds": -110
+          "line": 3.5,
+          "odds": -120
         }
       },
       "total": {
         "over": {
-          "line": 53.5,
-          "odds": -110
+          "line": 46.5,
+          "odds": -105
         },
         "under": {
-          "line": 53.5,
-          "odds": -110
+          "line": 46.5,
+          "odds": -115
         }
       },
       "moneyline": {
         "away": {
-          "odds": 155
+          "odds": -170
         },
         "home": {
-          "odds": -263
+          "odds": 145
         }
       }
     }
   },
   {
     "id": "2025-09-07-tb-atl",
+    "espnId": "401772830",
     "away": {
       "name": "Tampa Bay Buccaneers",
       "abbr": "TB",
@@ -109,36 +112,37 @@
     "odds": {
       "spread": {
         "away": {
-          "line": 1.5,
-          "odds": -110
+          "line": -1.5,
+          "odds": -115
         },
         "home": {
-          "line": -1.5,
-          "odds": -110
+          "line": 1.5,
+          "odds": -105
         }
       },
       "total": {
         "over": {
-          "line": 42,
+          "line": 47.5,
           "odds": -110
         },
         "under": {
-          "line": 42,
+          "line": 47.5,
           "odds": -110
         }
       },
       "moneyline": {
         "away": {
-          "odds": -134
+          "odds": -130
         },
         "home": {
-          "odds": 235
+          "odds": 110
         }
       }
     }
   },
   {
     "id": "2025-09-07-cin-cle",
+    "espnId": "401772829",
     "away": {
       "name": "Cincinnati Bengals",
       "abbr": "CIN",
@@ -155,36 +159,37 @@
     "odds": {
       "spread": {
         "away": {
-          "line": 13,
+          "line": -5.5,
           "odds": -110
         },
         "home": {
-          "line": -13,
+          "line": 5.5,
           "odds": -110
         }
       },
       "total": {
         "over": {
-          "line": 43,
-          "odds": -110
+          "line": 47.5,
+          "odds": -115
         },
         "under": {
-          "line": 43,
+          "line": 47.5,
           "odds": -110
         }
       },
       "moneyline": {
         "away": {
-          "odds": -155
+          "odds": -250
         },
         "home": {
-          "odds": -282
+          "odds": 210
         }
       }
     }
   },
   {
     "id": "2025-09-07-mia-ind",
+    "espnId": "401772719",
     "away": {
       "name": "Miami Dolphins",
       "abbr": "MIA",
@@ -201,36 +206,37 @@
     "odds": {
       "spread": {
         "away": {
-          "line": 5,
-          "odds": -110
+          "line": 1.5,
+          "odds": -125
         },
         "home": {
-          "line": -5,
-          "odds": -110
+          "line": -1.5,
+          "odds": 102
         }
       },
       "total": {
         "over": {
-          "line": 54.5,
+          "line": 46.5,
           "odds": -110
         },
         "under": {
-          "line": 54.5,
+          "line": 46.5,
           "odds": -110
         }
       },
       "moneyline": {
         "away": {
-          "odds": 234
+          "odds": -115
         },
         "home": {
-          "odds": -242
+          "odds": -105
         }
       }
     }
   },
   {
     "id": "2025-09-07-lv-ne",
+    "espnId": "401772720",
     "away": {
       "name": "Las Vegas Raiders",
       "abbr": "LV",
@@ -247,36 +253,37 @@
     "odds": {
       "spread": {
         "away": {
-          "line": 3,
-          "odds": -110
+          "line": 2.5,
+          "odds": -105
         },
         "home": {
-          "line": -3,
-          "odds": -110
+          "line": -2.5,
+          "odds": -120
         }
       },
       "total": {
         "over": {
-          "line": 45.5,
-          "odds": -110
+          "line": 43.5,
+          "odds": -115
         },
         "under": {
-          "line": 45.5,
-          "odds": -110
+          "line": 43.5,
+          "odds": -105
         }
       },
       "moneyline": {
         "away": {
-          "odds": 106
+          "odds": 120
         },
         "home": {
-          "odds": 201
+          "odds": -140
         }
       }
     }
   },
   {
     "id": "2025-09-07-ari-no",
+    "espnId": "401772718",
     "away": {
       "name": "Arizona Cardinals",
       "abbr": "ARI",
@@ -293,36 +300,37 @@
     "odds": {
       "spread": {
         "away": {
-          "line": 8,
+          "line": -6.5,
           "odds": -110
         },
         "home": {
-          "line": -8,
+          "line": 6.5,
           "odds": -110
         }
       },
       "total": {
         "over": {
-          "line": 37.5,
-          "odds": -110
+          "line": 43.5,
+          "odds": -105
         },
         "under": {
-          "line": 37.5,
-          "odds": -110
+          "line": 43.5,
+          "odds": -115
         }
       },
       "moneyline": {
         "away": {
-          "odds": -278
+          "odds": -290
         },
         "home": {
-          "odds": 178
+          "odds": 240
         }
       }
     }
   },
   {
     "id": "2025-09-07-pit-nyj",
+    "espnId": "401772721",
     "away": {
       "name": "Pittsburgh Steelers",
       "abbr": "PIT",
@@ -339,36 +347,37 @@
     "odds": {
       "spread": {
         "away": {
-          "line": 4.5,
-          "odds": -110
+          "line": -2.5,
+          "odds": -125
         },
         "home": {
-          "line": -4.5,
-          "odds": -110
+          "line": 2.5,
+          "odds": 102
         }
       },
       "total": {
         "over": {
-          "line": 42.5,
-          "odds": -110
+          "line": 37.5,
+          "odds": -120
         },
         "under": {
-          "line": 42.5,
-          "odds": -110
+          "line": 37.5,
+          "odds": 100
         }
       },
       "moneyline": {
         "away": {
-          "odds": 293
+          "odds": -150
         },
         "home": {
-          "odds": -206
+          "odds": 130
         }
       }
     }
   },
   {
     "id": "2025-09-07-nyg-wsh",
+    "espnId": "401772827",
     "away": {
       "name": "New York Giants",
       "abbr": "NYG",
@@ -385,36 +394,37 @@
     "odds": {
       "spread": {
         "away": {
-          "line": 6,
-          "odds": -110
+          "line": 6.5,
+          "odds": 100
         },
         "home": {
-          "line": -6,
-          "odds": -110
+          "line": -6.5,
+          "odds": -120
         }
       },
       "total": {
         "over": {
-          "line": 43,
+          "line": 45.5,
           "odds": -110
         },
         "under": {
-          "line": 43,
+          "line": 45.5,
           "odds": -110
         }
       },
       "moneyline": {
         "away": {
-          "odds": 289
+          "odds": 215
         },
         "home": {
-          "odds": 178
+          "odds": -260
         }
       }
     }
   },
   {
     "id": "2025-09-07-car-jax",
+    "espnId": "401772828",
     "away": {
       "name": "Carolina Panthers",
       "abbr": "CAR",
@@ -431,36 +441,37 @@
     "odds": {
       "spread": {
         "away": {
-          "line": 7,
-          "odds": -110
+          "line": 3.5,
+          "odds": -115
         },
         "home": {
-          "line": -7,
-          "odds": -110
+          "line": -3.5,
+          "odds": -105
         }
       },
       "total": {
         "over": {
-          "line": 37,
-          "odds": -110
+          "line": 46.5,
+          "odds": -120
         },
         "under": {
-          "line": 37,
-          "odds": -110
+          "line": 46.5,
+          "odds": 100
         }
       },
       "moneyline": {
         "away": {
-          "odds": -130
+          "odds": 160
         },
         "home": {
-          "odds": 122
+          "odds": -190
         }
       }
     }
   },
   {
     "id": "2025-09-07-ten-den",
+    "espnId": "401772832",
     "away": {
       "name": "Tennessee Titans",
       "abbr": "TEN",
@@ -477,36 +488,37 @@
     "odds": {
       "spread": {
         "away": {
-          "line": 10.5,
+          "line": 8.5,
           "odds": -110
         },
         "home": {
-          "line": -10.5,
+          "line": -8.5,
           "odds": -110
         }
       },
       "total": {
         "over": {
-          "line": 39.5,
-          "odds": -110
+          "line": 42.5,
+          "odds": -105
         },
         "under": {
-          "line": 39.5,
-          "odds": -110
+          "line": 42.5,
+          "odds": -115
         }
       },
       "moneyline": {
         "away": {
-          "odds": 101
+          "odds": 340
         },
         "home": {
-          "odds": 213
+          "odds": -450
         }
       }
     }
   },
   {
     "id": "2025-09-07-sf-sea",
+    "espnId": "401772831",
     "away": {
       "name": "San Francisco 49ers",
       "abbr": "SF",
@@ -523,36 +535,37 @@
     "odds": {
       "spread": {
         "away": {
-          "line": 14,
+          "line": -2.5,
           "odds": -110
         },
         "home": {
-          "line": -14,
+          "line": 2.5,
           "odds": -110
         }
       },
       "total": {
         "over": {
-          "line": 39.5,
-          "odds": -110
+          "line": 43.5,
+          "odds": -105
         },
         "under": {
-          "line": 39.5,
-          "odds": -110
+          "line": 43.5,
+          "odds": -115
         }
       },
       "moneyline": {
         "away": {
-          "odds": -193
+          "odds": -140
         },
         "home": {
-          "odds": 297
+          "odds": 120
         }
       }
     }
   },
   {
     "id": "2025-09-07-det-gb",
+    "espnId": "401772722",
     "away": {
       "name": "Detroit Lions",
       "abbr": "DET",
@@ -569,36 +582,37 @@
     "odds": {
       "spread": {
         "away": {
-          "line": 6,
-          "odds": -110
+          "line": 1.5,
+          "odds": 100
         },
         "home": {
-          "line": -6,
-          "odds": -110
+          "line": -1.5,
+          "odds": -120
         }
       },
       "total": {
         "over": {
-          "line": 44,
-          "odds": -110
+          "line": 47.5,
+          "odds": 100
         },
         "under": {
-          "line": 44,
-          "odds": -110
+          "line": 47.5,
+          "odds": -120
         }
       },
       "moneyline": {
         "away": {
-          "odds": 167
+          "odds": 110
         },
         "home": {
-          "odds": -257
+          "odds": -130
         }
       }
     }
   },
   {
     "id": "2025-09-07-hou-lar",
+    "espnId": "401772723",
     "away": {
       "name": "Houston Texans",
       "abbr": "HOU",
@@ -615,36 +629,37 @@
     "odds": {
       "spread": {
         "away": {
-          "line": 11.5,
-          "odds": -110
+          "line": 3.5,
+          "odds": -130
         },
         "home": {
-          "line": -11.5,
-          "odds": -110
+          "line": -3.5,
+          "odds": 105
         }
       },
       "total": {
         "over": {
-          "line": 53.5,
+          "line": 43.5,
           "odds": -110
         },
         "under": {
-          "line": 53.5,
+          "line": 43.5,
           "odds": -110
         }
       },
       "moneyline": {
         "away": {
-          "odds": -176
+          "odds": 135
         },
         "home": {
-          "odds": 164
+          "odds": -155
         }
       }
     }
   },
   {
     "id": "2025-09-08-bal-buf",
+    "espnId": "401772918",
     "away": {
       "name": "Baltimore Ravens",
       "abbr": "BAL",
@@ -661,36 +676,37 @@
     "odds": {
       "spread": {
         "away": {
-          "line": 11,
-          "odds": -110
+          "line": 1.5,
+          "odds": -125
         },
         "home": {
-          "line": -11,
-          "odds": -110
+          "line": -1.5,
+          "odds": 102
         }
       },
       "total": {
         "over": {
-          "line": 38,
+          "line": 50.5,
           "odds": -110
         },
         "under": {
-          "line": 38,
+          "line": 50.5,
           "odds": -110
         }
       },
       "moneyline": {
         "away": {
-          "odds": -236
+          "odds": -115
         },
         "home": {
-          "odds": 298
+          "odds": -105
         }
       }
     }
   },
   {
     "id": "2025-09-09-min-chi",
+    "espnId": "401772810",
     "away": {
       "name": "Minnesota Vikings",
       "abbr": "MIN",
@@ -707,30 +723,30 @@
     "odds": {
       "spread": {
         "away": {
-          "line": 9,
+          "line": -1.5,
           "odds": -110
         },
         "home": {
-          "line": -9,
+          "line": 1.5,
           "odds": -110
         }
       },
       "total": {
         "over": {
           "line": 43.5,
-          "odds": -110
+          "odds": -115
         },
         "under": {
           "line": 43.5,
-          "odds": -110
+          "odds": -105
         }
       },
       "moneyline": {
         "away": {
-          "odds": 149
+          "odds": -125
         },
         "home": {
-          "odds": 196
+          "odds": 105
         }
       }
     }

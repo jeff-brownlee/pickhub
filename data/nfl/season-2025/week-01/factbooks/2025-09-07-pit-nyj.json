@@ -1,207 +1,180 @@
 {
   "gameId": "2025-09-07-pit-nyj",
-  "season": 2025,
-  "week": 1,
   "kickoffISO": "2025-09-07T17:00:00.000-04:00",
-  "venue": {
-    "id": "unknown",
-    "name": "New York Jets Stadium",
-    "city": "Unknown",
-    "state": "Unknown",
-    "surface": "grass",
-    "indoor": false
-  },
+  "week": 1,
   "teams": {
     "away": {
-      "id": "23",
-      "name": "Pittsburgh Steelers",
       "abbreviation": "PIT",
-      "location": "Pittsburgh",
-      "nickname": "Steelers",
-      "color": "000000",
-      "alternateColor": "ffb612",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
       "record": {
-        "wins": 0,
-        "losses": 0,
-        "ties": 0,
-        "winPercentage": 0
-      },
-      "oddsRecords": {
-        "againstSpread": {
-          "wins": 0,
-          "losses": 0,
-          "ties": 0
-        },
-        "overUnder": {
-          "overs": 0,
-          "unders": 0,
-          "pushes": 0
-        },
-        "homeAway": {
-          "home": {
-            "wins": 0,
-            "losses": 0,
-            "ties": 0
-          },
-          "away": {
-            "wins": 0,
-            "losses": 0,
-            "ties": 0
-          }
-        }
+        "winPercentage": 0.5
       },
       "statistics": {
         "offense": {
           "pointsPerGame": 0,
-          "yardsPerGame": 0,
-          "passingYards": 0,
-          "rushingYards": 0,
-          "thirdDownPercentage": 0,
-          "redZonePercentage": 0,
-          "turnovers": 0
+          "turnovers": 4,
+          "rushingYards": 98,
+          "passingYards": 249
         },
         "defense": {
           "pointsAllowed": 0,
-          "yardsAllowed": 0,
-          "passingYardsAllowed": 0,
-          "rushingYardsAllowed": 0,
-          "sacks": 0,
-          "interceptions": 0,
-          "forcedFumbles": 0
+          "sacks": 1.3329999446868896,
+          "interceptions": 1,
+          "forcedFumbles": 0,
+          "totalTackles": 66
         }
       },
-      "injuries": [],
-      "keyPlayers": []
+      "keyPlayers": [
+        {
+          "position": "QB",
+          "name": "Skylar Thompson",
+          "stats": "41/56, 498 YDS, 4 TD, 1 INT",
+          "value": 498
+        },
+        {
+          "position": "RB",
+          "name": "Kaleb Johnson",
+          "stats": "24 CAR, 94 YDS",
+          "value": 94
+        },
+        {
+          "position": "WR",
+          "name": "Scotty Miller",
+          "stats": "9 REC, 167 YDS",
+          "value": 167
+        },
+        {
+          "position": "LB",
+          "name": "Carson Bruener",
+          "stats": "15",
+          "value": 15
+        },
+        {
+          "position": "DE",
+          "name": "Yahya Black",
+          "stats": "2",
+          "value": 2
+        },
+        {
+          "position": "CB",
+          "name": "James Pierre",
+          "stats": "1",
+          "value": 1
+        }
+      ],
+      "coaching": {
+        "experience": 18,
+        "name": "Mike Tomlin"
+      }
     },
     "home": {
-      "id": "20",
-      "name": "New York Jets",
       "abbreviation": "NYJ",
-      "location": "New York",
-      "nickname": "Jets",
-      "color": "115740",
-      "alternateColor": "ffffff",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png",
       "record": {
-        "wins": 0,
-        "losses": 0,
-        "ties": 0,
-        "winPercentage": 0
-      },
-      "oddsRecords": {
-        "againstSpread": {
-          "wins": 0,
-          "losses": 0,
-          "ties": 0
-        },
-        "overUnder": {
-          "overs": 0,
-          "unders": 0,
-          "pushes": 0
-        },
-        "homeAway": {
-          "home": {
-            "wins": 0,
-            "losses": 0,
-            "ties": 0
-          },
-          "away": {
-            "wins": 0,
-            "losses": 0,
-            "ties": 0
-          }
-        }
+        "winPercentage": 0.5
       },
       "statistics": {
         "offense": {
           "pointsPerGame": 0,
-          "yardsPerGame": 0,
-          "passingYards": 0,
-          "rushingYards": 0,
-          "thirdDownPercentage": 0,
-          "redZonePercentage": 0,
-          "turnovers": 0
+          "turnovers": 4,
+          "rushingYards": 139,
+          "passingYards": 211
         },
         "defense": {
           "pointsAllowed": 0,
-          "yardsAllowed": 0,
-          "passingYardsAllowed": 0,
-          "rushingYardsAllowed": 0,
-          "sacks": 0,
-          "interceptions": 0,
-          "forcedFumbles": 0
+          "sacks": 2.6670000553131104,
+          "interceptions": 1,
+          "forcedFumbles": 0,
+          "totalTackles": 56
         }
       },
-      "injuries": [],
-      "keyPlayers": []
+      "keyPlayers": [
+        {
+          "position": "QB",
+          "name": "Adrian Martinez",
+          "stats": "30/51, 352 YDS, 1 TD, 2 INT",
+          "value": 352
+        },
+        {
+          "position": "RB",
+          "name": "Donovan Edwards",
+          "stats": "26 CAR, 89 YDS, 1 TD",
+          "value": 89
+        },
+        {
+          "position": "WR",
+          "name": "Quentin Skinner",
+          "stats": "8 REC, 114 YDS, 1 TD",
+          "value": 114
+        },
+        {
+          "position": "LB",
+          "name": "Zaire Barnes",
+          "stats": "16",
+          "value": 16
+        },
+        {
+          "position": "DE",
+          "name": "Jay Tufele",
+          "stats": "1.5",
+          "value": 1.5
+        },
+        {
+          "position": "CB",
+          "name": "Dean Clark",
+          "stats": "1",
+          "value": 1
+        }
+      ],
+      "coaching": {
+        "experience": 0,
+        "name": "Aaron Glenn"
+      }
     }
   },
   "bettingContext": {
-    "openingLine": {
-      "spread": 4,
-      "total": 42,
-      "moneyline": {
-        "home": -216,
-        "away": 303
-      }
-    },
     "currentLine": {
-      "spread": 4.5,
-      "total": 42.5,
-      "moneyline": {
-        "home": -206,
-        "away": 293
-      }
-    },
-    "lineMovement": {
-      "spreadMovement": 0.5,
-      "totalMovement": 0.5,
-      "sharpMoney": "none",
-      "publicMoney": "none"
+      "spread": -2.5,
+      "total": 37.5
     },
     "bettingTrends": {
       "spread": {
-        "home": 50,
-        "away": 50
+        "home": 25,
+        "away": 75
       },
       "total": {
-        "over": 50,
-        "under": 50
+        "over": 38,
+        "under": 62
       },
       "moneyline": {
-        "home": 50,
-        "away": 50
+        "home": 8,
+        "away": 92
       }
     },
-    "keyNumbers": {
-      "spread": [
-        3,
-        7,
-        10,
-        14
-      ],
-      "total": [
-        37,
-        41,
-        44,
-        47,
-        51,
-        54
-      ]
+    "lineMovement": {
+      "spread": {
+        "current": -2.5,
+        "opening": -2.5,
+        "movement": 0,
+        "direction": "stable"
+      },
+      "total": {
+        "current": 37.5,
+        "opening": 38.5,
+        "movement": 1,
+        "direction": "under"
+      },
+      "moneyline": {
+        "away": {
+          "current": -150,
+          "opening": -150,
+          "movement": 0
+        },
+        "home": {
+          "current": 130,
+          "opening": 130,
+          "movement": 0
+        }
+      },
+      "sharpMoney": "none"
     }
-  },
-  "trends": [],
-  "keyMatchups": [],
-  "weather": {
-    "temperature": 72,
-    "conditions": "clear",
-    "windSpeed": 5,
-    "humidity": 50
-  },
-  "dataSources": {
-    "teamData": "ESPN API",
-    "bettingData": "Real Data",
-    "weatherData": "Real Data"
   }
 }

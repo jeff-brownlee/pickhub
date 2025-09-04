@@ -1,207 +1,180 @@
 {
   "gameId": "2025-09-07-cin-cle",
-  "season": 2025,
-  "week": 1,
   "kickoffISO": "2025-09-07T17:00:00.000-04:00",
-  "venue": {
-    "id": "unknown",
-    "name": "Cleveland Browns Stadium",
-    "city": "Unknown",
-    "state": "Unknown",
-    "surface": "grass",
-    "indoor": false
-  },
+  "week": 1,
   "teams": {
     "away": {
-      "id": "4",
-      "name": "Cincinnati Bengals",
       "abbreviation": "CIN",
-      "location": "Cincinnati",
-      "nickname": "Bengals",
-      "color": "fb4f14",
-      "alternateColor": "000000",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
       "record": {
-        "wins": 0,
-        "losses": 0,
-        "ties": 0,
-        "winPercentage": 0
-      },
-      "oddsRecords": {
-        "againstSpread": {
-          "wins": 0,
-          "losses": 0,
-          "ties": 0
-        },
-        "overUnder": {
-          "overs": 0,
-          "unders": 0,
-          "pushes": 0
-        },
-        "homeAway": {
-          "home": {
-            "wins": 0,
-            "losses": 0,
-            "ties": 0
-          },
-          "away": {
-            "wins": 0,
-            "losses": 0,
-            "ties": 0
-          }
-        }
+        "winPercentage": 0.5
       },
       "statistics": {
         "offense": {
           "pointsPerGame": 0,
-          "yardsPerGame": 0,
-          "passingYards": 0,
-          "rushingYards": 0,
-          "thirdDownPercentage": 0,
-          "redZonePercentage": 0,
-          "turnovers": 0
+          "turnovers": 3,
+          "rushingYards": 92,
+          "passingYards": 206
         },
         "defense": {
           "pointsAllowed": 0,
-          "yardsAllowed": 0,
-          "passingYardsAllowed": 0,
-          "rushingYardsAllowed": 0,
-          "sacks": 0,
-          "interceptions": 0,
-          "forcedFumbles": 0
+          "sacks": 1.6670000553131104,
+          "interceptions": 1,
+          "forcedFumbles": 0,
+          "totalTackles": 73
         }
       },
-      "injuries": [],
-      "keyPlayers": []
+      "keyPlayers": [
+        {
+          "position": "QB",
+          "name": "Jake Browning",
+          "stats": "22/39, 221 YDS, 2 TD, 1 INT",
+          "value": 221
+        },
+        {
+          "position": "RB",
+          "name": "Kendall Milton",
+          "stats": "17 CAR, 94 YDS",
+          "value": 94
+        },
+        {
+          "position": "WR",
+          "name": "Mitchell Tinsley",
+          "stats": "6 REC, 88 YDS, 2 TD",
+          "value": 88
+        },
+        {
+          "position": "LB",
+          "name": "Maema Njongmeta",
+          "stats": "20",
+          "value": 20
+        },
+        {
+          "position": "DE",
+          "name": "Isaiah Thomas",
+          "stats": "2",
+          "value": 2
+        },
+        {
+          "position": "CB",
+          "name": "Joe Giles-Harris",
+          "stats": "1",
+          "value": 1
+        }
+      ],
+      "coaching": {
+        "experience": 6,
+        "name": "Zac Taylor"
+      }
     },
     "home": {
-      "id": "5",
-      "name": "Cleveland Browns",
       "abbreviation": "CLE",
-      "location": "Cleveland",
-      "nickname": "Browns",
-      "color": "472a08",
-      "alternateColor": "ff3c00",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png",
       "record": {
-        "wins": 0,
-        "losses": 0,
-        "ties": 0,
-        "winPercentage": 0
-      },
-      "oddsRecords": {
-        "againstSpread": {
-          "wins": 0,
-          "losses": 0,
-          "ties": 0
-        },
-        "overUnder": {
-          "overs": 0,
-          "unders": 0,
-          "pushes": 0
-        },
-        "homeAway": {
-          "home": {
-            "wins": 0,
-            "losses": 0,
-            "ties": 0
-          },
-          "away": {
-            "wins": 0,
-            "losses": 0,
-            "ties": 0
-          }
-        }
+        "winPercentage": 0.5
       },
       "statistics": {
         "offense": {
           "pointsPerGame": 0,
-          "yardsPerGame": 0,
-          "passingYards": 0,
-          "rushingYards": 0,
-          "thirdDownPercentage": 0,
-          "redZonePercentage": 0,
-          "turnovers": 0
+          "turnovers": 2,
+          "rushingYards": 114,
+          "passingYards": 208
         },
         "defense": {
           "pointsAllowed": 0,
-          "yardsAllowed": 0,
-          "passingYardsAllowed": 0,
-          "rushingYardsAllowed": 0,
-          "sacks": 0,
-          "interceptions": 0,
-          "forcedFumbles": 0
+          "sacks": 3,
+          "interceptions": 2,
+          "forcedFumbles": 0,
+          "totalTackles": 58
         }
       },
-      "injuries": [],
-      "keyPlayers": []
+      "keyPlayers": [
+        {
+          "position": "QB",
+          "name": "Dillon Gabriel",
+          "stats": "25/37, 272 YDS, 1 TD, 1 INT",
+          "value": 272
+        },
+        {
+          "position": "RB",
+          "name": "Pierre Strong Jr.",
+          "stats": "18 CAR, 114 YDS",
+          "value": 114
+        },
+        {
+          "position": "WR",
+          "name": "Gage Larvadain",
+          "stats": "9 REC, 94 YDS, 1 TD",
+          "value": 94
+        },
+        {
+          "position": "LB",
+          "name": "Easton Mascarenas-Arnold",
+          "stats": "17",
+          "value": 17
+        },
+        {
+          "position": "DE",
+          "name": "Adin Huntington",
+          "stats": "2.5",
+          "value": 2.5
+        },
+        {
+          "position": "CB",
+          "name": "Nik Needham",
+          "stats": "1",
+          "value": 1
+        }
+      ],
+      "coaching": {
+        "experience": 5,
+        "name": "Kevin Stefanski"
+      }
     }
   },
   "bettingContext": {
-    "openingLine": {
-      "spread": 12.5,
-      "total": 42.5,
-      "moneyline": {
-        "home": -292,
-        "away": -145
-      }
-    },
     "currentLine": {
-      "spread": 13,
-      "total": 43,
-      "moneyline": {
-        "home": -282,
-        "away": -155
-      }
-    },
-    "lineMovement": {
-      "spreadMovement": 0.5,
-      "totalMovement": 0.5,
-      "sharpMoney": "none",
-      "publicMoney": "none"
+      "spread": -5.5,
+      "total": 47.5
     },
     "bettingTrends": {
       "spread": {
-        "home": 50,
-        "away": 50
+        "home": 26,
+        "away": 74
       },
       "total": {
-        "over": 50,
-        "under": 50
+        "over": 12,
+        "under": 88
       },
       "moneyline": {
-        "home": 50,
-        "away": 50
+        "home": 3,
+        "away": 97
       }
     },
-    "keyNumbers": {
-      "spread": [
-        3,
-        7,
-        10,
-        14
-      ],
-      "total": [
-        37,
-        41,
-        44,
-        47,
-        51,
-        54
-      ]
+    "lineMovement": {
+      "spread": {
+        "current": -5.5,
+        "opening": -5.5,
+        "movement": 0,
+        "direction": "stable"
+      },
+      "total": {
+        "current": 47.5,
+        "opening": 46.5,
+        "movement": 1,
+        "direction": "over"
+      },
+      "moneyline": {
+        "away": {
+          "current": -250,
+          "opening": -275,
+          "movement": 25
+        },
+        "home": {
+          "current": 210,
+          "opening": 225,
+          "movement": 15
+        }
+      },
+      "sharpMoney": "none"
     }
-  },
-  "trends": [],
-  "keyMatchups": [],
-  "weather": {
-    "temperature": 72,
-    "conditions": "clear",
-    "windSpeed": 5,
-    "humidity": 50
-  },
-  "dataSources": {
-    "teamData": "ESPN API",
-    "bettingData": "Real Data",
-    "weatherData": "Real Data"
   }
 }

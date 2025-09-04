@@ -1,6 +1,7 @@
-import { GameFactbook } from '../types/factbook';
+import { MinimalFactbook } from '../types/minimalFactbook';
 import { Persona } from '../types';
 import { AnalystPick, PickRationale } from './analystService';
+import { GameData } from '../adapters/espnNflApi';
 
 export interface WeeklyPickSelection {
   analystId: string;
@@ -17,7 +18,8 @@ export class PickSelectionService {
    * Generate weekly picks for an analyst using heuristics
    */
   async generateWeeklyPicksHeuristics(
-    factbooks: GameFactbook[], 
+    games: GameData[],
+    factbooks: MinimalFactbook[], 
     analyst: Persona, 
     week: number
   ): Promise<WeeklyPickSelection> {
@@ -35,9 +37,11 @@ export class PickSelectionService {
 
     // Generate picks for selected games
     const picks = await Promise.all(
-      topGames.map(({ factbook }) => 
-        this.generatePickForGame(factbook, analyst)
-      )
+      topGames.map(({ factbook }) => {
+        const game = games.find(g => g.id === factbook.gameId);
+        if (!game) throw new Error(`Game ${factbook.gameId} not found in games data`);
+        return this.generatePickForGame(game, factbook, analyst);
+      })
     );
 
     return {
@@ -53,7 +57,8 @@ export class PickSelectionService {
    * Generate weekly picks for an analyst using ChatGPT
    */
   async generateWeeklyPicksChatGPT(
-    factbooks: GameFactbook[], 
+    games: GameData[],
+    factbooks: MinimalFactbook[], 
     analyst: Persona, 
     week: number
   ): Promise<WeeklyPickSelection> {
@@ -68,8 +73,10 @@ export class PickSelectionService {
       const picks = await Promise.all(
         selectedGames.map((gameId: string) => {
           const factbook = factbooks.find(fb => fb.gameId === gameId);
-          if (!factbook) throw new Error(`Game ${gameId} not found`);
-          return this.generatePickForGame(factbook, analyst);
+          const game = games.find(g => g.id === gameId);
+          if (!factbook) throw new Error(`Game ${gameId} not found in factbooks`);
+          if (!game) throw new Error(`Game ${gameId} not found in games data`);
+          return this.generatePickForGame(game, factbook, analyst);
         })
       );
 
@@ -82,14 +89,14 @@ export class PickSelectionService {
       };
     } catch (error) {
       console.error('ChatGPT selection failed, falling back to heuristics:', error);
-      return this.generateWeeklyPicksHeuristics(factbooks, analyst, week);
+      return this.generateWeeklyPicksHeuristics(games, factbooks, analyst, week);
     }
   }
 
   /**
    * Calculate how well a game aligns with an analyst's bias
    */
-  private calculateBiasAlignmentScore(factbook: GameFactbook, analyst: Persona): number {
+  private calculateBiasAlignmentScore(factbook: MinimalFactbook, analyst: Persona): number {
     let score = 0;
 
     switch (analyst.id) {
@@ -127,7 +134,7 @@ export class PickSelectionService {
     return score;
   }
 
-  private calculateCoachScore(factbook: GameFactbook): number {
+  private calculateCoachScore(factbook: MinimalFactbook): number {
     const { away, home } = factbook.teams;
     let score = 0;
 
@@ -142,7 +149,7 @@ export class PickSelectionService {
     if (awayDiscipline < 15 || homeDiscipline < 15) score += 20;
 
     // Prefer games with clear coaching advantages
-    if (away.coaching.experience > 10 || home.coaching.experience > 10) score += 15;
+    if (away.coaching?.experience > 10 || home.coaching?.experience > 10) score += 15;
 
     // Prefer division games (more physical)
     if (factbook.keyMatchups.some(m => m.type === 'coaching')) score += 10;
@@ -150,7 +157,7 @@ export class PickSelectionService {
     return score;
   }
 
-  private calculateContrarianScore(factbook: GameFactbook): number {
+  private calculateContrarianScore(factbook: MinimalFactbook): number {
     const bettingTrends = factbook.bettingContext.bettingTrends;
     let score = 0;
 
@@ -176,7 +183,7 @@ export class PickSelectionService {
     return score;
   }
 
-  private calculateFratGuyScore(factbook: GameFactbook): number {
+  private calculateFratGuyScore(factbook: MinimalFactbook): number {
     let score = 0;
 
     // Prefer primetime games
@@ -202,7 +209,7 @@ export class PickSelectionService {
     return score;
   }
 
-  private calculateHotGirlScore(factbook: GameFactbook): number {
+  private calculateHotGirlScore(factbook: MinimalFactbook): number {
     let score = 0;
 
     // Prefer primetime games
@@ -229,7 +236,7 @@ export class PickSelectionService {
     return score;
   }
 
-  private calculateAverageJoeScore(factbook: GameFactbook): number {
+  private calculateAverageJoeScore(factbook: MinimalFactbook): number {
     let score = 0;
 
     // Prefer popular teams
@@ -254,7 +261,7 @@ export class PickSelectionService {
     return score;
   }
 
-  private calculateMobsterScore(factbook: GameFactbook): number {
+  private calculateMobsterScore(factbook: MinimalFactbook): number {
     let score = 0;
 
     // Prefer games with line movement
@@ -273,7 +280,7 @@ export class PickSelectionService {
     return score;
   }
 
-  private calculateNerdScore(factbook: GameFactbook): number {
+  private calculateNerdScore(factbook: MinimalFactbook): number {
     let score = 0;
 
     // Prefer games with clear statistical advantages
@@ -301,7 +308,7 @@ export class PickSelectionService {
     return score;
   }
 
-  private calculatePodcasterScore(factbook: GameFactbook): number {
+  private calculatePodcasterScore(factbook: MinimalFactbook): number {
     let score = 0;
 
     // Prefer physical teams (good rushing, good defense)
@@ -326,7 +333,7 @@ export class PickSelectionService {
     return score;
   }
 
-  private calculateProScore(factbook: GameFactbook): number {
+  private calculateProScore(factbook: MinimalFactbook): number {
     let score = 0;
 
     // Prefer games with line movement (indicates value)
@@ -355,29 +362,50 @@ export class PickSelectionService {
     return score;
   }
 
-  private async generatePickForGame(factbook: GameFactbook, analyst: Persona): Promise<AnalystPick> {
-    // This would call the analystService.generatePick method
-    // For now, return a placeholder
+  private async generatePickForGame(game: GameData, factbook: MinimalFactbook, analyst: Persona): Promise<AnalystPick> {
+    // Merge game data (odds, lines) with factbook data (analysis) for pick generation
+    const mergedData = {
+      game: game,           // Contains: odds, lines, basic game info
+      analysis: factbook    // Contains: team stats, trends, key matchups
+    };
+
+    // This would call the analystService.generatePick method with merged data
+    // For now, return a placeholder that uses actual game data
+    const spread = game.odds?.spread?.away?.line || 0;
+    const total = game.odds?.total?.over?.line || 48.5;
+    const awayTeam = game.away.abbr;
+    const homeTeam = game.home.abbr;
+    
     return {
-      gameId: factbook.gameId,
+      gameId: game.id,
       analystId: analyst.id,
-      pick: 'PHI +2.5',
+      pick: `${awayTeam} ${spread > 0 ? '+' : ''}${spread}`,
       rationale: {
-        pick: 'PHI +2.5',
+        pick: `${awayTeam} ${spread > 0 ? '+' : ''}${spread}`,
         confidence: 2,
-        rationale: 'Placeholder rationale',
-        keyFactors: ['Factor 1', 'Factor 2'],
+        rationale: `Based on ${analyst.persona} analysis: ${factbook.teams.away.abbreviation} has statistical advantages in key areas.`,
+        keyFactors: [
+          `Spread: ${spread > 0 ? awayTeam : homeTeam} ${Math.abs(spread)}`,
+          `Total: ${total}`,
+          `Analysis: ${factbook.keyMatchups.length} key factors identified`
+        ],
         supportingData: {
-          stats: ['Stat 1', 'Stat 2'],
-          trends: ['Trend 1', 'Trend 2'],
-          situational: ['Situation 1', 'Situation 2']
+          stats: [
+            `${awayTeam} PPG: ${factbook.teams.away.statistics.offense.pointsPerGame}`,
+            `${homeTeam} PPG: ${factbook.teams.home.statistics.offense.pointsPerGame}`
+          ],
+          trends: factbook.bettingContext.bettingTrends ? [
+            `Spread: ${factbook.bettingContext.bettingTrends.spread.home}% home, ${factbook.bettingContext.bettingTrends.spread.away}% away`,
+            `Total: ${factbook.bettingContext.bettingTrends.total.over}% over, ${factbook.bettingContext.bettingTrends.total.under}% under`
+          ] : [],
+          situational: factbook.keyMatchups.map(m => `${m.type}: ${m.description}`)
         }
       },
       timestamp: new Date().toISOString()
     };
   }
 
-  private createGameSummary(factbook: GameFactbook): string {
+  private createGameSummary(factbook: MinimalFactbook): string {
     return `${factbook.teams.away.abbreviation} @ ${factbook.teams.home.abbreviation} - Week ${factbook.week}`;
   }
 

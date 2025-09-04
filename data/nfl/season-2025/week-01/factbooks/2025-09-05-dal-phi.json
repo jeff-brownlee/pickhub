@@ -1,303 +1,180 @@
 {
   "gameId": "2025-09-05-dal-phi",
-  "season": 2025,
-  "week": 1,
   "kickoffISO": "2025-09-05T00:20:00.000-04:00",
-  "venue": {
-    "id": "unknown",
-    "name": "Philadelphia Eagles Stadium",
-    "city": "Unknown",
-    "state": "Unknown",
-    "surface": "grass",
-    "indoor": false
-  },
+  "week": 1,
   "teams": {
     "away": {
-      "id": "6",
-      "name": "Dallas Cowboys",
       "abbreviation": "DAL",
       "record": {
-        "wins": 0,
-        "losses": 0,
-        "ties": 0,
-        "winPercentage": 0,
-        "lastFive": [],
-        "streak": {
-          "type": "L",
-          "count": 0
-        }
-      },
-      "recentForm": {
-        "lastFiveGames": [],
-        "pointsFor": 0,
-        "pointsAgainst": 0,
-        "pointDifferential": 0,
-        "averageMargin": 0
-      },
-      "oddsRecords": {
-        "againstSpread": {
-          "wins": 0,
-          "losses": 0,
-          "ties": 0
-        },
-        "overUnder": {
-          "overs": 0,
-          "unders": 0,
-          "pushes": 0
-        },
-        "homeAway": {
-          "home": {
-            "wins": 0,
-            "losses": 0,
-            "ties": 0
-          },
-          "away": {
-            "wins": 0,
-            "losses": 0,
-            "ties": 0
-          }
-        }
+        "winPercentage": 0.5
       },
       "statistics": {
         "offense": {
           "pointsPerGame": 0,
-          "yardsPerGame": 0,
-          "passingYards": 0,
-          "rushingYards": 0,
-          "thirdDownPercentage": 0,
-          "redZonePercentage": 0,
-          "turnovers": 0
+          "turnovers": 3,
+          "rushingYards": 107,
+          "passingYards": 161
         },
         "defense": {
           "pointsAllowed": 0,
-          "yardsAllowed": 0,
-          "passingYardsAllowed": 0,
-          "rushingYardsAllowed": 0,
-          "sacks": 0,
-          "interceptions": 0,
-          "forcedFumbles": 0
-        },
-        "specialTeams": {
-          "fieldGoalPercentage": 0,
-          "puntReturnAverage": 0,
-          "kickoffReturnAverage": 0
+          "sacks": 1,
+          "interceptions": 1,
+          "forcedFumbles": 0,
+          "totalTackles": 75
         }
       },
-      "keyPlayers": [],
+      "keyPlayers": [
+        {
+          "position": "QB",
+          "name": "Joe Milton III",
+          "stats": "36/65, 397 YDS, 2 TD, 2 INT",
+          "value": 397
+        },
+        {
+          "position": "RB",
+          "name": "Malik Davis",
+          "stats": "9 CAR, 70 YDS",
+          "value": 70
+        },
+        {
+          "position": "WR",
+          "name": "Ryan Flournoy",
+          "stats": "7 REC, 92 YDS",
+          "value": 92
+        },
+        {
+          "position": "LB",
+          "name": "Mike Smith Jr.",
+          "stats": "18",
+          "value": 18
+        },
+        {
+          "position": "DE",
+          "name": "James Houston",
+          "stats": "1",
+          "value": 1
+        },
+        {
+          "position": "CB",
+          "name": "Robert Rochell",
+          "stats": "1",
+          "value": 1
+        }
+      ],
       "coaching": {
-        "headCoach": "Unknown",
         "experience": 0,
-        "record": {
-          "wins": 0,
-          "losses": 0,
-          "ties": 0
-        }
-      },
-      "situational": {
-        "homeAdvantage": {
-          "homeRecord": {
-            "wins": 0,
-            "losses": 0,
-            "ties": 0
-          },
-          "homePointsFor": 0,
-          "homePointsAgainst": 0
-        },
-        "restAdvantage": {
-          "daysRest": 7,
-          "opponentDaysRest": 7,
-          "restAdvantage": "even"
-        },
-        "travel": {
-          "milesTraveled": 500,
-          "timeZoneChange": 0,
-          "shortWeek": false
-        },
-        "motivation": {
-          "playoffRace": true,
-          "divisionGame": false,
-          "rivalry": false
-        }
-      },
-      "trends": []
+        "name": "Brian Schottenheimer"
+      }
     },
     "home": {
-      "id": "21",
-      "name": "Philadelphia Eagles",
       "abbreviation": "PHI",
       "record": {
-        "wins": 0,
-        "losses": 0,
-        "ties": 0,
-        "winPercentage": 0,
-        "lastFive": [],
-        "streak": {
-          "type": "L",
-          "count": 0
-        }
-      },
-      "recentForm": {
-        "lastFiveGames": [],
-        "pointsFor": 0,
-        "pointsAgainst": 0,
-        "pointDifferential": 0,
-        "averageMargin": 0
-      },
-      "oddsRecords": {
-        "againstSpread": {
-          "wins": 0,
-          "losses": 0,
-          "ties": 0
-        },
-        "overUnder": {
-          "overs": 0,
-          "unders": 0,
-          "pushes": 0
-        },
-        "homeAway": {
-          "home": {
-            "wins": 0,
-            "losses": 0,
-            "ties": 0
-          },
-          "away": {
-            "wins": 0,
-            "losses": 0,
-            "ties": 0
-          }
-        }
+        "winPercentage": 0.5
       },
       "statistics": {
         "offense": {
           "pointsPerGame": 0,
-          "yardsPerGame": 0,
-          "passingYards": 0,
-          "rushingYards": 0,
-          "thirdDownPercentage": 0,
-          "redZonePercentage": 0,
-          "turnovers": 0
+          "turnovers": 3,
+          "rushingYards": 81,
+          "passingYards": 172
         },
         "defense": {
           "pointsAllowed": 0,
-          "yardsAllowed": 0,
-          "passingYardsAllowed": 0,
-          "rushingYardsAllowed": 0,
-          "sacks": 0,
-          "interceptions": 0,
-          "forcedFumbles": 0
-        },
-        "specialTeams": {
-          "fieldGoalPercentage": 0,
-          "puntReturnAverage": 0,
-          "kickoffReturnAverage": 0
+          "sacks": 2,
+          "interceptions": 1,
+          "forcedFumbles": 0,
+          "totalTackles": 65
         }
       },
-      "keyPlayers": [],
+      "keyPlayers": [
+        {
+          "position": "QB",
+          "name": "Tanner McKee",
+          "stats": "20/25, 252 YDS, 2 TD",
+          "value": 252
+        },
+        {
+          "position": "RB",
+          "name": "Montrell Johnson Jr.",
+          "stats": "21 CAR, 77 YDS, 1 TD",
+          "value": 77
+        },
+        {
+          "position": "WR",
+          "name": "Darius Cooper",
+          "stats": "7 REC, 90 YDS, 1 TD",
+          "value": 90
+        },
+        {
+          "position": "LB",
+          "name": "Jeremiah Trotter Jr.",
+          "stats": "14",
+          "value": 14
+        },
+        {
+          "position": "DE",
+          "name": "Patrick Johnson",
+          "stats": "1",
+          "value": 1
+        },
+        {
+          "position": "CB",
+          "name": "Parry Nickerson",
+          "stats": "1",
+          "value": 1
+        }
+      ],
       "coaching": {
-        "headCoach": "Unknown",
-        "experience": 0,
-        "record": {
-          "wins": 0,
-          "losses": 0,
-          "ties": 0
-        }
-      },
-      "situational": {
-        "homeAdvantage": {
-          "homeRecord": {
-            "wins": 0,
-            "losses": 0,
-            "ties": 0
-          },
-          "homePointsFor": 0,
-          "homePointsAgainst": 0
-        },
-        "restAdvantage": {
-          "daysRest": 7,
-          "opponentDaysRest": 7,
-          "restAdvantage": "even"
-        },
-        "travel": {
-          "milesTraveled": 0,
-          "timeZoneChange": 0,
-          "shortWeek": false
-        },
-        "motivation": {
-          "playoffRace": true,
-          "divisionGame": false,
-          "rivalry": false
-        }
-      },
-      "trends": []
+        "experience": 4,
+        "name": "Nick Sirianni"
+      }
     }
   },
   "bettingContext": {
-    "openingLine": {
-      "spread": 7,
-      "total": 50.5,
-      "moneyline": {
-        "home": -272,
-        "away": -213
-      }
-    },
     "currentLine": {
-      "spread": 7.5,
-      "total": 51,
-      "moneyline": {
-        "home": -262,
-        "away": -223
-      }
-    },
-    "lineMovement": {
-      "spreadMovement": 0.5,
-      "totalMovement": 0.5,
-      "sharpMoney": "none",
-      "publicMoney": "none"
+      "spread": 8.5,
+      "total": 47.5
     },
     "bettingTrends": {
       "spread": {
-        "home": 50,
-        "away": 50
+        "home": 61,
+        "away": 39
       },
       "total": {
-        "over": 50,
-        "under": 50
+        "over": 27,
+        "under": 73
       },
       "moneyline": {
-        "home": 50,
-        "away": 50
+        "home": 94,
+        "away": 6
       }
     },
-    "keyNumbers": {
-      "spread": [
-        3,
-        7,
-        10,
-        14
-      ],
-      "total": [
-        37,
-        41,
-        44,
-        47,
-        51,
-        54
-      ]
+    "lineMovement": {
+      "spread": {
+        "current": 8.5,
+        "opening": 4.5,
+        "movement": 4,
+        "direction": "toward_home"
+      },
+      "total": {
+        "current": 48.5,
+        "opening": 43.5,
+        "movement": 5,
+        "direction": "over"
+      },
+      "moneyline": {
+        "away": {
+          "current": 340,
+          "opening": 230,
+          "movement": 110
+        },
+        "home": {
+          "current": -450,
+          "opening": -280,
+          "movement": 170
+        }
+      },
+      "sharpMoney": "none"
     }
-  },
-  "trends": [],
-  "keyMatchups": [],
-  "injuries": [],
-  "weather": {
-    "temperature": 72,
-    "conditions": "clear",
-    "windSpeed": 5,
-    "humidity": 50
-  },
-  "dataSources": {
-    "teamData": "ESPN API",
-    "bettingData": "Real Data",
-    "weatherData": "Real Data"
-  },
-  "lastUpdated": "2025-09-03T16:41:23.615Z"
+  }
 }

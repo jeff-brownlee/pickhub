@@ -1,207 +1,174 @@
 {
   "gameId": "2025-09-09-min-chi",
-  "season": 2025,
-  "week": 1,
   "kickoffISO": "2025-09-09T00:15:00.000-04:00",
-  "venue": {
-    "id": "unknown",
-    "name": "Chicago Bears Stadium",
-    "city": "Unknown",
-    "state": "Unknown",
-    "surface": "grass",
-    "indoor": false
-  },
+  "week": 1,
   "teams": {
     "away": {
-      "id": "16",
-      "name": "Minnesota Vikings",
       "abbreviation": "MIN",
-      "location": "Minnesota",
-      "nickname": "Vikings",
-      "color": "4f2683",
-      "alternateColor": "ffc62f",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/min.png",
       "record": {
-        "wins": 0,
-        "losses": 0,
-        "ties": 0,
-        "winPercentage": 0
-      },
-      "oddsRecords": {
-        "againstSpread": {
-          "wins": 0,
-          "losses": 0,
-          "ties": 0
-        },
-        "overUnder": {
-          "overs": 0,
-          "unders": 0,
-          "pushes": 0
-        },
-        "homeAway": {
-          "home": {
-            "wins": 0,
-            "losses": 0,
-            "ties": 0
-          },
-          "away": {
-            "wins": 0,
-            "losses": 0,
-            "ties": 0
-          }
-        }
+        "winPercentage": 0.5
       },
       "statistics": {
         "offense": {
           "pointsPerGame": 0,
-          "yardsPerGame": 0,
-          "passingYards": 0,
-          "rushingYards": 0,
-          "thirdDownPercentage": 0,
-          "redZonePercentage": 0,
-          "turnovers": 0
+          "turnovers": 4,
+          "rushingYards": 80,
+          "passingYards": 221
         },
         "defense": {
           "pointsAllowed": 0,
-          "yardsAllowed": 0,
-          "passingYardsAllowed": 0,
-          "rushingYardsAllowed": 0,
-          "sacks": 0,
-          "interceptions": 0,
-          "forcedFumbles": 0
+          "sacks": 1.6670000553131104,
+          "interceptions": 1,
+          "forcedFumbles": 0,
+          "totalTackles": 63
         }
       },
-      "injuries": [],
-      "keyPlayers": []
+      "keyPlayers": [
+        {
+          "position": "QB",
+          "name": "Max Brosmer",
+          "stats": "35/58, 364 YDS, 2 TD, 1 INT",
+          "value": 364
+        },
+        {
+          "position": "RB",
+          "name": "Zavier Scott",
+          "stats": "22 CAR, 96 YDS",
+          "value": 96
+        },
+        {
+          "position": "WR",
+          "name": "Jeshaun Jones",
+          "stats": "9 REC, 100 YDS",
+          "value": 100
+        },
+        {
+          "position": "LB",
+          "name": "Chaz Chambliss",
+          "stats": "15",
+          "value": 15
+        },
+        {
+          "position": "DE",
+          "name": "Gabriel Murphy",
+          "stats": "1.5",
+          "value": 1.5
+        },
+        {
+          "position": "CB",
+          "name": "Kahlef Hailassie",
+          "stats": "2",
+          "value": 2
+        }
+      ],
+      "coaching": {
+        "experience": 3,
+        "name": "Kevin O'Connell"
+      }
     },
     "home": {
-      "id": "3",
-      "name": "Chicago Bears",
       "abbreviation": "CHI",
-      "location": "Chicago",
-      "nickname": "Bears",
-      "color": "0b1c3a",
-      "alternateColor": "e64100",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
       "record": {
-        "wins": 0,
-        "losses": 0,
-        "ties": 0,
-        "winPercentage": 0
-      },
-      "oddsRecords": {
-        "againstSpread": {
-          "wins": 0,
-          "losses": 0,
-          "ties": 0
-        },
-        "overUnder": {
-          "overs": 0,
-          "unders": 0,
-          "pushes": 0
-        },
-        "homeAway": {
-          "home": {
-            "wins": 0,
-            "losses": 0,
-            "ties": 0
-          },
-          "away": {
-            "wins": 0,
-            "losses": 0,
-            "ties": 0
-          }
-        }
+        "winPercentage": 0.5
       },
       "statistics": {
         "offense": {
           "pointsPerGame": 0,
-          "yardsPerGame": 0,
-          "passingYards": 0,
-          "rushingYards": 0,
-          "thirdDownPercentage": 0,
-          "redZonePercentage": 0,
-          "turnovers": 0
+          "turnovers": 1,
+          "rushingYards": 125,
+          "passingYards": 306
         },
         "defense": {
           "pointsAllowed": 0,
-          "yardsAllowed": 0,
-          "passingYardsAllowed": 0,
-          "rushingYardsAllowed": 0,
-          "sacks": 0,
+          "sacks": 3,
           "interceptions": 0,
-          "forcedFumbles": 0
+          "forcedFumbles": 0,
+          "totalTackles": 54
         }
       },
-      "injuries": [],
-      "keyPlayers": []
+      "keyPlayers": [
+        {
+          "position": "QB",
+          "name": "Tyson Bagent",
+          "stats": "46/69, 511 YDS, 5 TD, 1 INT",
+          "value": 511
+        },
+        {
+          "position": "RB",
+          "name": "Ian Wheeler",
+          "stats": "26 CAR, 100 YDS, 2 TD",
+          "value": 100
+        },
+        {
+          "position": "WR",
+          "name": "Tyler Scott",
+          "stats": "7 REC, 99 YDS, 1 TD",
+          "value": 99
+        },
+        {
+          "position": "LB",
+          "name": "Ruben Hyppolite II",
+          "stats": "16",
+          "value": 16
+        },
+        {
+          "position": "DE",
+          "name": "Austin Booker",
+          "stats": "4",
+          "value": 4
+        }
+      ],
+      "coaching": {
+        "experience": 0,
+        "name": "Ben Johnson"
+      }
     }
   },
   "bettingContext": {
-    "openingLine": {
-      "spread": 8.5,
-      "total": 43,
-      "moneyline": {
-        "home": 186,
-        "away": 159
-      }
-    },
     "currentLine": {
-      "spread": 9,
-      "total": 43.5,
-      "moneyline": {
-        "home": 196,
-        "away": 149
-      }
-    },
-    "lineMovement": {
-      "spreadMovement": 0.5,
-      "totalMovement": 0.5,
-      "sharpMoney": "none",
-      "publicMoney": "none"
+      "spread": -1.5,
+      "total": 43.5
     },
     "bettingTrends": {
       "spread": {
-        "home": 50,
-        "away": 50
+        "home": 34,
+        "away": 66
       },
       "total": {
-        "over": 50,
-        "under": 50
+        "over": 22,
+        "under": 78
       },
       "moneyline": {
-        "home": 50,
-        "away": 50
+        "home": 27,
+        "away": 73
       }
     },
-    "keyNumbers": {
-      "spread": [
-        3,
-        7,
-        10,
-        14
-      ],
-      "total": [
-        37,
-        41,
-        44,
-        47,
-        51,
-        54
-      ]
+    "lineMovement": {
+      "spread": {
+        "current": -1.5,
+        "opening": -1.5,
+        "movement": 0,
+        "direction": "stable"
+      },
+      "total": {
+        "current": 43.5,
+        "opening": 43.5,
+        "movement": 0,
+        "direction": "stable"
+      },
+      "moneyline": {
+        "away": {
+          "current": -125,
+          "opening": -125,
+          "movement": 0
+        },
+        "home": {
+          "current": 105,
+          "opening": 105,
+          "movement": 0
+        }
+      },
+      "sharpMoney": "none"
     }
-  },
-  "trends": [],
-  "keyMatchups": [],
-  "weather": {
-    "temperature": 72,
-    "conditions": "clear",
-    "windSpeed": 5,
-    "humidity": 50
-  },
-  "dataSources": {
-    "teamData": "ESPN API",
-    "bettingData": "Real Data",
-    "weatherData": "Real Data"
   }
 }

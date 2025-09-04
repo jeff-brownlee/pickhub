@@ -1,207 +1,180 @@
 {
   "gameId": "2025-09-07-ten-den",
-  "season": 2025,
-  "week": 1,
   "kickoffISO": "2025-09-07T20:05:00.000-04:00",
-  "venue": {
-    "id": "unknown",
-    "name": "Denver Broncos Stadium",
-    "city": "Unknown",
-    "state": "Unknown",
-    "surface": "grass",
-    "indoor": false
-  },
+  "week": 1,
   "teams": {
     "away": {
-      "id": "10",
-      "name": "Tennessee Titans",
       "abbreviation": "TEN",
-      "location": "Tennessee",
-      "nickname": "Titans",
-      "color": "4b92db",
-      "alternateColor": "002a5c",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png",
       "record": {
-        "wins": 0,
-        "losses": 0,
-        "ties": 0,
-        "winPercentage": 0
-      },
-      "oddsRecords": {
-        "againstSpread": {
-          "wins": 0,
-          "losses": 0,
-          "ties": 0
-        },
-        "overUnder": {
-          "overs": 0,
-          "unders": 0,
-          "pushes": 0
-        },
-        "homeAway": {
-          "home": {
-            "wins": 0,
-            "losses": 0,
-            "ties": 0
-          },
-          "away": {
-            "wins": 0,
-            "losses": 0,
-            "ties": 0
-          }
-        }
+        "winPercentage": 0.5
       },
       "statistics": {
         "offense": {
           "pointsPerGame": 0,
-          "yardsPerGame": 0,
-          "passingYards": 0,
-          "rushingYards": 0,
-          "thirdDownPercentage": 0,
-          "redZonePercentage": 0,
-          "turnovers": 0
+          "turnovers": 5,
+          "rushingYards": 107,
+          "passingYards": 185
         },
         "defense": {
           "pointsAllowed": 0,
-          "yardsAllowed": 0,
-          "passingYardsAllowed": 0,
-          "rushingYardsAllowed": 0,
-          "sacks": 0,
-          "interceptions": 0,
-          "forcedFumbles": 0
+          "sacks": 1.3329999446868896,
+          "interceptions": 2,
+          "forcedFumbles": 0,
+          "totalTackles": 68
         }
       },
-      "injuries": [],
-      "keyPlayers": []
+      "keyPlayers": [
+        {
+          "position": "QB",
+          "name": "Brandon Allen",
+          "stats": "26/41, 318 YDS, 2 TD, 2 INT",
+          "value": 318
+        },
+        {
+          "position": "RB",
+          "name": "Jordan Mims",
+          "stats": "28 CAR, 98 YDS",
+          "value": 98
+        },
+        {
+          "position": "WR",
+          "name": "Van Jefferson",
+          "stats": "3 REC, 102 YDS, 1 TD",
+          "value": 102
+        },
+        {
+          "position": "LB",
+          "name": "Cedric Gray",
+          "stats": "19",
+          "value": 19
+        },
+        {
+          "position": "DE",
+          "name": "Jihad Ward",
+          "stats": "1",
+          "value": 1
+        },
+        {
+          "position": "CB",
+          "name": "James Williams Sr.",
+          "stats": "1",
+          "value": 1
+        }
+      ],
+      "coaching": {
+        "experience": 1,
+        "name": "Brian Callahan"
+      }
     },
     "home": {
-      "id": "7",
-      "name": "Denver Broncos",
       "abbreviation": "DEN",
-      "location": "Denver",
-      "nickname": "Broncos",
-      "color": "0a2343",
-      "alternateColor": "fc4c02",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/den.png",
       "record": {
-        "wins": 0,
-        "losses": 0,
-        "ties": 0,
-        "winPercentage": 0
-      },
-      "oddsRecords": {
-        "againstSpread": {
-          "wins": 0,
-          "losses": 0,
-          "ties": 0
-        },
-        "overUnder": {
-          "overs": 0,
-          "unders": 0,
-          "pushes": 0
-        },
-        "homeAway": {
-          "home": {
-            "wins": 0,
-            "losses": 0,
-            "ties": 0
-          },
-          "away": {
-            "wins": 0,
-            "losses": 0,
-            "ties": 0
-          }
-        }
+        "winPercentage": 0.5
       },
       "statistics": {
         "offense": {
           "pointsPerGame": 0,
-          "yardsPerGame": 0,
-          "passingYards": 0,
-          "rushingYards": 0,
-          "thirdDownPercentage": 0,
-          "redZonePercentage": 0,
-          "turnovers": 0
+          "turnovers": 2,
+          "rushingYards": 141,
+          "passingYards": 310
         },
         "defense": {
           "pointsAllowed": 0,
-          "yardsAllowed": 0,
-          "passingYardsAllowed": 0,
-          "rushingYardsAllowed": 0,
-          "sacks": 0,
-          "interceptions": 0,
-          "forcedFumbles": 0
+          "sacks": 3,
+          "interceptions": 1,
+          "forcedFumbles": 0,
+          "totalTackles": 55
         }
       },
-      "injuries": [],
-      "keyPlayers": []
+      "keyPlayers": [
+        {
+          "position": "QB",
+          "name": "Jarrett Stidham",
+          "stats": "30/38, 376 YDS, 4 TD",
+          "value": 376
+        },
+        {
+          "position": "RB",
+          "name": "Audric Estime",
+          "stats": "16 CAR, 66 YDS, 1 TD",
+          "value": 66
+        },
+        {
+          "position": "WR",
+          "name": "Pat Bryant",
+          "stats": "8 REC, 110 YDS",
+          "value": 110
+        },
+        {
+          "position": "LB",
+          "name": "Levelle Bailey",
+          "stats": "12",
+          "value": 12
+        },
+        {
+          "position": "DE",
+          "name": "John Franklin-Myers",
+          "stats": "1",
+          "value": 1
+        },
+        {
+          "position": "CB",
+          "name": "Ja'Quan McMillian",
+          "stats": "1",
+          "value": 1
+        }
+      ],
+      "coaching": {
+        "experience": 17,
+        "name": "Sean Payton"
+      }
     }
   },
   "bettingContext": {
-    "openingLine": {
-      "spread": 10,
-      "total": 39,
-      "moneyline": {
-        "home": 203,
-        "away": 111
-      }
-    },
     "currentLine": {
-      "spread": 10.5,
-      "total": 39.5,
-      "moneyline": {
-        "home": 213,
-        "away": 101
-      }
-    },
-    "lineMovement": {
-      "spreadMovement": 0.5,
-      "totalMovement": 0.5,
-      "sharpMoney": "none",
-      "publicMoney": "none"
+      "spread": 8.5,
+      "total": 42.5
     },
     "bettingTrends": {
       "spread": {
-        "home": 50,
-        "away": 50
+        "home": 88,
+        "away": 12
       },
       "total": {
-        "over": 50,
-        "under": 50
+        "over": 21,
+        "under": 79
       },
       "moneyline": {
-        "home": 50,
-        "away": 50
+        "home": 96,
+        "away": 4
       }
     },
-    "keyNumbers": {
-      "spread": [
-        3,
-        7,
-        10,
-        14
-      ],
-      "total": [
-        37,
-        41,
-        44,
-        47,
-        51,
-        54
-      ]
+    "lineMovement": {
+      "spread": {
+        "current": 8.5,
+        "opening": 8.5,
+        "movement": 0,
+        "direction": "stable"
+      },
+      "total": {
+        "current": 42.5,
+        "opening": 41.5,
+        "movement": 1,
+        "direction": "over"
+      },
+      "moneyline": {
+        "away": {
+          "current": 340,
+          "opening": 320,
+          "movement": 20
+        },
+        "home": {
+          "current": -450,
+          "opening": -425,
+          "movement": 25
+        }
+      },
+      "sharpMoney": "none"
     }
-  },
-  "trends": [],
-  "keyMatchups": [],
-  "weather": {
-    "temperature": 72,
-    "conditions": "clear",
-    "windSpeed": 5,
-    "humidity": 50
-  },
-  "dataSources": {
-    "teamData": "ESPN API",
-    "bettingData": "Real Data",
-    "weatherData": "Real Data"
   }
 }

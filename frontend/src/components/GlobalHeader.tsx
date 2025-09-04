@@ -14,7 +14,8 @@ export default function GlobalHeader() {
         borderBottom: '1px solid rgba(255,255,255,0.08)'
       }}
     >
-      <Toolbar sx={{ minHeight: 64, px: { xs: 1, sm: 2 } }}>
+      <Toolbar sx={{ minHeight: 64 }}>
+        <Container maxWidth="lg" sx={{ px: { xs: 1, sm: 2 } }}>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
             {/* Logo */}
             <Box
@@ -44,6 +45,7 @@ export default function GlobalHeader() {
               </Box>
             </Typography>
         </Box>
+        </Container>
       </Toolbar>
     </AppBar>
   );

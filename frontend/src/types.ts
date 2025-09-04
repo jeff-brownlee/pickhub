@@ -78,6 +78,7 @@ export type Pick = {
     odds: number;
     units: number;
     rationale: string;
+    rationaleCues?: string[];
   };
   result: {
     status: 'pending' | 'won' | 'loss' | 'push';

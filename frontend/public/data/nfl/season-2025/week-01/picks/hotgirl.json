@@ -2,6 +2,7 @@
   "analystId": "hotgirl",
   "week": 1,
   "season": 2025,
+  "generatedAt": "2025-09-04T22:57:02.169Z",
   "picks": [
     {
       "gameId": "2025-09-07-cin-cle",
@@ -49,265 +50,164 @@
         }
       },
       "selection": {
-        "betType": "moneyline",
-        "side": "away",
-        "line": 0,
-        "odds": -250,
-        "units": 1,
-        "rationale": "I don't crunch numbers, I crush vibes.: Stat margin AWAY 12.53 | Form Δ 0 | ML movement 25 cents | Public ML 3% home / 97% away"
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": 0,
-        "finalOdds": 0,
-        "payout": 0,
-        "netUnits": 0
-      },
-      "analystId": "hotgirl"
-    },
-    {
-      "gameId": "2025-09-05-dal-phi",
-      "gameDate": "2025-09-05T00:20:00.000-04:00",
-      "awayTeam": {
-        "id": "DAL",
-        "name": "Dallas Cowboys",
-        "nickname": "Cowboys",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "PHI",
-        "name": "Philadelphia Eagles",
-        "nickname": "Eagles",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 8.5,
-            "odds": -115
-          },
-          "home": {
-            "line": -8.5,
-            "odds": -105
-          }
-        },
-        "total": {
-          "over": {
-            "line": 47.5,
-            "odds": -115
-          },
-          "under": {
-            "line": 47.5,
-            "odds": -105
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": 320
-          },
-          "home": {
-            "odds": -425
-          }
-        }
-      },
-      "selection": {
-        "betType": "moneyline",
-        "side": "away",
-        "line": 0,
-        "odds": 320,
-        "units": 1,
-        "rationale": "I don't crunch numbers, I crush vibes.: Stat margin AWAY 3.06 | Form Δ 0 | ML movement 110 cents | Public ML 91% home / 9% away"
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": 0,
-        "finalOdds": 0,
-        "payout": 0,
-        "netUnits": 0
-      },
-      "analystId": "hotgirl"
-    },
-    {
-      "gameId": "2025-09-07-lv-ne",
-      "gameDate": "2025-09-07T17:00:00.000-04:00",
-      "awayTeam": {
-        "id": "LV",
-        "name": "Las Vegas Raiders",
-        "nickname": "Raiders",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "NE",
-        "name": "New England Patriots",
-        "nickname": "Patriots",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 2.5,
-            "odds": -105
-          },
-          "home": {
-            "line": -2.5,
-            "odds": -120
-          }
-        },
-        "total": {
-          "over": {
-            "line": 43.5,
-            "odds": -115
-          },
-          "under": {
-            "line": 43.5,
-            "odds": -105
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": 120
-          },
-          "home": {
-            "odds": -140
-          }
-        }
-      },
-      "selection": {
-        "betType": "total",
-        "side": "under",
-        "line": 43.5,
-        "odds": -105,
-        "units": 1,
-        "rationale": "I don't crunch numbers, I crush vibes.: Expected total 40.39 vs market 43.5 | Line move 45.5→43.5 (under) | Public O/U 27%/73% | Disruption total 7.33 | Passing tilt 385"
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": 0,
-        "finalOdds": 0,
-        "payout": 0,
-        "netUnits": 0
-      },
-      "analystId": "hotgirl"
-    },
-    {
-      "gameId": "2025-09-07-nyg-wsh",
-      "gameDate": "2025-09-07T17:00:00.000-04:00",
-      "awayTeam": {
-        "id": "NYG",
-        "name": "New York Giants",
-        "nickname": "Giants",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "WSH",
-        "name": "Washington Commanders",
-        "nickname": "Commanders",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 6.5,
-            "odds": 100
-          },
-          "home": {
-            "line": -6.5,
-            "odds": -120
-          }
-        },
-        "total": {
-          "over": {
-            "line": 45.5,
-            "odds": -110
-          },
-          "under": {
-            "line": 45.5,
-            "odds": -110
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": 215
-          },
-          "home": {
-            "odds": -260
-          }
-        }
-      },
-      "selection": {
         "betType": "spread",
-        "side": "home",
-        "line": -6.5,
-        "odds": -120,
+        "side": "away",
+        "line": -5.5,
+        "odds": -110,
         "units": 1,
-        "rationale": "I don't crunch numbers, I crush vibes.: Stat margin HOME 11.06 pts | Discipline Δ -4 | Disruption Δ -2 | Coaching Δ 4 | Spread move 0 pts | Public split 50% home / 50% away"
+        "rationale": "ATS lean: CIN -5.5 at -110. Stat margin (PPG vs opp PA): AWAY +12.53 pts",
+        "rationaleCues": [
+          "Stat margin (PPG vs opp PA): AWAY +12.53 pts",
+          "Turnovers delta (opp − chosen): -1",
+          "Defensive disruption delta (sacks+INTs): -2.33",
+          "Coaching experience delta (years): +1",
+          "Spread movement: -5.5→-5.5 (stable)",
+          "Public split (spread): 26% home / 74% away"
+        ]
       },
       "result": {
         "status": "pending",
-        "finalLine": 0,
-        "finalOdds": 0,
+        "finalLine": -5.5,
+        "finalOdds": -110,
         "payout": 0,
         "netUnits": 0
       },
       "analystId": "hotgirl"
     },
     {
-      "gameId": "2025-09-08-bal-buf",
-      "gameDate": "2025-09-08T00:20:00.000-04:00",
+      "gameId": "2025-09-07-det-gb",
+      "gameDate": "2025-09-07T20:25:00.000-04:00",
       "awayTeam": {
-        "id": "BAL",
-        "name": "Baltimore Ravens",
-        "nickname": "Ravens",
+        "id": "DET",
+        "name": "Detroit Lions",
+        "nickname": "Lions",
         "score": null
       },
       "homeTeam": {
-        "id": "BUF",
-        "name": "Buffalo Bills",
-        "nickname": "Bills",
+        "id": "GB",
+        "name": "Green Bay Packers",
+        "nickname": "Packers",
         "score": null
       },
       "marketData": {
         "spread": {
           "away": {
             "line": 1.5,
-            "odds": -125
+            "odds": 100
           },
           "home": {
             "line": -1.5,
-            "odds": 102
+            "odds": -120
           }
         },
         "total": {
           "over": {
-            "line": 50.5,
+            "line": 47.5,
+            "odds": 100
+          },
+          "under": {
+            "line": 47.5,
+            "odds": -120
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": 110
+          },
+          "home": {
+            "odds": -130
+          }
+        }
+      },
+      "selection": {
+        "betType": "total",
+        "side": "over",
+        "line": 47.5,
+        "odds": 100,
+        "units": 1,
+        "rationale": "Total lean: OVER 47.5 at +100. Expected total 53.15 vs market 47.5",
+        "rationaleCues": [
+          "Expected total 53.15 vs market 47.5",
+          "Total movement: 49.5→47.5 (under)",
+          "Public split (total): 14% over / 86% under",
+          "Defensive disruption (combined sacks+INTs): 5.25",
+          "Passing volume proxy (combined pass yards): 276"
+        ]
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 47.5,
+        "finalOdds": 100,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "hotgirl"
+    },
+    {
+      "gameId": "2025-09-07-tb-atl",
+      "gameDate": "2025-09-07T17:00:00.000-04:00",
+      "awayTeam": {
+        "id": "TB",
+        "name": "Tampa Bay Buccaneers",
+        "nickname": "Buccaneers",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "ATL",
+        "name": "Atlanta Falcons",
+        "nickname": "Falcons",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": -1.5,
+            "odds": -115
+          },
+          "home": {
+            "line": 1.5,
+            "odds": -105
+          }
+        },
+        "total": {
+          "over": {
+            "line": 47.5,
             "odds": -110
           },
           "under": {
-            "line": 50.5,
+            "line": 47.5,
             "odds": -110
           }
         },
         "moneyline": {
           "away": {
-            "odds": -115
+            "odds": -130
           },
           "home": {
-            "odds": -105
+            "odds": 110
           }
         }
       },
       "selection": {
         "betType": "spread",
-        "side": "home",
+        "side": "away",
         "line": -1.5,
-        "odds": 102,
+        "odds": -115,
         "units": 1,
-        "rationale": "I don't crunch numbers, I crush vibes.: Stat margin HOME 0.82 pts | Discipline Δ 2 | Disruption Δ -2.67 | Coaching Δ -10 | Spread move 3 pts | Public split 29% home / 71% away"
+        "rationale": "ATS lean: TB -1.5 at -115. Stat margin (PPG vs opp PA): AWAY +4.41 pts",
+        "rationaleCues": [
+          "Stat margin (PPG vs opp PA): AWAY +4.41 pts",
+          "Turnovers delta (opp − chosen): -1",
+          "Defensive disruption delta (sacks+INTs): +2",
+          "Coaching experience delta (years): +3",
+          "Spread movement: -2.5→-1.5 (toward_home)",
+          "Public split (spread): 75% home / 25% away"
+        ]
       },
       "result": {
         "status": "pending",
-        "finalLine": 0,
-        "finalOdds": 0,
+        "finalLine": -1.5,
+        "finalOdds": -115,
         "payout": 0,
         "netUnits": 0
       },
@@ -315,8 +215,8 @@
     }
   ],
   "weekSummary": {
-    "totalPicks": 5,
-    "totalUnits": 5,
+    "totalPicks": 3,
+    "totalUnits": 3,
     "weekPayout": 0,
     "weekNetUnits": 0
   }

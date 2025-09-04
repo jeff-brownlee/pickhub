@@ -2,6 +2,7 @@
   "analystId": "fratguy",
   "week": 1,
   "season": 2025,
+  "generatedAt": "2025-09-04T22:57:02.168Z",
   "picks": [
     {
       "gameId": "2025-09-07-cin-cle",
@@ -54,136 +55,18 @@
         "line": 0,
         "odds": -250,
         "units": 1,
-        "rationale": "Send it! Favorites, overs, let's rage.: Stat margin AWAY 12.53 | Form Δ 0 | ML movement 25 cents | Public ML 3% home / 97% away"
+        "rationale": "Moneyline lean: CIN at -250. Stat margin (PPG vs opp PA): AWAY +12.53",
+        "rationaleCues": [
+          "Stat margin (PPG vs opp PA): AWAY +12.53",
+          "Form delta (win%): +0",
+          "Moneyline movement (away): -275→-250 (25 cents)",
+          "Public split (moneyline): 3% home / 97% away"
+        ]
       },
       "result": {
         "status": "pending",
         "finalLine": 0,
-        "finalOdds": 0,
-        "payout": 0,
-        "netUnits": 0
-      },
-      "analystId": "fratguy"
-    },
-    {
-      "gameId": "2025-09-05-dal-phi",
-      "gameDate": "2025-09-05T00:20:00.000-04:00",
-      "awayTeam": {
-        "id": "DAL",
-        "name": "Dallas Cowboys",
-        "nickname": "Cowboys",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "PHI",
-        "name": "Philadelphia Eagles",
-        "nickname": "Eagles",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 8.5,
-            "odds": -115
-          },
-          "home": {
-            "line": -8.5,
-            "odds": -105
-          }
-        },
-        "total": {
-          "over": {
-            "line": 47.5,
-            "odds": -115
-          },
-          "under": {
-            "line": 47.5,
-            "odds": -105
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": 320
-          },
-          "home": {
-            "odds": -425
-          }
-        }
-      },
-      "selection": {
-        "betType": "moneyline",
-        "side": "away",
-        "line": 0,
-        "odds": 320,
-        "units": 1,
-        "rationale": "Send it! Favorites, overs, let's rage.: Stat margin AWAY 3.06 | Form Δ 0 | ML movement 110 cents | Public ML 91% home / 9% away"
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": 0,
-        "finalOdds": 0,
-        "payout": 0,
-        "netUnits": 0
-      },
-      "analystId": "fratguy"
-    },
-    {
-      "gameId": "2025-09-07-lv-ne",
-      "gameDate": "2025-09-07T17:00:00.000-04:00",
-      "awayTeam": {
-        "id": "LV",
-        "name": "Las Vegas Raiders",
-        "nickname": "Raiders",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "NE",
-        "name": "New England Patriots",
-        "nickname": "Patriots",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 2.5,
-            "odds": -105
-          },
-          "home": {
-            "line": -2.5,
-            "odds": -120
-          }
-        },
-        "total": {
-          "over": {
-            "line": 43.5,
-            "odds": -115
-          },
-          "under": {
-            "line": 43.5,
-            "odds": -105
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": 120
-          },
-          "home": {
-            "odds": -140
-          }
-        }
-      },
-      "selection": {
-        "betType": "total",
-        "side": "under",
-        "line": 43.5,
-        "odds": -105,
-        "units": 1,
-        "rationale": "Send it! Favorites, overs, let's rage.: Expected total 40.39 vs market 43.5 | Line move 45.5→43.5 (under) | Public O/U 27%/73% | Disruption total 7.33 | Passing tilt 385"
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": 0,
-        "finalOdds": 0,
+        "finalOdds": -250,
         "payout": 0,
         "netUnits": 0
       },
@@ -240,74 +123,224 @@
         "line": 47.5,
         "odds": 100,
         "units": 1,
-        "rationale": "Send it! Favorites, overs, let's rage.: Expected total 53.15 vs market 47.5 | Line move 49.5→47.5 (under) | Public O/U 14%/86% | Disruption total 5.25 | Passing tilt 276"
+        "rationale": "Total lean: OVER 47.5 at +100. Expected total 53.15 vs market 47.5",
+        "rationaleCues": [
+          "Expected total 53.15 vs market 47.5",
+          "Total movement: 49.5→47.5 (under)",
+          "Public split (total): 14% over / 86% under",
+          "Defensive disruption (combined sacks+INTs): 5.25",
+          "Passing volume proxy (combined pass yards): 276"
+        ]
       },
       "result": {
         "status": "pending",
-        "finalLine": 0,
-        "finalOdds": 0,
+        "finalLine": 47.5,
+        "finalOdds": 100,
         "payout": 0,
         "netUnits": 0
       },
       "analystId": "fratguy"
     },
     {
-      "gameId": "2025-09-07-nyg-wsh",
-      "gameDate": "2025-09-07T17:00:00.000-04:00",
+      "gameId": "2025-09-05-dal-phi",
+      "gameDate": "2025-09-05T00:20:00.000-04:00",
       "awayTeam": {
-        "id": "NYG",
-        "name": "New York Giants",
-        "nickname": "Giants",
+        "id": "DAL",
+        "name": "Dallas Cowboys",
+        "nickname": "Cowboys",
         "score": null
       },
       "homeTeam": {
-        "id": "WSH",
-        "name": "Washington Commanders",
-        "nickname": "Commanders",
+        "id": "PHI",
+        "name": "Philadelphia Eagles",
+        "nickname": "Eagles",
         "score": null
       },
       "marketData": {
         "spread": {
           "away": {
-            "line": 6.5,
-            "odds": 100
+            "line": 8.5,
+            "odds": -115
           },
           "home": {
-            "line": -6.5,
-            "odds": -120
+            "line": -8.5,
+            "odds": -105
           }
         },
         "total": {
           "over": {
-            "line": 45.5,
+            "line": 47.5,
+            "odds": -115
+          },
+          "under": {
+            "line": 47.5,
+            "odds": -105
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": 320
+          },
+          "home": {
+            "odds": -425
+          }
+        }
+      },
+      "selection": {
+        "betType": "moneyline",
+        "side": "away",
+        "line": 0,
+        "odds": 320,
+        "units": 1,
+        "rationale": "Moneyline lean: DAL at +320. Stat margin (PPG vs opp PA): AWAY +3.06",
+        "rationaleCues": [
+          "Stat margin (PPG vs opp PA): AWAY +3.06",
+          "Form delta (win%): +0",
+          "Moneyline movement (away): 230→340 (110 cents)",
+          "Public split (moneyline): 91% home / 9% away"
+        ]
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 0,
+        "finalOdds": 320,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "fratguy"
+    },
+    {
+      "gameId": "2025-09-08-bal-buf",
+      "gameDate": "2025-09-08T00:20:00.000-04:00",
+      "awayTeam": {
+        "id": "BAL",
+        "name": "Baltimore Ravens",
+        "nickname": "Ravens",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "BUF",
+        "name": "Buffalo Bills",
+        "nickname": "Bills",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 1.5,
+            "odds": -125
+          },
+          "home": {
+            "line": -1.5,
+            "odds": 102
+          }
+        },
+        "total": {
+          "over": {
+            "line": 50.5,
             "odds": -110
           },
           "under": {
-            "line": 45.5,
+            "line": 50.5,
             "odds": -110
           }
         },
         "moneyline": {
           "away": {
-            "odds": 215
+            "odds": -115
           },
           "home": {
-            "odds": -260
+            "odds": -105
           }
         }
       },
       "selection": {
-        "betType": "spread",
-        "side": "home",
-        "line": -6.5,
-        "odds": -120,
+        "betType": "total",
+        "side": "over",
+        "line": 50.5,
+        "odds": -110,
         "units": 1,
-        "rationale": "Send it! Favorites, overs, let's rage.: Stat margin HOME 11.06 pts | Discipline Δ -4 | Disruption Δ -2 | Coaching Δ 4 | Spread move 0 pts | Public split 50% home / 50% away"
+        "rationale": "Total lean: OVER 50.5 at -110. Expected total 54.89 vs market 50.5",
+        "rationaleCues": [
+          "Expected total 54.89 vs market 50.5",
+          "Total movement: 51.5→50.5 (under)",
+          "Public split (total): 13% over / 87% under",
+          "Defensive disruption (combined sacks+INTs): 4.67",
+          "Passing volume proxy (combined pass yards): 392"
+        ]
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 50.5,
+        "finalOdds": -110,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "fratguy"
+    },
+    {
+      "gameId": "2025-09-08-bal-buf",
+      "gameDate": "2025-09-08T00:20:00.000-04:00",
+      "awayTeam": {
+        "id": "BAL",
+        "name": "Baltimore Ravens",
+        "nickname": "Ravens",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "BUF",
+        "name": "Buffalo Bills",
+        "nickname": "Bills",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 1.5,
+            "odds": -125
+          },
+          "home": {
+            "line": -1.5,
+            "odds": 102
+          }
+        },
+        "total": {
+          "over": {
+            "line": 50.5,
+            "odds": -110
+          },
+          "under": {
+            "line": 50.5,
+            "odds": -110
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": -115
+          },
+          "home": {
+            "odds": -105
+          }
+        }
+      },
+      "selection": {
+        "betType": "moneyline",
+        "side": "home",
+        "line": 0,
+        "odds": -105,
+        "units": 1,
+        "rationale": "Moneyline lean: BUF at -105. Stat margin (PPG vs opp PA): HOME -0.82",
+        "rationaleCues": [
+          "Stat margin (PPG vs opp PA): HOME -0.82",
+          "Form delta (win%): +0",
+          "Moneyline movement (home): -120→0 (120 cents)",
+          "Public split (moneyline): 21% home / 79% away"
+        ]
       },
       "result": {
         "status": "pending",
         "finalLine": 0,
-        "finalOdds": 0,
+        "finalOdds": -105,
         "payout": 0,
         "netUnits": 0
       },

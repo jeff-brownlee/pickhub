@@ -64,7 +64,7 @@ export default function BiosPage() {
   }
 
   return (
-    <Container maxWidth="md" sx={{ py: 4 }}>
+    <Container maxWidth="lg" sx={{ py: 4 }}>
       <Stack spacing={6}>
         <Box sx={{ borderRadius: 2, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.08)' }}>
           <HeroImage srcPrimary={persona.profileImageUrl} avatarUrl={persona.avatarUrl} alt={persona.name} />
@@ -116,7 +116,7 @@ function HeroImage({ srcPrimary, avatarUrl, alt }: { srcPrimary?: string; avatar
   };
 
   return (
-    <Box sx={{ width: '100%', height: { xs: 220, sm: 280, md: 340 }, backgroundColor: 'rgba(255,255,255,0.04)' }}>
+    <Box sx={{ width: '100%', aspectRatio: '1 / 1', backgroundColor: 'rgba(255,255,255,0.04)' }}>
       {currentSrc ? (
         <Box
           component="img"

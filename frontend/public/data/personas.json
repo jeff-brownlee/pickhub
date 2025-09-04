@@ -3,7 +3,7 @@
     "id": "coach",
     "name": "Coach Dan Miller",
     "avatarUrl": "/avatars/coach.png",
-    "profileImageUrl": "/profiles/coach.png",
+    "profileImageUrl": "/profiles/coach.jpg",
     "record": {
       "wins": 0,
       "losses": 0,
@@ -19,7 +19,7 @@
     "id": "contrarian",
     "name": "Ricky Cruz",
     "avatarUrl": "/avatars/contrarian.png",
-    "profileImageUrl": "/profiles/contrarian.png",
+    "profileImageUrl": "/profiles/contrarian.jpg",
     "record": {
       "wins": 0,
       "losses": 0,
@@ -35,7 +35,7 @@
     "id": "fratguy",
     "name": "Tyler Brooks",
     "avatarUrl": "/avatars/fratguy.png",
-    "profileImageUrl": "/profiles/fratguy.png",
+    "profileImageUrl": "/profiles/fratguy.jpg",
     "record": {
       "wins": 0,
       "losses": 0,
@@ -51,7 +51,7 @@
     "id": "hotgirl",
     "name": "Maddie Blake",
     "avatarUrl": "/avatars/hotgirl.png",
-    "profileImageUrl": "/profiles/hotgirl.png",
+    "profileImageUrl": "/profiles/hotgirl.jpg",
     "record": {
       "wins": 0,
       "losses": 0,
@@ -67,7 +67,7 @@
     "id": "joe",
     "name": "Mike Donnelly",
     "avatarUrl": "/avatars/joe.png",
-    "profileImageUrl": "/profiles/joe.png",
+    "profileImageUrl": "/profiles/joe.jpg",
     "record": {
       "wins": 0,
       "losses": 0,
@@ -83,7 +83,7 @@
     "id": "mobster",
     "name": "Vinny Russo",
     "avatarUrl": "/avatars/mobster.png",
-    "profileImageUrl": "/profiles/mobster.png",
+    "profileImageUrl": "/profiles/mobster.jpg",
     "record": {
       "wins": 0,
       "losses": 0,
@@ -99,7 +99,7 @@
     "id": "nerd",
     "name": "Ethan Cole",
     "avatarUrl": "/avatars/nerd.png",
-    "profileImageUrl": "/profiles/nerd.png",
+    "profileImageUrl": "/profiles/nerd.jpg",
     "record": {
       "wins": 0,
       "losses": 0,
@@ -115,7 +115,7 @@
     "id": "podcaster",
     "name": "Trent \"Big T\" Walker",
     "avatarUrl": "/avatars/podcaster.png",
-    "profileImageUrl": "/profiles/podcaster.png",
+    "profileImageUrl": "/profiles/podcaster.jpg",
     "record": {
       "wins": 0,
       "losses": 0,
@@ -131,7 +131,7 @@
     "id": "pro",
     "name": "Cole Maddox",
     "avatarUrl": "/avatars/pro.png",
-    "profileImageUrl": "/profiles/pro.png",
+    "profileImageUrl": "/profiles/pro.jpg",
     "record": {
       "wins": 0,
       "losses": 0,

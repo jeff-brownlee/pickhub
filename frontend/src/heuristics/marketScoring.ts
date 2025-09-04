@@ -94,12 +94,12 @@ export function computeSpreadScore(fb: MinimalFactbook): SpreadScore {
   const edge = toFixed(Math.abs(statMargin), 2);
 
   const reasons: string[] = [
-    `Stat margin ${statMargin >= 0 ? "AWAY" : "HOME"} ${toFixed(Math.abs(statMargin), 2)} pts`,
-    `Discipline Δ ${toFixed(disciplineDelta, 2)}`,
-    `Disruption Δ ${toFixed(disruptionDelta, 2)}`,
-    `Coaching Δ ${toFixed(coachingDelta, 2)}`,
-    `Spread move ${toFixed(spreadMove, 2)} pts`,
-    `Public split ${trends ? `${trends.home}% home / ${trends.away}% away` : "n/a"}`
+    `Stat margin (PPG vs opp PA): ${statMargin >= 0 ? "AWAY" : "HOME"} ${statMargin >= 0 ? "+" : "-"}${toFixed(Math.abs(statMargin), 2)} pts`,
+    `Turnovers delta (opp − chosen): ${disciplineDelta >= 0 ? "+" : "-"}${toFixed(Math.abs(disciplineDelta), 2)}`,
+    `Defensive disruption delta (sacks+INTs): ${disruptionDelta >= 0 ? "+" : "-"}${toFixed(Math.abs(disruptionDelta), 2)}`,
+    `Coaching experience delta (years): ${coachingDelta >= 0 ? "+" : "-"}${toFixed(Math.abs(coachingDelta), 2)}`,
+    `${lm ? `Spread movement: ${toFixed(lm.opening ?? 0, 2)}→${toFixed(lm.current ?? 0, 2)} (${lm.direction})` : 'Spread movement: n/a'}`,
+    `Public split (spread): ${trends ? `${trends.home}% home / ${trends.away}% away` : 'n/a'}`
   ];
 
   return { score, side, edge, reasons };
@@ -154,10 +154,10 @@ export function computeTotalScore(fb: MinimalFactbook): TotalScore {
 
   const reasons: string[] = [
     `Expected total ${toFixed(expected, 2)} vs market ${currentTotal}`,
-    `Line move ${lmTotal ? `${toFixed(lmTotal.opening, 2)}→${toFixed(lmTotal.current, 2)} (${lmTotal.direction})` : "n/a"}`,
-    `Public O/U ${trends ? `${trends.over}%/${trends.under}%` : "n/a"}`,
-    `Disruption total ${toFixed(disruptionTotal, 2)}`,
-    `Passing tilt ${toFixed(passingTilt, 2)}`
+    `${lmTotal ? `Total movement: ${toFixed(lmTotal.opening ?? 0, 2)}→${toFixed(lmTotal.current ?? 0, 2)} (${lmTotal.direction})` : 'Total movement: n/a'}`,
+    `Public split (total): ${trends ? `${trends.over}% over / ${trends.under}% under` : 'n/a'}`,
+    `Defensive disruption (combined sacks+INTs): ${toFixed(disruptionTotal, 2)}`,
+    `Passing volume proxy (combined pass yards): ${toFixed(passingTilt, 2)}`
   ];
 
   return { score, direction, edge, reasons };
@@ -182,9 +182,10 @@ export function computeMoneylineScore(fb: MinimalFactbook): MoneylineScore {
 
   // Moneyline movement magnitude (steam)
   let steam = 0;
+  let chosenMl: { opening?: number; current?: number } | undefined;
   if (ml) {
-    const chosen = side === "away" ? ml.away : ml.home;
-    steam = chosen ? Math.abs((chosen.current || 0) - (chosen.opening || 0)) : 0;
+    chosenMl = side === "away" ? ml.away : ml.home;
+    steam = chosenMl ? Math.abs((chosenMl.current || 0) - (chosenMl.opening || 0)) : 0;
   }
 
   // Public imbalance magnitude
@@ -199,10 +200,10 @@ export function computeMoneylineScore(fb: MinimalFactbook): MoneylineScore {
   const score = clamp(toFixed(rawScore, 2));
 
   const reasons: string[] = [
-    `Stat margin ${statMargin >= 0 ? "AWAY" : "HOME"} ${toFixed(Math.abs(statMargin), 2)}`,
-    `Form Δ ${toFixed(formDelta, 3)}`,
-    `ML movement ${ml ? `${toFixed(steam, 2)} cents` : "n/a"}`,
-    `Public ML ${trends ? `${trends.home}% home / ${trends.away}% away` : "n/a"}`
+    `Stat margin (PPG vs opp PA): ${statMargin >= 0 ? "AWAY" : "HOME"} ${statMargin >= 0 ? "+" : "-"}${toFixed(Math.abs(statMargin), 2)}`,
+    `Form delta (win%): ${formDelta >= 0 ? "+" : "-"}${toFixed(Math.abs(formDelta), 3)}`,
+    `${ml && chosenMl ? `Moneyline movement (${side}): ${toFixed((chosenMl.opening ?? 0), 0)}→${toFixed((chosenMl.current ?? 0), 0)} (${toFixed(steam, 2)} cents)` : 'Moneyline movement: n/a'}`,
+    `Public split (moneyline): ${trends ? `${trends.home}% home / ${trends.away}% away` : 'n/a'}`
   ];
 
   return { score, side, edge, reasons };

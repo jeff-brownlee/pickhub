@@ -2,312 +2,141 @@
   "analystId": "podcaster",
   "week": 1,
   "season": 2025,
+  "generatedAt": "2025-09-04T22:57:02.171Z",
   "picks": [
     {
-      "gameId": "2025-09-07-cin-cle",
-      "gameDate": "2025-09-07T17:00:00.000-04:00",
+      "gameId": "2025-09-07-ten-den",
+      "gameDate": "2025-09-07T20:05:00.000-04:00",
       "awayTeam": {
-        "id": "CIN",
-        "name": "Cincinnati Bengals",
-        "nickname": "Bengals",
+        "id": "TEN",
+        "name": "Tennessee Titans",
+        "nickname": "Titans",
         "score": null
       },
       "homeTeam": {
-        "id": "CLE",
-        "name": "Cleveland Browns",
-        "nickname": "Browns",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": -5.5,
-            "odds": -110
-          },
-          "home": {
-            "line": 5.5,
-            "odds": -110
-          }
-        },
-        "total": {
-          "over": {
-            "line": 47.5,
-            "odds": -115
-          },
-          "under": {
-            "line": 47.5,
-            "odds": -110
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": -250
-          },
-          "home": {
-            "odds": 210
-          }
-        }
-      },
-      "selection": {
-        "betType": "moneyline",
-        "side": "away",
-        "line": 0,
-        "odds": -250,
-        "units": 1,
-        "rationale": "You win by pounding the rock — don't overthink it.: Stat margin AWAY 12.53 | Form Δ 0 | ML movement 25 cents | Public ML 3% home / 97% away"
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": 0,
-        "finalOdds": 0,
-        "payout": 0,
-        "netUnits": 0
-      },
-      "analystId": "podcaster"
-    },
-    {
-      "gameId": "2025-09-07-lv-ne",
-      "gameDate": "2025-09-07T17:00:00.000-04:00",
-      "awayTeam": {
-        "id": "LV",
-        "name": "Las Vegas Raiders",
-        "nickname": "Raiders",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "NE",
-        "name": "New England Patriots",
-        "nickname": "Patriots",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 2.5,
-            "odds": -105
-          },
-          "home": {
-            "line": -2.5,
-            "odds": -120
-          }
-        },
-        "total": {
-          "over": {
-            "line": 43.5,
-            "odds": -115
-          },
-          "under": {
-            "line": 43.5,
-            "odds": -105
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": 120
-          },
-          "home": {
-            "odds": -140
-          }
-        }
-      },
-      "selection": {
-        "betType": "total",
-        "side": "under",
-        "line": 43.5,
-        "odds": -105,
-        "units": 1,
-        "rationale": "You win by pounding the rock — don't overthink it.: Expected total 40.39 vs market 43.5 | Line move 45.5→43.5 (under) | Public O/U 27%/73% | Disruption total 7.33 | Passing tilt 385"
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": 0,
-        "finalOdds": 0,
-        "payout": 0,
-        "netUnits": 0
-      },
-      "analystId": "podcaster"
-    },
-    {
-      "gameId": "2025-09-05-dal-phi",
-      "gameDate": "2025-09-05T00:20:00.000-04:00",
-      "awayTeam": {
-        "id": "DAL",
-        "name": "Dallas Cowboys",
-        "nickname": "Cowboys",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "PHI",
-        "name": "Philadelphia Eagles",
-        "nickname": "Eagles",
+        "id": "DEN",
+        "name": "Denver Broncos",
+        "nickname": "Broncos",
         "score": null
       },
       "marketData": {
         "spread": {
           "away": {
             "line": 8.5,
-            "odds": -115
+            "odds": -110
           },
           "home": {
             "line": -8.5,
-            "odds": -105
+            "odds": -110
           }
         },
         "total": {
           "over": {
-            "line": 47.5,
+            "line": 42.5,
+            "odds": -105
+          },
+          "under": {
+            "line": 42.5,
             "odds": -115
-          },
-          "under": {
-            "line": 47.5,
-            "odds": -105
           }
         },
         "moneyline": {
           "away": {
-            "odds": 320
+            "odds": 340
           },
           "home": {
-            "odds": -425
-          }
-        }
-      },
-      "selection": {
-        "betType": "moneyline",
-        "side": "away",
-        "line": 0,
-        "odds": 320,
-        "units": 1,
-        "rationale": "You win by pounding the rock — don't overthink it.: Stat margin AWAY 3.06 | Form Δ 0 | ML movement 110 cents | Public ML 91% home / 9% away"
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": 0,
-        "finalOdds": 0,
-        "payout": 0,
-        "netUnits": 0
-      },
-      "analystId": "podcaster"
-    },
-    {
-      "gameId": "2025-09-07-det-gb",
-      "gameDate": "2025-09-07T20:25:00.000-04:00",
-      "awayTeam": {
-        "id": "DET",
-        "name": "Detroit Lions",
-        "nickname": "Lions",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "GB",
-        "name": "Green Bay Packers",
-        "nickname": "Packers",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 1.5,
-            "odds": 100
-          },
-          "home": {
-            "line": -1.5,
-            "odds": -120
-          }
-        },
-        "total": {
-          "over": {
-            "line": 47.5,
-            "odds": 100
-          },
-          "under": {
-            "line": 47.5,
-            "odds": -120
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": 110
-          },
-          "home": {
-            "odds": -130
+            "odds": -450
           }
         }
       },
       "selection": {
         "betType": "total",
         "side": "over",
-        "line": 47.5,
-        "odds": 100,
+        "line": 42.5,
+        "odds": -105,
         "units": 1,
-        "rationale": "You win by pounding the rock — don't overthink it.: Expected total 53.15 vs market 47.5 | Line move 49.5→47.5 (under) | Public O/U 14%/86% | Disruption total 5.25 | Passing tilt 276"
+        "rationale": "Total lean: OVER 42.5 at -105. Expected total 44.01 vs market 42.5",
+        "rationaleCues": [
+          "Expected total 44.01 vs market 42.5",
+          "Total movement: 41.5→42.5 (over)",
+          "Public split (total): 21% over / 79% under",
+          "Defensive disruption (combined sacks+INTs): 7.33",
+          "Passing volume proxy (combined pass yards): 495"
+        ]
       },
       "result": {
         "status": "pending",
-        "finalLine": 0,
-        "finalOdds": 0,
+        "finalLine": 42.5,
+        "finalOdds": -105,
         "payout": 0,
         "netUnits": 0
       },
       "analystId": "podcaster"
     },
     {
-      "gameId": "2025-09-07-mia-ind",
+      "gameId": "2025-09-07-pit-nyj",
       "gameDate": "2025-09-07T17:00:00.000-04:00",
       "awayTeam": {
-        "id": "MIA",
-        "name": "Miami Dolphins",
-        "nickname": "Dolphins",
+        "id": "PIT",
+        "name": "Pittsburgh Steelers",
+        "nickname": "Steelers",
         "score": null
       },
       "homeTeam": {
-        "id": "IND",
-        "name": "Indianapolis Colts",
-        "nickname": "Colts",
+        "id": "NYJ",
+        "name": "New York Jets",
+        "nickname": "Jets",
         "score": null
       },
       "marketData": {
         "spread": {
           "away": {
-            "line": 1.5,
+            "line": -2.5,
             "odds": -125
           },
           "home": {
-            "line": -1.5,
+            "line": 2.5,
             "odds": 102
           }
         },
         "total": {
           "over": {
-            "line": 46.5,
-            "odds": -110
+            "line": 37.5,
+            "odds": -120
           },
           "under": {
-            "line": 46.5,
-            "odds": -110
+            "line": 37.5,
+            "odds": 100
           }
         },
         "moneyline": {
           "away": {
-            "odds": -115
+            "odds": -150
           },
           "home": {
-            "odds": -105
+            "odds": 130
           }
         }
       },
       "selection": {
         "betType": "total",
-        "side": "under",
-        "line": 46.5,
-        "odds": -110,
+        "side": "over",
+        "line": 37.5,
+        "odds": -120,
         "units": 1,
-        "rationale": "You win by pounding the rock — don't overthink it.: Expected total 43.89 vs market 46.5 | Line move 47.5→46.5 (under) | Public O/U 15%/85% | Disruption total 7 | Passing tilt 501"
+        "rationale": "Total lean: OVER 37.5 at -120. Expected total 42.91 vs market 37.5",
+        "rationaleCues": [
+          "Expected total 42.91 vs market 37.5",
+          "Total movement: 38.5→38.5 (stable)",
+          "Public split (total): 38% over / 62% under",
+          "Defensive disruption (combined sacks+INTs): 6",
+          "Passing volume proxy (combined pass yards): 460"
+        ]
       },
       "result": {
         "status": "pending",
-        "finalLine": 0,
-        "finalOdds": 0,
+        "finalLine": 37.5,
+        "finalOdds": -120,
         "payout": 0,
         "netUnits": 0
       },
@@ -315,8 +144,8 @@
     }
   ],
   "weekSummary": {
-    "totalPicks": 5,
-    "totalUnits": 5,
+    "totalPicks": 2,
+    "totalUnits": 2,
     "weekPayout": 0,
     "weekNetUnits": 0
   }

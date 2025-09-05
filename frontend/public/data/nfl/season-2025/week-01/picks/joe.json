@@ -2,7 +2,7 @@
   "analystId": "joe",
   "week": 1,
   "season": 2025,
-  "generatedAt": "2025-09-04T22:57:02.169Z",
+  "generatedAt": "2025-09-05T11:35:00.901Z",
   "picks": [
     {
       "gameId": "2025-09-07-tb-atl",
@@ -10,13 +10,11 @@
       "awayTeam": {
         "id": "TB",
         "name": "Tampa Bay Buccaneers",
-        "nickname": "Buccaneers",
         "score": null
       },
       "homeTeam": {
         "id": "ATL",
         "name": "Atlanta Falcons",
-        "nickname": "Falcons",
         "score": null
       },
       "marketData": {

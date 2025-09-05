@@ -2,7 +2,7 @@
   "analystId": "hotgirl",
   "week": 1,
   "season": 2025,
-  "generatedAt": "2025-09-04T22:57:02.169Z",
+  "generatedAt": "2025-09-05T11:35:00.901Z",
   "picks": [
     {
       "gameId": "2025-09-07-cin-cle",
@@ -10,13 +10,11 @@
       "awayTeam": {
         "id": "CIN",
         "name": "Cincinnati Bengals",
-        "nickname": "Bengals",
         "score": null
       },
       "homeTeam": {
         "id": "CLE",
         "name": "Cleveland Browns",
-        "nickname": "Browns",
         "score": null
       },
       "marketData": {
@@ -80,13 +78,11 @@
       "awayTeam": {
         "id": "DET",
         "name": "Detroit Lions",
-        "nickname": "Lions",
         "score": null
       },
       "homeTeam": {
         "id": "GB",
         "name": "Green Bay Packers",
-        "nickname": "Packers",
         "score": null
       },
       "marketData": {
@@ -149,13 +145,11 @@
       "awayTeam": {
         "id": "TB",
         "name": "Tampa Bay Buccaneers",
-        "nickname": "Buccaneers",
         "score": null
       },
       "homeTeam": {
         "id": "ATL",
         "name": "Atlanta Falcons",
-        "nickname": "Falcons",
         "score": null
       },
       "marketData": {

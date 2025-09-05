@@ -1,0 +1,3234 @@
+[
+  {
+    "gameId": "2025-09-05-dal-phi",
+    "week": 1,
+    "kickoffISO": "2025-09-05T00:20:00.000-04:00",
+    "scoring": {
+      "spread": {
+        "score": 40.94,
+        "side": "away",
+        "edge": 3.06,
+        "reasons": [
+          "Stat margin (PPG vs opp PA): AWAY +3.06 pts",
+          "Turnovers delta (opp − chosen): +0",
+          "Defensive disruption delta (sacks+INTs): -1",
+          "Coaching experience delta (years): -4",
+          "Spread movement: 4.5→8.5 (toward_home)",
+          "Public split (spread): 62% home / 38% away"
+        ],
+        "components": {
+          "margin": {
+            "value": 3.06,
+            "normalized": 0.306,
+            "weight": 40,
+            "contribution": 12.24,
+            "description": "Stat margin (PPG vs opp PA)"
+          },
+          "discipline": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 10,
+            "contribution": 0,
+            "description": "Turnovers delta (opp − chosen)"
+          },
+          "disruption": {
+            "value": -1,
+            "normalized": 0.25,
+            "weight": 10,
+            "contribution": 2.5,
+            "description": "Defensive disruption delta (sacks+INTs)"
+          },
+          "coaching": {
+            "value": -4,
+            "normalized": 0.4,
+            "weight": 10,
+            "contribution": 4,
+            "description": "Coaching experience delta (years)"
+          },
+          "movement": {
+            "value": 4,
+            "normalized": 1,
+            "weight": 15,
+            "contribution": 15,
+            "description": "Spread movement magnitude"
+          },
+          "publicSkew": {
+            "value": 24,
+            "normalized": 0.48,
+            "weight": 15,
+            "contribution": 7.2,
+            "description": "Public split magnitude"
+          }
+        },
+        "inputs": {
+          "awayOffPPG": 20.588236,
+          "homeDefPA": 17.82353,
+          "homeOffPPG": 27.235294,
+          "awayDefPA": 27.529411,
+          "chosenOffTurnovers": 3,
+          "oppOffTurnovers": 3,
+          "chosenDefDisruption": 2,
+          "oppDefDisruption": 3,
+          "chosenCoachExp": 0,
+          "oppCoachExp": 4,
+          "lm_open": 4.5,
+          "lm_current": 8.5,
+          "lm_movement": 4,
+          "trends_home": 62,
+          "trends_away": 38
+        },
+        "formula": "score = 40*norm(statMargin/10) + 10*norm(disciplineDelta/10) + 10*norm(disruptionDelta/4) + 10*norm(coachingDelta/10) + 15*norm(spreadMove/3) + 15*norm(publicImbalance/50)"
+      },
+      "total": {
+        "score": 26.88,
+        "direction": "under",
+        "edge": 0.54,
+        "reasons": [
+          "Expected total 46.96 vs market 47.5",
+          "Total movement: 43.5→48.5 (over)",
+          "Public split (total): 29% over / 71% under",
+          "Defensive disruption (combined sacks+INTs): 5",
+          "Passing volume proxy (combined pass yards): 333"
+        ],
+        "components": {
+          "edge": {
+            "value": -0.54,
+            "normalized": 0.054,
+            "weight": 40,
+            "contribution": 2.16,
+            "description": "Expected vs market (points)"
+          },
+          "movement": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Movement aligned with direction"
+          },
+          "publicSkew": {
+            "value": 42,
+            "normalized": 0.84,
+            "weight": 20,
+            "contribution": 16.8,
+            "description": "Public O/U split magnitude"
+          },
+          "disruption": {
+            "value": 5,
+            "normalized": 0.625,
+            "weight": 10,
+            "contribution": 6.25,
+            "description": "Defensive disruption (sacks+INTs)"
+          },
+          "pace": {
+            "value": 333,
+            "normalized": 0.555,
+            "weight": 10,
+            "contribution": 1.67,
+            "description": "Passing volume proxy"
+          }
+        },
+        "inputs": {
+          "currentTotal": 47.5,
+          "expected": 46.95882385,
+          "awayOffPPG": 20.588236,
+          "homeOffPPG": 27.235294,
+          "awayDefPA": 27.529411,
+          "homeDefPA": 17.82353,
+          "lm_open": 43.5,
+          "lm_current": 48.5,
+          "lm_movement": 5,
+          "trends_over": 29,
+          "trends_under": 71,
+          "disruptionTotal": 5,
+          "passingTilt": 333
+        },
+        "formula": "score = 40*norm(diff/10) + 20*norm(moveConfirm/3) + 20*norm(publicImbalance/50) + 10*norm(disruption/8)*(under bias) + 10*norm(passingTilt/600)*(over bias)"
+      },
+      "moneyline": {
+        "score": 55.71,
+        "side": "away",
+        "edge": 3.06,
+        "reasons": [
+          "Stat margin (PPG vs opp PA): AWAY +3.06",
+          "Form delta (win%): +0",
+          "Moneyline movement (away): 230→340 (110 cents)",
+          "Public split (moneyline): 91% home / 9% away"
+        ],
+        "components": {
+          "stat": {
+            "value": 3.06,
+            "normalized": 0.306,
+            "weight": 35,
+            "contribution": 10.71,
+            "description": "Stat margin (PPG vs opp PA)"
+          },
+          "form": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Record delta (win%)"
+          },
+          "steam": {
+            "value": 110,
+            "normalized": 1,
+            "weight": 25,
+            "contribution": 25,
+            "description": "Moneyline movement (cents)"
+          },
+          "publicSkew": {
+            "value": 82,
+            "normalized": 1,
+            "weight": 20,
+            "contribution": 20,
+            "description": "Public ML split magnitude"
+          }
+        },
+        "inputs": {
+          "awayOffPPG": 20.588236,
+          "homeDefPA": 17.82353,
+          "homeOffPPG": 27.235294,
+          "awayDefPA": 27.529411,
+          "awayWinPct": 0.5,
+          "homeWinPct": 0.5,
+          "ml_open": 230,
+          "ml_current": 340,
+          "ml_steam": 110,
+          "trends_home": 91,
+          "trends_away": 9
+        },
+        "formula": "score = 35*norm(statMargin/10) + 20*norm(formDelta/0.5) + 25*norm(steam/60) + 20*norm(publicImbalance/50)"
+      }
+    }
+  },
+  {
+    "gameId": "2025-09-06-kc-lac",
+    "week": 1,
+    "kickoffISO": "2025-09-06T00:00:00.000-04:00",
+    "scoring": {
+      "spread": {
+        "score": 26.53,
+        "side": "away",
+        "edge": 0.47,
+        "reasons": [
+          "Stat margin (PPG vs opp PA): AWAY +0.47 pts",
+          "Turnovers delta (opp − chosen): +2",
+          "Defensive disruption delta (sacks+INTs): -0.5",
+          "Coaching experience delta (years): +21",
+          "Spread movement: -3.5→-3.5 (stable)",
+          "Public split (spread): 69% home / 31% away"
+        ],
+        "components": {
+          "margin": {
+            "value": 0.47,
+            "normalized": 0.047,
+            "weight": 40,
+            "contribution": 1.88,
+            "description": "Stat margin (PPG vs opp PA)"
+          },
+          "discipline": {
+            "value": 2,
+            "normalized": 0.2,
+            "weight": 10,
+            "contribution": 2,
+            "description": "Turnovers delta (opp − chosen)"
+          },
+          "disruption": {
+            "value": -0.5,
+            "normalized": 0.125,
+            "weight": 10,
+            "contribution": 1.25,
+            "description": "Defensive disruption delta (sacks+INTs)"
+          },
+          "coaching": {
+            "value": 21,
+            "normalized": 1,
+            "weight": 10,
+            "contribution": 10,
+            "description": "Coaching experience delta (years)"
+          },
+          "movement": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 15,
+            "contribution": 0,
+            "description": "Spread movement magnitude"
+          },
+          "publicSkew": {
+            "value": 38,
+            "normalized": 0.76,
+            "weight": 15,
+            "contribution": 11.4,
+            "description": "Public split magnitude"
+          }
+        },
+        "inputs": {
+          "awayOffPPG": 22.647058,
+          "homeDefPA": 17.705883,
+          "homeOffPPG": 23.647058,
+          "awayDefPA": 19.17647,
+          "chosenOffTurnovers": 3,
+          "oppOffTurnovers": 5,
+          "chosenDefDisruption": 3,
+          "oppDefDisruption": 3.5,
+          "chosenCoachExp": 26,
+          "oppCoachExp": 5,
+          "lm_open": -3.5,
+          "lm_current": -3.5,
+          "lm_movement": 0,
+          "trends_home": 69,
+          "trends_away": 31
+        },
+        "formula": "score = 40*norm(statMargin/10) + 10*norm(disciplineDelta/10) + 10*norm(disruptionDelta/4) + 10*norm(coachingDelta/10) + 15*norm(spreadMove/3) + 15*norm(publicImbalance/50)"
+      },
+      "total": {
+        "score": 43.91,
+        "direction": "under",
+        "edge": 3.5,
+        "reasons": [
+          "Expected total 43 vs market 46.5",
+          "Total movement: 45.5→46.5 (over)",
+          "Public split (total): 14% over / 86% under",
+          "Defensive disruption (combined sacks+INTs): 6.5",
+          "Passing volume proxy (combined pass yards): 355"
+        ],
+        "components": {
+          "edge": {
+            "value": -3.5,
+            "normalized": 0.35,
+            "weight": 40,
+            "contribution": 14,
+            "description": "Expected vs market (points)"
+          },
+          "movement": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Movement aligned with direction"
+          },
+          "publicSkew": {
+            "value": 72,
+            "normalized": 1,
+            "weight": 20,
+            "contribution": 20,
+            "description": "Public O/U split magnitude"
+          },
+          "disruption": {
+            "value": 6.5,
+            "normalized": 0.813,
+            "weight": 10,
+            "contribution": 8.13,
+            "description": "Defensive disruption (sacks+INTs)"
+          },
+          "pace": {
+            "value": 355,
+            "normalized": 0.592,
+            "weight": 10,
+            "contribution": 1.78,
+            "description": "Passing volume proxy"
+          }
+        },
+        "inputs": {
+          "currentTotal": 46.5,
+          "expected": 42.99999895,
+          "awayOffPPG": 22.647058,
+          "homeOffPPG": 23.647058,
+          "awayDefPA": 19.17647,
+          "homeDefPA": 17.705883,
+          "lm_open": 45.5,
+          "lm_current": 46.5,
+          "lm_movement": 1,
+          "trends_over": 14,
+          "trends_under": 86,
+          "disruptionTotal": 6.5,
+          "passingTilt": 355
+        },
+        "formula": "score = 40*norm(diff/10) + 20*norm(moveConfirm/3) + 20*norm(publicImbalance/50) + 10*norm(disruption/8)*(under bias) + 10*norm(passingTilt/600)*(over bias)"
+      },
+      "moneyline": {
+        "score": 27.9,
+        "side": "away",
+        "edge": 0.47,
+        "reasons": [
+          "Stat margin (PPG vs opp PA): AWAY +0.47",
+          "Form delta (win%): +0",
+          "Moneyline movement (away): -185→-170 (15 cents)",
+          "Public split (moneyline): 7% home / 93% away"
+        ],
+        "components": {
+          "stat": {
+            "value": 0.47,
+            "normalized": 0.047,
+            "weight": 35,
+            "contribution": 1.65,
+            "description": "Stat margin (PPG vs opp PA)"
+          },
+          "form": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Record delta (win%)"
+          },
+          "steam": {
+            "value": 15,
+            "normalized": 0.25,
+            "weight": 25,
+            "contribution": 6.25,
+            "description": "Moneyline movement (cents)"
+          },
+          "publicSkew": {
+            "value": 86,
+            "normalized": 1,
+            "weight": 20,
+            "contribution": 20,
+            "description": "Public ML split magnitude"
+          }
+        },
+        "inputs": {
+          "awayOffPPG": 22.647058,
+          "homeDefPA": 17.705883,
+          "homeOffPPG": 23.647058,
+          "awayDefPA": 19.17647,
+          "awayWinPct": 0.5,
+          "homeWinPct": 0.5,
+          "ml_open": -185,
+          "ml_current": -170,
+          "ml_steam": 15,
+          "trends_home": 7,
+          "trends_away": 93
+        },
+        "formula": "score = 35*norm(statMargin/10) + 20*norm(formDelta/0.5) + 25*norm(steam/60) + 20*norm(publicImbalance/50)"
+      }
+    }
+  },
+  {
+    "gameId": "2025-09-07-ari-no",
+    "week": 1,
+    "kickoffISO": "2025-09-07T17:00:00.000-04:00",
+    "scoring": {
+      "spread": {
+        "score": 30.85,
+        "side": "away",
+        "edge": 2.53,
+        "reasons": [
+          "Stat margin (PPG vs opp PA): AWAY +2.53 pts",
+          "Turnovers delta (opp − chosen): +2",
+          "Defensive disruption delta (sacks+INTs): +1.33",
+          "Coaching experience delta (years): +2",
+          "Spread movement: -5.5→-6.5 (toward_away)",
+          "Public split (spread): 36% home / 64% away"
+        ],
+        "components": {
+          "margin": {
+            "value": 2.53,
+            "normalized": 0.253,
+            "weight": 40,
+            "contribution": 10.12,
+            "description": "Stat margin (PPG vs opp PA)"
+          },
+          "discipline": {
+            "value": 2,
+            "normalized": 0.2,
+            "weight": 10,
+            "contribution": 2,
+            "description": "Turnovers delta (opp − chosen)"
+          },
+          "disruption": {
+            "value": 1.33,
+            "normalized": 0.333,
+            "weight": 10,
+            "contribution": 3.33,
+            "description": "Defensive disruption delta (sacks+INTs)"
+          },
+          "coaching": {
+            "value": 2,
+            "normalized": 0.2,
+            "weight": 10,
+            "contribution": 2,
+            "description": "Coaching experience delta (years)"
+          },
+          "movement": {
+            "value": 1,
+            "normalized": 0.333,
+            "weight": 15,
+            "contribution": 5,
+            "description": "Spread movement magnitude"
+          },
+          "publicSkew": {
+            "value": 28,
+            "normalized": 0.56,
+            "weight": 15,
+            "contribution": 8.4,
+            "description": "Public split magnitude"
+          }
+        },
+        "inputs": {
+          "awayOffPPG": 23.529411,
+          "homeDefPA": 23.411764,
+          "homeOffPPG": 19.882353,
+          "awayDefPA": 22.294117,
+          "chosenOffTurnovers": 3,
+          "oppOffTurnovers": 5,
+          "chosenDefDisruption": 4.33299994468689,
+          "oppDefDisruption": 3,
+          "chosenCoachExp": 2,
+          "oppCoachExp": 0,
+          "lm_open": -5.5,
+          "lm_current": -6.5,
+          "lm_movement": 1,
+          "trends_home": 36,
+          "trends_away": 64
+        },
+        "formula": "score = 40*norm(statMargin/10) + 10*norm(disciplineDelta/10) + 10*norm(disruptionDelta/4) + 10*norm(coachingDelta/10) + 15*norm(spreadMove/3) + 15*norm(publicImbalance/50)"
+      },
+      "total": {
+        "score": 31.86,
+        "direction": "over",
+        "edge": 0.71,
+        "reasons": [
+          "Expected total 44.21 vs market 43.5",
+          "Total movement: 44.5→43.5 (under)",
+          "Public split (total): 21% over / 79% under",
+          "Defensive disruption (combined sacks+INTs): 7.33",
+          "Passing volume proxy (combined pass yards): 375"
+        ],
+        "components": {
+          "edge": {
+            "value": 0.71,
+            "normalized": 0.071,
+            "weight": 40,
+            "contribution": 2.86,
+            "description": "Expected vs market (points)"
+          },
+          "movement": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Movement aligned with direction"
+          },
+          "publicSkew": {
+            "value": 58,
+            "normalized": 1,
+            "weight": 20,
+            "contribution": 20,
+            "description": "Public O/U split magnitude"
+          },
+          "disruption": {
+            "value": 7.33,
+            "normalized": 0.917,
+            "weight": 10,
+            "contribution": 2.75,
+            "description": "Defensive disruption (sacks+INTs)"
+          },
+          "pace": {
+            "value": 375,
+            "normalized": 0.625,
+            "weight": 10,
+            "contribution": 6.25,
+            "description": "Passing volume proxy"
+          }
+        },
+        "inputs": {
+          "currentTotal": 43.5,
+          "expected": 44.21470495,
+          "awayOffPPG": 23.529411,
+          "homeOffPPG": 19.882353,
+          "awayDefPA": 22.294117,
+          "homeDefPA": 23.411764,
+          "lm_open": 44.5,
+          "lm_current": 43.5,
+          "lm_movement": 1,
+          "trends_over": 21,
+          "trends_under": 79,
+          "disruptionTotal": 7.33299994468689,
+          "passingTilt": 375
+        },
+        "formula": "score = 40*norm(diff/10) + 20*norm(moveConfirm/3) + 20*norm(publicImbalance/50) + 10*norm(disruption/8)*(under bias) + 10*norm(passingTilt/600)*(over bias)"
+      },
+      "moneyline": {
+        "score": 37.18,
+        "side": "away",
+        "edge": 2.53,
+        "reasons": [
+          "Stat margin (PPG vs opp PA): AWAY +2.53",
+          "Form delta (win%): +0",
+          "Moneyline movement (away): -270→-290 (20 cents)",
+          "Public split (moneyline): 7% home / 93% away"
+        ],
+        "components": {
+          "stat": {
+            "value": 2.53,
+            "normalized": 0.253,
+            "weight": 35,
+            "contribution": 8.85,
+            "description": "Stat margin (PPG vs opp PA)"
+          },
+          "form": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Record delta (win%)"
+          },
+          "steam": {
+            "value": 20,
+            "normalized": 0.333,
+            "weight": 25,
+            "contribution": 8.33,
+            "description": "Moneyline movement (cents)"
+          },
+          "publicSkew": {
+            "value": 86,
+            "normalized": 1,
+            "weight": 20,
+            "contribution": 20,
+            "description": "Public ML split magnitude"
+          }
+        },
+        "inputs": {
+          "awayOffPPG": 23.529411,
+          "homeDefPA": 23.411764,
+          "homeOffPPG": 19.882353,
+          "awayDefPA": 22.294117,
+          "awayWinPct": 0.5,
+          "homeWinPct": 0.5,
+          "ml_open": -270,
+          "ml_current": -290,
+          "ml_steam": 20,
+          "trends_home": 7,
+          "trends_away": 93
+        },
+        "formula": "score = 35*norm(statMargin/10) + 20*norm(formDelta/0.5) + 25*norm(steam/60) + 20*norm(publicImbalance/50)"
+      }
+    }
+  },
+  {
+    "gameId": "2025-09-07-car-jax",
+    "week": 1,
+    "kickoffISO": "2025-09-07T17:00:00.000-04:00",
+    "scoring": {
+      "spread": {
+        "score": 41.24,
+        "side": "away",
+        "edge": 7.06,
+        "reasons": [
+          "Stat margin (PPG vs opp PA): AWAY +7.06 pts",
+          "Turnovers delta (opp − chosen): -2",
+          "Defensive disruption delta (sacks+INTs): -2",
+          "Coaching experience delta (years): +1",
+          "Spread movement: 2.5→3.5 (toward_home)",
+          "Public split (spread): 50% home / 50% away"
+        ],
+        "components": {
+          "margin": {
+            "value": 7.06,
+            "normalized": 0.706,
+            "weight": 40,
+            "contribution": 28.24,
+            "description": "Stat margin (PPG vs opp PA)"
+          },
+          "discipline": {
+            "value": -2,
+            "normalized": 0.2,
+            "weight": 10,
+            "contribution": 2,
+            "description": "Turnovers delta (opp − chosen)"
+          },
+          "disruption": {
+            "value": -2,
+            "normalized": 0.5,
+            "weight": 10,
+            "contribution": 5,
+            "description": "Defensive disruption delta (sacks+INTs)"
+          },
+          "coaching": {
+            "value": 1,
+            "normalized": 0.1,
+            "weight": 10,
+            "contribution": 1,
+            "description": "Coaching experience delta (years)"
+          },
+          "movement": {
+            "value": 1,
+            "normalized": 0.333,
+            "weight": 15,
+            "contribution": 5,
+            "description": "Spread movement magnitude"
+          },
+          "publicSkew": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 15,
+            "contribution": 0,
+            "description": "Public split magnitude"
+          }
+        },
+        "inputs": {
+          "awayOffPPG": 20.058823,
+          "homeDefPA": 25.588236,
+          "homeOffPPG": 18.82353,
+          "awayDefPA": 31.411764,
+          "chosenOffTurnovers": 6,
+          "oppOffTurnovers": 4,
+          "chosenDefDisruption": 2.3329999446868896,
+          "oppDefDisruption": 4.33299994468689,
+          "chosenCoachExp": 1,
+          "oppCoachExp": 0,
+          "lm_open": 2.5,
+          "lm_current": 3.5,
+          "lm_movement": 1,
+          "trends_home": 50,
+          "trends_away": 50
+        },
+        "formula": "score = 40*norm(statMargin/10) + 10*norm(disciplineDelta/10) + 10*norm(disruptionDelta/4) + 10*norm(coachingDelta/10) + 15*norm(spreadMove/3) + 15*norm(publicImbalance/50)"
+      },
+      "total": {
+        "score": 15.24,
+        "direction": "under",
+        "edge": 1.28,
+        "reasons": [
+          "Expected total 45.22 vs market 46.5",
+          "Total movement: 46.5→46.5 (stable)",
+          "Public split (total): 50% over / 50% under",
+          "Defensive disruption (combined sacks+INTs): 6.67",
+          "Passing volume proxy (combined pass yards): 359"
+        ],
+        "components": {
+          "edge": {
+            "value": -1.28,
+            "normalized": 0.128,
+            "weight": 40,
+            "contribution": 5.11,
+            "description": "Expected vs market (points)"
+          },
+          "movement": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Movement aligned with direction"
+          },
+          "publicSkew": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Public O/U split magnitude"
+          },
+          "disruption": {
+            "value": 6.67,
+            "normalized": 0.833,
+            "weight": 10,
+            "contribution": 8.33,
+            "description": "Defensive disruption (sacks+INTs)"
+          },
+          "pace": {
+            "value": 359,
+            "normalized": 0.598,
+            "weight": 10,
+            "contribution": 1.8,
+            "description": "Passing volume proxy"
+          }
+        },
+        "inputs": {
+          "currentTotal": 46.5,
+          "expected": 45.22352945,
+          "awayOffPPG": 20.058823,
+          "homeOffPPG": 18.82353,
+          "awayDefPA": 31.411764,
+          "homeDefPA": 25.588236,
+          "lm_open": 46.5,
+          "lm_current": 46.5,
+          "lm_movement": 0,
+          "trends_over": 50,
+          "trends_under": 50,
+          "disruptionTotal": 6.665999889373779,
+          "passingTilt": 359
+        },
+        "formula": "score = 40*norm(diff/10) + 20*norm(moveConfirm/3) + 20*norm(publicImbalance/50) + 10*norm(disruption/8)*(under bias) + 10*norm(passingTilt/600)*(over bias)"
+      },
+      "moneyline": {
+        "score": 39.29,
+        "side": "away",
+        "edge": 7.06,
+        "reasons": [
+          "Stat margin (PPG vs opp PA): AWAY +7.06",
+          "Form delta (win%): +0",
+          "Moneyline movement (away): 125→160 (35 cents)",
+          "Public split (moneyline): 50% home / 50% away"
+        ],
+        "components": {
+          "stat": {
+            "value": 7.06,
+            "normalized": 0.706,
+            "weight": 35,
+            "contribution": 24.71,
+            "description": "Stat margin (PPG vs opp PA)"
+          },
+          "form": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Record delta (win%)"
+          },
+          "steam": {
+            "value": 35,
+            "normalized": 0.583,
+            "weight": 25,
+            "contribution": 14.58,
+            "description": "Moneyline movement (cents)"
+          },
+          "publicSkew": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Public ML split magnitude"
+          }
+        },
+        "inputs": {
+          "awayOffPPG": 20.058823,
+          "homeDefPA": 25.588236,
+          "homeOffPPG": 18.82353,
+          "awayDefPA": 31.411764,
+          "awayWinPct": 0.5,
+          "homeWinPct": 0.5,
+          "ml_open": 125,
+          "ml_current": 160,
+          "ml_steam": 35,
+          "trends_home": 50,
+          "trends_away": 50
+        },
+        "formula": "score = 35*norm(statMargin/10) + 20*norm(formDelta/0.5) + 25*norm(steam/60) + 20*norm(publicImbalance/50)"
+      }
+    }
+  },
+  {
+    "gameId": "2025-09-07-cin-cle",
+    "week": 1,
+    "kickoffISO": "2025-09-07T17:00:00.000-04:00",
+    "scoring": {
+      "spread": {
+        "score": 62.23,
+        "side": "away",
+        "edge": 12.53,
+        "reasons": [
+          "Stat margin (PPG vs opp PA): AWAY +12.53 pts",
+          "Turnovers delta (opp − chosen): -1",
+          "Defensive disruption delta (sacks+INTs): -2.33",
+          "Coaching experience delta (years): +1",
+          "Spread movement: -5.5→-5.5 (stable)",
+          "Public split (spread): 26% home / 74% away"
+        ],
+        "components": {
+          "margin": {
+            "value": 12.53,
+            "normalized": 1,
+            "weight": 40,
+            "contribution": 40,
+            "description": "Stat margin (PPG vs opp PA)"
+          },
+          "discipline": {
+            "value": -1,
+            "normalized": 0.1,
+            "weight": 10,
+            "contribution": 1,
+            "description": "Turnovers delta (opp − chosen)"
+          },
+          "disruption": {
+            "value": -2.33,
+            "normalized": 0.583,
+            "weight": 10,
+            "contribution": 5.83,
+            "description": "Defensive disruption delta (sacks+INTs)"
+          },
+          "coaching": {
+            "value": 1,
+            "normalized": 0.1,
+            "weight": 10,
+            "contribution": 1,
+            "description": "Coaching experience delta (years)"
+          },
+          "movement": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 15,
+            "contribution": 0,
+            "description": "Spread movement magnitude"
+          },
+          "publicSkew": {
+            "value": 48,
+            "normalized": 0.96,
+            "weight": 15,
+            "contribution": 14.4,
+            "description": "Public split magnitude"
+          }
+        },
+        "inputs": {
+          "awayOffPPG": 27.764706,
+          "homeDefPA": 25.588236,
+          "homeOffPPG": 15.176471,
+          "awayDefPA": 25.529411,
+          "chosenOffTurnovers": 3,
+          "oppOffTurnovers": 2,
+          "chosenDefDisruption": 2.6670000553131104,
+          "oppDefDisruption": 5,
+          "chosenCoachExp": 6,
+          "oppCoachExp": 5,
+          "lm_open": -5.5,
+          "lm_current": -5.5,
+          "lm_movement": 0,
+          "trends_home": 26,
+          "trends_away": 74
+        },
+        "formula": "score = 40*norm(statMargin/10) + 10*norm(disciplineDelta/10) + 10*norm(disruptionDelta/4) + 10*norm(coachingDelta/10) + 15*norm(spreadMove/3) + 15*norm(publicImbalance/50)"
+      },
+      "total": {
+        "score": 38.44,
+        "direction": "under",
+        "edge": 1.7,
+        "reasons": [
+          "Expected total 45.8 vs market 47.5",
+          "Total movement: 46.5→48.5 (over)",
+          "Public split (total): 12% over / 88% under",
+          "Defensive disruption (combined sacks+INTs): 7.67",
+          "Passing volume proxy (combined pass yards): 414"
+        ],
+        "components": {
+          "edge": {
+            "value": -1.7,
+            "normalized": 0.17,
+            "weight": 40,
+            "contribution": 6.79,
+            "description": "Expected vs market (points)"
+          },
+          "movement": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Movement aligned with direction"
+          },
+          "publicSkew": {
+            "value": 76,
+            "normalized": 1,
+            "weight": 20,
+            "contribution": 20,
+            "description": "Public O/U split magnitude"
+          },
+          "disruption": {
+            "value": 7.67,
+            "normalized": 0.958,
+            "weight": 10,
+            "contribution": 9.58,
+            "description": "Defensive disruption (sacks+INTs)"
+          },
+          "pace": {
+            "value": 414,
+            "normalized": 0.69,
+            "weight": 10,
+            "contribution": 2.07,
+            "description": "Passing volume proxy"
+          }
+        },
+        "inputs": {
+          "currentTotal": 47.5,
+          "expected": 45.8029415,
+          "awayOffPPG": 27.764706,
+          "homeOffPPG": 15.176471,
+          "awayDefPA": 25.529411,
+          "homeDefPA": 25.588236,
+          "lm_open": 46.5,
+          "lm_current": 48.5,
+          "lm_movement": 2,
+          "trends_over": 12,
+          "trends_under": 88,
+          "disruptionTotal": 7.66700005531311,
+          "passingTilt": 414
+        },
+        "formula": "score = 40*norm(diff/10) + 20*norm(moveConfirm/3) + 20*norm(publicImbalance/50) + 10*norm(disruption/8)*(under bias) + 10*norm(passingTilt/600)*(over bias)"
+      },
+      "moneyline": {
+        "score": 65.42,
+        "side": "away",
+        "edge": 12.53,
+        "reasons": [
+          "Stat margin (PPG vs opp PA): AWAY +12.53",
+          "Form delta (win%): +0",
+          "Moneyline movement (away): -275→-250 (25 cents)",
+          "Public split (moneyline): 3% home / 97% away"
+        ],
+        "components": {
+          "stat": {
+            "value": 12.53,
+            "normalized": 1,
+            "weight": 35,
+            "contribution": 35,
+            "description": "Stat margin (PPG vs opp PA)"
+          },
+          "form": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Record delta (win%)"
+          },
+          "steam": {
+            "value": 25,
+            "normalized": 0.417,
+            "weight": 25,
+            "contribution": 10.42,
+            "description": "Moneyline movement (cents)"
+          },
+          "publicSkew": {
+            "value": 94,
+            "normalized": 1,
+            "weight": 20,
+            "contribution": 20,
+            "description": "Public ML split magnitude"
+          }
+        },
+        "inputs": {
+          "awayOffPPG": 27.764706,
+          "homeDefPA": 25.588236,
+          "homeOffPPG": 15.176471,
+          "awayDefPA": 25.529411,
+          "awayWinPct": 0.5,
+          "homeWinPct": 0.5,
+          "ml_open": -275,
+          "ml_current": -250,
+          "ml_steam": 25,
+          "trends_home": 3,
+          "trends_away": 97
+        },
+        "formula": "score = 35*norm(statMargin/10) + 20*norm(formDelta/0.5) + 25*norm(steam/60) + 20*norm(publicImbalance/50)"
+      }
+    }
+  },
+  {
+    "gameId": "2025-09-07-det-gb",
+    "week": 1,
+    "kickoffISO": "2025-09-07T20:25:00.000-04:00",
+    "scoring": {
+      "spread": {
+        "score": 48.29,
+        "side": "away",
+        "edge": 6.35,
+        "reasons": [
+          "Stat margin (PPG vs opp PA): AWAY +6.35 pts",
+          "Turnovers delta (opp − chosen): -5",
+          "Defensive disruption delta (sacks+INTs): -0.75",
+          "Coaching experience delta (years): -1",
+          "Spread movement: 1.5→1.5 (stable)",
+          "Public split (spread): 7% home / 93% away"
+        ],
+        "components": {
+          "margin": {
+            "value": 6.35,
+            "normalized": 0.635,
+            "weight": 40,
+            "contribution": 25.41,
+            "description": "Stat margin (PPG vs opp PA)"
+          },
+          "discipline": {
+            "value": -5,
+            "normalized": 0.5,
+            "weight": 10,
+            "contribution": 5,
+            "description": "Turnovers delta (opp − chosen)"
+          },
+          "disruption": {
+            "value": -0.75,
+            "normalized": 0.188,
+            "weight": 10,
+            "contribution": 1.88,
+            "description": "Defensive disruption delta (sacks+INTs)"
+          },
+          "coaching": {
+            "value": -1,
+            "normalized": 0.1,
+            "weight": 10,
+            "contribution": 1,
+            "description": "Coaching experience delta (years)"
+          },
+          "movement": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 15,
+            "contribution": 0,
+            "description": "Spread movement magnitude"
+          },
+          "publicSkew": {
+            "value": 86,
+            "normalized": 1,
+            "weight": 15,
+            "contribution": 15,
+            "description": "Public split magnitude"
+          }
+        },
+        "inputs": {
+          "awayOffPPG": 33.17647,
+          "homeDefPA": 19.882353,
+          "homeOffPPG": 27.058823,
+          "awayDefPA": 20.117647,
+          "chosenOffTurnovers": 9,
+          "oppOffTurnovers": 4,
+          "chosenDefDisruption": 2.25,
+          "oppDefDisruption": 3,
+          "chosenCoachExp": 5,
+          "oppCoachExp": 6,
+          "lm_open": 1.5,
+          "lm_current": 1.5,
+          "lm_movement": 0,
+          "trends_home": 7,
+          "trends_away": 93
+        },
+        "formula": "score = 40*norm(statMargin/10) + 10*norm(disciplineDelta/10) + 10*norm(disruptionDelta/4) + 10*norm(coachingDelta/10) + 15*norm(spreadMove/3) + 15*norm(publicImbalance/50)"
+      },
+      "total": {
+        "score": 49.18,
+        "direction": "over",
+        "edge": 5.65,
+        "reasons": [
+          "Expected total 53.15 vs market 47.5",
+          "Total movement: 49.5→47.5 (under)",
+          "Public split (total): 14% over / 86% under",
+          "Defensive disruption (combined sacks+INTs): 5.25",
+          "Passing volume proxy (combined pass yards): 276"
+        ],
+        "components": {
+          "edge": {
+            "value": 5.65,
+            "normalized": 0.565,
+            "weight": 40,
+            "contribution": 22.61,
+            "description": "Expected vs market (points)"
+          },
+          "movement": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Movement aligned with direction"
+          },
+          "publicSkew": {
+            "value": 72,
+            "normalized": 1,
+            "weight": 20,
+            "contribution": 20,
+            "description": "Public O/U split magnitude"
+          },
+          "disruption": {
+            "value": 5.25,
+            "normalized": 0.656,
+            "weight": 10,
+            "contribution": 1.97,
+            "description": "Defensive disruption (sacks+INTs)"
+          },
+          "pace": {
+            "value": 276,
+            "normalized": 0.46,
+            "weight": 10,
+            "contribution": 4.6,
+            "description": "Passing volume proxy"
+          }
+        },
+        "inputs": {
+          "currentTotal": 47.5,
+          "expected": 53.15294045,
+          "awayOffPPG": 33.17647,
+          "homeOffPPG": 27.058823,
+          "awayDefPA": 20.117647,
+          "homeDefPA": 19.882353,
+          "lm_open": 49.5,
+          "lm_current": 47.5,
+          "lm_movement": 2,
+          "trends_over": 14,
+          "trends_under": 86,
+          "disruptionTotal": 5.25,
+          "passingTilt": 276
+        },
+        "formula": "score = 40*norm(diff/10) + 20*norm(moveConfirm/3) + 20*norm(publicImbalance/50) + 10*norm(disruption/8)*(under bias) + 10*norm(passingTilt/600)*(over bias)"
+      },
+      "moneyline": {
+        "score": 43.52,
+        "side": "away",
+        "edge": 6.35,
+        "reasons": [
+          "Stat margin (PPG vs opp PA): AWAY +6.35",
+          "Form delta (win%): +0",
+          "Moneyline movement (away): 105→110 (5 cents)",
+          "Public split (moneyline): 26% home / 74% away"
+        ],
+        "components": {
+          "stat": {
+            "value": 6.35,
+            "normalized": 0.635,
+            "weight": 35,
+            "contribution": 22.24,
+            "description": "Stat margin (PPG vs opp PA)"
+          },
+          "form": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Record delta (win%)"
+          },
+          "steam": {
+            "value": 5,
+            "normalized": 0.083,
+            "weight": 25,
+            "contribution": 2.08,
+            "description": "Moneyline movement (cents)"
+          },
+          "publicSkew": {
+            "value": 48,
+            "normalized": 0.96,
+            "weight": 20,
+            "contribution": 19.2,
+            "description": "Public ML split magnitude"
+          }
+        },
+        "inputs": {
+          "awayOffPPG": 33.17647,
+          "homeDefPA": 19.882353,
+          "homeOffPPG": 27.058823,
+          "awayDefPA": 20.117647,
+          "awayWinPct": 0.5,
+          "homeWinPct": 0.5,
+          "ml_open": 105,
+          "ml_current": 110,
+          "ml_steam": 5,
+          "trends_home": 26,
+          "trends_away": 74
+        },
+        "formula": "score = 35*norm(statMargin/10) + 20*norm(formDelta/0.5) + 25*norm(steam/60) + 20*norm(publicImbalance/50)"
+      }
+    }
+  },
+  {
+    "gameId": "2025-09-07-hou-lar",
+    "week": 1,
+    "kickoffISO": "2025-09-07T20:25:00.000-04:00",
+    "scoring": {
+      "spread": {
+        "score": 15.95,
+        "side": "home",
+        "edge": 0.53,
+        "reasons": [
+          "Stat margin (PPG vs opp PA): HOME -0.53 pts",
+          "Turnovers delta (opp − chosen): +2",
+          "Defensive disruption delta (sacks+INTs): +0.33",
+          "Coaching experience delta (years): +6",
+          "Spread movement: 2.5→3.5 (toward_home)",
+          "Public split (spread): 50% home / 50% away"
+        ],
+        "components": {
+          "margin": {
+            "value": -0.53,
+            "normalized": 0.053,
+            "weight": 40,
+            "contribution": 2.12,
+            "description": "Stat margin (PPG vs opp PA)"
+          },
+          "discipline": {
+            "value": 2,
+            "normalized": 0.2,
+            "weight": 10,
+            "contribution": 2,
+            "description": "Turnovers delta (opp − chosen)"
+          },
+          "disruption": {
+            "value": 0.33,
+            "normalized": 0.083,
+            "weight": 10,
+            "contribution": 0.83,
+            "description": "Defensive disruption delta (sacks+INTs)"
+          },
+          "coaching": {
+            "value": 6,
+            "normalized": 0.6,
+            "weight": 10,
+            "contribution": 6,
+            "description": "Coaching experience delta (years)"
+          },
+          "movement": {
+            "value": 1,
+            "normalized": 0.333,
+            "weight": 15,
+            "contribution": 5,
+            "description": "Spread movement magnitude"
+          },
+          "publicSkew": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 15,
+            "contribution": 0,
+            "description": "Public split magnitude"
+          }
+        },
+        "inputs": {
+          "awayOffPPG": 21.882353,
+          "homeDefPA": 22.705883,
+          "homeOffPPG": 21.588236,
+          "awayDefPA": 21.882353,
+          "chosenOffTurnovers": 2,
+          "oppOffTurnovers": 4,
+          "chosenDefDisruption": 4,
+          "oppDefDisruption": 3.6670000553131104,
+          "chosenCoachExp": 8,
+          "oppCoachExp": 2,
+          "lm_open": 2.5,
+          "lm_current": 3.5,
+          "lm_movement": 1,
+          "trends_home": 50,
+          "trends_away": 50
+        },
+        "formula": "score = 40*norm(statMargin/10) + 10*norm(disciplineDelta/10) + 10*norm(disruptionDelta/4) + 10*norm(coachingDelta/10) + 15*norm(spreadMove/3) + 15*norm(publicImbalance/50)"
+      },
+      "total": {
+        "score": 11.35,
+        "direction": "over",
+        "edge": 0.36,
+        "reasons": [
+          "Expected total 43.86 vs market 43.5",
+          "Total movement: 44.5→43.5 (under)",
+          "Public split (total): 50% over / 50% under",
+          "Defensive disruption (combined sacks+INTs): 7.67",
+          "Passing volume proxy (combined pass yards): 421"
+        ],
+        "components": {
+          "edge": {
+            "value": 0.36,
+            "normalized": 0.036,
+            "weight": 40,
+            "contribution": 1.45,
+            "description": "Expected vs market (points)"
+          },
+          "movement": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Movement aligned with direction"
+          },
+          "publicSkew": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Public O/U split magnitude"
+          },
+          "disruption": {
+            "value": 7.67,
+            "normalized": 0.958,
+            "weight": 10,
+            "contribution": 2.88,
+            "description": "Defensive disruption (sacks+INTs)"
+          },
+          "pace": {
+            "value": 421,
+            "normalized": 0.702,
+            "weight": 10,
+            "contribution": 7.02,
+            "description": "Passing volume proxy"
+          }
+        },
+        "inputs": {
+          "currentTotal": 43.5,
+          "expected": 43.86176544999999,
+          "awayOffPPG": 21.882353,
+          "homeOffPPG": 21.588236,
+          "awayDefPA": 21.882353,
+          "homeDefPA": 22.705883,
+          "lm_open": 44.5,
+          "lm_current": 43.5,
+          "lm_movement": 1,
+          "trends_over": 50,
+          "trends_under": 50,
+          "disruptionTotal": 7.66700005531311,
+          "passingTilt": 421
+        },
+        "formula": "score = 40*norm(diff/10) + 20*norm(moveConfirm/3) + 20*norm(publicImbalance/50) + 10*norm(disruption/8)*(under bias) + 10*norm(passingTilt/600)*(over bias)"
+      },
+      "moneyline": {
+        "score": 8.1,
+        "side": "home",
+        "edge": 0.53,
+        "reasons": [
+          "Stat margin (PPG vs opp PA): HOME -0.53",
+          "Form delta (win%): +0",
+          "Moneyline movement (home): -140→-155 (15 cents)",
+          "Public split (moneyline): 50% home / 50% away"
+        ],
+        "components": {
+          "stat": {
+            "value": -0.53,
+            "normalized": 0.053,
+            "weight": 35,
+            "contribution": 1.85,
+            "description": "Stat margin (PPG vs opp PA)"
+          },
+          "form": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Record delta (win%)"
+          },
+          "steam": {
+            "value": 15,
+            "normalized": 0.25,
+            "weight": 25,
+            "contribution": 6.25,
+            "description": "Moneyline movement (cents)"
+          },
+          "publicSkew": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Public ML split magnitude"
+          }
+        },
+        "inputs": {
+          "awayOffPPG": 21.882353,
+          "homeDefPA": 22.705883,
+          "homeOffPPG": 21.588236,
+          "awayDefPA": 21.882353,
+          "awayWinPct": 0.5,
+          "homeWinPct": 0.5,
+          "ml_open": -140,
+          "ml_current": -155,
+          "ml_steam": 15,
+          "trends_home": 50,
+          "trends_away": 50
+        },
+        "formula": "score = 35*norm(statMargin/10) + 20*norm(formDelta/0.5) + 25*norm(steam/60) + 20*norm(publicImbalance/50)"
+      }
+    }
+  },
+  {
+    "gameId": "2025-09-07-lv-ne",
+    "week": 1,
+    "kickoffISO": "2025-09-07T17:00:00.000-04:00",
+    "scoring": {
+      "spread": {
+        "score": 39.31,
+        "side": "away",
+        "edge": 2.18,
+        "reasons": [
+          "Stat margin (PPG vs opp PA): AWAY +2.18 pts",
+          "Turnovers delta (opp − chosen): -3",
+          "Defensive disruption delta (sacks+INTs): +2",
+          "Coaching experience delta (years): +12",
+          "Spread movement: 2.5→2.5 (stable)",
+          "Public split (spread): 29% home / 71% away"
+        ],
+        "components": {
+          "margin": {
+            "value": 2.18,
+            "normalized": 0.218,
+            "weight": 40,
+            "contribution": 8.71,
+            "description": "Stat margin (PPG vs opp PA)"
+          },
+          "discipline": {
+            "value": -3,
+            "normalized": 0.3,
+            "weight": 10,
+            "contribution": 3,
+            "description": "Turnovers delta (opp − chosen)"
+          },
+          "disruption": {
+            "value": 2,
+            "normalized": 0.5,
+            "weight": 10,
+            "contribution": 5,
+            "description": "Defensive disruption delta (sacks+INTs)"
+          },
+          "coaching": {
+            "value": 12,
+            "normalized": 1,
+            "weight": 10,
+            "contribution": 10,
+            "description": "Coaching experience delta (years)"
+          },
+          "movement": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 15,
+            "contribution": 0,
+            "description": "Spread movement magnitude"
+          },
+          "publicSkew": {
+            "value": 42,
+            "normalized": 0.84,
+            "weight": 15,
+            "contribution": 12.6,
+            "description": "Public split magnitude"
+          }
+        },
+        "inputs": {
+          "awayOffPPG": 18.17647,
+          "homeDefPA": 24.529411,
+          "homeOffPPG": 17,
+          "awayDefPA": 25.529411,
+          "chosenOffTurnovers": 5,
+          "oppOffTurnovers": 2,
+          "chosenDefDisruption": 4.66700005531311,
+          "oppDefDisruption": 2.6670000553131104,
+          "chosenCoachExp": 18,
+          "oppCoachExp": 6,
+          "lm_open": 2.5,
+          "lm_current": 2.5,
+          "lm_movement": 0,
+          "trends_home": 29,
+          "trends_away": 71
+        },
+        "formula": "score = 40*norm(statMargin/10) + 10*norm(disciplineDelta/10) + 10*norm(disruptionDelta/4) + 10*norm(coachingDelta/10) + 15*norm(spreadMove/3) + 15*norm(publicImbalance/50)"
+      },
+      "total": {
+        "score": 55.29,
+        "direction": "under",
+        "edge": 3.11,
+        "reasons": [
+          "Expected total 40.39 vs market 43.5",
+          "Total movement: 45.5→43.5 (under)",
+          "Public split (total): 27% over / 73% under",
+          "Defensive disruption (combined sacks+INTs): 7.33",
+          "Passing volume proxy (combined pass yards): 385"
+        ],
+        "components": {
+          "edge": {
+            "value": -3.11,
+            "normalized": 0.311,
+            "weight": 40,
+            "contribution": 12.46,
+            "description": "Expected vs market (points)"
+          },
+          "movement": {
+            "value": 2,
+            "normalized": 0.667,
+            "weight": 20,
+            "contribution": 13.33,
+            "description": "Movement aligned with direction"
+          },
+          "publicSkew": {
+            "value": 46,
+            "normalized": 0.92,
+            "weight": 20,
+            "contribution": 18.4,
+            "description": "Public O/U split magnitude"
+          },
+          "disruption": {
+            "value": 7.33,
+            "normalized": 0.917,
+            "weight": 10,
+            "contribution": 9.17,
+            "description": "Defensive disruption (sacks+INTs)"
+          },
+          "pace": {
+            "value": 385,
+            "normalized": 0.642,
+            "weight": 10,
+            "contribution": 1.93,
+            "description": "Passing volume proxy"
+          }
+        },
+        "inputs": {
+          "currentTotal": 43.5,
+          "expected": 40.38529319999999,
+          "awayOffPPG": 18.17647,
+          "homeOffPPG": 17,
+          "awayDefPA": 25.529411,
+          "homeDefPA": 24.529411,
+          "lm_open": 45.5,
+          "lm_current": 43.5,
+          "lm_movement": 2,
+          "trends_over": 27,
+          "trends_under": 73,
+          "disruptionTotal": 7.334000110626221,
+          "passingTilt": 385
+        },
+        "formula": "score = 40*norm(diff/10) + 20*norm(moveConfirm/3) + 20*norm(publicImbalance/50) + 10*norm(disruption/8)*(under bias) + 10*norm(passingTilt/600)*(over bias)"
+      },
+      "moneyline": {
+        "score": 24.1,
+        "side": "away",
+        "edge": 2.18,
+        "reasons": [
+          "Stat margin (PPG vs opp PA): AWAY +2.18",
+          "Form delta (win%): +0",
+          "Moneyline movement (away): 125→120 (5 cents)",
+          "Public split (moneyline): 68% home / 32% away"
+        ],
+        "components": {
+          "stat": {
+            "value": 2.18,
+            "normalized": 0.218,
+            "weight": 35,
+            "contribution": 7.62,
+            "description": "Stat margin (PPG vs opp PA)"
+          },
+          "form": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Record delta (win%)"
+          },
+          "steam": {
+            "value": 5,
+            "normalized": 0.083,
+            "weight": 25,
+            "contribution": 2.08,
+            "description": "Moneyline movement (cents)"
+          },
+          "publicSkew": {
+            "value": 36,
+            "normalized": 0.72,
+            "weight": 20,
+            "contribution": 14.4,
+            "description": "Public ML split magnitude"
+          }
+        },
+        "inputs": {
+          "awayOffPPG": 18.17647,
+          "homeDefPA": 24.529411,
+          "homeOffPPG": 17,
+          "awayDefPA": 25.529411,
+          "awayWinPct": 0.5,
+          "homeWinPct": 0.5,
+          "ml_open": 125,
+          "ml_current": 120,
+          "ml_steam": 5,
+          "trends_home": 68,
+          "trends_away": 32
+        },
+        "formula": "score = 35*norm(statMargin/10) + 20*norm(formDelta/0.5) + 25*norm(steam/60) + 20*norm(publicImbalance/50)"
+      }
+    }
+  },
+  {
+    "gameId": "2025-09-07-mia-ind",
+    "week": 1,
+    "kickoffISO": "2025-09-07T17:00:00.000-04:00",
+    "scoring": {
+      "spread": {
+        "score": 41.85,
+        "side": "home",
+        "edge": 5.59,
+        "reasons": [
+          "Stat margin (PPG vs opp PA): HOME -5.59 pts",
+          "Turnovers delta (opp − chosen): +1",
+          "Defensive disruption delta (sacks+INTs): -1",
+          "Coaching experience delta (years): -1",
+          "Spread movement: 1.5→1.5 (stable)",
+          "Public split (spread): 21% home / 79% away"
+        ],
+        "components": {
+          "margin": {
+            "value": -5.59,
+            "normalized": 0.559,
+            "weight": 40,
+            "contribution": 22.35,
+            "description": "Stat margin (PPG vs opp PA)"
+          },
+          "discipline": {
+            "value": 1,
+            "normalized": 0.1,
+            "weight": 10,
+            "contribution": 1,
+            "description": "Turnovers delta (opp − chosen)"
+          },
+          "disruption": {
+            "value": -1,
+            "normalized": 0.25,
+            "weight": 10,
+            "contribution": 2.5,
+            "description": "Defensive disruption delta (sacks+INTs)"
+          },
+          "coaching": {
+            "value": -1,
+            "normalized": 0.1,
+            "weight": 10,
+            "contribution": 1,
+            "description": "Coaching experience delta (years)"
+          },
+          "movement": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 15,
+            "contribution": 0,
+            "description": "Spread movement magnitude"
+          },
+          "publicSkew": {
+            "value": 58,
+            "normalized": 1,
+            "weight": 15,
+            "contribution": 15,
+            "description": "Public split magnitude"
+          }
+        },
+        "inputs": {
+          "awayOffPPG": 20.294117,
+          "homeDefPA": 25.117647,
+          "homeOffPPG": 22.17647,
+          "awayDefPA": 21.411764,
+          "chosenOffTurnovers": 2,
+          "oppOffTurnovers": 3,
+          "chosenDefDisruption": 3,
+          "oppDefDisruption": 4,
+          "chosenCoachExp": 2,
+          "oppCoachExp": 3,
+          "lm_open": 1.5,
+          "lm_current": 1.5,
+          "lm_movement": 0,
+          "trends_home": 21,
+          "trends_away": 79
+        },
+        "formula": "score = 40*norm(statMargin/10) + 10*norm(disciplineDelta/10) + 10*norm(disruptionDelta/4) + 10*norm(coachingDelta/10) + 15*norm(spreadMove/3) + 15*norm(publicImbalance/50)"
+      },
+      "total": {
+        "score": 48.36,
+        "direction": "under",
+        "edge": 2.61,
+        "reasons": [
+          "Expected total 43.89 vs market 46.5",
+          "Total movement: 47.5→46.5 (under)",
+          "Public split (total): 15% over / 85% under",
+          "Defensive disruption (combined sacks+INTs): 7",
+          "Passing volume proxy (combined pass yards): 501"
+        ],
+        "components": {
+          "edge": {
+            "value": -2.61,
+            "normalized": 0.261,
+            "weight": 40,
+            "contribution": 10.44,
+            "description": "Expected vs market (points)"
+          },
+          "movement": {
+            "value": 1,
+            "normalized": 0.333,
+            "weight": 20,
+            "contribution": 6.67,
+            "description": "Movement aligned with direction"
+          },
+          "publicSkew": {
+            "value": 70,
+            "normalized": 1,
+            "weight": 20,
+            "contribution": 20,
+            "description": "Public O/U split magnitude"
+          },
+          "disruption": {
+            "value": 7,
+            "normalized": 0.875,
+            "weight": 10,
+            "contribution": 8.75,
+            "description": "Defensive disruption (sacks+INTs)"
+          },
+          "pace": {
+            "value": 501,
+            "normalized": 0.835,
+            "weight": 10,
+            "contribution": 2.5,
+            "description": "Passing volume proxy"
+          }
+        },
+        "inputs": {
+          "currentTotal": 46.5,
+          "expected": 43.891175399999995,
+          "awayOffPPG": 20.294117,
+          "homeOffPPG": 22.17647,
+          "awayDefPA": 21.411764,
+          "homeDefPA": 25.117647,
+          "lm_open": 47.5,
+          "lm_current": 46.5,
+          "lm_movement": 1,
+          "trends_over": 15,
+          "trends_under": 85,
+          "disruptionTotal": 7,
+          "passingTilt": 501
+        },
+        "formula": "score = 40*norm(diff/10) + 20*norm(moveConfirm/3) + 20*norm(publicImbalance/50) + 10*norm(disruption/8)*(under bias) + 10*norm(passingTilt/600)*(over bias)"
+      },
+      "moneyline": {
+        "score": 45.81,
+        "side": "home",
+        "edge": 5.59,
+        "reasons": [
+          "Stat margin (PPG vs opp PA): HOME -5.59",
+          "Form delta (win%): +0",
+          "Moneyline movement (home): -125→-110 (15 cents)",
+          "Public split (moneyline): 23% home / 77% away"
+        ],
+        "components": {
+          "stat": {
+            "value": -5.59,
+            "normalized": 0.559,
+            "weight": 35,
+            "contribution": 19.56,
+            "description": "Stat margin (PPG vs opp PA)"
+          },
+          "form": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Record delta (win%)"
+          },
+          "steam": {
+            "value": 15,
+            "normalized": 0.25,
+            "weight": 25,
+            "contribution": 6.25,
+            "description": "Moneyline movement (cents)"
+          },
+          "publicSkew": {
+            "value": 54,
+            "normalized": 1,
+            "weight": 20,
+            "contribution": 20,
+            "description": "Public ML split magnitude"
+          }
+        },
+        "inputs": {
+          "awayOffPPG": 20.294117,
+          "homeDefPA": 25.117647,
+          "homeOffPPG": 22.17647,
+          "awayDefPA": 21.411764,
+          "awayWinPct": 0.5,
+          "homeWinPct": 0.5,
+          "ml_open": -125,
+          "ml_current": -110,
+          "ml_steam": 15,
+          "trends_home": 23,
+          "trends_away": 77
+        },
+        "formula": "score = 35*norm(statMargin/10) + 20*norm(formDelta/0.5) + 25*norm(steam/60) + 20*norm(publicImbalance/50)"
+      }
+    }
+  },
+  {
+    "gameId": "2025-09-07-nyg-wsh",
+    "week": 1,
+    "kickoffISO": "2025-09-07T17:00:00.000-04:00",
+    "scoring": {
+      "spread": {
+        "score": 53,
+        "side": "home",
+        "edge": 11.06,
+        "reasons": [
+          "Stat margin (PPG vs opp PA): HOME -11.06 pts",
+          "Turnovers delta (opp − chosen): -4",
+          "Defensive disruption delta (sacks+INTs): -2",
+          "Coaching experience delta (years): +4",
+          "Spread movement: 6.5→6.5 (stable)",
+          "Public split (spread): 50% home / 50% away"
+        ],
+        "components": {
+          "margin": {
+            "value": -11.06,
+            "normalized": 1,
+            "weight": 40,
+            "contribution": 40,
+            "description": "Stat margin (PPG vs opp PA)"
+          },
+          "discipline": {
+            "value": -4,
+            "normalized": 0.4,
+            "weight": 10,
+            "contribution": 4,
+            "description": "Turnovers delta (opp − chosen)"
+          },
+          "disruption": {
+            "value": -2,
+            "normalized": 0.5,
+            "weight": 10,
+            "contribution": 5,
+            "description": "Defensive disruption delta (sacks+INTs)"
+          },
+          "coaching": {
+            "value": 4,
+            "normalized": 0.4,
+            "weight": 10,
+            "contribution": 4,
+            "description": "Coaching experience delta (years)"
+          },
+          "movement": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 15,
+            "contribution": 0,
+            "description": "Spread movement magnitude"
+          },
+          "publicSkew": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 15,
+            "contribution": 0,
+            "description": "Public split magnitude"
+          }
+        },
+        "inputs": {
+          "awayOffPPG": 16.058823,
+          "homeDefPA": 23,
+          "homeOffPPG": 28.529411,
+          "awayDefPA": 24.411764,
+          "chosenOffTurnovers": 8,
+          "oppOffTurnovers": 4,
+          "chosenDefDisruption": 1,
+          "oppDefDisruption": 3,
+          "chosenCoachExp": 7,
+          "oppCoachExp": 3,
+          "lm_open": 6.5,
+          "lm_current": 6.5,
+          "lm_movement": 0,
+          "trends_home": 50,
+          "trends_away": 50
+        },
+        "formula": "score = 40*norm(statMargin/10) + 10*norm(disciplineDelta/10) + 10*norm(disruptionDelta/4) + 10*norm(coachingDelta/10) + 15*norm(spreadMove/3) + 15*norm(publicImbalance/50)"
+      },
+      "total": {
+        "score": 10.34,
+        "direction": "over",
+        "edge": 0.08,
+        "reasons": [
+          "Expected total 45.58 vs market 45.5",
+          "Total movement: 45.5→45.5 (stable)",
+          "Public split (total): 50% over / 50% under",
+          "Defensive disruption (combined sacks+INTs): 4",
+          "Passing volume proxy (combined pass yards): 512"
+        ],
+        "components": {
+          "edge": {
+            "value": 0.08,
+            "normalized": 0.008,
+            "weight": 40,
+            "contribution": 0.31,
+            "description": "Expected vs market (points)"
+          },
+          "movement": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Movement aligned with direction"
+          },
+          "publicSkew": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Public O/U split magnitude"
+          },
+          "disruption": {
+            "value": 4,
+            "normalized": 0.5,
+            "weight": 10,
+            "contribution": 1.5,
+            "description": "Defensive disruption (sacks+INTs)"
+          },
+          "pace": {
+            "value": 512,
+            "normalized": 0.853,
+            "weight": 10,
+            "contribution": 8.53,
+            "description": "Passing volume proxy"
+          }
+        },
+        "inputs": {
+          "currentTotal": 45.5,
+          "expected": 45.5764695,
+          "awayOffPPG": 16.058823,
+          "homeOffPPG": 28.529411,
+          "awayDefPA": 24.411764,
+          "homeDefPA": 23,
+          "lm_open": 45.5,
+          "lm_current": 45.5,
+          "lm_movement": 0,
+          "trends_over": 50,
+          "trends_under": 50,
+          "disruptionTotal": 4,
+          "passingTilt": 512
+        },
+        "formula": "score = 40*norm(diff/10) + 20*norm(moveConfirm/3) + 20*norm(publicImbalance/50) + 10*norm(disruption/8)*(under bias) + 10*norm(passingTilt/600)*(over bias)"
+      },
+      "moneyline": {
+        "score": 39.17,
+        "side": "home",
+        "edge": 11.06,
+        "reasons": [
+          "Stat margin (PPG vs opp PA): HOME -11.06",
+          "Form delta (win%): +0",
+          "Moneyline movement (home): -270→-260 (10 cents)",
+          "Public split (moneyline): 50% home / 50% away"
+        ],
+        "components": {
+          "stat": {
+            "value": -11.06,
+            "normalized": 1,
+            "weight": 35,
+            "contribution": 35,
+            "description": "Stat margin (PPG vs opp PA)"
+          },
+          "form": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Record delta (win%)"
+          },
+          "steam": {
+            "value": 10,
+            "normalized": 0.167,
+            "weight": 25,
+            "contribution": 4.17,
+            "description": "Moneyline movement (cents)"
+          },
+          "publicSkew": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Public ML split magnitude"
+          }
+        },
+        "inputs": {
+          "awayOffPPG": 16.058823,
+          "homeDefPA": 23,
+          "homeOffPPG": 28.529411,
+          "awayDefPA": 24.411764,
+          "awayWinPct": 0.5,
+          "homeWinPct": 0.5,
+          "ml_open": -270,
+          "ml_current": -260,
+          "ml_steam": 10,
+          "trends_home": 50,
+          "trends_away": 50
+        },
+        "formula": "score = 35*norm(statMargin/10) + 20*norm(formDelta/0.5) + 25*norm(steam/60) + 20*norm(publicImbalance/50)"
+      }
+    }
+  },
+  {
+    "gameId": "2025-09-07-pit-nyj",
+    "week": 1,
+    "kickoffISO": "2025-09-07T17:00:00.000-04:00",
+    "scoring": {
+      "spread": {
+        "score": 31.87,
+        "side": "home",
+        "edge": 0.88,
+        "reasons": [
+          "Stat margin (PPG vs opp PA): HOME -0.88 pts",
+          "Turnovers delta (opp − chosen): +0",
+          "Defensive disruption delta (sacks+INTs): +1.33",
+          "Coaching experience delta (years): -18",
+          "Spread movement: -2.5→-2.5 (stable)",
+          "Public split (spread): 25% home / 75% away"
+        ],
+        "components": {
+          "margin": {
+            "value": -0.88,
+            "normalized": 0.088,
+            "weight": 40,
+            "contribution": 3.53,
+            "description": "Stat margin (PPG vs opp PA)"
+          },
+          "discipline": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 10,
+            "contribution": 0,
+            "description": "Turnovers delta (opp − chosen)"
+          },
+          "disruption": {
+            "value": 1.33,
+            "normalized": 0.334,
+            "weight": 10,
+            "contribution": 3.34,
+            "description": "Defensive disruption delta (sacks+INTs)"
+          },
+          "coaching": {
+            "value": -18,
+            "normalized": 1,
+            "weight": 10,
+            "contribution": 10,
+            "description": "Coaching experience delta (years)"
+          },
+          "movement": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 15,
+            "contribution": 0,
+            "description": "Spread movement magnitude"
+          },
+          "publicSkew": {
+            "value": 50,
+            "normalized": 1,
+            "weight": 15,
+            "contribution": 15,
+            "description": "Public split magnitude"
+          }
+        },
+        "inputs": {
+          "awayOffPPG": 22.352942,
+          "homeDefPA": 23.764706,
+          "homeOffPPG": 19.882353,
+          "awayDefPA": 20.411764,
+          "chosenOffTurnovers": 4,
+          "oppOffTurnovers": 4,
+          "chosenDefDisruption": 3.6670000553131104,
+          "oppDefDisruption": 2.3329999446868896,
+          "chosenCoachExp": 0,
+          "oppCoachExp": 18,
+          "lm_open": -2.5,
+          "lm_current": -2.5,
+          "lm_movement": 0,
+          "trends_home": 25,
+          "trends_away": 75
+        },
+        "formula": "score = 40*norm(statMargin/10) + 10*norm(disciplineDelta/10) + 10*norm(disruptionDelta/4) + 10*norm(coachingDelta/10) + 15*norm(spreadMove/3) + 15*norm(publicImbalance/50)"
+      },
+      "total": {
+        "score": 41.18,
+        "direction": "over",
+        "edge": 5.41,
+        "reasons": [
+          "Expected total 42.91 vs market 37.5",
+          "Total movement: 38.5→38.5 (stable)",
+          "Public split (total): 38% over / 62% under",
+          "Defensive disruption (combined sacks+INTs): 6",
+          "Passing volume proxy (combined pass yards): 460"
+        ],
+        "components": {
+          "edge": {
+            "value": 5.41,
+            "normalized": 0.541,
+            "weight": 40,
+            "contribution": 21.66,
+            "description": "Expected vs market (points)"
+          },
+          "movement": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Movement aligned with direction"
+          },
+          "publicSkew": {
+            "value": 24,
+            "normalized": 0.48,
+            "weight": 20,
+            "contribution": 9.6,
+            "description": "Public O/U split magnitude"
+          },
+          "disruption": {
+            "value": 6,
+            "normalized": 0.75,
+            "weight": 10,
+            "contribution": 2.25,
+            "description": "Defensive disruption (sacks+INTs)"
+          },
+          "pace": {
+            "value": 460,
+            "normalized": 0.767,
+            "weight": 10,
+            "contribution": 7.67,
+            "description": "Passing volume proxy"
+          }
+        },
+        "inputs": {
+          "currentTotal": 37.5,
+          "expected": 42.914706249999995,
+          "awayOffPPG": 22.352942,
+          "homeOffPPG": 19.882353,
+          "awayDefPA": 20.411764,
+          "homeDefPA": 23.764706,
+          "lm_open": 38.5,
+          "lm_current": 38.5,
+          "lm_movement": 0,
+          "trends_over": 38,
+          "trends_under": 62,
+          "disruptionTotal": 6,
+          "passingTilt": 460
+        },
+        "formula": "score = 40*norm(diff/10) + 20*norm(moveConfirm/3) + 20*norm(publicImbalance/50) + 10*norm(disruption/8)*(under bias) + 10*norm(passingTilt/600)*(over bias)"
+      },
+      "moneyline": {
+        "score": 23.09,
+        "side": "home",
+        "edge": 0.88,
+        "reasons": [
+          "Stat margin (PPG vs opp PA): HOME -0.88",
+          "Form delta (win%): +0",
+          "Moneyline movement (home): 130→130 (0 cents)",
+          "Public split (moneyline): 7% home / 93% away"
+        ],
+        "components": {
+          "stat": {
+            "value": -0.88,
+            "normalized": 0.088,
+            "weight": 35,
+            "contribution": 3.09,
+            "description": "Stat margin (PPG vs opp PA)"
+          },
+          "form": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Record delta (win%)"
+          },
+          "steam": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 25,
+            "contribution": 0,
+            "description": "Moneyline movement (cents)"
+          },
+          "publicSkew": {
+            "value": 86,
+            "normalized": 1,
+            "weight": 20,
+            "contribution": 20,
+            "description": "Public ML split magnitude"
+          }
+        },
+        "inputs": {
+          "awayOffPPG": 22.352942,
+          "homeDefPA": 23.764706,
+          "homeOffPPG": 19.882353,
+          "awayDefPA": 20.411764,
+          "awayWinPct": 0.5,
+          "homeWinPct": 0.5,
+          "ml_open": 130,
+          "ml_current": 130,
+          "ml_steam": 0,
+          "trends_home": 7,
+          "trends_away": 93
+        },
+        "formula": "score = 35*norm(statMargin/10) + 20*norm(formDelta/0.5) + 25*norm(steam/60) + 20*norm(publicImbalance/50)"
+      }
+    }
+  },
+  {
+    "gameId": "2025-09-07-sf-sea",
+    "week": 1,
+    "kickoffISO": "2025-09-07T20:05:00.000-04:00",
+    "scoring": {
+      "spread": {
+        "score": 34.52,
+        "side": "away",
+        "edge": 4.82,
+        "reasons": [
+          "Stat margin (PPG vs opp PA): AWAY +4.82 pts",
+          "Turnovers delta (opp − chosen): -2",
+          "Defensive disruption delta (sacks+INTs): -0.33",
+          "Coaching experience delta (years): +7",
+          "Spread movement: -2.5→-2.5 (stable)",
+          "Public split (spread): 41% home / 59% away"
+        ],
+        "components": {
+          "margin": {
+            "value": 4.82,
+            "normalized": 0.482,
+            "weight": 40,
+            "contribution": 19.29,
+            "description": "Stat margin (PPG vs opp PA)"
+          },
+          "discipline": {
+            "value": -2,
+            "normalized": 0.2,
+            "weight": 10,
+            "contribution": 2,
+            "description": "Turnovers delta (opp − chosen)"
+          },
+          "disruption": {
+            "value": -0.33,
+            "normalized": 0.083,
+            "weight": 10,
+            "contribution": 0.83,
+            "description": "Defensive disruption delta (sacks+INTs)"
+          },
+          "coaching": {
+            "value": 7,
+            "normalized": 0.7,
+            "weight": 10,
+            "contribution": 7,
+            "description": "Coaching experience delta (years)"
+          },
+          "movement": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 15,
+            "contribution": 0,
+            "description": "Spread movement magnitude"
+          },
+          "publicSkew": {
+            "value": 18,
+            "normalized": 0.36,
+            "weight": 15,
+            "contribution": 5.4,
+            "description": "Public split magnitude"
+          }
+        },
+        "inputs": {
+          "awayOffPPG": 22.882353,
+          "homeDefPA": 21.647058,
+          "homeOffPPG": 22.058823,
+          "awayDefPA": 25.647058,
+          "chosenOffTurnovers": 7,
+          "oppOffTurnovers": 5,
+          "chosenDefDisruption": 3,
+          "oppDefDisruption": 3.3329999446868896,
+          "chosenCoachExp": 8,
+          "oppCoachExp": 1,
+          "lm_open": -2.5,
+          "lm_current": -2.5,
+          "lm_movement": 0,
+          "trends_home": 41,
+          "trends_away": 59
+        },
+        "formula": "score = 40*norm(statMargin/10) + 10*norm(disciplineDelta/10) + 10*norm(disruptionDelta/4) + 10*norm(coachingDelta/10) + 15*norm(spreadMove/3) + 15*norm(publicImbalance/50)"
+      },
+      "total": {
+        "score": 37.88,
+        "direction": "over",
+        "edge": 2.26,
+        "reasons": [
+          "Expected total 45.76 vs market 43.5",
+          "Total movement: 44.5→43.5 (under)",
+          "Public split (total): 15% over / 85% under",
+          "Defensive disruption (combined sacks+INTs): 6.33",
+          "Passing volume proxy (combined pass yards): 387"
+        ],
+        "components": {
+          "edge": {
+            "value": 2.26,
+            "normalized": 0.226,
+            "weight": 40,
+            "contribution": 9.06,
+            "description": "Expected vs market (points)"
+          },
+          "movement": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Movement aligned with direction"
+          },
+          "publicSkew": {
+            "value": 70,
+            "normalized": 1,
+            "weight": 20,
+            "contribution": 20,
+            "description": "Public O/U split magnitude"
+          },
+          "disruption": {
+            "value": 6.33,
+            "normalized": 0.792,
+            "weight": 10,
+            "contribution": 2.37,
+            "description": "Defensive disruption (sacks+INTs)"
+          },
+          "pace": {
+            "value": 387,
+            "normalized": 0.645,
+            "weight": 10,
+            "contribution": 6.45,
+            "description": "Passing volume proxy"
+          }
+        },
+        "inputs": {
+          "currentTotal": 43.5,
+          "expected": 45.764705,
+          "awayOffPPG": 22.882353,
+          "homeOffPPG": 22.058823,
+          "awayDefPA": 25.647058,
+          "homeDefPA": 21.647058,
+          "lm_open": 44.5,
+          "lm_current": 43.5,
+          "lm_movement": 1,
+          "trends_over": 15,
+          "trends_under": 85,
+          "disruptionTotal": 6.33299994468689,
+          "passingTilt": 387
+        },
+        "formula": "score = 40*norm(diff/10) + 20*norm(moveConfirm/3) + 20*norm(publicImbalance/50) + 10*norm(disruption/8)*(under bias) + 10*norm(passingTilt/600)*(over bias)"
+      },
+      "moneyline": {
+        "score": 23.28,
+        "side": "away",
+        "edge": 4.82,
+        "reasons": [
+          "Stat margin (PPG vs opp PA): AWAY +4.82",
+          "Form delta (win%): +0",
+          "Moneyline movement (away): -140→-140 (0 cents)",
+          "Public split (moneyline): 42% home / 58% away"
+        ],
+        "components": {
+          "stat": {
+            "value": 4.82,
+            "normalized": 0.482,
+            "weight": 35,
+            "contribution": 16.88,
+            "description": "Stat margin (PPG vs opp PA)"
+          },
+          "form": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Record delta (win%)"
+          },
+          "steam": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 25,
+            "contribution": 0,
+            "description": "Moneyline movement (cents)"
+          },
+          "publicSkew": {
+            "value": 16,
+            "normalized": 0.32,
+            "weight": 20,
+            "contribution": 6.4,
+            "description": "Public ML split magnitude"
+          }
+        },
+        "inputs": {
+          "awayOffPPG": 22.882353,
+          "homeDefPA": 21.647058,
+          "homeOffPPG": 22.058823,
+          "awayDefPA": 25.647058,
+          "awayWinPct": 0.5,
+          "homeWinPct": 0.5,
+          "ml_open": -140,
+          "ml_current": -140,
+          "ml_steam": 0,
+          "trends_home": 42,
+          "trends_away": 58
+        },
+        "formula": "score = 35*norm(statMargin/10) + 20*norm(formDelta/0.5) + 25*norm(steam/60) + 20*norm(publicImbalance/50)"
+      }
+    }
+  },
+  {
+    "gameId": "2025-09-07-tb-atl",
+    "week": 1,
+    "kickoffISO": "2025-09-07T17:00:00.000-04:00",
+    "scoring": {
+      "spread": {
+        "score": 46.65,
+        "side": "away",
+        "edge": 4.41,
+        "reasons": [
+          "Stat margin (PPG vs opp PA): AWAY +4.41 pts",
+          "Turnovers delta (opp − chosen): -1",
+          "Defensive disruption delta (sacks+INTs): +2",
+          "Coaching experience delta (years): +3",
+          "Spread movement: -2.5→-1.5 (toward_home)",
+          "Public split (spread): 75% home / 25% away"
+        ],
+        "components": {
+          "margin": {
+            "value": 4.41,
+            "normalized": 0.441,
+            "weight": 40,
+            "contribution": 17.65,
+            "description": "Stat margin (PPG vs opp PA)"
+          },
+          "discipline": {
+            "value": -1,
+            "normalized": 0.1,
+            "weight": 10,
+            "contribution": 1,
+            "description": "Turnovers delta (opp − chosen)"
+          },
+          "disruption": {
+            "value": 2,
+            "normalized": 0.5,
+            "weight": 10,
+            "contribution": 5,
+            "description": "Defensive disruption delta (sacks+INTs)"
+          },
+          "coaching": {
+            "value": 3,
+            "normalized": 0.3,
+            "weight": 10,
+            "contribution": 3,
+            "description": "Coaching experience delta (years)"
+          },
+          "movement": {
+            "value": 1,
+            "normalized": 0.333,
+            "weight": 15,
+            "contribution": 5,
+            "description": "Spread movement magnitude"
+          },
+          "publicSkew": {
+            "value": 50,
+            "normalized": 1,
+            "weight": 15,
+            "contribution": 15,
+            "description": "Public split magnitude"
+          }
+        },
+        "inputs": {
+          "awayOffPPG": 29.529411,
+          "homeDefPA": 24.882353,
+          "homeOffPPG": 22.882353,
+          "awayDefPA": 22.647058,
+          "chosenOffTurnovers": 4,
+          "oppOffTurnovers": 3,
+          "chosenDefDisruption": 4.66700005531311,
+          "oppDefDisruption": 2.6670000553131104,
+          "chosenCoachExp": 8,
+          "oppCoachExp": 5,
+          "lm_open": -2.5,
+          "lm_current": -1.5,
+          "lm_movement": 1,
+          "trends_home": 75,
+          "trends_away": 25
+        },
+        "formula": "score = 40*norm(statMargin/10) + 10*norm(disciplineDelta/10) + 10*norm(disruptionDelta/4) + 10*norm(coachingDelta/10) + 15*norm(spreadMove/3) + 15*norm(publicImbalance/50)"
+      },
+      "total": {
+        "score": 42.06,
+        "direction": "over",
+        "edge": 3.2,
+        "reasons": [
+          "Expected total 50.7 vs market 47.5",
+          "Total movement: 47.5→47.5 (stable)",
+          "Public split (total): 21% over / 79% under",
+          "Defensive disruption (combined sacks+INTs): 7.33",
+          "Passing volume proxy (combined pass yards): 390"
+        ],
+        "components": {
+          "edge": {
+            "value": 3.2,
+            "normalized": 0.32,
+            "weight": 40,
+            "contribution": 12.81,
+            "description": "Expected vs market (points)"
+          },
+          "movement": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Movement aligned with direction"
+          },
+          "publicSkew": {
+            "value": 58,
+            "normalized": 1,
+            "weight": 20,
+            "contribution": 20,
+            "description": "Public O/U split magnitude"
+          },
+          "disruption": {
+            "value": 7.33,
+            "normalized": 0.917,
+            "weight": 10,
+            "contribution": 2.75,
+            "description": "Defensive disruption (sacks+INTs)"
+          },
+          "pace": {
+            "value": 390,
+            "normalized": 0.65,
+            "weight": 10,
+            "contribution": 6.5,
+            "description": "Passing volume proxy"
+          }
+        },
+        "inputs": {
+          "currentTotal": 47.5,
+          "expected": 50.70294045,
+          "awayOffPPG": 29.529411,
+          "homeOffPPG": 22.882353,
+          "awayDefPA": 22.647058,
+          "homeDefPA": 24.882353,
+          "lm_open": 47.5,
+          "lm_current": 47.5,
+          "lm_movement": 0,
+          "trends_over": 21,
+          "trends_under": 79,
+          "disruptionTotal": 7.334000110626221,
+          "passingTilt": 390
+        },
+        "formula": "score = 40*norm(diff/10) + 20*norm(moveConfirm/3) + 20*norm(publicImbalance/50) + 10*norm(disruption/8)*(under bias) + 10*norm(passingTilt/600)*(over bias)"
+      },
+      "moneyline": {
+        "score": 31.12,
+        "side": "away",
+        "edge": 4.41,
+        "reasons": [
+          "Stat margin (PPG vs opp PA): AWAY +4.41",
+          "Form delta (win%): +0",
+          "Moneyline movement (away): -135→-130 (5 cents)",
+          "Public split (moneyline): 67% home / 33% away"
+        ],
+        "components": {
+          "stat": {
+            "value": 4.41,
+            "normalized": 0.441,
+            "weight": 35,
+            "contribution": 15.44,
+            "description": "Stat margin (PPG vs opp PA)"
+          },
+          "form": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Record delta (win%)"
+          },
+          "steam": {
+            "value": 5,
+            "normalized": 0.083,
+            "weight": 25,
+            "contribution": 2.08,
+            "description": "Moneyline movement (cents)"
+          },
+          "publicSkew": {
+            "value": 34,
+            "normalized": 0.68,
+            "weight": 20,
+            "contribution": 13.6,
+            "description": "Public ML split magnitude"
+          }
+        },
+        "inputs": {
+          "awayOffPPG": 29.529411,
+          "homeDefPA": 24.882353,
+          "homeOffPPG": 22.882353,
+          "awayDefPA": 22.647058,
+          "awayWinPct": 0.5,
+          "homeWinPct": 0.5,
+          "ml_open": -135,
+          "ml_current": -130,
+          "ml_steam": 5,
+          "trends_home": 67,
+          "trends_away": 33
+        },
+        "formula": "score = 35*norm(statMargin/10) + 20*norm(formDelta/0.5) + 25*norm(steam/60) + 20*norm(publicImbalance/50)"
+      }
+    }
+  },
+  {
+    "gameId": "2025-09-07-ten-den",
+    "week": 1,
+    "kickoffISO": "2025-09-07T20:05:00.000-04:00",
+    "scoring": {
+      "spread": {
+        "score": 37.91,
+        "side": "away",
+        "edge": 2.06,
+        "reasons": [
+          "Stat margin (PPG vs opp PA): AWAY +2.06 pts",
+          "Turnovers delta (opp − chosen): -3",
+          "Defensive disruption delta (sacks+INTs): -0.67",
+          "Coaching experience delta (years): -16",
+          "Spread movement: 8.5→8.5 (stable)",
+          "Public split (spread): 87% home / 13% away"
+        ],
+        "components": {
+          "margin": {
+            "value": 2.06,
+            "normalized": 0.206,
+            "weight": 40,
+            "contribution": 8.24,
+            "description": "Stat margin (PPG vs opp PA)"
+          },
+          "discipline": {
+            "value": -3,
+            "normalized": 0.3,
+            "weight": 10,
+            "contribution": 3,
+            "description": "Turnovers delta (opp − chosen)"
+          },
+          "disruption": {
+            "value": -0.67,
+            "normalized": 0.167,
+            "weight": 10,
+            "contribution": 1.67,
+            "description": "Defensive disruption delta (sacks+INTs)"
+          },
+          "coaching": {
+            "value": -16,
+            "normalized": 1,
+            "weight": 10,
+            "contribution": 10,
+            "description": "Coaching experience delta (years)"
+          },
+          "movement": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 15,
+            "contribution": 0,
+            "description": "Spread movement magnitude"
+          },
+          "publicSkew": {
+            "value": 74,
+            "normalized": 1,
+            "weight": 15,
+            "contribution": 15,
+            "description": "Public split magnitude"
+          }
+        },
+        "inputs": {
+          "awayOffPPG": 18.294117,
+          "homeDefPA": 18.294117,
+          "homeOffPPG": 25,
+          "awayDefPA": 27.058823,
+          "chosenOffTurnovers": 5,
+          "oppOffTurnovers": 2,
+          "chosenDefDisruption": 3.3329999446868896,
+          "oppDefDisruption": 4,
+          "chosenCoachExp": 1,
+          "oppCoachExp": 17,
+          "lm_open": 8.5,
+          "lm_current": 8.5,
+          "lm_movement": 0,
+          "trends_home": 87,
+          "trends_away": 13
+        },
+        "formula": "score = 40*norm(statMargin/10) + 10*norm(disciplineDelta/10) + 10*norm(disruptionDelta/4) + 10*norm(coachingDelta/10) + 15*norm(spreadMove/3) + 15*norm(publicImbalance/50)"
+      },
+      "total": {
+        "score": 43.73,
+        "direction": "over",
+        "edge": 1.51,
+        "reasons": [
+          "Expected total 44.01 vs market 42.5",
+          "Total movement: 41.5→42.5 (over)",
+          "Public split (total): 21% over / 79% under",
+          "Defensive disruption (combined sacks+INTs): 7.33",
+          "Passing volume proxy (combined pass yards): 495"
+        ],
+        "components": {
+          "edge": {
+            "value": 1.51,
+            "normalized": 0.151,
+            "weight": 40,
+            "contribution": 6.06,
+            "description": "Expected vs market (points)"
+          },
+          "movement": {
+            "value": 1,
+            "normalized": 0.333,
+            "weight": 20,
+            "contribution": 6.67,
+            "description": "Movement aligned with direction"
+          },
+          "publicSkew": {
+            "value": 58,
+            "normalized": 1,
+            "weight": 20,
+            "contribution": 20,
+            "description": "Public O/U split magnitude"
+          },
+          "disruption": {
+            "value": 7.33,
+            "normalized": 0.917,
+            "weight": 10,
+            "contribution": 2.75,
+            "description": "Defensive disruption (sacks+INTs)"
+          },
+          "pace": {
+            "value": 495,
+            "normalized": 0.825,
+            "weight": 10,
+            "contribution": 8.25,
+            "description": "Passing volume proxy"
+          }
+        },
+        "inputs": {
+          "currentTotal": 42.5,
+          "expected": 44.01470505,
+          "awayOffPPG": 18.294117,
+          "homeOffPPG": 25,
+          "awayDefPA": 27.058823,
+          "homeDefPA": 18.294117,
+          "lm_open": 41.5,
+          "lm_current": 42.5,
+          "lm_movement": 1,
+          "trends_over": 21,
+          "trends_under": 79,
+          "disruptionTotal": 7.33299994468689,
+          "passingTilt": 495
+        },
+        "formula": "score = 40*norm(diff/10) + 20*norm(moveConfirm/3) + 20*norm(publicImbalance/50) + 10*norm(disruption/8)*(under bias) + 10*norm(passingTilt/600)*(over bias)"
+      },
+      "moneyline": {
+        "score": 35.54,
+        "side": "away",
+        "edge": 2.06,
+        "reasons": [
+          "Stat margin (PPG vs opp PA): AWAY +2.06",
+          "Form delta (win%): +0",
+          "Moneyline movement (away): 320→340 (20 cents)",
+          "Public split (moneyline): 91% home / 9% away"
+        ],
+        "components": {
+          "stat": {
+            "value": 2.06,
+            "normalized": 0.206,
+            "weight": 35,
+            "contribution": 7.21,
+            "description": "Stat margin (PPG vs opp PA)"
+          },
+          "form": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Record delta (win%)"
+          },
+          "steam": {
+            "value": 20,
+            "normalized": 0.333,
+            "weight": 25,
+            "contribution": 8.33,
+            "description": "Moneyline movement (cents)"
+          },
+          "publicSkew": {
+            "value": 82,
+            "normalized": 1,
+            "weight": 20,
+            "contribution": 20,
+            "description": "Public ML split magnitude"
+          }
+        },
+        "inputs": {
+          "awayOffPPG": 18.294117,
+          "homeDefPA": 18.294117,
+          "homeOffPPG": 25,
+          "awayDefPA": 27.058823,
+          "awayWinPct": 0.5,
+          "homeWinPct": 0.5,
+          "ml_open": 320,
+          "ml_current": 340,
+          "ml_steam": 20,
+          "trends_home": 91,
+          "trends_away": 9
+        },
+        "formula": "score = 35*norm(statMargin/10) + 20*norm(formDelta/0.5) + 25*norm(steam/60) + 20*norm(publicImbalance/50)"
+      }
+    }
+  },
+  {
+    "gameId": "2025-09-08-bal-buf",
+    "week": 1,
+    "kickoffISO": "2025-09-08T00:20:00.000-04:00",
+    "scoring": {
+      "spread": {
+        "score": 49.56,
+        "side": "home",
+        "edge": 0.82,
+        "reasons": [
+          "Stat margin (PPG vs opp PA): HOME -0.82 pts",
+          "Turnovers delta (opp − chosen): +2",
+          "Defensive disruption delta (sacks+INTs): -2.67",
+          "Coaching experience delta (years): -10",
+          "Spread movement: 1.5→-1.5 (toward_away)",
+          "Public split (spread): 29% home / 71% away"
+        ],
+        "components": {
+          "margin": {
+            "value": -0.82,
+            "normalized": 0.082,
+            "weight": 40,
+            "contribution": 3.29,
+            "description": "Stat margin (PPG vs opp PA)"
+          },
+          "discipline": {
+            "value": 2,
+            "normalized": 0.2,
+            "weight": 10,
+            "contribution": 2,
+            "description": "Turnovers delta (opp − chosen)"
+          },
+          "disruption": {
+            "value": -2.67,
+            "normalized": 0.667,
+            "weight": 10,
+            "contribution": 6.67,
+            "description": "Defensive disruption delta (sacks+INTs)"
+          },
+          "coaching": {
+            "value": -10,
+            "normalized": 1,
+            "weight": 10,
+            "contribution": 10,
+            "description": "Coaching experience delta (years)"
+          },
+          "movement": {
+            "value": 3,
+            "normalized": 1,
+            "weight": 15,
+            "contribution": 15,
+            "description": "Spread movement magnitude"
+          },
+          "publicSkew": {
+            "value": 42,
+            "normalized": 0.84,
+            "weight": 15,
+            "contribution": 12.6,
+            "description": "Public split magnitude"
+          }
+        },
+        "inputs": {
+          "awayOffPPG": 30.470589,
+          "homeDefPA": 21.647058,
+          "homeOffPPG": 30.882353,
+          "awayDefPA": 21.235294,
+          "chosenOffTurnovers": 2,
+          "oppOffTurnovers": 4,
+          "chosenDefDisruption": 1,
+          "oppDefDisruption": 3.6670000553131104,
+          "chosenCoachExp": 7,
+          "oppCoachExp": 17,
+          "lm_open": 1.5,
+          "lm_current": -1.5,
+          "lm_movement": 3,
+          "trends_home": 29,
+          "trends_away": 71
+        },
+        "formula": "score = 40*norm(statMargin/10) + 10*norm(disciplineDelta/10) + 10*norm(disruptionDelta/4) + 10*norm(coachingDelta/10) + 15*norm(spreadMove/3) + 15*norm(publicImbalance/50)"
+      },
+      "total": {
+        "score": 45.83,
+        "direction": "over",
+        "edge": 4.39,
+        "reasons": [
+          "Expected total 54.89 vs market 50.5",
+          "Total movement: 51.5→50.5 (under)",
+          "Public split (total): 13% over / 87% under",
+          "Defensive disruption (combined sacks+INTs): 4.67",
+          "Passing volume proxy (combined pass yards): 392"
+        ],
+        "components": {
+          "edge": {
+            "value": 4.39,
+            "normalized": 0.439,
+            "weight": 40,
+            "contribution": 17.55,
+            "description": "Expected vs market (points)"
+          },
+          "movement": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Movement aligned with direction"
+          },
+          "publicSkew": {
+            "value": 74,
+            "normalized": 1,
+            "weight": 20,
+            "contribution": 20,
+            "description": "Public O/U split magnitude"
+          },
+          "disruption": {
+            "value": 4.67,
+            "normalized": 0.583,
+            "weight": 10,
+            "contribution": 1.75,
+            "description": "Defensive disruption (sacks+INTs)"
+          },
+          "pace": {
+            "value": 392,
+            "normalized": 0.653,
+            "weight": 10,
+            "contribution": 6.53,
+            "description": "Passing volume proxy"
+          }
+        },
+        "inputs": {
+          "currentTotal": 50.5,
+          "expected": 54.88823549999999,
+          "awayOffPPG": 30.470589,
+          "homeOffPPG": 30.882353,
+          "awayDefPA": 21.235294,
+          "homeDefPA": 21.647058,
+          "lm_open": 51.5,
+          "lm_current": 50.5,
+          "lm_movement": 1,
+          "trends_over": 13,
+          "trends_under": 87,
+          "disruptionTotal": 4.66700005531311,
+          "passingTilt": 392
+        },
+        "formula": "score = 40*norm(diff/10) + 20*norm(moveConfirm/3) + 20*norm(publicImbalance/50) + 10*norm(disruption/8)*(under bias) + 10*norm(passingTilt/600)*(over bias)"
+      },
+      "moneyline": {
+        "score": 47.88,
+        "side": "home",
+        "edge": 0.82,
+        "reasons": [
+          "Stat margin (PPG vs opp PA): HOME -0.82",
+          "Form delta (win%): +0",
+          "Moneyline movement (home): -120→0 (120 cents)",
+          "Public split (moneyline): 21% home / 79% away"
+        ],
+        "components": {
+          "stat": {
+            "value": -0.82,
+            "normalized": 0.082,
+            "weight": 35,
+            "contribution": 2.88,
+            "description": "Stat margin (PPG vs opp PA)"
+          },
+          "form": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Record delta (win%)"
+          },
+          "steam": {
+            "value": 120,
+            "normalized": 1,
+            "weight": 25,
+            "contribution": 25,
+            "description": "Moneyline movement (cents)"
+          },
+          "publicSkew": {
+            "value": 58,
+            "normalized": 1,
+            "weight": 20,
+            "contribution": 20,
+            "description": "Public ML split magnitude"
+          }
+        },
+        "inputs": {
+          "awayOffPPG": 30.470589,
+          "homeDefPA": 21.647058,
+          "homeOffPPG": 30.882353,
+          "awayDefPA": 21.235294,
+          "awayWinPct": 0.5,
+          "homeWinPct": 0.5,
+          "ml_open": -120,
+          "ml_current": null,
+          "ml_steam": 120,
+          "trends_home": 21,
+          "trends_away": 79
+        },
+        "formula": "score = 35*norm(statMargin/10) + 20*norm(formDelta/0.5) + 25*norm(steam/60) + 20*norm(publicImbalance/50)"
+      }
+    }
+  },
+  {
+    "gameId": "2025-09-09-min-chi",
+    "week": 1,
+    "kickoffISO": "2025-09-09T00:15:00.000-04:00",
+    "scoring": {
+      "spread": {
+        "score": 38.69,
+        "side": "away",
+        "edge": 4.94,
+        "reasons": [
+          "Stat margin (PPG vs opp PA): AWAY +4.94 pts",
+          "Turnovers delta (opp − chosen): -3",
+          "Defensive disruption delta (sacks+INTs): -1.33",
+          "Coaching experience delta (years): +3",
+          "Spread movement: -1.5→-1.5 (stable)",
+          "Public split (spread): 34% home / 66% away"
+        ],
+        "components": {
+          "margin": {
+            "value": 4.94,
+            "normalized": 0.494,
+            "weight": 40,
+            "contribution": 19.76,
+            "description": "Stat margin (PPG vs opp PA)"
+          },
+          "discipline": {
+            "value": -3,
+            "normalized": 0.3,
+            "weight": 10,
+            "contribution": 3,
+            "description": "Turnovers delta (opp − chosen)"
+          },
+          "disruption": {
+            "value": -1.33,
+            "normalized": 0.333,
+            "weight": 10,
+            "contribution": 3.33,
+            "description": "Defensive disruption delta (sacks+INTs)"
+          },
+          "coaching": {
+            "value": 3,
+            "normalized": 0.3,
+            "weight": 10,
+            "contribution": 3,
+            "description": "Coaching experience delta (years)"
+          },
+          "movement": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 15,
+            "contribution": 0,
+            "description": "Spread movement magnitude"
+          },
+          "publicSkew": {
+            "value": 32,
+            "normalized": 0.64,
+            "weight": 15,
+            "contribution": 9.6,
+            "description": "Public split magnitude"
+          }
+        },
+        "inputs": {
+          "awayOffPPG": 25.411764,
+          "homeDefPA": 21.764706,
+          "homeOffPPG": 18.235294,
+          "awayDefPA": 19.529411,
+          "chosenOffTurnovers": 4,
+          "oppOffTurnovers": 1,
+          "chosenDefDisruption": 2.6670000553131104,
+          "oppDefDisruption": 4,
+          "chosenCoachExp": 3,
+          "oppCoachExp": 0,
+          "lm_open": -1.5,
+          "lm_current": -1.5,
+          "lm_movement": 0,
+          "trends_home": 34,
+          "trends_away": 66
+        },
+        "formula": "score = 40*norm(statMargin/10) + 10*norm(disciplineDelta/10) + 10*norm(disruptionDelta/4) + 10*norm(coachingDelta/10) + 15*norm(spreadMove/3) + 15*norm(publicImbalance/50)"
+      },
+      "total": {
+        "score": 33.67,
+        "direction": "under",
+        "edge": 0.68,
+        "reasons": [
+          "Expected total 42.82 vs market 43.5",
+          "Total movement: 43.5→43.5 (stable)",
+          "Public split (total): 22% over / 78% under",
+          "Defensive disruption (combined sacks+INTs): 6.67",
+          "Passing volume proxy (combined pass yards): 527"
+        ],
+        "components": {
+          "edge": {
+            "value": -0.68,
+            "normalized": 0.068,
+            "weight": 40,
+            "contribution": 2.71,
+            "description": "Expected vs market (points)"
+          },
+          "movement": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Movement aligned with direction"
+          },
+          "publicSkew": {
+            "value": 56,
+            "normalized": 1,
+            "weight": 20,
+            "contribution": 20,
+            "description": "Public O/U split magnitude"
+          },
+          "disruption": {
+            "value": 6.67,
+            "normalized": 0.833,
+            "weight": 10,
+            "contribution": 8.33,
+            "description": "Defensive disruption (sacks+INTs)"
+          },
+          "pace": {
+            "value": 527,
+            "normalized": 0.878,
+            "weight": 10,
+            "contribution": 2.63,
+            "description": "Passing volume proxy"
+          }
+        },
+        "inputs": {
+          "currentTotal": 43.5,
+          "expected": 42.82352865,
+          "awayOffPPG": 25.411764,
+          "homeOffPPG": 18.235294,
+          "awayDefPA": 19.529411,
+          "homeDefPA": 21.764706,
+          "lm_open": 43.5,
+          "lm_current": 43.5,
+          "lm_movement": 0,
+          "trends_over": 22,
+          "trends_under": 78,
+          "disruptionTotal": 6.66700005531311,
+          "passingTilt": 527
+        },
+        "formula": "score = 40*norm(diff/10) + 20*norm(moveConfirm/3) + 20*norm(publicImbalance/50) + 10*norm(disruption/8)*(under bias) + 10*norm(passingTilt/600)*(over bias)"
+      },
+      "moneyline": {
+        "score": 36.49,
+        "side": "away",
+        "edge": 4.94,
+        "reasons": [
+          "Stat margin (PPG vs opp PA): AWAY +4.94",
+          "Form delta (win%): +0",
+          "Moneyline movement (away): -125→-125 (0 cents)",
+          "Public split (moneyline): 26% home / 74% away"
+        ],
+        "components": {
+          "stat": {
+            "value": 4.94,
+            "normalized": 0.494,
+            "weight": 35,
+            "contribution": 17.29,
+            "description": "Stat margin (PPG vs opp PA)"
+          },
+          "form": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 20,
+            "contribution": 0,
+            "description": "Record delta (win%)"
+          },
+          "steam": {
+            "value": 0,
+            "normalized": 0,
+            "weight": 25,
+            "contribution": 0,
+            "description": "Moneyline movement (cents)"
+          },
+          "publicSkew": {
+            "value": 48,
+            "normalized": 0.96,
+            "weight": 20,
+            "contribution": 19.2,
+            "description": "Public ML split magnitude"
+          }
+        },
+        "inputs": {
+          "awayOffPPG": 25.411764,
+          "homeDefPA": 21.764706,
+          "homeOffPPG": 18.235294,
+          "awayDefPA": 19.529411,
+          "awayWinPct": 0.5,
+          "homeWinPct": 0.5,
+          "ml_open": -125,
+          "ml_current": -125,
+          "ml_steam": 0,
+          "trends_home": 26,
+          "trends_away": 74
+        },
+        "formula": "score = 35*norm(statMargin/10) + 20*norm(formDelta/0.5) + 25*norm(steam/60) + 20*norm(publicImbalance/50)"
+      }
+    }
+  }
+]

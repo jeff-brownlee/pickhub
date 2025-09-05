@@ -2,7 +2,7 @@
   "analystId": "podcaster",
   "week": 1,
   "season": 2025,
-  "generatedAt": "2025-09-04T22:57:02.171Z",
+  "generatedAt": "2025-09-05T11:35:00.903Z",
   "picks": [
     {
       "gameId": "2025-09-07-ten-den",
@@ -10,13 +10,11 @@
       "awayTeam": {
         "id": "TEN",
         "name": "Tennessee Titans",
-        "nickname": "Titans",
         "score": null
       },
       "homeTeam": {
         "id": "DEN",
         "name": "Denver Broncos",
-        "nickname": "Broncos",
         "score": null
       },
       "marketData": {
@@ -79,13 +77,11 @@
       "awayTeam": {
         "id": "PIT",
         "name": "Pittsburgh Steelers",
-        "nickname": "Steelers",
         "score": null
       },
       "homeTeam": {
         "id": "NYJ",
         "name": "New York Jets",
-        "nickname": "Jets",
         "score": null
       },
       "marketData": {

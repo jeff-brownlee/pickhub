@@ -2,7 +2,7 @@
   "analystId": "coach",
   "week": 1,
   "season": 2025,
-  "generatedAt": "2025-09-04T22:57:02.164Z",
+  "generatedAt": "2025-09-05T11:35:00.896Z",
   "picks": [
     {
       "gameId": "2025-09-07-cin-cle",
@@ -10,13 +10,11 @@
       "awayTeam": {
         "id": "CIN",
         "name": "Cincinnati Bengals",
-        "nickname": "Bengals",
         "score": null
       },
       "homeTeam": {
         "id": "CLE",
         "name": "Cleveland Browns",
-        "nickname": "Browns",
         "score": null
       },
       "marketData": {
@@ -80,13 +78,11 @@
       "awayTeam": {
         "id": "NYG",
         "name": "New York Giants",
-        "nickname": "Giants",
         "score": null
       },
       "homeTeam": {
         "id": "WSH",
         "name": "Washington Commanders",
-        "nickname": "Commanders",
         "score": null
       },
       "marketData": {
@@ -150,13 +146,11 @@
       "awayTeam": {
         "id": "BAL",
         "name": "Baltimore Ravens",
-        "nickname": "Ravens",
         "score": null
       },
       "homeTeam": {
         "id": "BUF",
         "name": "Buffalo Bills",
-        "nickname": "Bills",
         "score": null
       },
       "marketData": {
@@ -220,13 +214,11 @@
       "awayTeam": {
         "id": "LV",
         "name": "Las Vegas Raiders",
-        "nickname": "Raiders",
         "score": null
       },
       "homeTeam": {
         "id": "NE",
         "name": "New England Patriots",
-        "nickname": "Patriots",
         "score": null
       },
       "marketData": {
@@ -289,13 +281,11 @@
       "awayTeam": {
         "id": "DET",
         "name": "Detroit Lions",
-        "nickname": "Lions",
         "score": null
       },
       "homeTeam": {
         "id": "GB",
         "name": "Green Bay Packers",
-        "nickname": "Packers",
         "score": null
       },
       "marketData": {

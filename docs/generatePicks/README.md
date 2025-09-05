@@ -4,70 +4,35 @@
 Produce diversified, persona-aligned weekly picks using real data. Scoring is persona-agnostic; lightweight bias overlays (from personas.json) and constraints are layered on top to minimize correlation across personas.
 
 ### Tuning vs Persona Overlay (at a glance)
-- Base tuning lives in `frontend/src/heuristics/marketScoring.ts` and affects every persona equally (global weights for features like stat margin, movement, public splits).
-- Persona overlay lives in `frontend/src/services/pickSelectionService.ts` and nudges only that persona’s candidates (e.g., contrarian fades public, trenches favor ATS, totals lean Over/Under).
+- Base tuning is global and affects every persona equally (e.g., stat margins, movement, public splits).
+- Persona overlay nudges a persona’s candidates toward their style (e.g., contrarian, trenches, totals lean).
 
 ### Inputs
-- `games.json`: odds/lines, `espnId`, kickoff time
-  - Files: `frontend/src/scripts/generateNflGames.ts`
-- Factbooks (`data/nfl/season-YYYY/week-WW/factbooks/*.json`): real team stats, leaders, coaching, line movement, Action Network trends, plus `statsSourceSeason`
-  - Files: `frontend/src/scripts/generateFactbooks.ts`
-- Personas: `frontend/public/data/personas.json` (name, tagline, bias, voiceStyle)
-  - Note: `frontend/src/heuristics/personas.ts` is not used for selection; personas are driven by `personas.json`.
+- Games (week): odds/lines, `espnId`, kickoff time
+  - Files: `frontend/src/scripts/generateNflGames.ts` -> `data/nfl/season-YYYY/week-WW/games.json`
+- Factbooks (per game): team stats, leaders, coaching, line movement, public betting trends, and `statsSourceSeason`
+  - Files: `frontend/src/scripts/generateFactbooks.ts` -> `data/nfl/season-YYYY/week-WW/factbooks/*.json`
+- Personas: `personas.json` (name, tagline, bias, voiceStyle). Note: biases come only from this file.
+  - Note: `frontend/src/heuristics/personas.ts` is not used for selection; personas are driven by `personas.json`. -> `frontend/public/data/personas.json`
 
 ### Step 1 — Market scoring (persona-agnostic)
-File: `frontend/src/heuristics/marketScoring.ts`
-- `computeSpreadScore(fb)` → `{ score: 0–100, side: 'home'|'away', edge: pts, reasons[] }`
-- `computeTotalScore(fb)` → `{ score: 0–100, direction: 'over'|'under', edge: pts, reasons[] }`
-- `computeMoneylineScore(fb)` → `{ score: 0–100, side: 'home'|'away', edge: proxy, reasons[] }`
+- Score ATS, Total, and Moneyline candidates per game using normalized signals (stat margins, disruption, coaching deltas, line movement, public splits).
+- Provide concise reason strings for transparency.
+- Early-season quality: `statsSourceSeason` indicates if prior-season data was used.
+  - Files: `frontend/src/heuristics/marketScoring.ts`
 
-Primary signals used
-- Spread: statistical margin (PPG vs PA), turnovers (discipline), defensive disruption (sacks+INTs), coaching experience delta, spread movement magnitude, public split magnitude
-- Total: expected total (offense+defense blend) vs market, total movement confirmation, public O/U split, disruption (leans Under), passing tilt (leans Over)
-- Moneyline: stat margin + record delta, ML steam, public ML split
-
-Notes
-- Normalized to 0–100 with clamps; `reasons[]` provides human-readable context
-- Early-season quality: `statsSourceSeason === 2024` indicates prior-season fallback for PPG/PA
-
-### Service integration — pickSelectionService
-File: `frontend/src/services/pickSelectionService.ts`
-
-Entrypoint invocation (from the generator script):
-
-```ts
-// frontend/src/scripts/generatePicks.ts
-const res = await pickSelectionService.generateWeeklyPicksHeuristicsWithDecorrelation(
-  games,
-  factbooks,
-  persona,
-  week,
-  exposures // shared across personas
-);
-```
-
-What happens inside:
-- Build candidates per game: `spread`, `total`, `moneyline` using Step 1 scoring
-  - `buildCandidatesForGame(fb)` calls `computeSpreadScore/computeTotalScore/computeMoneylineScore`
-- Apply persona overlay: `applyBiasOverlay(cand, persona, factbook)` (uses `persona.bias` from `personas.json` only)
-  - Examples: contrarian favors less popular sides; over/under leans; “trenches/discipline” favors ATS over ML; favorites/dogs; heavy ML chalk penalty
-- Enforce constraints (see Step 3)
-- Materialize UI picks: `candidateToPick(...)` converts to the legacy UI schema and composes a readable rationale from scoring `reasons`
-- Return `WeeklyPickSelection` with `picks` (later wrapped into the legacy envelope in the script)
-
-Tuning knobs:
-- Base weights live in `frontend/src/heuristics/marketScoring.ts`
-- Persona overlay weights live in `frontend/src/services/pickSelectionService.ts` (`applyBiasOverlay`)
+### Orchestration overview
+- Data generation runs locally: generate games → factbooks → persona picks.
+- Selection pipeline: market scoring → persona weighting → constraints → cross-persona decorrelation.
+- Output: one JSON per persona per week in the public data tree for the UI (legacy envelope preserved).
 
 ### Step 2 — Persona weighting (bias overlay)
-- Files: `frontend/src/services/pickSelectionService.ts` (`applyBiasOverlay`)
 - Apply a lightweight overlay inferred from `persona.bias`/`tagline` (e.g., contrarian → favor less popular sides; over/under lean; favorite/underdog lean).
 - Optional data-quality factor: lightly down-weight when prior-season stats are used.
 
 Result: `personaScore = baseScore + biasBonus`
 
 ### Step 3 — Constraints (per persona)
-- Files: `frontend/src/services/pickSelectionService.ts` (enforced in selection loop)
 - Fixed picks per persona per week: N (configurable; default N = 5)
 - Per-game cap: max 2 picks
   - Allowed combos: ATS + Total OR Moneyline + Total
@@ -77,10 +42,6 @@ Result: `personaScore = baseScore + biasBonus`
 ### Step 4 — Cross-persona decorrelation
 - Personas are selected sequentially (deterministic order or rotated weekly) while maintaining a shared exposure map.
 - Overlap penalties are applied to later personas so they naturally drift from already-selected picks.
-
-- Files:
-  - `frontend/src/services/pickSelectionService.ts` (`generateWeeklyPicksHeuristicsWithDecorrelation`, `computeDecorrelationPenalty`, `updateExposuresAfterSelection`)
-  - `frontend/src/scripts/generatePicks.ts` (creates and passes shared `exposures` object)
 
 Current thresholds (defaults):
 - Exact pick overlap (same game + market + side): allow up to 2 personas. 3rd+ gets a heavy penalty.
@@ -95,7 +56,6 @@ Mechanics:
 
 ### Step 6 — Output
 - Picks are written to `frontend/public/data/nfl/season-YYYY/week-WW/picks/{personaId}.json` by `frontend/src/scripts/generatePicks.ts`.
-- Files: `frontend/src/scripts/generatePicks.ts`
 - We adhere to the legacy UI envelope for compatibility:
 
 ```json

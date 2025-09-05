@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { pickSelectionService } from '../services/pickSelectionService';
 import { MinimalFactbook } from '../types/minimalFactbook';
+import { computeSpreadScoreDebug, computeTotalScoreDebug, computeMoneylineScoreDebug } from '../heuristics/marketScoring';
 import { GameData } from '../adapters/espnNflApi';
 import { Persona } from '../types';
 
@@ -36,6 +37,23 @@ async function main() {
   const picksOutDir = path.join(process.cwd(), 'public', 'data', 'nfl', 'season-2025', weekStr, 'picks');
   fs.mkdirSync(picksOutDir, { recursive: true });
 
+  // Always-on market scoring audit log
+  const scoringDir = path.join(process.cwd(), '..', 'data/nfl/season-2025', weekStr, 'scoring');
+  fs.mkdirSync(scoringDir, { recursive: true });
+  const marketScoreLog = factbooks.map((fb) => ({
+    gameId: fb.gameId,
+    week: fb.week,
+    kickoffISO: fb.kickoffISO,
+    scoring: {
+      spread: computeSpreadScoreDebug(fb),
+      total: computeTotalScoreDebug(fb),
+      moneyline: computeMoneylineScoreDebug(fb)
+    }
+  }));
+  const marketScoreOut = path.join(scoringDir, 'market-score.json');
+  fs.writeFileSync(marketScoreOut, JSON.stringify(marketScoreLog, null, 2));
+  console.log(`🧭 Market scoring log written → ${marketScoreOut}`);
+
   // Shared exposures across personas for decorrelation
   const exposures: any = {};
 
@@ -47,7 +65,12 @@ async function main() {
         factbooks,
         persona,
         week,
-        exposures
+        exposures,
+        Object.fromEntries(marketScoreLog.map(entry => [entry.gameId, {
+          spread: { side: entry.scoring.spread.side, score: entry.scoring.spread.score, reasons: entry.scoring.spread.reasons },
+          total: { direction: entry.scoring.total.direction, score: entry.scoring.total.score, reasons: entry.scoring.total.reasons },
+          moneyline: { side: entry.scoring.moneyline.side, score: entry.scoring.moneyline.score, reasons: entry.scoring.moneyline.reasons }
+        }]))
       );
       // Adapt to legacy UI JSON envelope
       const legacyEnvelope = {

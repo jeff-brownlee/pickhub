@@ -2,7 +2,7 @@
   "analystId": "mobster",
   "week": 1,
   "season": 2025,
-  "generatedAt": "2025-09-04T22:57:02.169Z",
+  "generatedAt": "2025-09-05T11:35:00.902Z",
   "picks": [
     {
       "gameId": "2025-09-07-det-gb",
@@ -10,13 +10,11 @@
       "awayTeam": {
         "id": "DET",
         "name": "Detroit Lions",
-        "nickname": "Lions",
         "score": null
       },
       "homeTeam": {
         "id": "GB",
         "name": "Green Bay Packers",
-        "nickname": "Packers",
         "score": null
       },
       "marketData": {
@@ -80,13 +78,11 @@
       "awayTeam": {
         "id": "MIA",
         "name": "Miami Dolphins",
-        "nickname": "Dolphins",
         "score": null
       },
       "homeTeam": {
         "id": "IND",
         "name": "Indianapolis Colts",
-        "nickname": "Colts",
         "score": null
       },
       "marketData": {
@@ -150,13 +146,11 @@
       "awayTeam": {
         "id": "CAR",
         "name": "Carolina Panthers",
-        "nickname": "Panthers",
         "score": null
       },
       "homeTeam": {
         "id": "JAX",
         "name": "Jacksonville Jaguars",
-        "nickname": "Jaguars",
         "score": null
       },
       "marketData": {

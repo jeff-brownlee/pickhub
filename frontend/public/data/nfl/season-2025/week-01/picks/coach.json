@@ -2,7 +2,7 @@
   "analystId": "coach",
   "week": 1,
   "season": 2025,
-  "generatedAt": "2025-09-05T11:35:00.896Z",
+  "generatedAt": "2025-09-05T18:50:18.231Z",
   "picks": [
     {
       "gameId": "2025-09-07-cin-cle",
@@ -141,6 +141,73 @@
       "analystId": "coach"
     },
     {
+      "gameId": "2025-09-07-det-gb",
+      "gameDate": "2025-09-07T20:25:00.000-04:00",
+      "awayTeam": {
+        "id": "DET",
+        "name": "Detroit Lions",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "GB",
+        "name": "Green Bay Packers",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 1.5,
+            "odds": 100
+          },
+          "home": {
+            "line": -1.5,
+            "odds": -120
+          }
+        },
+        "total": {
+          "over": {
+            "line": 47.5,
+            "odds": 100
+          },
+          "under": {
+            "line": 47.5,
+            "odds": -120
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": 110
+          },
+          "home": {
+            "odds": -130
+          }
+        }
+      },
+      "selection": {
+        "betType": "total",
+        "side": "over",
+        "line": 47.5,
+        "odds": 100,
+        "units": 1,
+        "rationale": "Total lean: OVER 47.5 at +100. Expected total 53.15 vs market 47.5",
+        "rationaleCues": [
+          "Expected total 53.15 vs market 47.5",
+          "Total movement: 49.5→47.5 (under)",
+          "Public split (total): 14% over / 86% under",
+          "Defensive disruption (combined sacks+INTs): 5.25",
+          "Passing volume proxy (combined pass yards): 276"
+        ]
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 47.5,
+        "finalOdds": 100,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "coach"
+    },
+    {
       "gameId": "2025-09-08-bal-buf",
       "gameDate": "2025-09-08T00:20:00.000-04:00",
       "awayTeam": {
@@ -203,73 +270,6 @@
         "status": "pending",
         "finalLine": -1.5,
         "finalOdds": 102,
-        "payout": 0,
-        "netUnits": 0
-      },
-      "analystId": "coach"
-    },
-    {
-      "gameId": "2025-09-07-lv-ne",
-      "gameDate": "2025-09-07T17:00:00.000-04:00",
-      "awayTeam": {
-        "id": "LV",
-        "name": "Las Vegas Raiders",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "NE",
-        "name": "New England Patriots",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 2.5,
-            "odds": -105
-          },
-          "home": {
-            "line": -2.5,
-            "odds": -120
-          }
-        },
-        "total": {
-          "over": {
-            "line": 43.5,
-            "odds": -115
-          },
-          "under": {
-            "line": 43.5,
-            "odds": -105
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": 120
-          },
-          "home": {
-            "odds": -140
-          }
-        }
-      },
-      "selection": {
-        "betType": "total",
-        "side": "under",
-        "line": 43.5,
-        "odds": -105,
-        "units": 1,
-        "rationale": "Total lean: UNDER 43.5 at -105. Expected total 40.39 vs market 43.5",
-        "rationaleCues": [
-          "Expected total 40.39 vs market 43.5",
-          "Total movement: 45.5→43.5 (under)",
-          "Public split (total): 27% over / 73% under",
-          "Defensive disruption (combined sacks+INTs): 7.33",
-          "Passing volume proxy (combined pass yards): 385"
-        ]
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": 43.5,
-        "finalOdds": -105,
         "payout": 0,
         "netUnits": 0
       },

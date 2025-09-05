@@ -2,206 +2,70 @@
   "analystId": "mobster",
   "week": 1,
   "season": 2025,
-  "generatedAt": "2025-09-05T11:35:00.902Z",
+  "generatedAt": "2025-09-05T18:50:18.236Z",
   "picks": [
     {
-      "gameId": "2025-09-07-det-gb",
-      "gameDate": "2025-09-07T20:25:00.000-04:00",
+      "gameId": "2025-09-07-tb-atl",
+      "gameDate": "2025-09-07T17:00:00.000-04:00",
       "awayTeam": {
-        "id": "DET",
-        "name": "Detroit Lions",
+        "id": "TB",
+        "name": "Tampa Bay Buccaneers",
         "score": null
       },
       "homeTeam": {
-        "id": "GB",
-        "name": "Green Bay Packers",
+        "id": "ATL",
+        "name": "Atlanta Falcons",
         "score": null
       },
       "marketData": {
         "spread": {
           "away": {
-            "line": 1.5,
-            "odds": 100
+            "line": -1.5,
+            "odds": -115
           },
           "home": {
-            "line": -1.5,
-            "odds": -120
+            "line": 1.5,
+            "odds": -105
           }
         },
         "total": {
           "over": {
             "line": 47.5,
-            "odds": 100
+            "odds": -110
           },
           "under": {
             "line": 47.5,
-            "odds": -120
+            "odds": -110
           }
         },
         "moneyline": {
           "away": {
-            "odds": 110
+            "odds": -130
           },
           "home": {
-            "odds": -130
+            "odds": 110
           }
         }
       },
       "selection": {
         "betType": "spread",
         "side": "away",
-        "line": 1.5,
-        "odds": 100,
-        "units": 1,
-        "rationale": "ATS lean: DET +1.5 at +100. Stat margin (PPG vs opp PA): AWAY +6.35 pts",
-        "rationaleCues": [
-          "Stat margin (PPG vs opp PA): AWAY +6.35 pts",
-          "Turnovers delta (opp − chosen): -5",
-          "Defensive disruption delta (sacks+INTs): -0.75",
-          "Coaching experience delta (years): -1",
-          "Spread movement: 1.5→1.5 (stable)",
-          "Public split (spread): 7% home / 93% away"
-        ]
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": 1.5,
-        "finalOdds": 100,
-        "payout": 0,
-        "netUnits": 0
-      },
-      "analystId": "mobster"
-    },
-    {
-      "gameId": "2025-09-07-mia-ind",
-      "gameDate": "2025-09-07T17:00:00.000-04:00",
-      "awayTeam": {
-        "id": "MIA",
-        "name": "Miami Dolphins",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "IND",
-        "name": "Indianapolis Colts",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 1.5,
-            "odds": -125
-          },
-          "home": {
-            "line": -1.5,
-            "odds": 102
-          }
-        },
-        "total": {
-          "over": {
-            "line": 46.5,
-            "odds": -110
-          },
-          "under": {
-            "line": 46.5,
-            "odds": -110
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": -115
-          },
-          "home": {
-            "odds": -105
-          }
-        }
-      },
-      "selection": {
-        "betType": "spread",
-        "side": "home",
         "line": -1.5,
-        "odds": 102,
+        "odds": -115,
         "units": 1,
-        "rationale": "ATS lean: IND -1.5 at +102. Stat margin (PPG vs opp PA): HOME -5.59 pts",
+        "rationale": "ATS lean: TB -1.5 at -115. Stat margin (PPG vs opp PA): AWAY +4.41 pts",
         "rationaleCues": [
-          "Stat margin (PPG vs opp PA): HOME -5.59 pts",
-          "Turnovers delta (opp − chosen): +1",
-          "Defensive disruption delta (sacks+INTs): -1",
-          "Coaching experience delta (years): -1",
-          "Spread movement: 1.5→1.5 (stable)",
-          "Public split (spread): 21% home / 79% away"
+          "Stat margin (PPG vs opp PA): AWAY +4.41 pts",
+          "Turnovers delta (opp − chosen): -1",
+          "Defensive disruption delta (sacks+INTs): +2",
+          "Coaching experience delta (years): +3",
+          "Spread movement: -2.5→-1.5 (toward_home)",
+          "Public split (spread): 75% home / 25% away"
         ]
       },
       "result": {
         "status": "pending",
         "finalLine": -1.5,
-        "finalOdds": 102,
-        "payout": 0,
-        "netUnits": 0
-      },
-      "analystId": "mobster"
-    },
-    {
-      "gameId": "2025-09-07-car-jax",
-      "gameDate": "2025-09-07T17:00:00.000-04:00",
-      "awayTeam": {
-        "id": "CAR",
-        "name": "Carolina Panthers",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "JAX",
-        "name": "Jacksonville Jaguars",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 3.5,
-            "odds": -115
-          },
-          "home": {
-            "line": -3.5,
-            "odds": -105
-          }
-        },
-        "total": {
-          "over": {
-            "line": 46.5,
-            "odds": -120
-          },
-          "under": {
-            "line": 46.5,
-            "odds": 100
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": 160
-          },
-          "home": {
-            "odds": -190
-          }
-        }
-      },
-      "selection": {
-        "betType": "spread",
-        "side": "away",
-        "line": 3.5,
-        "odds": -115,
-        "units": 1,
-        "rationale": "ATS lean: CAR +3.5 at -115. Stat margin (PPG vs opp PA): AWAY +7.06 pts",
-        "rationaleCues": [
-          "Stat margin (PPG vs opp PA): AWAY +7.06 pts",
-          "Turnovers delta (opp − chosen): -2",
-          "Defensive disruption delta (sacks+INTs): -2",
-          "Coaching experience delta (years): +1",
-          "Spread movement: 2.5→3.5 (toward_home)",
-          "Public split (spread): 50% home / 50% away"
-        ]
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": 3.5,
         "finalOdds": -115,
         "payout": 0,
         "netUnits": 0
@@ -210,8 +74,8 @@
     }
   ],
   "weekSummary": {
-    "totalPicks": 3,
-    "totalUnits": 3,
+    "totalPicks": 1,
+    "totalUnits": 1,
     "weekPayout": 0,
     "weekNetUnits": 0
   }

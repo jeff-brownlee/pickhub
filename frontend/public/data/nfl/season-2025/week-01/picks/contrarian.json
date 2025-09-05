@@ -2,7 +2,7 @@
   "analystId": "contrarian",
   "week": 1,
   "season": 2025,
-  "generatedAt": "2025-09-05T11:35:00.899Z",
+  "generatedAt": "2025-09-05T18:50:18.233Z",
   "picks": [
     {
       "gameId": "2025-09-07-cin-cle",
@@ -138,134 +138,67 @@
       "analystId": "contrarian"
     },
     {
-      "gameId": "2025-09-05-dal-phi",
-      "gameDate": "2025-09-05T00:20:00.000-04:00",
+      "gameId": "2025-09-07-det-gb",
+      "gameDate": "2025-09-07T20:25:00.000-04:00",
       "awayTeam": {
-        "id": "DAL",
-        "name": "Dallas Cowboys",
+        "id": "DET",
+        "name": "Detroit Lions",
         "score": null
       },
       "homeTeam": {
-        "id": "PHI",
-        "name": "Philadelphia Eagles",
+        "id": "GB",
+        "name": "Green Bay Packers",
         "score": null
       },
       "marketData": {
         "spread": {
           "away": {
-            "line": 8.5,
-            "odds": -115
-          },
-          "home": {
-            "line": -8.5,
-            "odds": -105
-          }
-        },
-        "total": {
-          "over": {
-            "line": 47.5,
-            "odds": -115
-          },
-          "under": {
-            "line": 47.5,
-            "odds": -105
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": 320
-          },
-          "home": {
-            "odds": -425
-          }
-        }
-      },
-      "selection": {
-        "betType": "moneyline",
-        "side": "away",
-        "line": 0,
-        "odds": 320,
-        "units": 1,
-        "rationale": "Moneyline lean: DAL at +320. Stat margin (PPG vs opp PA): AWAY +3.06",
-        "rationaleCues": [
-          "Stat margin (PPG vs opp PA): AWAY +3.06",
-          "Form delta (win%): +0",
-          "Moneyline movement (away): 230→340 (110 cents)",
-          "Public split (moneyline): 91% home / 9% away"
-        ]
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": 0,
-        "finalOdds": 320,
-        "payout": 0,
-        "netUnits": 0
-      },
-      "analystId": "contrarian"
-    },
-    {
-      "gameId": "2025-09-07-nyg-wsh",
-      "gameDate": "2025-09-07T17:00:00.000-04:00",
-      "awayTeam": {
-        "id": "NYG",
-        "name": "New York Giants",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "WSH",
-        "name": "Washington Commanders",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 6.5,
+            "line": 1.5,
             "odds": 100
           },
           "home": {
-            "line": -6.5,
+            "line": -1.5,
             "odds": -120
           }
         },
         "total": {
           "over": {
-            "line": 45.5,
-            "odds": -110
+            "line": 47.5,
+            "odds": 100
           },
           "under": {
-            "line": 45.5,
-            "odds": -110
+            "line": 47.5,
+            "odds": -120
           }
         },
         "moneyline": {
           "away": {
-            "odds": 215
+            "odds": 110
           },
           "home": {
-            "odds": -260
+            "odds": -130
           }
         }
       },
       "selection": {
-        "betType": "spread",
-        "side": "home",
-        "line": -6.5,
-        "odds": -120,
+        "betType": "total",
+        "side": "over",
+        "line": 47.5,
+        "odds": 100,
         "units": 1,
-        "rationale": "ATS lean: WSH -6.5 at -120. Stat margin (PPG vs opp PA): HOME -11.06 pts",
+        "rationale": "Total lean: OVER 47.5 at +100. Expected total 53.15 vs market 47.5",
         "rationaleCues": [
-          "Stat margin (PPG vs opp PA): HOME -11.06 pts",
-          "Turnovers delta (opp − chosen): -4",
-          "Defensive disruption delta (sacks+INTs): -2",
-          "Coaching experience delta (years): +4",
-          "Spread movement: 6.5→6.5 (stable)",
-          "Public split (spread): 50% home / 50% away"
+          "Expected total 53.15 vs market 47.5",
+          "Total movement: 49.5→47.5 (under)",
+          "Public split (total): 14% over / 86% under",
+          "Defensive disruption (combined sacks+INTs): 5.25",
+          "Passing volume proxy (combined pass yards): 276"
         ]
       },
       "result": {
         "status": "pending",
-        "finalLine": -6.5,
-        "finalOdds": -120,
+        "finalLine": 47.5,
+        "finalOdds": 100,
         "payout": 0,
         "netUnits": 0
       },
@@ -334,6 +267,74 @@
         "status": "pending",
         "finalLine": -1.5,
         "finalOdds": 102,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "contrarian"
+    },
+    {
+      "gameId": "2025-09-07-nyg-wsh",
+      "gameDate": "2025-09-07T17:00:00.000-04:00",
+      "awayTeam": {
+        "id": "NYG",
+        "name": "New York Giants",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "WSH",
+        "name": "Washington Commanders",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 6.5,
+            "odds": 100
+          },
+          "home": {
+            "line": -6.5,
+            "odds": -120
+          }
+        },
+        "total": {
+          "over": {
+            "line": 45.5,
+            "odds": -110
+          },
+          "under": {
+            "line": 45.5,
+            "odds": -110
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": 215
+          },
+          "home": {
+            "odds": -260
+          }
+        }
+      },
+      "selection": {
+        "betType": "spread",
+        "side": "home",
+        "line": -6.5,
+        "odds": -120,
+        "units": 1,
+        "rationale": "ATS lean: WSH -6.5 at -120. Stat margin (PPG vs opp PA): HOME -11.06 pts",
+        "rationaleCues": [
+          "Stat margin (PPG vs opp PA): HOME -11.06 pts",
+          "Turnovers delta (opp − chosen): -4",
+          "Defensive disruption delta (sacks+INTs): -2",
+          "Coaching experience delta (years): +4",
+          "Spread movement: 6.5→6.5 (stable)",
+          "Public split (spread): 50% home / 50% away"
+        ]
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": -6.5,
+        "finalOdds": -120,
         "payout": 0,
         "netUnits": 0
       },

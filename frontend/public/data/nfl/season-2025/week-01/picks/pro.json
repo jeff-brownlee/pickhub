@@ -2,8 +2,76 @@
   "analystId": "pro",
   "week": 1,
   "season": 2025,
-  "generatedAt": "2025-09-05T11:35:00.903Z",
+  "generatedAt": "2025-09-05T18:50:18.237Z",
   "picks": [
+    {
+      "gameId": "2025-09-07-det-gb",
+      "gameDate": "2025-09-07T20:25:00.000-04:00",
+      "awayTeam": {
+        "id": "DET",
+        "name": "Detroit Lions",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "GB",
+        "name": "Green Bay Packers",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 1.5,
+            "odds": 100
+          },
+          "home": {
+            "line": -1.5,
+            "odds": -120
+          }
+        },
+        "total": {
+          "over": {
+            "line": 47.5,
+            "odds": 100
+          },
+          "under": {
+            "line": 47.5,
+            "odds": -120
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": 110
+          },
+          "home": {
+            "odds": -130
+          }
+        }
+      },
+      "selection": {
+        "betType": "spread",
+        "side": "away",
+        "line": 1.5,
+        "odds": 100,
+        "units": 1,
+        "rationale": "ATS lean: DET +1.5 at +100. Stat margin (PPG vs opp PA): AWAY +6.35 pts",
+        "rationaleCues": [
+          "Stat margin (PPG vs opp PA): AWAY +6.35 pts",
+          "Turnovers delta (opp − chosen): -5",
+          "Defensive disruption delta (sacks+INTs): -0.75",
+          "Coaching experience delta (years): -1",
+          "Spread movement: 1.5→1.5 (stable)",
+          "Public split (spread): 7% home / 93% away"
+        ]
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 1.5,
+        "finalOdds": 100,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "pro"
+    },
     {
       "gameId": "2025-09-07-car-jax",
       "gameDate": "2025-09-07T17:00:00.000-04:00",
@@ -74,8 +142,8 @@
     }
   ],
   "weekSummary": {
-    "totalPicks": 1,
-    "totalUnits": 1,
+    "totalPicks": 2,
+    "totalUnits": 2,
     "weekPayout": 0,
     "weekNetUnits": 0
   }

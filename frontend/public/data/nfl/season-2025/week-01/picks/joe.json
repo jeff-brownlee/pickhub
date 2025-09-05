@@ -2,8 +2,142 @@
   "analystId": "joe",
   "week": 1,
   "season": 2025,
-  "generatedAt": "2025-09-05T11:35:00.901Z",
+  "generatedAt": "2025-09-05T18:50:18.235Z",
   "picks": [
+    {
+      "gameId": "2025-09-07-cin-cle",
+      "gameDate": "2025-09-07T17:00:00.000-04:00",
+      "awayTeam": {
+        "id": "CIN",
+        "name": "Cincinnati Bengals",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "CLE",
+        "name": "Cleveland Browns",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": -5.5,
+            "odds": -110
+          },
+          "home": {
+            "line": 5.5,
+            "odds": -110
+          }
+        },
+        "total": {
+          "over": {
+            "line": 47.5,
+            "odds": -115
+          },
+          "under": {
+            "line": 47.5,
+            "odds": -110
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": -250
+          },
+          "home": {
+            "odds": 210
+          }
+        }
+      },
+      "selection": {
+        "betType": "spread",
+        "side": "away",
+        "line": -5.5,
+        "odds": -110,
+        "units": 1,
+        "rationale": "ATS lean: CIN -5.5 at -110. Stat margin (PPG vs opp PA): AWAY +12.53 pts",
+        "rationaleCues": [
+          "Stat margin (PPG vs opp PA): AWAY +12.53 pts",
+          "Turnovers delta (opp − chosen): -1",
+          "Defensive disruption delta (sacks+INTs): -2.33",
+          "Coaching experience delta (years): +1",
+          "Spread movement: -5.5→-5.5 (stable)",
+          "Public split (spread): 26% home / 74% away"
+        ]
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": -5.5,
+        "finalOdds": -110,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "joe"
+    },
+    {
+      "gameId": "2025-09-07-mia-ind",
+      "gameDate": "2025-09-07T17:00:00.000-04:00",
+      "awayTeam": {
+        "id": "MIA",
+        "name": "Miami Dolphins",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "IND",
+        "name": "Indianapolis Colts",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 1.5,
+            "odds": -125
+          },
+          "home": {
+            "line": -1.5,
+            "odds": 102
+          }
+        },
+        "total": {
+          "over": {
+            "line": 46.5,
+            "odds": -110
+          },
+          "under": {
+            "line": 46.5,
+            "odds": -110
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": -115
+          },
+          "home": {
+            "odds": -105
+          }
+        }
+      },
+      "selection": {
+        "betType": "moneyline",
+        "side": "home",
+        "line": 0,
+        "odds": -105,
+        "units": 1,
+        "rationale": "Moneyline lean: IND at -105. Stat margin (PPG vs opp PA): HOME -5.59",
+        "rationaleCues": [
+          "Stat margin (PPG vs opp PA): HOME -5.59",
+          "Form delta (win%): +0",
+          "Moneyline movement (home): -125→-110 (15 cents)",
+          "Public split (moneyline): 23% home / 77% away"
+        ]
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 0,
+        "finalOdds": -105,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "joe"
+    },
     {
       "gameId": "2025-09-07-tb-atl",
       "gameDate": "2025-09-07T17:00:00.000-04:00",
@@ -74,8 +208,8 @@
     }
   ],
   "weekSummary": {
-    "totalPicks": 1,
-    "totalUnits": 1,
+    "totalPicks": 3,
+    "totalUnits": 3,
     "weekPayout": 0,
     "weekNetUnits": 0
   }

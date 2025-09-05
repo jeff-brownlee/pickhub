@@ -30,7 +30,17 @@ async function main() {
 
   const games = readJson<GameData[]>(gamesPath);
   const factbookFiles = fs.readdirSync(factbooksDir).filter(f => f.endsWith('.json'));
-  const factbooks: MinimalFactbook[] = factbookFiles.map(f => readJson<MinimalFactbook>(path.join(factbooksDir, f)));
+  const allFactbooks: MinimalFactbook[] = factbookFiles.map(f => readJson<MinimalFactbook>(path.join(factbooksDir, f)));
+  // Discard games that have already started
+  const now = new Date();
+  const factbooks: MinimalFactbook[] = allFactbooks.filter(fb => {
+    const ko = new Date(fb.kickoffISO);
+    return ko > now;
+  });
+  const discarded = allFactbooks.length - factbooks.length;
+  if (discarded > 0) {
+    console.log(`⏱️  Skipping ${discarded} game(s) that have already started.`);
+  }
   const personas: Persona[] = readJson<Persona[]>(personasPath);
 
   // Output dir (public) for Vercel consumption

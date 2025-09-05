@@ -1,5 +1,5 @@
-import { GameFactbook } from '../types/factbook';
-import { Persona } from '../types';
+import { MinimalFactbook } from '../types/minimalFactbook';
+import { Persona, Pick as UIPick } from '../types';
 import { PickRationale } from './analystService';
 
 export interface ChatGPTConfig {
@@ -20,9 +20,9 @@ export class ChatGPTRationaleService {
    * Generate a rationale for a pick using ChatGPT
    */
   async generateRationale(
-    factbook: GameFactbook,
+    factbook: MinimalFactbook,
     analyst: Persona,
-    pick: string,
+    pick: UIPick,
     confidence: 1 | 2 | 3
   ): Promise<PickRationale> {
     
@@ -38,21 +38,25 @@ export class ChatGPTRationaleService {
   }
 
   private buildRationalePrompt(
-    factbook: GameFactbook,
+    factbook: MinimalFactbook,
     analyst: Persona,
-    pick: string,
+    pick: UIPick,
     confidence: 1 | 2 | 3
   ): string {
     
     const gameContext = this.buildGameContext(factbook);
     const analystContext = this.buildAnalystContext(analyst);
+    const pickContext = this.buildPickContext(pick);
     
     return `
-You are ${analyst.name}, a ${analyst.persona} sports betting analyst. Generate a rationale for your pick: "${pick}"
+You are ${analyst.name}, a ${analyst.persona} sports betting analyst. Generate a rationale for this pick.
 
 ${analystContext}
 
 ${gameContext}
+
+PICK DETAILS:
+${pickContext}
 
 Your task:
 1. Write a rationale that matches your personality and voice style
@@ -91,42 +95,62 @@ ${this.getAnalystApproach(analyst.id)}
 `;
   }
 
-  private buildGameContext(factbook: GameFactbook): string {
+  private buildGameContext(factbook: MinimalFactbook): string {
     const { away, home } = factbook.teams;
-    
+    const awayWinPct = Math.round((away.record.winPercentage || 0) * 100);
+    const homeWinPct = Math.round((home.record.winPercentage || 0) * 100);
+    const statsSourceNote = factbook.statsSourceSeason ? ` (stats from ${factbook.statsSourceSeason})` : '';
+
+    const bt = factbook.bettingContext?.bettingTrends;
+    const lm = factbook.bettingContext?.lineMovement;
+    const spreadMove = lm?.spread ? `${lm.spread.opening} → ${lm.spread.current} (${lm.spread.direction})` : 'N/A';
+    const totalMove = lm?.total ? `${lm.total.opening} → ${lm.total.current} (${lm.total.direction})` : 'N/A';
+
     return `
 GAME CONTEXT:
-${away.abbreviation} @ ${home.abbreviation} - Week ${factbook.week}
+${away.abbreviation} @ ${home.abbreviation} — Week ${factbook.week}${statsSourceNote}
 
 TEAM RECORDS:
-- ${away.abbreviation}: ${away.record.wins}-${away.record.losses} (${Math.round(away.record.winPercentage * 100)}%)
-- ${home.abbreviation}: ${home.record.wins}-${home.record.losses} (${Math.round(home.record.winPercentage * 100)}%)
+- ${away.abbreviation}: ${awayWinPct}% win pct
+- ${home.abbreviation}: ${homeWinPct}% win pct
 
-KEY STATISTICS:
-- ${away.abbreviation} Offense: ${away.statistics.offense.pointsPerGame.toFixed(1)} PPG, ${away.statistics.offense.yardsPerGame.toFixed(0)} YPG
-- ${away.abbreviation} Defense: ${away.statistics.defense.pointsAllowed.toFixed(1)} PPG allowed, ${away.statistics.defense.yardsAllowed.toFixed(0)} YPG allowed
-- ${home.abbreviation} Offense: ${home.statistics.offense.pointsPerGame.toFixed(1)} PPG, ${home.statistics.offense.yardsPerGame.toFixed(0)} YPG
-- ${home.abbreviation} Defense: ${home.statistics.defense.pointsAllowed.toFixed(1)} PPG allowed, ${home.statistics.defense.yardsAllowed.toFixed(0)} YPG allowed
+KEY STATS (per game):
+- ${away.abbreviation} Off: ${away.statistics.offense.pointsPerGame.toFixed(1)} PPG | Def: ${away.statistics.defense.pointsAllowed.toFixed(1)} PPA
+- ${home.abbreviation} Off: ${home.statistics.offense.pointsPerGame.toFixed(1)} PPG | Def: ${home.statistics.defense.pointsAllowed.toFixed(1)} PPA
 
 BETTING CONTEXT:
-- Current Spread: ${factbook.bettingContext.currentLine?.spread || 'N/A'}
-- Current Total: ${factbook.bettingContext.currentLine?.total || 'N/A'}
-- Public Betting: ${factbook.bettingContext.bettingTrends.spread.home}% / ${factbook.bettingContext.bettingTrends.spread.away}%
-- Line Movement: ${factbook.bettingContext.lineMovement.spreadMovement || 'None'}
-
-VENUE: ${factbook.venue.name} (${factbook.venue.city}, ${factbook.venue.state})
-- Indoor: ${factbook.venue.indoor ? 'Yes' : 'No'}
-- Surface: ${factbook.venue.surface}
-
-KEY MATCHUPS:
-${factbook.keyMatchups.map(m => `- ${m.description} (${m.advantage} advantage)`).join('\n')}
-
-INJURIES:
-${factbook.injuries.map(i => `- ${i.player} (${i.position}): ${i.injury} - ${i.status}`).join('\n')}
-
-TRENDS:
-${factbook.trends.map(t => `- ${t.description}: ${t.record} (${t.significance} significance)`).join('\n')}
+- Current Spread: ${factbook.bettingContext.currentLine?.spread ?? 'N/A'}
+- Current Total: ${factbook.bettingContext.currentLine?.total ?? 'N/A'}
+- Public (Spread): Home ${bt?.spread.home ?? 'N/A'}% / Away ${bt?.spread.away ?? 'N/A'}%
+- Public (Total): Over ${bt?.total.over ?? 'N/A'}% / Under ${bt?.total.under ?? 'N/A'}%
+- Line Movement: Spread ${spreadMove} | Total ${totalMove}
 `;
+  }
+
+  private buildPickContext(pick: UIPick): string {
+    const market = pick.selection.betType;
+    const side = pick.selection.side;
+    const line = pick.selection.line;
+    const odds = pick.selection.odds;
+    const cues = pick.selection.rationaleCues || [];
+    const game = `${pick.awayTeam.id} @ ${pick.homeTeam.id}`;
+    return `
+Pick: ${game} — ${market.toUpperCase()} ${side.toString().toUpperCase()} ${line} (${odds > 0 ? '+' : ''}${odds})
+Heuristic Cues: ${cues.length ? cues.map(c => `- ${c}`).join('\n') : '- n/a'}
+`;
+  }
+
+  private formatPickLabel(pick: UIPick): string {
+    const market = pick.selection.betType;
+    if (market === 'total') {
+      return `${(pick.selection.side as string).toUpperCase()} ${pick.selection.line}`;
+    }
+    const team = pick.selection.side === 'away' ? pick.awayTeam.id : pick.homeTeam.id;
+    if (market === 'moneyline') {
+      return `${team} ${pick.selection.odds > 0 ? '+' : ''}${pick.selection.odds}`;
+    }
+    // spread
+    return `${team} ${pick.selection.line > 0 ? '+' : ''}${pick.selection.line}`;
   }
 
   private getAnalystApproach(analystId: string): string {
@@ -174,11 +198,11 @@ ${factbook.trends.map(t => `- ${t.description}: ${t.record} (${t.significance} s
     });
   }
 
-  private parseRationaleResponse(response: string, pick: string, confidence: 1 | 2 | 3): PickRationale {
+  private parseRationaleResponse(response: string, pick: UIPick, confidence: 1 | 2 | 3): PickRationale {
     try {
       const parsed = JSON.parse(response);
       return {
-        pick,
+        pick: this.formatPickLabel(pick),
         confidence,
         rationale: parsed.rationale || 'No rationale provided',
         keyFactors: parsed.keyFactors || [],
@@ -194,9 +218,9 @@ ${factbook.trends.map(t => `- ${t.description}: ${t.record} (${t.significance} s
     }
   }
 
-  private getFallbackRationale(pick: string, confidence: 1 | 2 | 3): PickRationale {
+  private getFallbackRationale(pick: UIPick, confidence: 1 | 2 | 3): PickRationale {
     return {
-      pick,
+      pick: this.formatPickLabel(pick),
       confidence,
       rationale: 'Unable to generate rationale at this time. Please try again later.',
       keyFactors: ['Technical issue', 'Please retry'],

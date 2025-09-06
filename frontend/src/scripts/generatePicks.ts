@@ -4,7 +4,8 @@ import { pickSelectionService } from '../services/pickSelectionService';
 import { MinimalFactbook } from '../types/minimalFactbook';
 import { computeSpreadScoreDebug, computeTotalScoreDebug, computeMoneylineScoreDebug } from '../heuristics/marketScoring';
 import { GameData } from '../adapters/espnNflApi';
-import { Persona } from '../types';
+import { Persona, Pick as UIPick } from '../types';
+import { chatgptRationaleService } from '../services/chatgptRationaleService';
 
 function readJson<T = any>(p: string): T {
   return JSON.parse(fs.readFileSync(p, 'utf8')) as T;
@@ -66,6 +67,8 @@ async function main() {
 
   // Shared exposures across personas for decorrelation
   const exposures: any = {};
+  // Global budget: allow only one ChatGPT call for the whole run
+  let totalCallsRemaining = 1;
 
   for (const persona of personas) {
     try {
@@ -82,16 +85,45 @@ async function main() {
           moneyline: { side: entry.scoring.moneyline.side, score: entry.scoring.moneyline.score, reasons: entry.scoring.moneyline.reasons }
         }]))
       );
+
+      // Replace heuristic rationale string with ChatGPT narrative per pick (keep rationaleCues)
+      const picksWithNarratives: UIPick[] = [];
+      for (const pick of res.picks as unknown as UIPick[]) {
+        const fb = factbooks.find(f => f.gameId === pick.gameId);
+        if (!fb) { picksWithNarratives.push(pick); continue; }
+        try {
+          if (totalCallsRemaining > 0) {
+            const gpt = await chatgptRationaleService.generateRationale(fb, persona, pick, 2);
+            totalCallsRemaining -= 1;
+            picksWithNarratives.push({
+              ...pick,
+              selection: {
+                ...pick.selection,
+                rationale: gpt.rationale,
+                rationaleCues: pick.selection.rationaleCues
+              }
+            });
+            // brief delay to reduce rate limit pressure
+            await new Promise(r => setTimeout(r, 150));
+          } else {
+            picksWithNarratives.push(pick);
+          }
+        } catch (err) {
+          console.warn(`ChatGPT failed for ${persona.id} ${pick.gameId}:`, err);
+          picksWithNarratives.push(pick);
+        }
+      }
+
       // Adapt to legacy UI JSON envelope
       const legacyEnvelope = {
         analystId: persona.id,
         week,
         season: 2025,
         generatedAt,
-        picks: res.picks,
+        picks: picksWithNarratives,
         weekSummary: {
-          totalPicks: res.picks.length,
-          totalUnits: res.picks.length,
+          totalPicks: picksWithNarratives.length,
+          totalUnits: picksWithNarratives.length,
           weekPayout: 0,
           weekNetUnits: 0
         }

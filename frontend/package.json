@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "generate-games": "tsx src/scripts/generateNflGames.ts",
     "generate-factbooks": "tsx src/scripts/generateFactbooks.ts",
-    "generate-picks": "tsx src/scripts/generatePicks.ts",
+    "generate-picks": "tsx -r dotenv/config src/scripts/generatePicks.ts",
+    "generate-rationale-prompts": "tsx src/scripts/generateRationalePrompts.ts",
     "log-market-scoring": "tsx src/scripts/generateMarketScoringLog.ts",
     "generate-all": "npm run generate-games -- $WEEK && npm run generate-factbooks -- $WEEK && npm run generate-picks -- $WEEK",
     "test-picks": "tsx src/scripts/testPickSelection.ts"
@@ -25,7 +26,8 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.23.1",
-    "tsx": "^4.20.5"
+    "tsx": "^4.20.5",
+    "dotenv": "^16.4.5"
   },
   "devDependencies": {
     "@types/react": "^18.3.5",

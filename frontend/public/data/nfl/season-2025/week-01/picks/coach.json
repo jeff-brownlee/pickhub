@@ -2,7 +2,7 @@
   "analystId": "coach",
   "week": 1,
   "season": 2025,
-  "generatedAt": "2025-09-05T18:50:18.231Z",
+  "generatedAt": "2025-09-06T16:36:08.665Z",
   "picks": [
     {
       "gameId": "2025-09-07-cin-cle",
@@ -53,7 +53,7 @@
         "line": -5.5,
         "odds": -110,
         "units": 1,
-        "rationale": "ATS lean: CIN -5.5 at -110. Stat margin (PPG vs opp PA): AWAY +12.53 pts",
+        "rationale": "The Bengals bring a +12.5 point scoring edge and steadiness on the line. With 74% of the public on their side and a stable -5.5 spread, they just need to stay disciplined up front to cover.",
         "rationaleCues": [
           "Stat margin (PPG vs opp PA): AWAY +12.53 pts",
           "Turnovers delta (opp − chosen): -1",
@@ -121,7 +121,7 @@
         "line": -6.5,
         "odds": -120,
         "units": 1,
-        "rationale": "ATS lean: WSH -6.5 at -120. Stat margin (PPG vs opp PA): HOME -11.06 pts",
+        "rationale": "Washington’s defense creates a -4 turnover edge and their coach brings 4 more years of experience. With the spread steady at -6.5, their toughness in the trenches should wear down the Giants.",
         "rationaleCues": [
           "Stat margin (PPG vs opp PA): HOME -11.06 pts",
           "Turnovers delta (opp − chosen): -4",
@@ -189,7 +189,7 @@
         "line": 47.5,
         "odds": 100,
         "units": 1,
-        "rationale": "Total lean: OVER 47.5 at +100. Expected total 53.15 vs market 47.5",
+        "rationale": "The projection calls for 53 points while the line sits at 47.5. With just 14% of the public backing the Over, I’ll trust the offenses to punch through if the lines hold steady.",
         "rationaleCues": [
           "Expected total 53.15 vs market 47.5",
           "Total movement: 49.5→47.5 (under)",
@@ -256,7 +256,7 @@
         "line": -1.5,
         "odds": 102,
         "units": 1,
-        "rationale": "ATS lean: BUF -1.5 at +102. Stat margin (PPG vs opp PA): HOME -0.82 pts",
+        "rationale": "The Bills may trail in coaching years (-10) and sit nearly even in stat margin (-0.8), but just 29% of the public is backing them. At home, discipline in the trenches should tilt a close game their way.",
         "rationaleCues": [
           "Stat margin (PPG vs opp PA): HOME -0.82 pts",
           "Turnovers delta (opp − chosen): +2",
@@ -324,7 +324,7 @@
         "line": 1.5,
         "odds": 100,
         "units": 1,
-        "rationale": "ATS lean: DET +1.5 at +100. Stat margin (PPG vs opp PA): AWAY +6.35 pts",
+        "rationale": "Detroit owns a +6.3 point edge and a -5 turnover margin, the signs of discipline that win tight games. With 93% of the public on their side, I’ll ride the Lions’ grit in the trenches plus the points.",
         "rationaleCues": [
           "Stat margin (PPG vs opp PA): AWAY +6.35 pts",
           "Turnovers delta (opp − chosen): -5",

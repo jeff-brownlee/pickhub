@@ -49,11 +49,11 @@
       },
       "selection": {
         "betType": "moneyline",
-        "side": "away",
+        "side": "home",
         "line": 0,
-        "odds": -250,
+        "odds": 210,
         "units": 1,
-        "rationale": "Moneyline lean: CIN at -250. Stat margin (PPG vs opp PA): AWAY +12.53",
+        "rationale": "Ninety-seven percent of bettors are laying juice on Cincy at -250. I'll gladly fade that hard and take the home underdog.",
         "rationaleCues": [
           "Stat margin (PPG vs opp PA): AWAY +12.53",
           "Form delta (win%): +0",
@@ -115,11 +115,11 @@
       },
       "selection": {
         "betType": "total",
-        "side": "under",
+        "side": "over",
         "line": 43.5,
-        "odds": -105,
+        "odds": -115,
         "units": 1,
-        "rationale": "Total lean: UNDER 43.5 at -105. Expected total 40.39 vs market 43.5",
+        "rationale": "Seventy-three percent are piling on the Under after a drop from 45.5 to 43.5. When everyone screams defense, I’m happy to bet they’re late to the party.",
         "rationaleCues": [
           "Expected total 40.39 vs market 43.5",
           "Total movement: 45.5→43.5 (under)",
@@ -186,7 +186,7 @@
         "line": 47.5,
         "odds": 100,
         "units": 1,
-        "rationale": "Total lean: OVER 47.5 at +100. Expected total 53.15 vs market 47.5",
+        "rationale": "Eighty-six percent are sold on the Under after the line dipped from 49.5 to 47.5. That’s my cue to grab the Over at even money and laugh when the scoreboard keeps ticking.",
         "rationaleCues": [
           "Expected total 53.15 vs market 47.5",
           "Total movement: 49.5→47.5 (under)",
@@ -253,7 +253,7 @@
         "line": -1.5,
         "odds": 102,
         "units": 1,
-        "rationale": "ATS lean: BUF -1.5 at +102. Stat margin (PPG vs opp PA): HOME -0.82 pts",
+        "rationale": "Seventy-one percent of tickets are on Baltimore after the line swung their way. I’ll roll with Buffalo at +102 and enjoy watching the crowd cry into their slips.",
         "rationaleCues": [
           "Stat margin (PPG vs opp PA): HOME -0.82 pts",
           "Turnovers delta (opp − chosen): +2",
@@ -321,7 +321,7 @@
         "line": -6.5,
         "odds": -120,
         "units": 1,
-        "rationale": "ATS lean: WSH -6.5 at -120. Stat margin (PPG vs opp PA): HOME -11.06 pts",
+        "rationale": "With the public split dead even at 50/50, this isn’t about fading anyone—it’s just picking the side with a -4 turnover edge and more discipline. Sometimes contrarian means passing on the obvious sucker play.",
         "rationaleCues": [
           "Stat margin (PPG vs opp PA): HOME -11.06 pts",
           "Turnovers delta (opp − chosen): -4",

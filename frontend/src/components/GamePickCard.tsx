@@ -5,6 +5,11 @@ import { ExpandMore, ExpandLess } from '@mui/icons-material';
 import type { Game, Pick } from '../types';
 import { getTeamColor } from '../utils/teamColors';
 
+function formatSigned(value: number): string {
+  if (value > 0) return `+${value}`;
+  return `${value}`;
+}
+
 function TeamBadge({ name, abbr, nickname, score }: { name: string; abbr: string; nickname: string; score?: number }) {
   const teamColor = getTeamColor(abbr);
   
@@ -102,10 +107,12 @@ function BettingOption({
 export default function GamePickCard({
   game,
   pick,
+  picks,
   onClick,
 }: {
   game: Game;
   pick?: Pick;
+  picks?: Pick[];
   onClick?: () => void;
 }) {
   const [isRationaleExpanded, setIsRationaleExpanded] = useState(false);
@@ -114,59 +121,60 @@ export default function GamePickCard({
   const gameTime = kickoff.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' });
 
   // Use real pick data if available, otherwise use game odds
-  const hasPick = pick && pick.selection && pick.marketData;
+  const primaryPick = (picks && picks.length > 0 ? picks[0] : pick);
+  const hasPick = primaryPick && (primaryPick as Pick).selection && (primaryPick as Pick).marketData;
   const hasGameOdds = game.odds && game.odds.spread && game.odds.total && game.odds.moneyline;
   
   // Get betting data from pick, game odds, or use default values
   const bettingData = hasPick ? {
     spread: {
       away: { 
-        value: `+${pick.marketData.spread.away.line}`, 
-        odds: pick.marketData.spread.away.odds.toString() 
+        value: formatSigned((primaryPick as Pick).marketData.spread.away.line), 
+        odds: formatSigned((primaryPick as Pick).marketData.spread.away.odds) 
       },
       home: { 
-        value: `-${pick.marketData.spread.home.line}`, 
-        odds: pick.marketData.spread.home.odds.toString() 
+        value: formatSigned((primaryPick as Pick).marketData.spread.home.line), 
+        odds: formatSigned((primaryPick as Pick).marketData.spread.home.odds) 
       }
     },
     total: {
       over: { 
-        value: `O ${pick.marketData.total.over.line}`, 
-        odds: pick.marketData.total.over.odds.toString() 
+        value: `O ${(primaryPick as Pick).marketData.total.over.line}`, 
+        odds: formatSigned((primaryPick as Pick).marketData.total.over.odds) 
       },
       under: { 
-        value: `U ${pick.marketData.total.under.line}`, 
-        odds: pick.marketData.total.under.odds.toString() 
+        value: `U ${(primaryPick as Pick).marketData.total.under.line}`, 
+        odds: formatSigned((primaryPick as Pick).marketData.total.under.odds) 
       }
     },
     moneyline: {
-      away: pick.marketData.moneyline.away.odds.toString(),
-      home: pick.marketData.moneyline.home.odds.toString()
+      away: formatSigned((primaryPick as Pick).marketData.moneyline.away.odds),
+      home: formatSigned((primaryPick as Pick).marketData.moneyline.home.odds)
     }
   } : hasGameOdds ? {
     spread: game.odds.spread ? {
       away: { 
-        value: `+${game.odds.spread.away.line}`, 
-        odds: game.odds.spread.away.odds.toString() 
+        value: formatSigned(game.odds.spread.away.line), 
+        odds: formatSigned(game.odds.spread.away.odds) 
       },
       home: { 
-        value: `-${game.odds.spread.home.line}`, 
-        odds: game.odds.spread.home.odds.toString() 
+        value: formatSigned(game.odds.spread.home.line), 
+        odds: formatSigned(game.odds.spread.home.odds) 
       }
     } : undefined,
     total: game.odds.total ? {
       over: { 
         value: `O ${game.odds.total.over.line}`, 
-        odds: game.odds.total.over.odds.toString() 
+        odds: formatSigned(game.odds.total.over.odds) 
       },
       under: { 
         value: `U ${game.odds.total.under.line}`, 
-        odds: game.odds.total.under.odds.toString() 
+        odds: formatSigned(game.odds.total.under.odds) 
       }
     } : undefined,
     moneyline: game.odds.moneyline ? {
-      away: game.odds.moneyline.away.odds.toString(),
-      home: game.odds.moneyline.home.odds.toString()
+      away: formatSigned(game.odds.moneyline.away.odds),
+      home: formatSigned(game.odds.moneyline.home.odds)
     } : undefined
   } : {
     spread: {
@@ -183,35 +191,31 @@ export default function GamePickCard({
     }
   };
 
-  // Determine which bet is picked based on actual pick data
-  const getPickedBet = () => {
-    if (!hasPick) return null;
-    
-    const { betType, side } = pick.selection;
-    if (betType === 'spread') {
-      return side === 'away' ? 'spread-away' : 'spread-home';
-    } else if (betType === 'total') {
-      return side === 'over' ? 'total-over' : 'total-under';
-    } else if (betType === 'moneyline') {
-      return side === 'away' ? 'moneyline-away' : 'moneyline-home';
-    }
-    return null;
+  // Determine if a specific cell is selected by any pick
+  const isCellPicked = (
+    cell: 'spread-away' | 'spread-home' | 'total-over' | 'total-under' | 'moneyline-away' | 'moneyline-home'
+  ) => {
+    const list = picks && picks.length ? picks : (pick ? [pick] : []);
+    if (!list.length) return false;
+    return list.some((p) => {
+      const { betType, side } = p.selection;
+      if (betType === 'spread') return (side === 'away' && cell === 'spread-away') || (side === 'home' && cell === 'spread-home');
+      if (betType === 'total') return (side === 'over' && cell === 'total-over') || (side === 'under' && cell === 'total-under');
+      if (betType === 'moneyline') return (side === 'away' && cell === 'moneyline-away') || (side === 'home' && cell === 'moneyline-home');
+      return false;
+    });
   };
 
-  const pickedBet = getPickedBet();
-
-  // Get pick status from actual pick data
-  const pickStatus = hasPick ? {
-    status: pick.result?.status || 'pending',
-    pick: pick.selection.betType === 'total' 
-      ? `${pick.selection.side === 'over' ? 'OVER' : 'UNDER'} ${pick.selection.line} ${pick.selection.odds > 0 ? '+' : ''}${pick.selection.odds}`
-      : `${pick.selection.side === 'away' ? game.away.abbr : game.home.abbr} ${pick.selection.betType === 'spread' ? pick.selection.line : ''} ${pick.selection.odds > 0 ? '+' : ''}${pick.selection.odds}`,
-    rationale: pick.selection.rationale || pick.rationale || 'No rationale provided.'
-  } : {
-    status: 'pending' as const,
-    pick: 'No pick',
-    rationale: 'No pick has been made for this game.'
-  };
+  // Build pick status rows
+  const statusListSource = picks && picks.length ? picks : (pick ? [pick] : []);
+  const pickStatusList = statusListSource.map((p) => ({
+    status: p.result?.status || 'pending',
+    text: p.selection.betType === 'total'
+      ? `${p.selection.side === 'over' ? 'OVER' : 'UNDER'} ${p.selection.line} ${p.selection.odds > 0 ? '+' : ''}${p.selection.odds}`
+      : `${p.selection.side === 'away' ? game.away.abbr : game.home.abbr} ${p.selection.betType === 'spread' ? p.selection.line : ''} ${p.selection.odds > 0 ? '+' : ''}${p.selection.odds}`,
+    rationale: p.selection.rationale || p.rationale || 'No rationale provided.'
+  }));
+  const pickStatusFallback = [{ status: 'pending' as const, text: 'No pick', rationale: 'No pick has been made for this game.' }];
 
   const getStatusEmoji = (status: string) => {
     switch (status) {
@@ -262,60 +266,60 @@ export default function GamePickCard({
 
             {/* Row 2: Away Team */}
             <Grid2 size={5}>
-              <TeamBadge name={game.away.name} abbr={game.away.abbr} nickname={game.away.nickname} score={pick?.awayTeam?.score} />
+              <TeamBadge name={game.away.name} abbr={game.away.abbr} nickname={game.away.nickname} score={(primaryPick as Pick | undefined)?.awayTeam?.score} />
             </Grid2>
             <Grid2 size={2.33}>
               <BettingOption
                 value={bettingData.spread?.away?.value || 'N/A'}
                 odds={bettingData.spread?.away?.odds || 'N/A'}
-                isPicked={pickedBet === 'spread-away'}
+                isPicked={isCellPicked('spread-away')}
               />
             </Grid2>
             <Grid2 size={2.33}>
               <BettingOption
                 value={bettingData.total?.over?.value || 'N/A'}
                 odds={bettingData.total?.over?.odds || 'N/A'}
-                isPicked={pickedBet === 'total-over'}
+                isPicked={isCellPicked('total-over')}
               />
             </Grid2>
             <Grid2 size={2.33}>
               <BettingOption
                 value=""
                 odds={bettingData.moneyline?.away || 'N/A'}
-                isPicked={pickedBet === 'moneyline-away'}
+                isPicked={isCellPicked('moneyline-away')}
                 isMoneyline={true}
               />
             </Grid2>
 
             {/* Row 3: Home Team */}
             <Grid2 size={5}>
-              <TeamBadge name={game.home.name} abbr={game.home.abbr} nickname={game.home.nickname} score={pick?.homeTeam?.score} />
+              <TeamBadge name={game.home.name} abbr={game.home.abbr} nickname={game.home.nickname} score={(primaryPick as Pick | undefined)?.homeTeam?.score} />
             </Grid2>
             <Grid2 size={2.33}>
               <BettingOption
                 value={bettingData.spread?.home?.value || 'N/A'}
                 odds={bettingData.spread?.home?.odds || 'N/A'}
-                isPicked={pickedBet === 'spread-home'}
+                isPicked={isCellPicked('spread-home')}
               />
             </Grid2>
             <Grid2 size={2.33}>
               <BettingOption
                 value={bettingData.total?.under?.value || 'N/A'}
                 odds={bettingData.total?.under?.odds || 'N/A'}
-                isPicked={pickedBet === 'total-under'}
+                isPicked={isCellPicked('total-under')}
               />
             </Grid2>
             <Grid2 size={2.33}>
               <BettingOption
                 value=""
                 odds={bettingData.moneyline?.home || 'N/A'}
-                isPicked={pickedBet === 'moneyline-home'}
+                isPicked={isCellPicked('moneyline-home')}
                 isMoneyline={true}
               />
             </Grid2>
           </Grid2>
 
-          {/* Pick Status Element */}
+          {/* Pick Status Elements */}
           <Box
             sx={{
               mt: 2,
@@ -325,32 +329,35 @@ export default function GamePickCard({
               border: '1px solid rgba(255,255,255,0.1)'
             }}
           >
-                                 <Stack direction="row" alignItems="center" spacing={1}>
-                       <Typography sx={{ fontSize: '1.2rem' }}>
-                         {getStatusEmoji(pickStatus.status)}
-                       </Typography>
-                       <Typography variant="body2" sx={{ fontWeight: 600, flex: 1 }}>
-                         {pickStatus.pick}
-                       </Typography>
-                       <IconButton
-                         size="small"
-                         sx={{ color: 'text.secondary' }}
-                         onClick={(e) => {
-                           e.stopPropagation();
-                           setIsRationaleExpanded(!isRationaleExpanded);
-                         }}
-                       >
-                         {isRationaleExpanded ? <ExpandLess /> : <ExpandMore />}
-                       </IconButton>
-                     </Stack>
-            
-            <Collapse in={isRationaleExpanded}>
-              <Box sx={{ mt: 1.5, pt: 1.5, borderTop: '1px solid rgba(255,255,255,0.1)' }}>
-                <Typography variant="caption" color="text.secondary" sx={{ lineHeight: 1.4 }}>
-                  {pickStatus.rationale}
-                </Typography>
+            {(pickStatusList.length ? pickStatusList : pickStatusFallback).map((ps, idx) => (
+              <Box key={idx} sx={{ '&:not(:first-of-type)': { mt: 1, pt: 1, borderTop: '1px solid rgba(255,255,255,0.08)' } }}>
+                <Stack direction="row" alignItems="center" spacing={1}>
+                  <Typography sx={{ fontSize: '1.2rem' }}>
+                    {getStatusEmoji(ps.status as string)}
+                  </Typography>
+                  <Typography variant="body2" sx={{ fontWeight: 600, flex: 1 }}>
+                    {ps.text}
+                  </Typography>
+                  <IconButton
+                    size="small"
+                    sx={{ color: 'text.secondary' }}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setIsRationaleExpanded(!isRationaleExpanded);
+                    }}
+                  >
+                    {isRationaleExpanded ? <ExpandLess /> : <ExpandMore />}
+                  </IconButton>
+                </Stack>
+                <Collapse in={isRationaleExpanded}>
+                  <Box sx={{ mt: 1 }}>
+                    <Typography variant="caption" color="text.secondary" sx={{ lineHeight: 1.4 }}>
+                      {ps.rationale}
+                    </Typography>
+                  </Box>
+                </Collapse>
               </Box>
-            </Collapse>
+            ))}
           </Box>
 
       </CardContent>

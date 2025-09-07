@@ -2,8 +2,76 @@
   "analystId": "podcaster",
   "week": 1,
   "season": 2025,
-  "generatedAt": "2025-09-06T16:36:20.983Z",
+  "generatedAt": "2025-09-07T20:19:08.673Z",
   "picks": [
+    {
+      "gameId": "2025-09-07-cin-cle",
+      "gameDate": "2025-09-07T17:00:00.000-04:00",
+      "awayTeam": {
+        "id": "CIN",
+        "name": "Cincinnati Bengals",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "CLE",
+        "name": "Cleveland Browns",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": -5.5,
+            "odds": -110
+          },
+          "home": {
+            "line": 5.5,
+            "odds": -110
+          }
+        },
+        "total": {
+          "over": {
+            "line": 47.5,
+            "odds": -115
+          },
+          "under": {
+            "line": 47.5,
+            "odds": -110
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": -250
+          },
+          "home": {
+            "odds": 210
+          }
+        }
+      },
+      "selection": {
+        "betType": "spread",
+        "side": "away",
+        "line": -5.5,
+        "odds": -110,
+        "units": 1,
+        "rationale": "Cincy’s got the muscle with a +12.5 point edge, and you don’t need to be a genius to know they’ll bully Cleveland up front. When 74% of folks are already on ‘em, you just pound the rock and trust the better squad to cover.",
+        "rationaleCues": [
+          "Stat margin (PPG vs opp PA): AWAY +12.53 pts",
+          "Turnovers delta (opp − chosen): -1",
+          "Defensive disruption delta (sacks+INTs): -2.33",
+          "Coaching experience delta (years): +1",
+          "Spread movement: -5.5→-5.5 (stable)",
+          "Public split (spread): 26% home / 74% away"
+        ]
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": -5.5,
+        "finalOdds": -110,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "podcaster"
+    },
     {
       "gameId": "2025-09-07-mia-ind",
       "gameDate": "2025-09-07T17:00:00.000-04:00",
@@ -53,7 +121,7 @@
         "line": 46.5,
         "odds": -110,
         "units": 1,
-        "rationale": "Total lean: UNDER 46.5 at -110. Expected total 43.89 vs market 46.5",
+        "rationale": "This one’s all about toughness—projection’s 43.9, and both squads can grind. With 85% of the public already on the Under, I’m doubling down and saying this turns into a slugfest under the number.",
         "rationaleCues": [
           "Expected total 43.89 vs market 46.5",
           "Total movement: 47.5→46.5 (under)",
@@ -70,11 +138,214 @@
         "netUnits": 0
       },
       "analystId": "podcaster"
+    },
+    {
+      "gameId": "2025-09-07-nyg-wsh",
+      "gameDate": "2025-09-07T17:00:00.000-04:00",
+      "awayTeam": {
+        "id": "NYG",
+        "name": "New York Giants",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "WSH",
+        "name": "Washington Commanders",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 6.5,
+            "odds": 100
+          },
+          "home": {
+            "line": -6.5,
+            "odds": -120
+          }
+        },
+        "total": {
+          "over": {
+            "line": 45.5,
+            "odds": -110
+          },
+          "under": {
+            "line": 45.5,
+            "odds": -110
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": 215
+          },
+          "home": {
+            "odds": -260
+          }
+        }
+      },
+      "selection": {
+        "betType": "spread",
+        "side": "home",
+        "line": -6.5,
+        "odds": -120,
+        "units": 1,
+        "rationale": "Washington’s got the coaching edge (+4 years) and forces turnovers (-4 delta), which screams discipline and smashmouth ball. This ain’t finesse football—it’s about putting helmets on helmets, and I’ll back WSH to cover.",
+        "rationaleCues": [
+          "Stat margin (PPG vs opp PA): HOME -11.06 pts",
+          "Turnovers delta (opp − chosen): -4",
+          "Defensive disruption delta (sacks+INTs): -2",
+          "Coaching experience delta (years): +4",
+          "Spread movement: 6.5→6.5 (stable)",
+          "Public split (spread): 50% home / 50% away"
+        ]
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": -6.5,
+        "finalOdds": -120,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "podcaster"
+    },
+    {
+      "gameId": "2025-09-06-kc-lac",
+      "gameDate": "2025-09-06T00:00:00.000-04:00",
+      "awayTeam": {
+        "id": "KC",
+        "name": "Kansas City Chiefs",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "LAC",
+        "name": "Los Angeles Chargers",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": -3.5,
+            "odds": 100
+          },
+          "home": {
+            "line": 3.5,
+            "odds": -120
+          }
+        },
+        "total": {
+          "over": {
+            "line": 46.5,
+            "odds": -105
+          },
+          "under": {
+            "line": 46.5,
+            "odds": -115
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": -170
+          },
+          "home": {
+            "odds": 145
+          }
+        }
+      },
+      "selection": {
+        "betType": "total",
+        "side": "under",
+        "line": 46.5,
+        "odds": -115,
+        "units": 1,
+        "rationale": "The model pegs this at 43, and when you’ve got defenses bringing 6.5 disruptive plays a game, it’s gonna be a grind. Forget the highlight reels—this is old-school football, and I’m hammering the Under.",
+        "rationaleCues": [
+          "Expected total 43 vs market 46.5",
+          "Total movement: 45.5→46.5 (over)",
+          "Public split (total): 14% over / 86% under",
+          "Defensive disruption (combined sacks+INTs): 6.5",
+          "Passing volume proxy (combined pass yards): 355"
+        ]
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 46.5,
+        "finalOdds": -115,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "podcaster"
+    },
+    {
+      "gameId": "2025-09-07-tb-atl",
+      "gameDate": "2025-09-07T17:00:00.000-04:00",
+      "awayTeam": {
+        "id": "TB",
+        "name": "Tampa Bay Buccaneers",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "ATL",
+        "name": "Atlanta Falcons",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": -1.5,
+            "odds": -115
+          },
+          "home": {
+            "line": 1.5,
+            "odds": -105
+          }
+        },
+        "total": {
+          "over": {
+            "line": 47.5,
+            "odds": -110
+          },
+          "under": {
+            "line": 47.5,
+            "odds": -110
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": -130
+          },
+          "home": {
+            "odds": 110
+          }
+        }
+      },
+      "selection": {
+        "betType": "spread",
+        "side": "away",
+        "line": -1.5,
+        "odds": -115,
+        "units": 1,
+        "rationale": "Tampa’s got the +4.4 margin and a coaching edge, and they’re built to win in the trenches. Don’t get fooled by 75% riding ATL—when you’ve got the tougher team, you lay the -1.5 and talk about it on Monday.",
+        "rationaleCues": [
+          "Stat margin (PPG vs opp PA): AWAY +4.41 pts",
+          "Turnovers delta (opp − chosen): -1",
+          "Defensive disruption delta (sacks+INTs): +2",
+          "Coaching experience delta (years): +3",
+          "Spread movement: -2.5→-1.5 (toward_home)",
+          "Public split (spread): 75% home / 25% away"
+        ]
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": -1.5,
+        "finalOdds": -115,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "podcaster"
     }
   ],
   "weekSummary": {
-    "totalPicks": 1,
-    "totalUnits": 1,
+    "totalPicks": 5,
+    "totalUnits": 5,
     "weekPayout": 0,
     "weekNetUnits": 0
   }

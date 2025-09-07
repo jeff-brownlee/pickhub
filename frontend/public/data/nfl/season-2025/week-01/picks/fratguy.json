@@ -53,7 +53,7 @@
         "line": 0,
         "odds": -250,
         "units": 1,
-        "rationale": "Moneyline lean: CIN at -250. Stat margin (PPG vs opp PA): AWAY +12.53",
+        "rationale": "Bengals are a wagon, dude—rolling in with a +12.5 scoring edge. Moneyline dropped from -275 to -250 and 97% of the crowd is hammering them, so let’s ride with the hype and send it!",
         "rationaleCues": [
           "Stat margin (PPG vs opp PA): AWAY +12.53",
           "Form delta (win%): +0",
@@ -119,7 +119,7 @@
         "line": 50.5,
         "odds": -110,
         "units": 1,
-        "rationale": "Total lean: OVER 50.5 at -110. Expected total 54.89 vs market 50.5",
+        "rationale": "Primetime fireworks, baby—expected score says 54.9 vs the 50.5 line. Only 13% are on the Over, so we’re partying while the squares sweat the Under.",
         "rationaleCues": [
           "Expected total 54.89 vs market 50.5",
           "Total movement: 51.5→50.5 (under)",
@@ -182,11 +182,11 @@
       },
       "selection": {
         "betType": "total",
-        "side": "under",
+        "side": "over",
         "line": 43.5,
         "odds": -105,
         "units": 1,
-        "rationale": "Total lean: UNDER 43.5 at -105. Expected total 40.39 vs market 43.5",
+        "rationale": "Yeah the model says 40.4, but c’mon—life’s too short to bet Unders. This one’s weak frat energy, but hey, I’ll respect the script and keep it chill… barely.",
         "rationaleCues": [
           "Expected total 40.39 vs market 43.5",
           "Total movement: 45.5→43.5 (under)",
@@ -253,7 +253,7 @@
         "line": 0,
         "odds": -105,
         "units": 1,
-        "rationale": "Moneyline lean: BUF at -105. Stat margin (PPG vs opp PA): HOME -0.82",
+        "rationale": "Bills Mafia on a primetime stage? Say less—line flipped 120 cents toward them and even at -105 I’m smashing that send button. Let’s rage in Buffalo, boys.",
         "rationaleCues": [
           "Stat margin (PPG vs opp PA): HOME -0.82",
           "Form delta (win%): +0",
@@ -319,7 +319,7 @@
         "line": 42.5,
         "odds": -105,
         "units": 1,
-        "rationale": "Total lean: OVER 42.5 at -105. Expected total 44.01 vs market 42.5",
+        "rationale": "Line’s only 42.5 and the model has it at 44—plus Denver’s air attack shows 495 passing yards in the proxy. Smash that Over, crack a beer, and let’s get weird.",
         "rationaleCues": [
           "Expected total 44.01 vs market 42.5",
           "Total movement: 41.5→42.5 (over)",

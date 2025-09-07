@@ -159,6 +159,50 @@ export class PickSelectionService {
       trySelect(this.MIN_ADJUSTED_SCORE_FALLBACK);
     }
 
+    // Final fill pass: relax thresholds to ensure exactly PICKS_PER_WEEK (no extra penalties)
+    if (selected.length < this.PICKS_PER_WEEK) {
+      for (const cand of sorted) {
+        if (selected.length >= this.PICKS_PER_WEEK) break;
+        const count = perGameCount[cand.gameId] || 0;
+        if (count >= 2) continue;
+        const existing = selected.filter(s => s.gameId === cand.gameId);
+        if (existing.length === 1) {
+          const first = existing[0];
+          const isFirstTotal = first.market === 'total';
+          const isCandTotal = cand.market === 'total';
+          if (!((isFirstTotal && (cand.market === 'spread' || cand.market === 'moneyline')) ||
+                 (isCandTotal && (first.market === 'spread' || first.market === 'moneyline')))) {
+            continue;
+          }
+        }
+        selected.push(cand);
+        perGameCount[cand.gameId] = count + 1;
+      }
+    }
+
+    // Final fill pass: relax thresholds/penalties to ensure exactly PICKS_PER_WEEK
+    if (selected.length < this.PICKS_PER_WEEK) {
+      for (const cand of sorted) {
+        if (selected.length >= this.PICKS_PER_WEEK) break;
+        const count = perGameCount[cand.gameId] || 0;
+        if (count >= 2) continue;
+        const existing = selected.filter(s => s.gameId === cand.gameId);
+        if (existing.length === 1) {
+          const first = existing[0];
+          const isFirstTotal = first.market === 'total';
+          const isCandTotal = cand.market === 'total';
+          if (!((isFirstTotal && (cand.market === 'spread' || cand.market === 'moneyline')) ||
+                 (isCandTotal && (first.market === 'spread' || first.market === 'moneyline')))) {
+            continue;
+          }
+        }
+        selected.push(cand);
+        perGameCount[cand.gameId] = count + 1;
+        const fact = factbooks.find(f => f.gameId === cand.gameId)!;
+        this.updateExposuresAfterSelection(cand, fact, games, exposures);
+      }
+    }
+
     const picks = selected.map(c => this.candidateToPick(c, games, analyst));
 
     return {

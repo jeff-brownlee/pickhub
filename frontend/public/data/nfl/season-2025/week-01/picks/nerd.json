@@ -2,11 +2,346 @@
   "analystId": "nerd",
   "week": 1,
   "season": 2025,
-  "generatedAt": "2025-09-06T16:36:20.982Z",
-  "picks": [],
+  "generatedAt": "2025-09-07T20:19:08.671Z",
+  "picks": [
+    {
+      "gameId": "2025-09-07-cin-cle",
+      "gameDate": "2025-09-07T17:00:00.000-04:00",
+      "awayTeam": {
+        "id": "CIN",
+        "name": "Cincinnati Bengals",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "CLE",
+        "name": "Cleveland Browns",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": -5.5,
+            "odds": -110
+          },
+          "home": {
+            "line": 5.5,
+            "odds": -110
+          }
+        },
+        "total": {
+          "over": {
+            "line": 47.5,
+            "odds": -115
+          },
+          "under": {
+            "line": 47.5,
+            "odds": -110
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": -250
+          },
+          "home": {
+            "odds": 210
+          }
+        }
+      },
+      "selection": {
+        "betType": "moneyline",
+        "side": "away",
+        "line": 0,
+        "odds": -250,
+        "units": 1,
+        "rationale": "Cincinnati’s profile shows a +12.5 point efficiency margin versus Cleveland, which translates to a high win probability. Even with the line drifting from -275 to -250, the underlying numbers still justify backing the Bengals.",
+        "rationaleCues": [
+          "Stat margin (PPG vs opp PA): AWAY +12.53",
+          "Form delta (win%): +0",
+          "Moneyline movement (away): -275→-250 (25 cents)",
+          "Public split (moneyline): 3% home / 97% away"
+        ]
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 0,
+        "finalOdds": -250,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "nerd"
+    },
+    {
+      "gameId": "2025-09-05-dal-phi",
+      "gameDate": "2025-09-05T00:20:00.000-04:00",
+      "awayTeam": {
+        "id": "DAL",
+        "name": "Dallas Cowboys",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "PHI",
+        "name": "Philadelphia Eagles",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 8.5,
+            "odds": -115
+          },
+          "home": {
+            "line": -8.5,
+            "odds": -105
+          }
+        },
+        "total": {
+          "over": {
+            "line": 47.5,
+            "odds": -115
+          },
+          "under": {
+            "line": 47.5,
+            "odds": -105
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": 320
+          },
+          "home": {
+            "odds": -425
+          }
+        }
+      },
+      "selection": {
+        "betType": "moneyline",
+        "side": "away",
+        "line": 0,
+        "odds": 320,
+        "units": 1,
+        "rationale": "Dallas owns a +3.1 point margin by efficiency metrics, while Philadelphia’s moneyline ballooned from -230 to -425. At +320 with only 9% of the tickets, the model sees asymmetric value on the Cowboys.",
+        "rationaleCues": [
+          "Stat margin (PPG vs opp PA): AWAY +3.06",
+          "Form delta (win%): +0",
+          "Moneyline movement (away): 230→340 (110 cents)",
+          "Public split (moneyline): 91% home / 9% away"
+        ]
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 0,
+        "finalOdds": 320,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "nerd"
+    },
+    {
+      "gameId": "2025-09-07-lv-ne",
+      "gameDate": "2025-09-07T17:00:00.000-04:00",
+      "awayTeam": {
+        "id": "LV",
+        "name": "Las Vegas Raiders",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "NE",
+        "name": "New England Patriots",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 2.5,
+            "odds": -105
+          },
+          "home": {
+            "line": -2.5,
+            "odds": -120
+          }
+        },
+        "total": {
+          "over": {
+            "line": 43.5,
+            "odds": -115
+          },
+          "under": {
+            "line": 43.5,
+            "odds": -105
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": 120
+          },
+          "home": {
+            "odds": -140
+          }
+        }
+      },
+      "selection": {
+        "betType": "total",
+        "side": "under",
+        "line": 43.5,
+        "odds": -105,
+        "units": 1,
+        "rationale": "The projection has this game at 40.4 points, well below the market’s 43.5. With the total moving down from 45.5 and defensive disruption graded at 7.3 combined plays, the Under offers positive expected value.",
+        "rationaleCues": [
+          "Expected total 40.39 vs market 43.5",
+          "Total movement: 45.5→43.5 (under)",
+          "Public split (total): 27% over / 73% under",
+          "Defensive disruption (combined sacks+INTs): 7.33",
+          "Passing volume proxy (combined pass yards): 385"
+        ]
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 43.5,
+        "finalOdds": -105,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "nerd"
+    },
+    {
+      "gameId": "2025-09-07-det-gb",
+      "gameDate": "2025-09-07T20:25:00.000-04:00",
+      "awayTeam": {
+        "id": "DET",
+        "name": "Detroit Lions",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "GB",
+        "name": "Green Bay Packers",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 1.5,
+            "odds": 100
+          },
+          "home": {
+            "line": -1.5,
+            "odds": -120
+          }
+        },
+        "total": {
+          "over": {
+            "line": 47.5,
+            "odds": 100
+          },
+          "under": {
+            "line": 47.5,
+            "odds": -120
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": 110
+          },
+          "home": {
+            "odds": -130
+          }
+        }
+      },
+      "selection": {
+        "betType": "total",
+        "side": "over",
+        "line": 47.5,
+        "odds": 100,
+        "units": 1,
+        "rationale": "Model projection is 53.2 points, more than five points above the current 47.5 total. With public action heavily skewed to the Under (86%), the Over represents a clear efficiency edge at even money.",
+        "rationaleCues": [
+          "Expected total 53.15 vs market 47.5",
+          "Total movement: 49.5→47.5 (under)",
+          "Public split (total): 14% over / 86% under",
+          "Defensive disruption (combined sacks+INTs): 5.25",
+          "Passing volume proxy (combined pass yards): 276"
+        ]
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 47.5,
+        "finalOdds": 100,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "nerd"
+    },
+    {
+      "gameId": "2025-09-08-bal-buf",
+      "gameDate": "2025-09-08T00:20:00.000-04:00",
+      "awayTeam": {
+        "id": "BAL",
+        "name": "Baltimore Ravens",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "BUF",
+        "name": "Buffalo Bills",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 1.5,
+            "odds": -125
+          },
+          "home": {
+            "line": -1.5,
+            "odds": 102
+          }
+        },
+        "total": {
+          "over": {
+            "line": 50.5,
+            "odds": -110
+          },
+          "under": {
+            "line": 50.5,
+            "odds": -110
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": -115
+          },
+          "home": {
+            "odds": -105
+          }
+        }
+      },
+      "selection": {
+        "betType": "spread",
+        "side": "home",
+        "line": -1.5,
+        "odds": 102,
+        "units": 1,
+        "rationale": "Despite a marginal scoring differential (-0.8), the market flipped Buffalo from +1.5 to -1.5, a 3-point swing that aligns with model projections. With only 29% of tickets on the Bills, the numbers validate laying the small spread at plus money.",
+        "rationaleCues": [
+          "Stat margin (PPG vs opp PA): HOME -0.82 pts",
+          "Turnovers delta (opp − chosen): +2",
+          "Defensive disruption delta (sacks+INTs): -2.67",
+          "Coaching experience delta (years): -10",
+          "Spread movement: 1.5→-1.5 (toward_away)",
+          "Public split (spread): 29% home / 71% away"
+        ]
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": -1.5,
+        "finalOdds": 102,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "nerd"
+    }
+  ],
   "weekSummary": {
-    "totalPicks": 0,
-    "totalUnits": 0,
+    "totalPicks": 5,
+    "totalUnits": 5,
     "weekPayout": 0,
     "weekNetUnits": 0
   }

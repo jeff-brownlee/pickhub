@@ -24,7 +24,7 @@ export default function WeekSelector({
         type="number"
         value={week}
         onChange={(e) => setWeek(clamp(parseInt(e.target.value || '1', 10)))}
-        sx={{ width: 110 }}
+        sx={{ width: 80 }}
         inputProps={{ min: 1, max: maxWeek }}
       />
       <IconButton onClick={() => setWeek(clamp(week + 1))} disabled={week >= maxWeek}>

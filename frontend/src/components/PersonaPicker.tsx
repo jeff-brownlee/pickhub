@@ -21,7 +21,7 @@ export default function PersonaPicker({
       value={safeValue}
       disabled={personas.length === 0}
       onChange={(e) => onChange(e.target.value)}
-      sx={{ minWidth: 160 }}
+      sx={{ minWidth: { xs: 220, sm: 260 }, width: { xs: 220, sm: 320 } }}
       SelectProps={{
         displayEmpty: true,
         renderValue: (v) => {

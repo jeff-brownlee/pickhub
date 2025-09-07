@@ -53,7 +53,7 @@
         "line": -5.5,
         "odds": -110,
         "units": 1,
-        "rationale": "ATS lean: CIN -5.5 at -110. Stat margin (PPG vs opp PA): AWAY +12.53 pts",
+        "rationale": "The Bengals just feel like the right call—up over 12 points on the stat margin and three-quarters of the crowd backing them. Feels like one of those games where Cincy covers and everyone at the bar nods along.",
         "rationaleCues": [
           "Stat margin (PPG vs opp PA): AWAY +12.53 pts",
           "Turnovers delta (opp − chosen): -1",
@@ -121,7 +121,7 @@
         "line": 0,
         "odds": -105,
         "units": 1,
-        "rationale": "Moneyline lean: IND at -105. Stat margin (PPG vs opp PA): HOME -5.59",
+        "rationale": "Everybody’s on Miami—77% of the bets—but Indy at home feels like the sneaky move. The line slid toward them too, so I’ll crack a beer and ride the Colts for the upset vibe.",
         "rationaleCues": [
           "Stat margin (PPG vs opp PA): HOME -5.59",
           "Form delta (win%): +0",
@@ -187,7 +187,7 @@
         "line": -1.5,
         "odds": -115,
         "units": 1,
-        "rationale": "ATS lean: TB -1.5 at -115. Stat margin (PPG vs opp PA): AWAY +4.41 pts",
+        "rationale": "Even with 75% of the bets on Atlanta, Tampa feels like the safer team—they’ve got a +4.4 margin and a coaching edge. Sometimes you just trust your gut and back the Bucs to cover.",
         "rationaleCues": [
           "Stat margin (PPG vs opp PA): AWAY +4.41 pts",
           "Turnovers delta (opp − chosen): -1",
@@ -205,11 +205,145 @@
         "netUnits": 0
       },
       "analystId": "joe"
+    },
+    {
+      "gameId": "2025-09-08-bal-buf",
+      "gameDate": "2025-09-08T00:20:00.000-04:00",
+      "awayTeam": {
+        "id": "BAL",
+        "name": "Baltimore Ravens",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "BUF",
+        "name": "Buffalo Bills",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 1.5,
+            "odds": -125
+          },
+          "home": {
+            "line": -1.5,
+            "odds": 102
+          }
+        },
+        "total": {
+          "over": {
+            "line": 50.5,
+            "odds": -110
+          },
+          "under": {
+            "line": 50.5,
+            "odds": -110
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": -115
+          },
+          "home": {
+            "odds": -105
+          }
+        }
+      },
+      "selection": {
+        "betType": "total",
+        "side": "over",
+        "line": 50.5,
+        "odds": -110,
+        "units": 1,
+        "rationale": "It’s Monday night, so of course I’m taking the Over—expected points are almost 55 and the number’s only 50.5. Even if 87% are on the Under, I’m here for the shootout vibes.",
+        "rationaleCues": [
+          "Expected total 54.89 vs market 50.5",
+          "Total movement: 51.5→50.5 (under)",
+          "Public split (total): 13% over / 87% under",
+          "Defensive disruption (combined sacks+INTs): 4.67",
+          "Passing volume proxy (combined pass yards): 392"
+        ]
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 50.5,
+        "finalOdds": -110,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "joe"
+    },
+    {
+      "gameId": "2025-09-07-ten-den",
+      "gameDate": "2025-09-07T20:05:00.000-04:00",
+      "awayTeam": {
+        "id": "TEN",
+        "name": "Tennessee Titans",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "DEN",
+        "name": "Denver Broncos",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 8.5,
+            "odds": -110
+          },
+          "home": {
+            "line": -8.5,
+            "odds": -110
+          }
+        },
+        "total": {
+          "over": {
+            "line": 42.5,
+            "odds": -105
+          },
+          "under": {
+            "line": 42.5,
+            "odds": -115
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": 340
+          },
+          "home": {
+            "odds": -450
+          }
+        }
+      },
+      "selection": {
+        "betType": "total",
+        "side": "over",
+        "line": 42.5,
+        "odds": -105,
+        "units": 1,
+        "rationale": "The line’s low at 42.5, and the projection has it closer to 44, so the Over just feels right. With Denver showing almost 500 passing yards in the proxy, I’m banking on points here.",
+        "rationaleCues": [
+          "Expected total 44.01 vs market 42.5",
+          "Total movement: 41.5→42.5 (over)",
+          "Public split (total): 21% over / 79% under",
+          "Defensive disruption (combined sacks+INTs): 7.33",
+          "Passing volume proxy (combined pass yards): 495"
+        ]
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 42.5,
+        "finalOdds": -105,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "joe"
     }
   ],
   "weekSummary": {
-    "totalPicks": 3,
-    "totalUnits": 3,
+    "totalPicks": 5,
+    "totalUnits": 5,
     "weekPayout": 0,
     "weekNetUnits": 0
   }

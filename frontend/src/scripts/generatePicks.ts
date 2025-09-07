@@ -32,17 +32,32 @@ async function main() {
   const games = readJson<GameData[]>(gamesPath);
   const factbookFiles = fs.readdirSync(factbooksDir).filter(f => f.endsWith('.json'));
   const allFactbooks: MinimalFactbook[] = factbookFiles.map(f => readJson<MinimalFactbook>(path.join(factbooksDir, f)));
-  // Discard games that have already started
-  const now = new Date();
-  const factbooks: MinimalFactbook[] = allFactbooks.filter(fb => {
-    const ko = new Date(fb.kickoffISO);
-    return ko > now;
-  });
-  const discarded = allFactbooks.length - factbooks.length;
-  if (discarded > 0) {
-    console.log(`⏱️  Skipping ${discarded} game(s) that have already started.`);
+  const ignoreStarted = String(process.env.PICKHUB_IGNORE_STARTED || '').toLowerCase() === 'true';
+  let factbooks: MinimalFactbook[];
+  if (ignoreStarted) {
+    factbooks = allFactbooks;
+    console.log('⏱️  Ignoring started-games filter (PICKHUB_IGNORE_STARTED=true).');
+  } else {
+    // Discard games that have already started
+    const now = new Date();
+    factbooks = allFactbooks.filter(fb => {
+      const ko = new Date(fb.kickoffISO);
+      return ko > now;
+    });
+    const discarded = allFactbooks.length - factbooks.length;
+    if (discarded > 0) {
+      console.log(`⏱️  Skipping ${discarded} game(s) that have already started.`);
+    }
   }
-  const personas: Persona[] = readJson<Persona[]>(personasPath);
+  const personasAll: Persona[] = readJson<Persona[]>(personasPath);
+  const targetIds = (process.env.PICKHUB_PERSONAS || '')
+    .split(',')
+    .map(s => s.trim())
+    .filter(Boolean);
+  const personas: Persona[] = targetIds.length > 0
+    ? personasAll.filter(p => targetIds.includes(p.id))
+    : personasAll;
+  console.log(`👤 Generating for personas: ${personas.map(p=>p.id).join(', ')}`);
 
   // Output dir (public) for Vercel consumption
   const picksOutDir = path.join(process.cwd(), 'public', 'data', 'nfl', 'season-2025', weekStr, 'picks');

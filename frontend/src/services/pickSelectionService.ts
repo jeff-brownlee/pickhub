@@ -12,6 +12,13 @@ export interface WeeklyPickSelection {
   selectionMethod: 'heuristics' | 'chatgpt';
 }
 
+// Optional precomputed market scores to ensure selection uses the same values as audit logs
+export type PrecomputedMarketScores = Record<string, {
+  spread: { side: 'home'|'away'; score: number; reasons: string[] };
+  total: { direction: 'over'|'under'; score: number; reasons: string[] };
+  moneyline: { side: 'home'|'away'; score: number; reasons: string[] };
+}>;
+
 export class PickSelectionService {
   private readonly PICKS_PER_WEEK = 5; // Fixed number of picks per analyst per week
   private readonly MIN_ADJUSTED_SCORE_PRIMARY = 55; // prefer stronger edges first
@@ -34,10 +41,11 @@ export class PickSelectionService {
     games: GameData[],
     factbooks: MinimalFactbook[], 
     analyst: Persona, 
-    week: number
+    week: number,
+    precomputed?: PrecomputedMarketScores
   ): Promise<WeeklyPickSelection> {
     // Build candidates for all games (spread, total, moneyline)
-    const allCandidates = factbooks.flatMap((fb) => this.buildCandidatesForGame(fb));
+    const allCandidates = factbooks.flatMap((fb) => this.buildCandidatesForGame(fb, precomputed));
 
     // Apply lightweight bias overlay using persona.bias text only (no personas.ts)
     const enhanced = allCandidates.map(c => ({
@@ -89,7 +97,7 @@ export class PickSelectionService {
     return {
       analystId: analyst.id,
       week,
-      picks,
+      picks: picks as unknown as AnalystPick[],
       totalPicks: picks.length,
       selectionMethod: 'heuristics'
     };
@@ -103,10 +111,11 @@ export class PickSelectionService {
     factbooks: MinimalFactbook[],
     analyst: Persona,
     week: number,
-    exposures: any
+    exposures: any,
+    precomputed?: PrecomputedMarketScores
   ): Promise<WeeklyPickSelection> {
     // Build candidates for all games (spread, total, moneyline)
-    const allCandidates = factbooks.flatMap((fb) => this.buildCandidatesForGame(fb));
+    const allCandidates = factbooks.flatMap((fb) => this.buildCandidatesForGame(fb, precomputed));
 
     const enhanced = allCandidates.map(c => ({
       ...c,
@@ -150,12 +159,56 @@ export class PickSelectionService {
       trySelect(this.MIN_ADJUSTED_SCORE_FALLBACK);
     }
 
+    // Final fill pass: relax thresholds to ensure exactly PICKS_PER_WEEK (no extra penalties)
+    if (selected.length < this.PICKS_PER_WEEK) {
+      for (const cand of sorted) {
+        if (selected.length >= this.PICKS_PER_WEEK) break;
+        const count = perGameCount[cand.gameId] || 0;
+        if (count >= 2) continue;
+        const existing = selected.filter(s => s.gameId === cand.gameId);
+        if (existing.length === 1) {
+          const first = existing[0];
+          const isFirstTotal = first.market === 'total';
+          const isCandTotal = cand.market === 'total';
+          if (!((isFirstTotal && (cand.market === 'spread' || cand.market === 'moneyline')) ||
+                 (isCandTotal && (first.market === 'spread' || first.market === 'moneyline')))) {
+            continue;
+          }
+        }
+        selected.push(cand);
+        perGameCount[cand.gameId] = count + 1;
+      }
+    }
+
+    // Final fill pass: relax thresholds/penalties to ensure exactly PICKS_PER_WEEK
+    if (selected.length < this.PICKS_PER_WEEK) {
+      for (const cand of sorted) {
+        if (selected.length >= this.PICKS_PER_WEEK) break;
+        const count = perGameCount[cand.gameId] || 0;
+        if (count >= 2) continue;
+        const existing = selected.filter(s => s.gameId === cand.gameId);
+        if (existing.length === 1) {
+          const first = existing[0];
+          const isFirstTotal = first.market === 'total';
+          const isCandTotal = cand.market === 'total';
+          if (!((isFirstTotal && (cand.market === 'spread' || cand.market === 'moneyline')) ||
+                 (isCandTotal && (first.market === 'spread' || first.market === 'moneyline')))) {
+            continue;
+          }
+        }
+        selected.push(cand);
+        perGameCount[cand.gameId] = count + 1;
+        const fact = factbooks.find(f => f.gameId === cand.gameId)!;
+        this.updateExposuresAfterSelection(cand, fact, games, exposures);
+      }
+    }
+
     const picks = selected.map(c => this.candidateToPick(c, games, analyst));
 
     return {
       analystId: analyst.id,
       week,
-      picks,
+      picks: picks as unknown as AnalystPick[],
       totalPicks: picks.length,
       selectionMethod: 'heuristics'
     };
@@ -287,42 +340,16 @@ export class PickSelectionService {
     analyst: Persona, 
     week: number
   ): Promise<WeeklyPickSelection> {
-    
-    // Prepare data for ChatGPT
-    const gameSummaries = factbooks.map(fb => this.createGameSummary(fb));
-    
-    const prompt = this.buildSelectionPrompt(analyst, gameSummaries, week);
-    
-    try {
-      const selectedGames = await this.callChatGPT(prompt);
-      const picks = await Promise.all(
-        selectedGames.map((gameId: string) => {
-          const factbook = factbooks.find(fb => fb.gameId === gameId);
-          const game = games.find(g => g.id === gameId);
-          if (!factbook) throw new Error(`Game ${gameId} not found in factbooks`);
-          if (!game) throw new Error(`Game ${gameId} not found in games data`);
-          return this.generatePickForGame(game, factbook, analyst);
-        })
-      );
-
-      return {
-        analystId: analyst.id,
-        week,
-        picks,
-        totalPicks: picks.length,
-        selectionMethod: 'chatgpt'
-      };
-    } catch (error) {
-      console.error('ChatGPT selection failed, falling back to heuristics:', error);
-      return this.generateWeeklyPicksHeuristics(games, factbooks, analyst, week);
-    }
+    // For now, delegate to heuristics to avoid duplicate logic
+    return this.generateWeeklyPicksHeuristics(games, factbooks, analyst, week);
   }
 
   // Build ATS/Total/ML candidates for a given game
-  private buildCandidatesForGame(fb: MinimalFactbook) {
-    const spread = computeSpreadScore(fb);
-    const total = computeTotalScore(fb);
-    const moneyline = computeMoneylineScore(fb);
+  private buildCandidatesForGame(fb: MinimalFactbook, precomputed?: PrecomputedMarketScores) {
+    const pre = precomputed?.[fb.gameId];
+    const spread = pre ? { score: pre.spread.score, side: pre.spread.side, edge: 0, reasons: pre.spread.reasons } : computeSpreadScore(fb);
+    const total = pre ? { score: pre.total.score, direction: pre.total.direction, edge: 0, reasons: pre.total.reasons } : computeTotalScore(fb);
+    const moneyline = pre ? { score: pre.moneyline.score, side: pre.moneyline.side, edge: 0, reasons: pre.moneyline.reasons } : computeMoneylineScore(fb);
 
     return [
       {
@@ -335,7 +362,7 @@ export class PickSelectionService {
       {
         gameId: fb.gameId,
         market: 'total' as const,
-        selection: total.direction,
+        selection: (total as any).direction,
         baseScore: total.score,
         reasons: total.reasons
       },
@@ -445,10 +472,10 @@ export class PickSelectionService {
     if (awayDiscipline < 15 || homeDiscipline < 15) score += 20;
 
     // Prefer games with clear coaching advantages
-    if (away.coaching?.experience > 10 || home.coaching?.experience > 10) score += 15;
+    if ((away.coaching?.experience || 0) > 10 || (home.coaching?.experience || 0) > 10) score += 15;
 
     // Prefer division games (more physical)
-    if (factbook.keyMatchups.some(m => m.type === 'coaching')) score += 10;
+    // keyMatchups removed from factbook; skip check
 
     return score;
   }
@@ -467,6 +494,7 @@ export class PickSelectionService {
 
     // Prefer games with line movement against public
     const lineMovement = factbook.bettingContext.lineMovement;
+    // sharpMoney only
     if (lineMovement.sharpMoney && lineMovement.sharpMoney !== 'none') score += 25;
 
     // Prefer popular teams (more public bias)
@@ -562,8 +590,9 @@ export class PickSelectionService {
 
     // Prefer games with line movement
     const lineMovement = factbook.bettingContext.lineMovement;
-    if (lineMovement.spreadMovement && Math.abs(lineMovement.spreadMovement) > 1) score += 35;
-    if (lineMovement.totalMovement && Math.abs(lineMovement.totalMovement) > 1) score += 30;
+    // use lineMovement fields directly (spread/total)
+    if (lineMovement.spread && Math.abs(lineMovement.spread.movement) > 1) score += 35;
+    if (lineMovement.total && Math.abs(lineMovement.total.movement) > 1) score += 30;
 
     // Prefer games with sharp money indicators
     if (lineMovement.sharpMoney && lineMovement.sharpMoney !== 'none') score += 40;
@@ -616,7 +645,7 @@ export class PickSelectionService {
     if (awayPhysicality > 200 || homePhysicality > 200) score += 30;
 
     // Prefer division games (more physical)
-    if (factbook.keyMatchups.some(m => m.type === 'coaching')) score += 25;
+    // keyMatchups removed from factbook; skip check
 
     // Prefer games with strong defenses
     const totalDefense = factbook.teams.away.statistics.defense.pointsAllowed + 
@@ -634,8 +663,8 @@ export class PickSelectionService {
 
     // Prefer games with line movement (indicates value)
     const lineMovement = factbook.bettingContext.lineMovement;
-    if (lineMovement.spreadMovement && Math.abs(lineMovement.spreadMovement) > 1) score += 30;
-    if (lineMovement.totalMovement && Math.abs(lineMovement.totalMovement) > 1) score += 25;
+    if (lineMovement.spread && Math.abs(lineMovement.spread.movement) > 1) score += 30;
+    if (lineMovement.total && Math.abs(lineMovement.total.movement) > 1) score += 25;
 
     // Prefer games with sharp money indicators
     if (lineMovement.sharpMoney && lineMovement.sharpMoney !== 'none') score += 35;
@@ -714,8 +743,8 @@ export class PickSelectionService {
     const uiPick: UIPick = {
       gameId: game.id,
       gameDate: game.kickoffEt,
-      awayTeam: { id: game.away.abbr, name: game.away.name, nickname: game.away.nickname, score: null },
-      homeTeam: { id: game.home.abbr, name: game.home.name, nickname: game.home.nickname, score: null },
+      awayTeam: { id: game.away.abbr, name: game.away.name, score: null },
+      homeTeam: { id: game.home.abbr, name: game.home.name, score: null },
       marketData: marketData as UIPick['marketData'],
       selection: {
         betType: cand.market,

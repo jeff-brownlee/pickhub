@@ -1,5 +1,5 @@
-import { GameFactbook } from '../types/factbook';
-import { Persona } from '../types';
+import { MinimalFactbook } from '../types/minimalFactbook';
+import { Persona, Pick as UIPick } from '../types';
 import { PickRationale } from './analystService';
 
 export interface ChatGPTConfig {
@@ -20,16 +20,18 @@ export class ChatGPTRationaleService {
    * Generate a rationale for a pick using ChatGPT
    */
   async generateRationale(
-    factbook: GameFactbook,
+    factbook: MinimalFactbook,
     analyst: Persona,
-    pick: string,
+    pick: UIPick,
     confidence: 1 | 2 | 3
   ): Promise<PickRationale> {
     
     const prompt = this.buildRationalePrompt(factbook, analyst, pick, confidence);
+    console.log('--- ChatGPT Prompt (rationale) ---\n', prompt, '\n--- end prompt ---');
     
     try {
       const response = await this.callChatGPT(prompt);
+      console.log('--- ChatGPT Response (rationale) ---\n', response, '\n--- end response ---');
       return this.parseRationaleResponse(response, pick, confidence);
     } catch (error) {
       console.error('ChatGPT rationale generation failed:', error);
@@ -38,21 +40,25 @@ export class ChatGPTRationaleService {
   }
 
   private buildRationalePrompt(
-    factbook: GameFactbook,
+    factbook: MinimalFactbook,
     analyst: Persona,
-    pick: string,
+    pick: UIPick,
     confidence: 1 | 2 | 3
   ): string {
     
     const gameContext = this.buildGameContext(factbook);
     const analystContext = this.buildAnalystContext(analyst);
+    const pickContext = this.buildPickContext(pick);
     
     return `
-You are ${analyst.name}, a ${analyst.persona} sports betting analyst. Generate a rationale for your pick: "${pick}"
+You are ${analyst.name}, a ${analyst.persona} sports betting analyst. Generate a rationale for this pick.
 
 ${analystContext}
 
 ${gameContext}
+
+PICK DETAILS:
+${pickContext}
 
 Your task:
 1. Write a rationale that matches your personality and voice style
@@ -91,42 +97,62 @@ ${this.getAnalystApproach(analyst.id)}
 `;
   }
 
-  private buildGameContext(factbook: GameFactbook): string {
+  private buildGameContext(factbook: MinimalFactbook): string {
     const { away, home } = factbook.teams;
-    
+    const awayWinPct = Math.round((away.record.winPercentage || 0) * 100);
+    const homeWinPct = Math.round((home.record.winPercentage || 0) * 100);
+    const statsSourceNote = factbook.statsSourceSeason ? ` (stats from ${factbook.statsSourceSeason})` : '';
+
+    const bt = factbook.bettingContext?.bettingTrends;
+    const lm = factbook.bettingContext?.lineMovement;
+    const spreadMove = lm?.spread ? `${lm.spread.opening} → ${lm.spread.current} (${lm.spread.direction})` : 'N/A';
+    const totalMove = lm?.total ? `${lm.total.opening} → ${lm.total.current} (${lm.total.direction})` : 'N/A';
+
     return `
 GAME CONTEXT:
-${away.abbreviation} @ ${home.abbreviation} - Week ${factbook.week}
+${away.abbreviation} @ ${home.abbreviation} — Week ${factbook.week}${statsSourceNote}
 
 TEAM RECORDS:
-- ${away.abbreviation}: ${away.record.wins}-${away.record.losses} (${Math.round(away.record.winPercentage * 100)}%)
-- ${home.abbreviation}: ${home.record.wins}-${home.record.losses} (${Math.round(home.record.winPercentage * 100)}%)
+- ${away.abbreviation}: ${awayWinPct}% win pct
+- ${home.abbreviation}: ${homeWinPct}% win pct
 
-KEY STATISTICS:
-- ${away.abbreviation} Offense: ${away.statistics.offense.pointsPerGame.toFixed(1)} PPG, ${away.statistics.offense.yardsPerGame.toFixed(0)} YPG
-- ${away.abbreviation} Defense: ${away.statistics.defense.pointsAllowed.toFixed(1)} PPG allowed, ${away.statistics.defense.yardsAllowed.toFixed(0)} YPG allowed
-- ${home.abbreviation} Offense: ${home.statistics.offense.pointsPerGame.toFixed(1)} PPG, ${home.statistics.offense.yardsPerGame.toFixed(0)} YPG
-- ${home.abbreviation} Defense: ${home.statistics.defense.pointsAllowed.toFixed(1)} PPG allowed, ${home.statistics.defense.yardsAllowed.toFixed(0)} YPG allowed
+KEY STATS (per game):
+- ${away.abbreviation} Off: ${away.statistics.offense.pointsPerGame.toFixed(1)} PPG | Def: ${away.statistics.defense.pointsAllowed.toFixed(1)} PPA
+- ${home.abbreviation} Off: ${home.statistics.offense.pointsPerGame.toFixed(1)} PPG | Def: ${home.statistics.defense.pointsAllowed.toFixed(1)} PPA
 
 BETTING CONTEXT:
-- Current Spread: ${factbook.bettingContext.currentLine?.spread || 'N/A'}
-- Current Total: ${factbook.bettingContext.currentLine?.total || 'N/A'}
-- Public Betting: ${factbook.bettingContext.bettingTrends.spread.home}% / ${factbook.bettingContext.bettingTrends.spread.away}%
-- Line Movement: ${factbook.bettingContext.lineMovement.spreadMovement || 'None'}
-
-VENUE: ${factbook.venue.name} (${factbook.venue.city}, ${factbook.venue.state})
-- Indoor: ${factbook.venue.indoor ? 'Yes' : 'No'}
-- Surface: ${factbook.venue.surface}
-
-KEY MATCHUPS:
-${factbook.keyMatchups.map(m => `- ${m.description} (${m.advantage} advantage)`).join('\n')}
-
-INJURIES:
-${factbook.injuries.map(i => `- ${i.player} (${i.position}): ${i.injury} - ${i.status}`).join('\n')}
-
-TRENDS:
-${factbook.trends.map(t => `- ${t.description}: ${t.record} (${t.significance} significance)`).join('\n')}
+- Current Spread: ${factbook.bettingContext.currentLine?.spread ?? 'N/A'}
+- Current Total: ${factbook.bettingContext.currentLine?.total ?? 'N/A'}
+- Public (Spread): Home ${bt?.spread.home ?? 'N/A'}% / Away ${bt?.spread.away ?? 'N/A'}%
+- Public (Total): Over ${bt?.total.over ?? 'N/A'}% / Under ${bt?.total.under ?? 'N/A'}%
+- Line Movement: Spread ${spreadMove} | Total ${totalMove}
 `;
+  }
+
+  private buildPickContext(pick: UIPick): string {
+    const market = pick.selection.betType;
+    const side = pick.selection.side;
+    const line = pick.selection.line;
+    const odds = pick.selection.odds;
+    const cues = pick.selection.rationaleCues || [];
+    const game = `${pick.awayTeam.id} @ ${pick.homeTeam.id}`;
+    return `
+Pick: ${game} — ${market.toUpperCase()} ${side.toString().toUpperCase()} ${line} (${odds > 0 ? '+' : ''}${odds})
+Heuristic Cues: ${cues.length ? cues.map(c => `- ${c}`).join('\n') : '- n/a'}
+`;
+  }
+
+  private formatPickLabel(pick: UIPick): string {
+    const market = pick.selection.betType;
+    if (market === 'total') {
+      return `${(pick.selection.side as string).toUpperCase()} ${pick.selection.line}`;
+    }
+    const team = pick.selection.side === 'away' ? pick.awayTeam.id : pick.homeTeam.id;
+    if (market === 'moneyline') {
+      return `${team} ${pick.selection.odds > 0 ? '+' : ''}${pick.selection.odds}`;
+    }
+    // spread
+    return `${team} ${pick.selection.line > 0 ? '+' : ''}${pick.selection.line}`;
   }
 
   private getAnalystApproach(analystId: string): string {
@@ -146,39 +172,78 @@ ${factbook.trends.map(t => `- ${t.description}: ${t.record} (${t.significance} s
   }
 
   private async callChatGPT(prompt: string): Promise<string> {
-    // This would make an actual ChatGPT API call
-    // For now, return a placeholder response
-    return JSON.stringify({
-      rationale: "This is a placeholder rationale that would be generated by ChatGPT based on the analyst's personality and the game data.",
-      keyFactors: [
-        "Key factor 1 that supports the pick",
-        "Key factor 2 that supports the pick", 
-        "Key factor 3 that supports the pick",
-        "Key factor 4 that supports the pick"
-      ],
-      supportingData: {
-        stats: [
-          "Supporting statistic 1",
-          "Supporting statistic 2",
-          "Supporting statistic 3"
-        ],
-        trends: [
-          "Relevant trend 1",
-          "Relevant trend 2"
-        ],
-        situational: [
-          "Situational factor 1",
-          "Situational factor 2"
-        ]
+    const apiKey = process.env.OPENAI_API_KEY || process.env.REACT_APP_CHATGPT_API_KEY || '';
+    if (!apiKey) {
+      throw new Error('OPENAI_API_KEY not set');
+    }
+
+    const body = {
+      model: this.config.model || 'gpt-4o-mini',
+      temperature: this.config.temperature ?? 0.3,
+      max_tokens: this.config.maxTokens ?? 500,
+      messages: [
+        { role: 'system', content: 'You are an expert NFL betting analyst. Output STRICT JSON only that matches the schema described. No markdown, no prose.' },
+        { role: 'user', content: prompt }
+      ]
+    } as any;
+
+    const endpoint = 'https://api.openai.com/v1/chat/completions';
+    let attempt = 0;
+    let delayMs = 400;
+    while (true) {
+      attempt += 1;
+      const resp = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${apiKey}`
+        },
+        body: JSON.stringify(body)
+      });
+
+      if (resp.ok) {
+        const data = await resp.json();
+        const content = data?.choices?.[0]?.message?.content;
+        if (typeof content !== 'string' || !content.trim()) {
+          throw new Error('Empty response from OpenAI');
+        }
+        return content;
       }
-    });
+
+      // Handle rate limits and transient errors with backoff
+      if ((resp.status === 429 || resp.status >= 500) && attempt < 5) {
+        await new Promise(r => setTimeout(r, delayMs));
+        delayMs *= 2;
+        continue;
+      }
+
+      const text = await resp.text();
+      throw new Error(`OpenAI API error ${resp.status}: ${text}`);
+    }
   }
 
-  private parseRationaleResponse(response: string, pick: string, confidence: 1 | 2 | 3): PickRationale {
+  private extractJson(content: string): string {
+    // Remove markdown fences if present
+    const fenced = content.match(/```(?:json)?[\s\S]*?```/i);
+    if (fenced) {
+      const inner = fenced[0].replace(/```(?:json)?/i, '').replace(/```$/, '');
+      return inner.trim();
+    }
+    // Try to find the first {...} JSON object
+    const first = content.indexOf('{');
+    const last = content.lastIndexOf('}');
+    if (first !== -1 && last !== -1 && last > first) {
+      return content.slice(first, last + 1).trim();
+    }
+    return content.trim();
+  }
+
+  private parseRationaleResponse(response: string, pick: UIPick, confidence: 1 | 2 | 3): PickRationale {
     try {
-      const parsed = JSON.parse(response);
+      const json = this.extractJson(response);
+      const parsed = JSON.parse(json);
       return {
-        pick,
+        pick: this.formatPickLabel(pick),
         confidence,
         rationale: parsed.rationale || 'No rationale provided',
         keyFactors: parsed.keyFactors || [],
@@ -194,9 +259,9 @@ ${factbook.trends.map(t => `- ${t.description}: ${t.record} (${t.significance} s
     }
   }
 
-  private getFallbackRationale(pick: string, confidence: 1 | 2 | 3): PickRationale {
+  private getFallbackRationale(pick: UIPick, confidence: 1 | 2 | 3): PickRationale {
     return {
-      pick,
+      pick: this.formatPickLabel(pick),
       confidence,
       rationale: 'Unable to generate rationale at this time. Please try again later.',
       keyFactors: ['Technical issue', 'Please retry'],

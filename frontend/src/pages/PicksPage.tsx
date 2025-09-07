@@ -14,41 +14,44 @@ export default function PicksPage() {
   const { selectedPersonaId, setSelectedPersonaId } = usePickhubContext();
   const [personas, setPersonas] = useState<Persona[]>([]);
 
-  const [picks, setPicks] = useState<Record<string, Pick>>({});
+  const [picks, setPicks] = useState<Record<string, Pick[]>>({});
   const [week, setWeek] = useState(1);
 
   // Extract games from picks data
   const games = useMemo(() => {
-    return Object.values(picks).map(pick => ({
-      id: pick.gameId,
-      kickoffEt: pick.gameDate,
-      away: {
-        name: pick.awayTeam.name,
-        abbr: pick.awayTeam.id,
-        nickname: pick.awayTeam.nickname,
-        primaryHex: '#000000' // Default color, could be enhanced later
-      },
-      home: {
-        name: pick.homeTeam.name,
-        abbr: pick.homeTeam.id,
-        nickname: pick.homeTeam.nickname,
-        primaryHex: '#000000' // Default color, could be enhanced later
-      },
-      odds: {
-        spread: pick.marketData.spread ? {
-          away: { line: pick.marketData.spread.away.line, odds: pick.marketData.spread.away.odds },
-          home: { line: pick.marketData.spread.home.line, odds: pick.marketData.spread.home.odds }
-        } : undefined,
-        total: pick.marketData.total ? {
-          over: { line: pick.marketData.total.over.line, odds: pick.marketData.total.over.odds },
-          under: { line: pick.marketData.total.under.line, odds: pick.marketData.total.under.odds }
-        } : undefined,
-        moneyline: pick.marketData.moneyline ? {
-          away: { odds: pick.marketData.moneyline.away.odds },
-          home: { odds: pick.marketData.moneyline.home.odds }
-        } : undefined
-      }
-    }));
+    return Object.values(picks).map(list => {
+      const pick = list[0];
+      return {
+        id: pick.gameId,
+        kickoffEt: pick.gameDate,
+        away: {
+          name: pick.awayTeam.name,
+          abbr: pick.awayTeam.id,
+          nickname: pick.awayTeam.nickname,
+          primaryHex: '#000000'
+        },
+        home: {
+          name: pick.homeTeam.name,
+          abbr: pick.homeTeam.id,
+          nickname: pick.homeTeam.nickname,
+          primaryHex: '#000000'
+        },
+        odds: {
+          spread: pick.marketData.spread ? {
+            away: { line: pick.marketData.spread.away.line, odds: pick.marketData.spread.away.odds },
+            home: { line: pick.marketData.spread.home.line, odds: pick.marketData.spread.home.odds }
+          } : undefined,
+          total: pick.marketData.total ? {
+            over: { line: pick.marketData.total.over.line, odds: pick.marketData.total.over.odds },
+            under: { line: pick.marketData.total.under.line, odds: pick.marketData.total.under.odds }
+          } : undefined,
+          moneyline: pick.marketData.moneyline ? {
+            away: { odds: pick.marketData.moneyline.away.odds },
+            home: { odds: pick.marketData.moneyline.home.odds }
+          } : undefined
+        }
+      } as Game;
+    });
   }, [picks]);
 
   // Load mock JSON from /public/data
@@ -74,12 +77,12 @@ export default function PicksPage() {
     fetch(`/data/nfl/season-2025/week-${weekStr}/picks/${selectedPersonaId}.json`)
       .then(r => r.json())
       .then((pickData: any) => {
-        // Convert new pick structure to match Pick type
-        const picksMap: Record<string, Pick> = {};
+        // Group picks by gameId while preserving individual pick records
+        const picksMap: Record<string, Pick[]> = {};
         if (pickData.picks) {
           pickData.picks.forEach((pick: any) => {
-            picksMap[pick.gameId] = {
-              id: `${selectedPersonaId}-${pick.gameId}`,
+            const mapped: Pick = {
+              id: `${selectedPersonaId}-${pick.gameId}-${pick.selection.betType}-${pick.selection.side}`,
               gameId: pick.gameId,
               gameDate: pick.gameDate,
               awayTeam: pick.awayTeam,
@@ -90,6 +93,8 @@ export default function PicksPage() {
               analystId: selectedPersonaId,
               rationale: pick.selection.rationale
             };
+            if (!picksMap[pick.gameId]) picksMap[pick.gameId] = [];
+            picksMap[pick.gameId].push(mapped);
           });
         }
         setPicks(picksMap);
@@ -118,7 +123,7 @@ export default function PicksPage() {
         <Grid2 container spacing={2}>
           {games.map((g) => (
               <Grid2 key={g.id} size={{ xs: 12 }}>
-                <GamePickCard game={g} pick={picks[g.id]} onClick={() => { /* optional: open inline facts */ }} />
+                <GamePickCard game={g} picks={picks[g.id]} onClick={() => { /* optional: open inline facts */ }} />
               </Grid2>
             ))}
         </Grid2>

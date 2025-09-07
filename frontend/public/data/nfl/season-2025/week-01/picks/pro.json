@@ -2,73 +2,343 @@
   "analystId": "pro",
   "week": 1,
   "season": 2025,
-  "generatedAt": "2025-09-04T22:57:02.172Z",
+  "generatedAt": "2025-09-07T20:19:08.673Z",
   "picks": [
     {
-      "gameId": "2025-09-07-car-jax",
+      "gameId": "2025-09-07-cin-cle",
       "gameDate": "2025-09-07T17:00:00.000-04:00",
       "awayTeam": {
-        "id": "CAR",
-        "name": "Carolina Panthers",
-        "nickname": "Panthers",
+        "id": "CIN",
+        "name": "Cincinnati Bengals",
         "score": null
       },
       "homeTeam": {
-        "id": "JAX",
-        "name": "Jacksonville Jaguars",
-        "nickname": "Jaguars",
+        "id": "CLE",
+        "name": "Cleveland Browns",
         "score": null
       },
       "marketData": {
         "spread": {
           "away": {
-            "line": 3.5,
-            "odds": -115
+            "line": -5.5,
+            "odds": -110
           },
           "home": {
-            "line": -3.5,
-            "odds": -105
+            "line": 5.5,
+            "odds": -110
           }
         },
         "total": {
           "over": {
-            "line": 46.5,
-            "odds": -120
+            "line": 47.5,
+            "odds": -115
           },
           "under": {
-            "line": 46.5,
-            "odds": 100
+            "line": 47.5,
+            "odds": -110
           }
         },
         "moneyline": {
           "away": {
-            "odds": 160
+            "odds": -250
           },
           "home": {
-            "odds": -190
+            "odds": 210
           }
         }
       },
       "selection": {
         "betType": "spread",
         "side": "away",
-        "line": 3.5,
-        "odds": -115,
+        "line": -5.5,
+        "odds": -110,
         "units": 1,
-        "rationale": "ATS lean: CAR +3.5 at -115. Stat margin (PPG vs opp PA): AWAY +7.06 pts",
+        "rationale": "Cincinnati carries a +12.5 point scoring margin and a small coaching edge, which supports laying -5.5. With 74% of tickets already aligned and the price stable, the number remains efficient but playable.",
         "rationaleCues": [
-          "Stat margin (PPG vs opp PA): AWAY +7.06 pts",
-          "Turnovers delta (opp − chosen): -2",
-          "Defensive disruption delta (sacks+INTs): -2",
+          "Stat margin (PPG vs opp PA): AWAY +12.53 pts",
+          "Turnovers delta (opp − chosen): -1",
+          "Defensive disruption delta (sacks+INTs): -2.33",
           "Coaching experience delta (years): +1",
-          "Spread movement: 2.5→3.5 (toward_home)",
+          "Spread movement: -5.5→-5.5 (stable)",
+          "Public split (spread): 26% home / 74% away"
+        ]
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": -5.5,
+        "finalOdds": -110,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "pro"
+    },
+    {
+      "gameId": "2025-09-07-nyg-wsh",
+      "gameDate": "2025-09-07T17:00:00.000-04:00",
+      "awayTeam": {
+        "id": "NYG",
+        "name": "New York Giants",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "WSH",
+        "name": "Washington Commanders",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 6.5,
+            "odds": 100
+          },
+          "home": {
+            "line": -6.5,
+            "odds": -120
+          }
+        },
+        "total": {
+          "over": {
+            "line": 45.5,
+            "odds": -110
+          },
+          "under": {
+            "line": 45.5,
+            "odds": -110
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": 215
+          },
+          "home": {
+            "odds": -260
+          }
+        }
+      },
+      "selection": {
+        "betType": "spread",
+        "side": "home",
+        "line": -6.5,
+        "odds": -120,
+        "units": 1,
+        "rationale": "Washington’s turnover edge (-4 delta) and coaching experience gap (+4 years) justify a -6.5 number despite a weaker scoring margin. With an even public split, the spread reflects fair value for the favorite.",
+        "rationaleCues": [
+          "Stat margin (PPG vs opp PA): HOME -11.06 pts",
+          "Turnovers delta (opp − chosen): -4",
+          "Defensive disruption delta (sacks+INTs): -2",
+          "Coaching experience delta (years): +4",
+          "Spread movement: 6.5→6.5 (stable)",
           "Public split (spread): 50% home / 50% away"
         ]
       },
       "result": {
         "status": "pending",
-        "finalLine": 3.5,
+        "finalLine": -6.5,
+        "finalOdds": -120,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "pro"
+    },
+    {
+      "gameId": "2025-09-07-det-gb",
+      "gameDate": "2025-09-07T20:25:00.000-04:00",
+      "awayTeam": {
+        "id": "DET",
+        "name": "Detroit Lions",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "GB",
+        "name": "Green Bay Packers",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 1.5,
+            "odds": 100
+          },
+          "home": {
+            "line": -1.5,
+            "odds": -120
+          }
+        },
+        "total": {
+          "over": {
+            "line": 47.5,
+            "odds": 100
+          },
+          "under": {
+            "line": 47.5,
+            "odds": -120
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": 110
+          },
+          "home": {
+            "odds": -130
+          }
+        }
+      },
+      "selection": {
+        "betType": "spread",
+        "side": "away",
+        "line": 1.5,
+        "odds": 100,
+        "units": 1,
+        "rationale": "Detroit’s efficiency edge is +6.3 points with a -5 turnover delta, indicating stronger fundamentals than the market implies. At +100, taking the points secures value in an otherwise efficient line.",
+        "rationaleCues": [
+          "Stat margin (PPG vs opp PA): AWAY +6.35 pts",
+          "Turnovers delta (opp − chosen): -5",
+          "Defensive disruption delta (sacks+INTs): -0.75",
+          "Coaching experience delta (years): -1",
+          "Spread movement: 1.5→1.5 (stable)",
+          "Public split (spread): 7% home / 93% away"
+        ]
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 1.5,
+        "finalOdds": 100,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "pro"
+    },
+    {
+      "gameId": "2025-09-07-tb-atl",
+      "gameDate": "2025-09-07T17:00:00.000-04:00",
+      "awayTeam": {
+        "id": "TB",
+        "name": "Tampa Bay Buccaneers",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "ATL",
+        "name": "Atlanta Falcons",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": -1.5,
+            "odds": -115
+          },
+          "home": {
+            "line": 1.5,
+            "odds": -105
+          }
+        },
+        "total": {
+          "over": {
+            "line": 47.5,
+            "odds": -110
+          },
+          "under": {
+            "line": 47.5,
+            "odds": -110
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": -130
+          },
+          "home": {
+            "odds": 110
+          }
+        }
+      },
+      "selection": {
+        "betType": "spread",
+        "side": "away",
+        "line": -1.5,
+        "odds": -115,
+        "units": 1,
+        "rationale": "Tampa shows a +4.4 scoring margin, a +2 disruption edge, and +3 years of coaching experience. Even with the spread tightening from -2.5 to -1.5, the fundamentals support backing the Buccaneers.",
+        "rationaleCues": [
+          "Stat margin (PPG vs opp PA): AWAY +4.41 pts",
+          "Turnovers delta (opp − chosen): -1",
+          "Defensive disruption delta (sacks+INTs): +2",
+          "Coaching experience delta (years): +3",
+          "Spread movement: -2.5→-1.5 (toward_home)",
+          "Public split (spread): 75% home / 25% away"
+        ]
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": -1.5,
         "finalOdds": -115,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "pro"
+    },
+    {
+      "gameId": "2025-09-07-mia-ind",
+      "gameDate": "2025-09-07T17:00:00.000-04:00",
+      "awayTeam": {
+        "id": "MIA",
+        "name": "Miami Dolphins",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "IND",
+        "name": "Indianapolis Colts",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 1.5,
+            "odds": -125
+          },
+          "home": {
+            "line": -1.5,
+            "odds": 102
+          }
+        },
+        "total": {
+          "over": {
+            "line": 46.5,
+            "odds": -110
+          },
+          "under": {
+            "line": 46.5,
+            "odds": -110
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": -115
+          },
+          "home": {
+            "odds": -105
+          }
+        }
+      },
+      "selection": {
+        "betType": "spread",
+        "side": "home",
+        "line": -1.5,
+        "odds": 102,
+        "units": 1,
+        "rationale": "Despite a -5.6 margin on paper, Indianapolis is priced at plus money with 21% of spread tickets. In a stable line environment, the contrarian position on the Colts provides positive expected value.",
+        "rationaleCues": [
+          "Stat margin (PPG vs opp PA): HOME -5.59 pts",
+          "Turnovers delta (opp − chosen): +1",
+          "Defensive disruption delta (sacks+INTs): -1",
+          "Coaching experience delta (years): -1",
+          "Spread movement: 1.5→1.5 (stable)",
+          "Public split (spread): 21% home / 79% away"
+        ]
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": -1.5,
+        "finalOdds": 102,
         "payout": 0,
         "netUnits": 0
       },
@@ -76,8 +346,8 @@
     }
   ],
   "weekSummary": {
-    "totalPicks": 1,
-    "totalUnits": 1,
+    "totalPicks": 5,
+    "totalUnits": 5,
     "weekPayout": 0,
     "weekNetUnits": 0
   }

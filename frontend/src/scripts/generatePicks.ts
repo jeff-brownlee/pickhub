@@ -2,8 +2,10 @@ import fs from 'fs';
 import path from 'path';
 import { pickSelectionService } from '../services/pickSelectionService';
 import { MinimalFactbook } from '../types/minimalFactbook';
+import { computeSpreadScoreDebug, computeTotalScoreDebug, computeMoneylineScoreDebug } from '../heuristics/marketScoring';
 import { GameData } from '../adapters/espnNflApi';
-import { Persona } from '../types';
+import { Persona, Pick as UIPick } from '../types';
+import { chatgptRationaleService } from '../services/chatgptRationaleService';
 
 function readJson<T = any>(p: string): T {
   return JSON.parse(fs.readFileSync(p, 'utf8')) as T;
@@ -29,15 +31,59 @@ async function main() {
 
   const games = readJson<GameData[]>(gamesPath);
   const factbookFiles = fs.readdirSync(factbooksDir).filter(f => f.endsWith('.json'));
-  const factbooks: MinimalFactbook[] = factbookFiles.map(f => readJson<MinimalFactbook>(path.join(factbooksDir, f)));
-  const personas: Persona[] = readJson<Persona[]>(personasPath);
+  const allFactbooks: MinimalFactbook[] = factbookFiles.map(f => readJson<MinimalFactbook>(path.join(factbooksDir, f)));
+  const ignoreStarted = String(process.env.PICKHUB_IGNORE_STARTED || '').toLowerCase() === 'true';
+  let factbooks: MinimalFactbook[];
+  if (ignoreStarted) {
+    factbooks = allFactbooks;
+    console.log('⏱️  Ignoring started-games filter (PICKHUB_IGNORE_STARTED=true).');
+  } else {
+    // Discard games that have already started
+    const now = new Date();
+    factbooks = allFactbooks.filter(fb => {
+      const ko = new Date(fb.kickoffISO);
+      return ko > now;
+    });
+    const discarded = allFactbooks.length - factbooks.length;
+    if (discarded > 0) {
+      console.log(`⏱️  Skipping ${discarded} game(s) that have already started.`);
+    }
+  }
+  const personasAll: Persona[] = readJson<Persona[]>(personasPath);
+  const targetIds = (process.env.PICKHUB_PERSONAS || '')
+    .split(',')
+    .map(s => s.trim())
+    .filter(Boolean);
+  const personas: Persona[] = targetIds.length > 0
+    ? personasAll.filter(p => targetIds.includes(p.id))
+    : personasAll;
+  console.log(`👤 Generating for personas: ${personas.map(p=>p.id).join(', ')}`);
 
   // Output dir (public) for Vercel consumption
   const picksOutDir = path.join(process.cwd(), 'public', 'data', 'nfl', 'season-2025', weekStr, 'picks');
   fs.mkdirSync(picksOutDir, { recursive: true });
 
+  // Always-on market scoring audit log
+  const scoringDir = path.join(process.cwd(), '..', 'data/nfl/season-2025', weekStr, 'scoring');
+  fs.mkdirSync(scoringDir, { recursive: true });
+  const marketScoreLog = factbooks.map((fb) => ({
+    gameId: fb.gameId,
+    week: fb.week,
+    kickoffISO: fb.kickoffISO,
+    scoring: {
+      spread: computeSpreadScoreDebug(fb),
+      total: computeTotalScoreDebug(fb),
+      moneyline: computeMoneylineScoreDebug(fb)
+    }
+  }));
+  const marketScoreOut = path.join(scoringDir, 'market-score.json');
+  fs.writeFileSync(marketScoreOut, JSON.stringify(marketScoreLog, null, 2));
+  console.log(`🧭 Market scoring log written → ${marketScoreOut}`);
+
   // Shared exposures across personas for decorrelation
   const exposures: any = {};
+  // Global budget: allow only one ChatGPT call for the whole run
+  let totalCallsRemaining = 1;
 
   for (const persona of personas) {
     try {
@@ -47,18 +93,52 @@ async function main() {
         factbooks,
         persona,
         week,
-        exposures
+        exposures,
+        Object.fromEntries(marketScoreLog.map(entry => [entry.gameId, {
+          spread: { side: entry.scoring.spread.side, score: entry.scoring.spread.score, reasons: entry.scoring.spread.reasons },
+          total: { direction: entry.scoring.total.direction, score: entry.scoring.total.score, reasons: entry.scoring.total.reasons },
+          moneyline: { side: entry.scoring.moneyline.side, score: entry.scoring.moneyline.score, reasons: entry.scoring.moneyline.reasons }
+        }]))
       );
+
+      // Replace heuristic rationale string with ChatGPT narrative per pick (keep rationaleCues)
+      const picksWithNarratives: UIPick[] = [];
+      for (const pick of res.picks as unknown as UIPick[]) {
+        const fb = factbooks.find(f => f.gameId === pick.gameId);
+        if (!fb) { picksWithNarratives.push(pick); continue; }
+        try {
+          if (totalCallsRemaining > 0) {
+            const gpt = await chatgptRationaleService.generateRationale(fb, persona, pick, 2);
+            totalCallsRemaining -= 1;
+            picksWithNarratives.push({
+              ...pick,
+              selection: {
+                ...pick.selection,
+                rationale: gpt.rationale,
+                rationaleCues: pick.selection.rationaleCues
+              }
+            });
+            // brief delay to reduce rate limit pressure
+            await new Promise(r => setTimeout(r, 150));
+          } else {
+            picksWithNarratives.push(pick);
+          }
+        } catch (err) {
+          console.warn(`ChatGPT failed for ${persona.id} ${pick.gameId}:`, err);
+          picksWithNarratives.push(pick);
+        }
+      }
+
       // Adapt to legacy UI JSON envelope
       const legacyEnvelope = {
         analystId: persona.id,
         week,
         season: 2025,
         generatedAt,
-        picks: res.picks,
+        picks: picksWithNarratives,
         weekSummary: {
-          totalPicks: res.picks.length,
-          totalUnits: res.picks.length,
+          totalPicks: picksWithNarratives.length,
+          totalUnits: picksWithNarratives.length,
           weekPayout: 0,
           weekNetUnits: 0
         }

@@ -2,7 +2,7 @@
   "analystId": "contrarian",
   "week": 1,
   "season": 2025,
-  "generatedAt": "2025-09-04T22:57:02.167Z",
+  "generatedAt": "2025-09-06T16:36:20.979Z",
   "picks": [
     {
       "gameId": "2025-09-07-cin-cle",
@@ -10,13 +10,11 @@
       "awayTeam": {
         "id": "CIN",
         "name": "Cincinnati Bengals",
-        "nickname": "Bengals",
         "score": null
       },
       "homeTeam": {
         "id": "CLE",
         "name": "Cleveland Browns",
-        "nickname": "Browns",
         "score": null
       },
       "marketData": {
@@ -51,11 +49,11 @@
       },
       "selection": {
         "betType": "moneyline",
-        "side": "away",
+        "side": "home",
         "line": 0,
-        "odds": -250,
+        "odds": 210,
         "units": 1,
-        "rationale": "Moneyline lean: CIN at -250. Stat margin (PPG vs opp PA): AWAY +12.53",
+        "rationale": "Ninety-seven percent of bettors are laying juice on Cincy at -250. I'll gladly fade that hard and take the home underdog.",
         "rationaleCues": [
           "Stat margin (PPG vs opp PA): AWAY +12.53",
           "Form delta (win%): +0",
@@ -78,13 +76,11 @@
       "awayTeam": {
         "id": "LV",
         "name": "Las Vegas Raiders",
-        "nickname": "Raiders",
         "score": null
       },
       "homeTeam": {
         "id": "NE",
         "name": "New England Patriots",
-        "nickname": "Patriots",
         "score": null
       },
       "marketData": {
@@ -119,11 +115,11 @@
       },
       "selection": {
         "betType": "total",
-        "side": "under",
+        "side": "over",
         "line": 43.5,
-        "odds": -105,
+        "odds": -115,
         "units": 1,
-        "rationale": "Total lean: UNDER 43.5 at -105. Expected total 40.39 vs market 43.5",
+        "rationale": "Seventy-three percent are piling on the Under after a drop from 45.5 to 43.5. When everyone screams defense, I’m happy to bet they’re late to the party.",
         "rationaleCues": [
           "Expected total 40.39 vs market 43.5",
           "Total movement: 45.5→43.5 (under)",
@@ -142,138 +138,67 @@
       "analystId": "contrarian"
     },
     {
-      "gameId": "2025-09-05-dal-phi",
-      "gameDate": "2025-09-05T00:20:00.000-04:00",
+      "gameId": "2025-09-07-det-gb",
+      "gameDate": "2025-09-07T20:25:00.000-04:00",
       "awayTeam": {
-        "id": "DAL",
-        "name": "Dallas Cowboys",
-        "nickname": "Cowboys",
+        "id": "DET",
+        "name": "Detroit Lions",
         "score": null
       },
       "homeTeam": {
-        "id": "PHI",
-        "name": "Philadelphia Eagles",
-        "nickname": "Eagles",
+        "id": "GB",
+        "name": "Green Bay Packers",
         "score": null
       },
       "marketData": {
         "spread": {
           "away": {
-            "line": 8.5,
-            "odds": -115
-          },
-          "home": {
-            "line": -8.5,
-            "odds": -105
-          }
-        },
-        "total": {
-          "over": {
-            "line": 47.5,
-            "odds": -115
-          },
-          "under": {
-            "line": 47.5,
-            "odds": -105
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": 320
-          },
-          "home": {
-            "odds": -425
-          }
-        }
-      },
-      "selection": {
-        "betType": "moneyline",
-        "side": "away",
-        "line": 0,
-        "odds": 320,
-        "units": 1,
-        "rationale": "Moneyline lean: DAL at +320. Stat margin (PPG vs opp PA): AWAY +3.06",
-        "rationaleCues": [
-          "Stat margin (PPG vs opp PA): AWAY +3.06",
-          "Form delta (win%): +0",
-          "Moneyline movement (away): 230→340 (110 cents)",
-          "Public split (moneyline): 91% home / 9% away"
-        ]
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": 0,
-        "finalOdds": 320,
-        "payout": 0,
-        "netUnits": 0
-      },
-      "analystId": "contrarian"
-    },
-    {
-      "gameId": "2025-09-07-nyg-wsh",
-      "gameDate": "2025-09-07T17:00:00.000-04:00",
-      "awayTeam": {
-        "id": "NYG",
-        "name": "New York Giants",
-        "nickname": "Giants",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "WSH",
-        "name": "Washington Commanders",
-        "nickname": "Commanders",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 6.5,
+            "line": 1.5,
             "odds": 100
           },
           "home": {
-            "line": -6.5,
+            "line": -1.5,
             "odds": -120
           }
         },
         "total": {
           "over": {
-            "line": 45.5,
-            "odds": -110
+            "line": 47.5,
+            "odds": 100
           },
           "under": {
-            "line": 45.5,
-            "odds": -110
+            "line": 47.5,
+            "odds": -120
           }
         },
         "moneyline": {
           "away": {
-            "odds": 215
+            "odds": 110
           },
           "home": {
-            "odds": -260
+            "odds": -130
           }
         }
       },
       "selection": {
-        "betType": "spread",
-        "side": "home",
-        "line": -6.5,
-        "odds": -120,
+        "betType": "total",
+        "side": "over",
+        "line": 47.5,
+        "odds": 100,
         "units": 1,
-        "rationale": "ATS lean: WSH -6.5 at -120. Stat margin (PPG vs opp PA): HOME -11.06 pts",
+        "rationale": "Eighty-six percent are sold on the Under after the line dipped from 49.5 to 47.5. That’s my cue to grab the Over at even money and laugh when the scoreboard keeps ticking.",
         "rationaleCues": [
-          "Stat margin (PPG vs opp PA): HOME -11.06 pts",
-          "Turnovers delta (opp − chosen): -4",
-          "Defensive disruption delta (sacks+INTs): -2",
-          "Coaching experience delta (years): +4",
-          "Spread movement: 6.5→6.5 (stable)",
-          "Public split (spread): 50% home / 50% away"
+          "Expected total 53.15 vs market 47.5",
+          "Total movement: 49.5→47.5 (under)",
+          "Public split (total): 14% over / 86% under",
+          "Defensive disruption (combined sacks+INTs): 5.25",
+          "Passing volume proxy (combined pass yards): 276"
         ]
       },
       "result": {
         "status": "pending",
-        "finalLine": -6.5,
-        "finalOdds": -120,
+        "finalLine": 47.5,
+        "finalOdds": 100,
         "payout": 0,
         "netUnits": 0
       },
@@ -285,13 +210,11 @@
       "awayTeam": {
         "id": "BAL",
         "name": "Baltimore Ravens",
-        "nickname": "Ravens",
         "score": null
       },
       "homeTeam": {
         "id": "BUF",
         "name": "Buffalo Bills",
-        "nickname": "Bills",
         "score": null
       },
       "marketData": {
@@ -330,7 +253,7 @@
         "line": -1.5,
         "odds": 102,
         "units": 1,
-        "rationale": "ATS lean: BUF -1.5 at +102. Stat margin (PPG vs opp PA): HOME -0.82 pts",
+        "rationale": "Seventy-one percent of tickets are on Baltimore after the line swung their way. I’ll roll with Buffalo at +102 and enjoy watching the crowd cry into their slips.",
         "rationaleCues": [
           "Stat margin (PPG vs opp PA): HOME -0.82 pts",
           "Turnovers delta (opp − chosen): +2",
@@ -344,6 +267,74 @@
         "status": "pending",
         "finalLine": -1.5,
         "finalOdds": 102,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "contrarian"
+    },
+    {
+      "gameId": "2025-09-07-nyg-wsh",
+      "gameDate": "2025-09-07T17:00:00.000-04:00",
+      "awayTeam": {
+        "id": "NYG",
+        "name": "New York Giants",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "WSH",
+        "name": "Washington Commanders",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 6.5,
+            "odds": 100
+          },
+          "home": {
+            "line": -6.5,
+            "odds": -120
+          }
+        },
+        "total": {
+          "over": {
+            "line": 45.5,
+            "odds": -110
+          },
+          "under": {
+            "line": 45.5,
+            "odds": -110
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": 215
+          },
+          "home": {
+            "odds": -260
+          }
+        }
+      },
+      "selection": {
+        "betType": "spread",
+        "side": "home",
+        "line": -6.5,
+        "odds": -120,
+        "units": 1,
+        "rationale": "With the public split dead even at 50/50, this isn’t about fading anyone—it’s just picking the side with a -4 turnover edge and more discipline. Sometimes contrarian means passing on the obvious sucker play.",
+        "rationaleCues": [
+          "Stat margin (PPG vs opp PA): HOME -11.06 pts",
+          "Turnovers delta (opp − chosen): -4",
+          "Defensive disruption delta (sacks+INTs): -2",
+          "Coaching experience delta (years): +4",
+          "Spread movement: 6.5→6.5 (stable)",
+          "Public split (spread): 50% home / 50% away"
+        ]
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": -6.5,
+        "finalOdds": -120,
         "payout": 0,
         "netUnits": 0
       },

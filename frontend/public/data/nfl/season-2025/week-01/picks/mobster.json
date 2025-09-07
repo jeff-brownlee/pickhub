@@ -2,21 +2,218 @@
   "analystId": "mobster",
   "week": 1,
   "season": 2025,
-  "generatedAt": "2025-09-04T22:57:02.169Z",
+  "generatedAt": "2025-09-07T20:18:55.485Z",
   "picks": [
+    {
+      "gameId": "2025-09-07-cin-cle",
+      "gameDate": "2025-09-07T17:00:00.000-04:00",
+      "awayTeam": {
+        "id": "CIN",
+        "name": "Cincinnati Bengals",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "CLE",
+        "name": "Cleveland Browns",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": -5.5,
+            "odds": -110
+          },
+          "home": {
+            "line": 5.5,
+            "odds": -110
+          }
+        },
+        "total": {
+          "over": {
+            "line": 47.5,
+            "odds": -115
+          },
+          "under": {
+            "line": 47.5,
+            "odds": -110
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": -250
+          },
+          "home": {
+            "odds": 210
+          }
+        }
+      },
+      "selection": {
+        "betType": "moneyline",
+        "side": "home",
+        "line": 0,
+        "odds": 210,
+        "units": 1,
+        "rationale": "Everybody and their mother’s on Cincy—97% of the tickets—and the line still slid from -275 to -250. That’s the book telling you the sharp side is Cleveland, so I’ll take the Browns at +210 and let the public drown in juice.",
+        "rationaleCues": [
+          "Stat margin (PPG vs opp PA): AWAY +12.53",
+          "Form delta (win%): +0",
+          "Moneyline movement (away): -275→-250 (25 cents)",
+          "Public split (moneyline): 3% home / 97% away"
+        ]
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 0,
+        "finalOdds": 210,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "mobster"
+    },
+    {
+      "gameId": "2025-09-05-dal-phi",
+      "gameDate": "2025-09-05T00:20:00.000-04:00",
+      "awayTeam": {
+        "id": "DAL",
+        "name": "Dallas Cowboys",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "PHI",
+        "name": "Philadelphia Eagles",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 8.5,
+            "odds": -115
+          },
+          "home": {
+            "line": -8.5,
+            "odds": -105
+          }
+        },
+        "total": {
+          "over": {
+            "line": 47.5,
+            "odds": -115
+          },
+          "under": {
+            "line": 47.5,
+            "odds": -105
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": 320
+          },
+          "home": {
+            "odds": -425
+          }
+        }
+      },
+      "selection": {
+        "betType": "moneyline",
+        "side": "away",
+        "line": 0,
+        "odds": 320,
+        "units": 1,
+        "rationale": "The Birds took 91% of the moneyline bets, yet Philly’s price ballooned from -230 to -425. That kind of steam tells me the value’s on the other side, so I’ll sprinkle Dallas +320 and let the math do the talking.",
+        "rationaleCues": [
+          "Stat margin (PPG vs opp PA): AWAY +3.06",
+          "Form delta (win%): +0",
+          "Moneyline movement (away): 230→340 (110 cents)",
+          "Public split (moneyline): 91% home / 9% away"
+        ]
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 0,
+        "finalOdds": 320,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "mobster"
+    },
+    {
+      "gameId": "2025-09-07-lv-ne",
+      "gameDate": "2025-09-07T17:00:00.000-04:00",
+      "awayTeam": {
+        "id": "LV",
+        "name": "Las Vegas Raiders",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "NE",
+        "name": "New England Patriots",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 2.5,
+            "odds": -105
+          },
+          "home": {
+            "line": -2.5,
+            "odds": -120
+          }
+        },
+        "total": {
+          "over": {
+            "line": 43.5,
+            "odds": -115
+          },
+          "under": {
+            "line": 43.5,
+            "odds": -105
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": 120
+          },
+          "home": {
+            "odds": -140
+          }
+        }
+      },
+      "selection": {
+        "betType": "total",
+        "side": "under",
+        "line": 43.5,
+        "odds": -105,
+        "units": 1,
+        "rationale": "We saw the total crash from 45.5 down to 43.5 with 73% of the bets already on the Under. Sharps hammered the number early, so I’m following the steam and riding the Under train.",
+        "rationaleCues": [
+          "Expected total 40.39 vs market 43.5",
+          "Total movement: 45.5→43.5 (under)",
+          "Public split (total): 27% over / 73% under",
+          "Defensive disruption (combined sacks+INTs): 7.33",
+          "Passing volume proxy (combined pass yards): 385"
+        ]
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 43.5,
+        "finalOdds": -105,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "mobster"
+    },
     {
       "gameId": "2025-09-07-det-gb",
       "gameDate": "2025-09-07T20:25:00.000-04:00",
       "awayTeam": {
         "id": "DET",
         "name": "Detroit Lions",
-        "nickname": "Lions",
         "score": null
       },
       "homeTeam": {
         "id": "GB",
         "name": "Green Bay Packers",
-        "nickname": "Packers",
         "score": null
       },
       "marketData": {
@@ -50,24 +247,23 @@
         }
       },
       "selection": {
-        "betType": "spread",
-        "side": "away",
-        "line": 1.5,
+        "betType": "total",
+        "side": "over",
+        "line": 47.5,
         "odds": 100,
         "units": 1,
-        "rationale": "ATS lean: DET +1.5 at +100. Stat margin (PPG vs opp PA): AWAY +6.35 pts",
+        "rationale": "Projection’s at 53 and the line’s sitting 47.5 after a dip from 49.5. With 86% of the crowd pounding the Under, the sharp side’s clear—give me the Over at even money.",
         "rationaleCues": [
-          "Stat margin (PPG vs opp PA): AWAY +6.35 pts",
-          "Turnovers delta (opp − chosen): -5",
-          "Defensive disruption delta (sacks+INTs): -0.75",
-          "Coaching experience delta (years): -1",
-          "Spread movement: 1.5→1.5 (stable)",
-          "Public split (spread): 7% home / 93% away"
+          "Expected total 53.15 vs market 47.5",
+          "Total movement: 49.5→47.5 (under)",
+          "Public split (total): 14% over / 86% under",
+          "Defensive disruption (combined sacks+INTs): 5.25",
+          "Passing volume proxy (combined pass yards): 276"
         ]
       },
       "result": {
         "status": "pending",
-        "finalLine": 1.5,
+        "finalLine": 47.5,
         "finalOdds": 100,
         "payout": 0,
         "netUnits": 0
@@ -75,18 +271,16 @@
       "analystId": "mobster"
     },
     {
-      "gameId": "2025-09-07-mia-ind",
-      "gameDate": "2025-09-07T17:00:00.000-04:00",
+      "gameId": "2025-09-08-bal-buf",
+      "gameDate": "2025-09-08T00:20:00.000-04:00",
       "awayTeam": {
-        "id": "MIA",
-        "name": "Miami Dolphins",
-        "nickname": "Dolphins",
+        "id": "BAL",
+        "name": "Baltimore Ravens",
         "score": null
       },
       "homeTeam": {
-        "id": "IND",
-        "name": "Indianapolis Colts",
-        "nickname": "Colts",
+        "id": "BUF",
+        "name": "Buffalo Bills",
         "score": null
       },
       "marketData": {
@@ -102,11 +296,11 @@
         },
         "total": {
           "over": {
-            "line": 46.5,
+            "line": 50.5,
             "odds": -110
           },
           "under": {
-            "line": 46.5,
+            "line": 50.5,
             "odds": -110
           }
         },
@@ -125,14 +319,14 @@
         "line": -1.5,
         "odds": 102,
         "units": 1,
-        "rationale": "ATS lean: IND -1.5 at +102. Stat margin (PPG vs opp PA): HOME -5.59 pts",
+        "rationale": "This line flipped from Buffalo +1.5 to -1.5 even though 71% of the action’s on Baltimore. That’s reverse line movement straight outta the wiseguy playbook—Bills are the side, no questions asked.",
         "rationaleCues": [
-          "Stat margin (PPG vs opp PA): HOME -5.59 pts",
-          "Turnovers delta (opp − chosen): +1",
-          "Defensive disruption delta (sacks+INTs): -1",
-          "Coaching experience delta (years): -1",
-          "Spread movement: 1.5→1.5 (stable)",
-          "Public split (spread): 21% home / 79% away"
+          "Stat margin (PPG vs opp PA): HOME -0.82 pts",
+          "Turnovers delta (opp − chosen): +2",
+          "Defensive disruption delta (sacks+INTs): -2.67",
+          "Coaching experience delta (years): -10",
+          "Spread movement: 1.5→-1.5 (toward_away)",
+          "Public split (spread): 29% home / 71% away"
         ]
       },
       "result": {
@@ -143,81 +337,11 @@
         "netUnits": 0
       },
       "analystId": "mobster"
-    },
-    {
-      "gameId": "2025-09-07-car-jax",
-      "gameDate": "2025-09-07T17:00:00.000-04:00",
-      "awayTeam": {
-        "id": "CAR",
-        "name": "Carolina Panthers",
-        "nickname": "Panthers",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "JAX",
-        "name": "Jacksonville Jaguars",
-        "nickname": "Jaguars",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 3.5,
-            "odds": -115
-          },
-          "home": {
-            "line": -3.5,
-            "odds": -105
-          }
-        },
-        "total": {
-          "over": {
-            "line": 46.5,
-            "odds": -120
-          },
-          "under": {
-            "line": 46.5,
-            "odds": 100
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": 160
-          },
-          "home": {
-            "odds": -190
-          }
-        }
-      },
-      "selection": {
-        "betType": "spread",
-        "side": "away",
-        "line": 3.5,
-        "odds": -115,
-        "units": 1,
-        "rationale": "ATS lean: CAR +3.5 at -115. Stat margin (PPG vs opp PA): AWAY +7.06 pts",
-        "rationaleCues": [
-          "Stat margin (PPG vs opp PA): AWAY +7.06 pts",
-          "Turnovers delta (opp − chosen): -2",
-          "Defensive disruption delta (sacks+INTs): -2",
-          "Coaching experience delta (years): +1",
-          "Spread movement: 2.5→3.5 (toward_home)",
-          "Public split (spread): 50% home / 50% away"
-        ]
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": 3.5,
-        "finalOdds": -115,
-        "payout": 0,
-        "netUnits": 0
-      },
-      "analystId": "mobster"
     }
   ],
   "weekSummary": {
-    "totalPicks": 3,
-    "totalUnits": 3,
+    "totalPicks": 5,
+    "totalUnits": 5,
     "weekPayout": 0,
     "weekNetUnits": 0
   }

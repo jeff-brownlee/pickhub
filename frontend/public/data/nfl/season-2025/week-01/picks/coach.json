@@ -2,7 +2,7 @@
   "analystId": "coach",
   "week": 1,
   "season": 2025,
-  "generatedAt": "2025-09-04T22:57:02.164Z",
+  "generatedAt": "2025-09-06T16:36:08.665Z",
   "picks": [
     {
       "gameId": "2025-09-07-cin-cle",
@@ -10,13 +10,11 @@
       "awayTeam": {
         "id": "CIN",
         "name": "Cincinnati Bengals",
-        "nickname": "Bengals",
         "score": null
       },
       "homeTeam": {
         "id": "CLE",
         "name": "Cleveland Browns",
-        "nickname": "Browns",
         "score": null
       },
       "marketData": {
@@ -55,7 +53,7 @@
         "line": -5.5,
         "odds": -110,
         "units": 1,
-        "rationale": "ATS lean: CIN -5.5 at -110. Stat margin (PPG vs opp PA): AWAY +12.53 pts",
+        "rationale": "The Bengals bring a +12.5 point scoring edge and steadiness on the line. With 74% of the public on their side and a stable -5.5 spread, they just need to stay disciplined up front to cover.",
         "rationaleCues": [
           "Stat margin (PPG vs opp PA): AWAY +12.53 pts",
           "Turnovers delta (opp − chosen): -1",
@@ -80,13 +78,11 @@
       "awayTeam": {
         "id": "NYG",
         "name": "New York Giants",
-        "nickname": "Giants",
         "score": null
       },
       "homeTeam": {
         "id": "WSH",
         "name": "Washington Commanders",
-        "nickname": "Commanders",
         "score": null
       },
       "marketData": {
@@ -125,7 +121,7 @@
         "line": -6.5,
         "odds": -120,
         "units": 1,
-        "rationale": "ATS lean: WSH -6.5 at -120. Stat margin (PPG vs opp PA): HOME -11.06 pts",
+        "rationale": "Washington’s defense creates a -4 turnover edge and their coach brings 4 more years of experience. With the spread steady at -6.5, their toughness in the trenches should wear down the Giants.",
         "rationaleCues": [
           "Stat margin (PPG vs opp PA): HOME -11.06 pts",
           "Turnovers delta (opp − chosen): -4",
@@ -145,18 +141,83 @@
       "analystId": "coach"
     },
     {
+      "gameId": "2025-09-07-det-gb",
+      "gameDate": "2025-09-07T20:25:00.000-04:00",
+      "awayTeam": {
+        "id": "DET",
+        "name": "Detroit Lions",
+        "score": null
+      },
+      "homeTeam": {
+        "id": "GB",
+        "name": "Green Bay Packers",
+        "score": null
+      },
+      "marketData": {
+        "spread": {
+          "away": {
+            "line": 1.5,
+            "odds": 100
+          },
+          "home": {
+            "line": -1.5,
+            "odds": -120
+          }
+        },
+        "total": {
+          "over": {
+            "line": 47.5,
+            "odds": 100
+          },
+          "under": {
+            "line": 47.5,
+            "odds": -120
+          }
+        },
+        "moneyline": {
+          "away": {
+            "odds": 110
+          },
+          "home": {
+            "odds": -130
+          }
+        }
+      },
+      "selection": {
+        "betType": "total",
+        "side": "over",
+        "line": 47.5,
+        "odds": 100,
+        "units": 1,
+        "rationale": "The projection calls for 53 points while the line sits at 47.5. With just 14% of the public backing the Over, I’ll trust the offenses to punch through if the lines hold steady.",
+        "rationaleCues": [
+          "Expected total 53.15 vs market 47.5",
+          "Total movement: 49.5→47.5 (under)",
+          "Public split (total): 14% over / 86% under",
+          "Defensive disruption (combined sacks+INTs): 5.25",
+          "Passing volume proxy (combined pass yards): 276"
+        ]
+      },
+      "result": {
+        "status": "pending",
+        "finalLine": 47.5,
+        "finalOdds": 100,
+        "payout": 0,
+        "netUnits": 0
+      },
+      "analystId": "coach"
+    },
+    {
       "gameId": "2025-09-08-bal-buf",
       "gameDate": "2025-09-08T00:20:00.000-04:00",
       "awayTeam": {
         "id": "BAL",
         "name": "Baltimore Ravens",
-        "nickname": "Ravens",
         "score": null
       },
       "homeTeam": {
         "id": "BUF",
         "name": "Buffalo Bills",
-        "nickname": "Bills",
         "score": null
       },
       "marketData": {
@@ -195,7 +256,7 @@
         "line": -1.5,
         "odds": 102,
         "units": 1,
-        "rationale": "ATS lean: BUF -1.5 at +102. Stat margin (PPG vs opp PA): HOME -0.82 pts",
+        "rationale": "The Bills may trail in coaching years (-10) and sit nearly even in stat margin (-0.8), but just 29% of the public is backing them. At home, discipline in the trenches should tilt a close game their way.",
         "rationaleCues": [
           "Stat margin (PPG vs opp PA): HOME -0.82 pts",
           "Turnovers delta (opp − chosen): +2",
@@ -215,87 +276,16 @@
       "analystId": "coach"
     },
     {
-      "gameId": "2025-09-07-lv-ne",
-      "gameDate": "2025-09-07T17:00:00.000-04:00",
-      "awayTeam": {
-        "id": "LV",
-        "name": "Las Vegas Raiders",
-        "nickname": "Raiders",
-        "score": null
-      },
-      "homeTeam": {
-        "id": "NE",
-        "name": "New England Patriots",
-        "nickname": "Patriots",
-        "score": null
-      },
-      "marketData": {
-        "spread": {
-          "away": {
-            "line": 2.5,
-            "odds": -105
-          },
-          "home": {
-            "line": -2.5,
-            "odds": -120
-          }
-        },
-        "total": {
-          "over": {
-            "line": 43.5,
-            "odds": -115
-          },
-          "under": {
-            "line": 43.5,
-            "odds": -105
-          }
-        },
-        "moneyline": {
-          "away": {
-            "odds": 120
-          },
-          "home": {
-            "odds": -140
-          }
-        }
-      },
-      "selection": {
-        "betType": "total",
-        "side": "under",
-        "line": 43.5,
-        "odds": -105,
-        "units": 1,
-        "rationale": "Total lean: UNDER 43.5 at -105. Expected total 40.39 vs market 43.5",
-        "rationaleCues": [
-          "Expected total 40.39 vs market 43.5",
-          "Total movement: 45.5→43.5 (under)",
-          "Public split (total): 27% over / 73% under",
-          "Defensive disruption (combined sacks+INTs): 7.33",
-          "Passing volume proxy (combined pass yards): 385"
-        ]
-      },
-      "result": {
-        "status": "pending",
-        "finalLine": 43.5,
-        "finalOdds": -105,
-        "payout": 0,
-        "netUnits": 0
-      },
-      "analystId": "coach"
-    },
-    {
       "gameId": "2025-09-07-det-gb",
       "gameDate": "2025-09-07T20:25:00.000-04:00",
       "awayTeam": {
         "id": "DET",
         "name": "Detroit Lions",
-        "nickname": "Lions",
         "score": null
       },
       "homeTeam": {
         "id": "GB",
         "name": "Green Bay Packers",
-        "nickname": "Packers",
         "score": null
       },
       "marketData": {
@@ -334,7 +324,7 @@
         "line": 1.5,
         "odds": 100,
         "units": 1,
-        "rationale": "ATS lean: DET +1.5 at +100. Stat margin (PPG vs opp PA): AWAY +6.35 pts",
+        "rationale": "Detroit owns a +6.3 point edge and a -5 turnover margin, the signs of discipline that win tight games. With 93% of the public on their side, I’ll ride the Lions’ grit in the trenches plus the points.",
         "rationaleCues": [
           "Stat margin (PPG vs opp PA): AWAY +6.35 pts",
           "Turnovers delta (opp − chosen): -5",

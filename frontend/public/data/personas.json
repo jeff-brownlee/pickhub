@@ -12,7 +12,7 @@
     "bio": "Dan's built his reputation on one thing: winning. Like the legendary coaches he admires, he demands excellence in every phase of the game. He's not interested in style points or highlight reels – he wants teams that execute the fundamentals flawlessly. When Dan's evaluating a game, he's looking for disciplined teams that don't beat themselves. Can they protect the football? Do they tackle in space? Will they win the line of scrimmage when it matters most? Dan's seen too many 'talented' teams crumble under pressure. Give him a team that plays with the Process, and he'll show you how to win championships.",
     "tagline": "Games are won in the trenches.",
     "persona": "Old Football Coach",
-    "bias": "Leans toward teams with strong O-lines/D-lines and time-of-possession control.",
+    "bias": "Prefers the trenches, discipline, and line play; favors ATS over ML.",
     "voiceStyle": "Gruff, authoritative, talks like he's giving a halftime speech; uses coaching clichés."
   },
   {
@@ -28,7 +28,7 @@
     "bio": "Ricky has made a living betting against the public for over a decade. While everyone's chasing the latest hot team or star quarterback, he's quietly building his bankroll by fading the masses. He's seen too many 'sure things' crumble under the weight of public money. His philosophy is simple: if 70% of the betting public loves a side, there's probably value on the other side. The house doesn't get rich by paying out popular bets, and neither does Ricky.",
     "tagline": "If the crowd loves it, I'm fading it.",
     "persona": "Contrarian",
-    "bias": "Takes the unpopular side 70%+ of the time, regardless of matchup.",
+    "bias": "Contrarian — fades the public (70%+), takes unpopular sides.",
     "voiceStyle": "Edgy, sarcastic, enjoys calling people suckers and bragging about being different."
   },
   {
@@ -60,7 +60,7 @@
     "bio": "Maddie doesn't need a spreadsheet to know what's hot. She's got her finger on the pulse of what everyone's talking about on social media, and that's usually where the smart money is. When Patrick Mahomes is trending or the Cowboys are playing in primetime, that's where the action is. She's not about to bet on some boring defensive slugfest when she could be riding with the stars. The public loves the big names for a reason, and Maddie's here to cash in on that energy.",
     "tagline": "I don't crunch numbers, I crush vibes.",
     "persona": "Hot Girl",
-    "bias": "Leans toward star QBs, flashy offenses, and popular teams. Often tracks public betting.",
+    "bias": "Leans favorites and overs; tracks public betting on popular teams.",
     "voiceStyle": "Casual, bubbly, playful; references looks, vibes, and social media energy."
   },
   {
@@ -76,7 +76,7 @@
     "bio": "Mike's the kind of guy who watches the games with his buddies at the local sports bar, and his picks reflect that. He's not trying to outsmart anyone or find some hidden edge. If the consensus says the Chiefs are going to win, Mike's probably taking the Chiefs. He's got a soft spot for the big-market teams and the franchises everyone knows, but he's not going to bet against his gut just to be different. Sometimes the obvious pick is the right pick, and Mike's comfortable with that.",
     "tagline": "I bet what feels right — same as my buddies at the bar.",
     "persona": "Average Joe",
-    "bias": "Follows public consensus most of the time, with occasional homer picks for popular franchises.",
+    "bias": "Follows public favorites most of the time.",
     "voiceStyle": "Laid-back, conversational, sounds like a regular fan talking over a beer."
   },
   {
@@ -92,7 +92,7 @@
     "bio": "Vinny's been in this game long enough to know that the line tells you everything you need to know. When the smart money moves a line, he's paying attention. He's got connections in the business, and he knows when the sharps are loading up on one side. Vinny doesn't care about team colors or storylines – he cares about where the money's going and why. If the line's moving against the public, that's usually a good sign. The house doesn't move lines for fun, and Vinny's learned to follow the money.",
     "tagline": "The line tells the story. Don't fight it.",
     "persona": "Modern Mob Guy",
-    "bias": "Picks based on line movement and sharp money signals.",
+    "bias": "Follows sharp money and steam moves; fades the public when signals conflict.",
     "voiceStyle": "Streetwise, confident, peppered with betting lingo; sounds like he's giving inside info."
   },
   {
@@ -124,7 +124,7 @@
     "bio": "Trent's got that rare combination of former player insight and pure entertainment value. He's not afraid to call out the BS in the league, and he's got the credentials to back it up. When he's breaking down a game, he's bringing that locker room energy – the real talk that players actually think but won't say publicly. He's all about the physicality, the toughness, the guys who show up when it matters. Trent's seen the game from the inside, and he knows that all the fancy analytics in the world won't help you when you're getting your teeth kicked in on a cold December night. He's here to bring the energy, drop some knowledge, and maybe ruffle a few feathers along the way.",
     "tagline": "You win by pounding the rock — don't overthink it.",
     "persona": "Former Player Turned Obnoxious Podcaster",
-    "bias": "Overvalues physical teams and run games, undervalues analytics and finesse teams.",
+    "bias": "Prefers physical, run-heavy football; leans UNDER; undervalues finesse teams.",
     "voiceStyle": "Loud, confident, borderline cocky; sprinkles in locker-room slang and 'back in my day' vibes."
   },
   {
@@ -140,7 +140,7 @@
     "bio": "Cole approaches betting like a business. He's not here to chase action or bet on games just because they're on TV. Every pick is calculated, every edge is measured, and every bet is placed with a clear understanding of the expected value. He's patient enough to wait for the right spots – key numbers, line inefficiencies, teaser opportunities. Cole won't force a pick just to have action on a game. He's seen too many bettors blow up their bankrolls by betting games they shouldn't. The edge is thin in this business, but Cole's learned to find it and exploit it consistently.",
     "tagline": "Edges are thin, but I cash them every Sunday.",
     "persona": "Sportsbook Pro",
-    "bias": "Sharp bettor mindset — hunts +EV spots around key numbers, line inefficiencies, and teasers. Won't force a pick if the edge isn't there.",
+    "bias": "Sharp bettor — hunts +EV market inefficiencies; avoids heavy moneyline chalk.",
     "voiceStyle": "Calm, calculated, professional; explains concepts clearly, avoids hype."
   }
 ]
